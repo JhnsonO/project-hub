@@ -45,8 +45,8 @@
           "note": "Eight native sections completed, responsive walkthrough recorded and publication approved. Historical implementation evidence; later live homepage loaded on 21 October.",
           "last_touched": "2026-10-04",
           "lane": "Website",
-          "start": null,
-          "end": null,
+          "start": "2026-10-03",
+          "end": "2026-10-04",
           "completed_on": "2026-10-04",
           "depends_on": [],
           "evidence": [
@@ -55,7 +55,9 @@
               "url": "https://docs.google.com/document/d/1Ai973jkiOD_3WvG1ra2sFiIzPO3F3R1AlGIvKzZWWXA/edit",
               "label": "Website master handover"
             }
-          ]
+          ],
+          "date_basis": "observed",
+          "date_note": "Dated handover records draft/prototype work on 3 October and native rebuild/publishing on 4 October."
         },
         {
           "id": "web-002",
@@ -65,8 +67,8 @@
           "note": "Native booking page and the real Acuity embed implemented; booking payment acceptance remains a separate open check.",
           "last_touched": "2026-10-04",
           "lane": "Booking",
-          "start": null,
-          "end": null,
+          "start": "2026-10-04",
+          "end": "2026-10-04",
           "completed_on": "2026-10-04",
           "depends_on": [],
           "evidence": [
@@ -75,7 +77,9 @@
               "url": "https://docs.google.com/document/d/1Ai973jkiOD_3WvG1ra2sFiIzPO3F3R1AlGIvKzZWWXA/edit",
               "label": "Website master handover"
             }
-          ]
+          ],
+          "date_basis": "observed",
+          "date_note": "4 October handover records construction and checks of the native booking page and Acuity embed. The later route migration is a separate task."
         },
         {
           "id": "web-003",
@@ -105,8 +109,8 @@
           "note": "Shop launch and a purchase-flow pass are recorded in the historical handover. This does not close the current Apple Pay and device acceptance checks.",
           "last_touched": "2026-10-05",
           "lane": "Shop",
-          "start": null,
-          "end": null,
+          "start": "2026-10-05",
+          "end": "2026-10-05",
           "completed_on": "2026-10-05",
           "depends_on": [],
           "evidence": [
@@ -115,7 +119,9 @@
               "url": "https://docs.google.com/document/d/1Ai973jkiOD_3WvG1ra2sFiIzPO3F3R1AlGIvKzZWWXA/edit",
               "label": "Website master handover"
             }
-          ]
+          ],
+          "date_basis": "observed",
+          "date_note": "5 October handover records the approved live store rebuild, option checks and layout QA."
         },
         {
           "id": "web-005",
@@ -125,8 +131,8 @@
           "note": "Lounge Set variants and matching images, Active Set swatch and duplicate cart question corrected and selections checked.",
           "last_touched": "2026-10-06",
           "lane": "Shop",
-          "start": null,
-          "end": null,
+          "start": "2026-10-06",
+          "end": "2026-10-06",
           "completed_on": "2026-10-06",
           "depends_on": [],
           "evidence": [
@@ -135,7 +141,9 @@
               "url": "https://docs.google.com/document/d/1Ai973jkiOD_3WvG1ra2sFiIzPO3F3R1AlGIvKzZWWXA/edit",
               "label": "Website master handover"
             }
-          ]
+          ],
+          "date_basis": "observed",
+          "date_note": "6 October handover records product variant, swatch and cart-question implementation and checks."
         },
         {
           "id": "web-006",
@@ -145,8 +153,8 @@
           "note": "The approximately 936px overlap was corrected and verified after reload.",
           "last_touched": "2026-10-06",
           "lane": "Website",
-          "start": null,
-          "end": null,
+          "start": "2026-10-06",
+          "end": "2026-10-06",
           "completed_on": "2026-10-06",
           "depends_on": [],
           "evidence": [
@@ -155,7 +163,9 @@
               "url": "https://docs.google.com/document/d/1Ai973jkiOD_3WvG1ra2sFiIzPO3F3R1AlGIvKzZWWXA/edit",
               "label": "Website master handover"
             }
-          ]
+          ],
+          "date_basis": "observed",
+          "date_note": "6 October handover records the tablet overlap repair and reload verification."
         },
         {
           "id": "web-007",
@@ -484,8 +494,8 @@
       "name": "FFA Media",
       "mono": "FM",
       "group": "FFA",
-      "status": "v2 beta",
-      "summary": "Beta sign-in loads; signed-in acceptance and release checks are open.",
+      "status": "v2 live · acceptance",
+      "summary": "The dated log records v2 cutover on 20 October and native-clip work on 21 October; remaining API, real-device and deferred configuration checks stay open.",
       "milestones": [
         {
           "name": "Beta entry live",
@@ -596,8 +606,8 @@
           "note": "Camera type labels, usual sessions, automatic placement and Needs placing tray implemented. Local SQLite tests and v2 browser suite recorded; no live-device acceptance claim.",
           "last_touched": "2026-10-13",
           "lane": "Beta implementation",
-          "start": null,
-          "end": null,
+          "start": "2026-10-13",
+          "end": "2026-10-13",
           "completed_on": "2026-10-13",
           "depends_on": [],
           "evidence": [
@@ -605,8 +615,15 @@
               "provider": "GitHub",
               "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/ai-project-state.md",
               "label": "Media implementation log"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/28",
+              "label": "Dated v2 implementation commits"
             }
-          ]
+          ],
+          "date_basis": "observed",
+          "date_note": "PR #28 commits 752455f, 8e08ab9 and 8d9f004 record implementation on 13 October."
         },
         {
           "id": "media-006",
@@ -616,8 +633,8 @@
           "note": "V2 link intake reports real status and retries failed videos when pasted again; local verification recorded.",
           "last_touched": "2026-10-13",
           "lane": "Beta implementation",
-          "start": null,
-          "end": null,
+          "start": "2026-10-13",
+          "end": "2026-10-13",
           "completed_on": "2026-10-13",
           "depends_on": [],
           "evidence": [
@@ -625,8 +642,15 @@
               "provider": "GitHub",
               "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/ai-project-state.md",
               "label": "Media implementation log"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/28",
+              "label": "Dated v2 implementation commits"
             }
-          ]
+          ],
+          "date_basis": "observed",
+          "date_note": "PR #28 commits 8e08ab9 and 8d9f004 record link-intake implementation and UI on 13 October."
         },
         {
           "id": "media-007",
@@ -636,8 +660,8 @@
           "note": "Recorded v2 native player, sync, downloads and source-file handling. Implementation evidence is from the beta branch and local checks; live acceptance is still open.",
           "last_touched": "2026-10-14",
           "lane": "Beta implementation",
-          "start": null,
-          "end": null,
+          "start": "2026-10-12",
+          "end": "2026-10-14",
           "completed_on": "2026-10-14",
           "depends_on": [],
           "evidence": [
@@ -645,8 +669,15 @@
               "provider": "GitHub",
               "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/ai-project-state.md",
               "label": "Media implementation log"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/28",
+              "label": "Dated v2 implementation commits"
             }
-          ]
+          ],
+          "date_basis": "observed",
+          "date_note": "12 October v2 watch/sync frontend commits, 13 October Watch/Sync changes and 14 October native-player/download commits establish this observed implementation window."
         },
         {
           "id": "media-008",
@@ -656,8 +687,8 @@
           "note": "Clip-level uploads, review/rework and rejected-session workflow implemented and locally tested. Not a claim that all historical sessions were processed.",
           "last_touched": "2026-10-14",
           "lane": "Beta implementation",
-          "start": null,
-          "end": null,
+          "start": "2026-10-12",
+          "end": "2026-10-14",
           "completed_on": "2026-10-14",
           "depends_on": [],
           "evidence": [
@@ -665,28 +696,42 @@
               "provider": "GitHub",
               "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/ai-project-state.md",
               "label": "Media implementation log"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/28",
+              "label": "Dated v2 implementation commits"
             }
-          ]
+          ],
+          "date_basis": "observed",
+          "date_note": "12 October review/API foundation, 13 October one-video review and 14 October pipeline/rework commits establish the observed implementation window."
         },
         {
           "id": "media-009",
           "name": "Build the guarded historical backfill dry-run tool",
           "status": "done",
           "owner": null,
-          "note": "Dry-run plans, confirmation controls and reviewer report implemented. The later log explicitly says the plan was not applied to a database; applying/accepting it remains open.",
+          "note": "Dry-run plans, confirmation controls and reviewer report implemented. The later log explicitly says the plan was not applied to a database; applying/accepting it remains open. Title-matching and report-copy corrections were recorded on 15 October; completion date corrected from the initial 14 October checkpoint.",
           "last_touched": "2026-10-14",
           "lane": "Beta implementation",
-          "start": null,
-          "end": null,
-          "completed_on": "2026-10-14",
+          "start": "2026-10-14",
+          "end": "2026-10-15",
+          "completed_on": "2026-10-15",
           "depends_on": [],
           "evidence": [
             {
               "provider": "GitHub",
               "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/ai-project-state.md",
               "label": "Media implementation log"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/28",
+              "label": "Dated v2 implementation commits"
             }
-          ]
+          ],
+          "date_basis": "observed",
+          "date_note": "Backfill dry-run implementation commits on 14 October; Copy report and title-matching corrections on 15 October. This does not mean a production backfill was accepted/applied."
         },
         {
           "id": "media-010",
@@ -696,8 +741,8 @@
           "note": "Mouse and held-touch moves, permissions, undo and review-stage actions passed local tests/emulation. Real devices and beta acceptance are separate.",
           "last_touched": "2026-10-16",
           "lane": "Beta implementation",
-          "start": null,
-          "end": null,
+          "start": "2026-10-16",
+          "end": "2026-10-16",
           "completed_on": "2026-10-16",
           "depends_on": [],
           "evidence": [
@@ -705,8 +750,15 @@
               "provider": "GitHub",
               "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/ai-project-state.md",
               "label": "Media implementation log"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/28",
+              "label": "Dated v2 implementation commits"
             }
-          ]
+          ],
+          "date_basis": "observed",
+          "date_note": "PR #28 commits 522d97a and 58fdc79 record Board drag implementation and merge on 16 October."
         },
         {
           "id": "media-011",
@@ -716,8 +768,8 @@
           "note": "Logger progress visibility and clip bin/restore permissions implemented; local SQLite and browser tests recorded.",
           "last_touched": "2026-10-16",
           "lane": "Beta implementation",
-          "start": null,
-          "end": null,
+          "start": "2026-10-16",
+          "end": "2026-10-16",
           "completed_on": "2026-10-16",
           "depends_on": [],
           "evidence": [
@@ -725,8 +777,15 @@
               "provider": "GitHub",
               "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/ai-project-state.md",
               "label": "Media implementation log"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/28",
+              "label": "Dated v2 implementation commits"
             }
-          ]
+          ],
+          "date_basis": "observed",
+          "date_note": "PR #28 commits 48cca7d and 43568da record bin/restore and watch-progress implementation on 16 October."
         },
         {
           "id": "media-012",
@@ -736,8 +795,8 @@
           "note": "Rail/dialog access, contrast, touch targets and useful retry messages fixed in local QA. Real-device exceptions remain open.",
           "last_touched": "2026-10-16",
           "lane": "Beta QA",
-          "start": null,
-          "end": null,
+          "start": "2026-10-13",
+          "end": "2026-10-16",
           "completed_on": "2026-10-16",
           "depends_on": [],
           "evidence": [
@@ -745,8 +804,15 @@
               "provider": "GitHub",
               "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/ai-project-state.md",
               "label": "Media implementation log"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/28",
+              "label": "Dated v2 implementation commits"
             }
-          ]
+          ],
+          "date_basis": "observed",
+          "date_note": "13 October sign-in/cookie and responsive fixes, followed by 16 October contrast/error-handling QA batches; recorded activity window, not uninterrupted work."
         },
         {
           "id": "media-013",
@@ -756,8 +822,8 @@
           "note": "Shorts routing and stats UI implemented with local tests. Live stats depend on the deferred beta configuration task.",
           "last_touched": "2026-10-19",
           "lane": "Beta implementation",
-          "start": null,
-          "end": null,
+          "start": "2026-10-19",
+          "end": "2026-10-19",
           "completed_on": "2026-10-19",
           "depends_on": [],
           "evidence": [
@@ -765,8 +831,15 @@
               "provider": "GitHub",
               "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/ai-project-state.md",
               "label": "Media implementation log"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/28",
+              "label": "Dated v2 implementation commits"
             }
-          ]
+          ],
+          "date_basis": "observed",
+          "date_note": "PR #34 / commit 03cadac implemented and locally verified Shorts separation on 19 October."
         },
         {
           "id": "media-014",
@@ -776,8 +849,8 @@
           "note": "Flags, Report or suggest, categories and feedback attachment flow implemented. Local browser checks passed; live feedback storage upload remains unverified.",
           "last_touched": "2026-10-19",
           "lane": "Beta implementation",
-          "start": null,
-          "end": null,
+          "start": "2026-10-19",
+          "end": "2026-10-19",
           "completed_on": "2026-10-19",
           "depends_on": [],
           "evidence": [
@@ -785,8 +858,15 @@
               "provider": "GitHub",
               "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/ai-project-state.md",
               "label": "Media implementation log"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/28",
+              "label": "Dated v2 implementation commits"
             }
-          ]
+          ],
+          "date_basis": "observed",
+          "date_note": "PR #34 and #35 record issue flags, report UI and categories built on 19 October."
         },
         {
           "id": "media-015",
@@ -796,8 +876,8 @@
           "note": "Late-sync alternate cuts and per-angle download controls implemented and tested locally; real late-synced beta acceptance remains open.",
           "last_touched": "2026-10-19",
           "lane": "Beta implementation",
-          "start": null,
-          "end": null,
+          "start": "2026-10-19",
+          "end": "2026-10-19",
           "completed_on": "2026-10-19",
           "depends_on": [],
           "evidence": [
@@ -805,8 +885,15 @@
               "provider": "GitHub",
               "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/ai-project-state.md",
               "label": "Media implementation log"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/28",
+              "label": "Dated v2 implementation commits"
             }
-          ]
+          ],
+          "date_basis": "observed",
+          "date_note": "PR #34 records the after-sync angle hook and angle-selection downloads built on 19 October."
         },
         {
           "id": "media-016",
@@ -816,17 +903,24 @@
           "note": "Share metadata and icons added; the recorded local suite passed 544 tests and the v2 browser run. Cached old previews may persist.",
           "last_touched": "2026-10-19",
           "lane": "Beta implementation",
-          "start": null,
-          "end": null,
-          "completed_on": "2026-10-19",
+          "start": "2026-10-19",
+          "end": "2026-10-20",
+          "completed_on": "2026-10-20",
           "depends_on": [],
           "evidence": [
             {
               "provider": "GitHub",
               "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/ai-project-state.md",
               "label": "Media implementation log"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/28",
+              "label": "Dated v2 implementation commits"
             }
-          ]
+          ],
+          "date_basis": "observed",
+          "date_note": "Share-preview/icon commits on 19 October; the simplified preview follow-up at 23:02 UTC is 00:02 on 20 October in Europe/London."
         },
         {
           "id": "media-017",
@@ -949,8 +1043,171 @@
               "label": "Media implementation log"
             }
           ]
+        },
+        {
+          "id": "media-023",
+          "name": "Ship league controls and per-session teams",
+          "status": "done",
+          "owner": null,
+          "note": "Goal controls, saved league players and per-session rosters/goal sorting were implemented and locally checked in the 20 October log.",
+          "last_touched": "2026-10-20",
+          "lane": "League",
+          "start": "2026-10-20",
+          "end": "2026-10-20",
+          "completed_on": "2026-10-20",
+          "depends_on": [],
+          "date_basis": "observed",
+          "date_note": "Implementation activity recorded in dated commits and the historical handover on 2026-10-20.",
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/43",
+              "label": "Implementation / recorded delivery"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/ai-project-state.md",
+              "label": "Dated implementation and test log"
+            }
+          ]
+        },
+        {
+          "id": "media-024",
+          "name": "Keep logging controls in full-screen playback",
+          "status": "done",
+          "owner": null,
+          "note": "The 20 October log records full-screen logging controls and guarded one-tap clip deletion with undo.",
+          "last_touched": "2026-10-20",
+          "lane": "Player",
+          "start": "2026-10-20",
+          "end": "2026-10-20",
+          "completed_on": "2026-10-20",
+          "depends_on": [],
+          "date_basis": "observed",
+          "date_note": "Implementation activity recorded in dated commits and the historical handover on 2026-10-20.",
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/39",
+              "label": "Implementation / recorded delivery"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/ai-project-state.md",
+              "label": "Dated implementation and test log"
+            }
+          ]
+        },
+        {
+          "id": "media-025",
+          "name": "Add the guarded admin account switcher",
+          "status": "done",
+          "owner": null,
+          "note": "The 20 October log records the admin-only switcher, return controls and tests of activity/KPI side-effect guards.",
+          "last_touched": "2026-10-20",
+          "lane": "Administration",
+          "start": "2026-10-20",
+          "end": "2026-10-20",
+          "completed_on": "2026-10-20",
+          "depends_on": [],
+          "date_basis": "observed",
+          "date_note": "Implementation activity recorded in dated commits and the historical handover on 2026-10-20.",
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/40",
+              "label": "Implementation / recorded delivery"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/ai-project-state.md",
+              "label": "Dated implementation and test log"
+            }
+          ]
+        },
+        {
+          "id": "media-026",
+          "name": "Repair Watch clip rows and tablet header layout",
+          "status": "done",
+          "owner": null,
+          "note": "20 October clip-row fixes and the tablet-header menu adjustment were implemented with responsive regression checks.",
+          "last_touched": "2026-10-20",
+          "lane": "Interface QA",
+          "start": "2026-10-20",
+          "end": "2026-10-20",
+          "completed_on": "2026-10-20",
+          "depends_on": [],
+          "date_basis": "observed",
+          "date_note": "Implementation activity recorded in dated commits and the historical handover on 2026-10-20.",
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/47",
+              "label": "Implementation / recorded delivery"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/ai-project-state.md",
+              "label": "Dated implementation and test log"
+            }
+          ]
+        },
+        {
+          "id": "media-027",
+          "name": "Cut over v2 as the default application",
+          "status": "done",
+          "owner": null,
+          "note": "20 October handover records PR #28 merged, web/worker successful deployments and / redirecting to /v2 while /classic stays available. This is recorded rollout evidence, not a fresh authenticated acceptance test.",
+          "last_touched": "2026-10-20",
+          "lane": "Release",
+          "start": "2026-10-20",
+          "end": "2026-10-20",
+          "completed_on": "2026-10-20",
+          "depends_on": [],
+          "date_basis": "observed",
+          "date_note": "Implementation activity recorded in dated commits and the historical handover on 2026-10-20.",
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/49",
+              "label": "Implementation / recorded delivery"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/ai-project-state.md",
+              "label": "Dated implementation and test log"
+            }
+          ]
+        },
+        {
+          "id": "media-028",
+          "name": "Prerender logged clips and switch to native playback",
+          "status": "done",
+          "owner": null,
+          "note": "21 October handover records render-on-log for cached masters, Preparing status, native-player switching and 562 passing tests. It does not establish live real-device acceptance.",
+          "last_touched": "2026-10-21",
+          "lane": "Player",
+          "start": "2026-10-21",
+          "end": "2026-10-21",
+          "completed_on": "2026-10-21",
+          "depends_on": [],
+          "date_basis": "observed",
+          "date_note": "Implementation activity recorded in dated commits and the historical handover on 2026-10-21.",
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/ai-project-state.md",
+              "label": "Implementation / recorded delivery"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/ai-project-state.md",
+              "label": "Dated implementation and test log"
+            }
+          ]
         }
-      ]
+      ],
+      "watch": "The compact 21 October current-state summary missed later entries in the historical log. Use the dated cutover and native-clip evidence; live acceptance remains separate."
     },
     {
       "id": "auto",
@@ -1049,8 +1306,8 @@
           "note": "Merged on main; nine metadata unit tests recorded passing. First complete post-change live-output acceptance remains separate.",
           "last_touched": "2026-10-15",
           "lane": "Uploader",
-          "start": null,
-          "end": null,
+          "start": "2026-10-15",
+          "end": "2026-10-15",
           "completed_on": "2026-10-15",
           "depends_on": [],
           "evidence": [
@@ -1058,8 +1315,15 @@
               "provider": "GitHub",
               "url": "https://github.com/JhnsonO/ffa-automations/blob/main/docs/ai-project-state.md",
               "label": "Automation engineering log"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-automations/commit/a85d0033c7ec62a55d37c9dfaf6eed37fd335a4f",
+              "label": "Metadata implementation commit"
             }
-          ]
+          ],
+          "date_basis": "observed",
+          "date_note": "Implementation commit a85d003 was made at 23:01 UTC on 14 October, i.e. 00:01 on 15 October in Europe/London; the state log records implementation/tests on 15 October."
         },
         {
           "id": "auto-005",
@@ -1305,8 +1569,8 @@
           "note": "The reconciled roadmap records the cylindrical implementation and locked framing config. The older claim that M1 was cleared is superseded by the unresolved current acceptance gate; this records the implementation only.",
           "last_touched": "2026-10-22",
           "lane": "Stitching",
-          "start": null,
-          "end": null,
+          "start": "2026-08-09",
+          "end": "2026-08-10",
           "completed_on": null,
           "depends_on": [],
           "evidence": [
@@ -1314,8 +1578,15 @@
               "provider": "GitHub",
               "url": "https://github.com/JhnsonO/oev/blob/main/docs/roadmap.md",
               "label": "OEV reconciled roadmap"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/video-stitcher/commit/df07a86f02416f09811cd41ca6db5aa8407fa13a",
+              "label": "Cylindrical renderer implementation"
             }
-          ]
+          ],
+          "date_basis": "observed",
+          "date_note": "Merged cylindrical renderer commit df07a86 on 9 August; the 10 August log records geometry/framing implementation and locked configuration. Customer acceptance is separate."
         },
         {
           "id": "oev-002",
@@ -1325,8 +1596,8 @@
           "note": "The engineering log records the shared-buffer repair merged and rolled into standard workflows. The rejected shared-image approach is not counted as a shipped fix.",
           "last_touched": "2026-10-22",
           "lane": "Rendering",
-          "start": null,
-          "end": null,
+          "start": "2026-08-10",
+          "end": "2026-08-15",
           "completed_on": null,
           "depends_on": [],
           "evidence": [
@@ -1334,8 +1605,15 @@
               "provider": "GitHub",
               "url": "https://github.com/JhnsonO/ffa-automations/blob/main/docs/ai-project-state.md",
               "label": "Automation engineering log"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/video-stitcher/commit/f27cbb6d0d65fcf9a11fb4d82d119ae214695318",
+              "label": "Shared-buffer rollout merge"
             }
-          ]
+          ],
+          "date_basis": "observed",
+          "date_note": "10 August GPU corruption investigations, 12 August correction identifying the real zero-copy defect, and 15 August shared-buffer rollout/visual verification at f27cbb6."
         },
         {
           "id": "oev-003",
@@ -1345,8 +1623,8 @@
           "note": "The progress log records the 640–2560px investigation concluded at 1920px with real throughput measurements. This was an engineering result, not whole-product acceptance.",
           "last_touched": "2026-10-22",
           "lane": "Detection",
-          "start": null,
-          "end": null,
+          "start": "2026-08-10",
+          "end": "2026-08-10",
           "completed_on": null,
           "depends_on": [],
           "evidence": [
@@ -1355,7 +1633,9 @@
               "url": "https://github.com/JhnsonO/oev/blob/main/docs/roadmap.md",
               "label": "OEV reconciled roadmap"
             }
-          ]
+          ],
+          "date_basis": "observed",
+          "date_note": "10 August detector-resolution A/B and GPU throughput runs, ending in the recorded 1920px decision."
         },
         {
           "id": "oev-004",
@@ -1365,8 +1645,8 @@
           "note": "The roadmap progress log records ROI filtering to stop the camera wandering onto neighbouring pitches.",
           "last_touched": "2026-10-22",
           "lane": "Detection",
-          "start": null,
-          "end": null,
+          "start": "2026-08-10",
+          "end": "2026-08-10",
           "completed_on": null,
           "depends_on": [],
           "evidence": [
@@ -1375,7 +1655,9 @@
               "url": "https://github.com/JhnsonO/oev/blob/main/docs/roadmap.md",
               "label": "OEV reconciled roadmap"
             }
-          ]
+          ],
+          "date_basis": "observed",
+          "date_note": "10 August ROI stills and ROI-injection implementation/dispatch entries establish observed work on this day, not the later experimental ROI changes."
         },
         {
           "id": "oev-005",
@@ -1385,8 +1667,8 @@
           "note": "The log records bridging recovery and its coverage improvement. Remaining camera-containment and identity failures are not marked fixed by this entry.",
           "last_touched": "2026-10-22",
           "lane": "Tracking",
-          "start": null,
-          "end": null,
+          "start": "2026-08-17",
+          "end": "2026-08-17",
           "completed_on": null,
           "depends_on": [],
           "evidence": [
@@ -1394,8 +1676,15 @@
               "provider": "GitHub",
               "url": "https://github.com/JhnsonO/ffa-automations/blob/main/docs/ai-project-state.md",
               "label": "Automation engineering log"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/video-stitcher/commit/c8b0d74b537d192c7de8d2856de64620a82830cf",
+              "label": "Backward bridge merge"
             }
-          ]
+          ],
+          "date_basis": "observed",
+          "date_note": "Backward bridge merged at 23:23 UTC on 16 August = 00:23 on 17 August in Europe/London; 17 August state entry records sample evidence."
         },
         {
           "id": "oev-006",
@@ -1445,8 +1734,8 @@
           "note": "Thirty visible-ball disagreement moments were scored across sessions. C was selected as the working v1 baseline and B1 was runner-up; this small evaluation does not establish product reliability.",
           "last_touched": "2026-10-21",
           "lane": "Evaluation",
-          "start": null,
-          "end": null,
+          "start": "2026-10-18",
+          "end": "2026-10-20",
           "completed_on": null,
           "depends_on": [],
           "evidence": [
@@ -1454,8 +1743,15 @@
               "provider": "GitHub",
               "url": "https://github.com/JhnsonO/oev/blob/main/docs/roadmap.md",
               "label": "OEV reconciled roadmap"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/project-hub/blob/main/docs/roadmap-date-evidence.md",
+              "label": "Dated conversation reconciliation"
             }
-          ]
+          ],
+          "date_basis": "observed",
+          "date_note": "Dated conversation records show ablation/evaluation running on 18 October and Johnson reporting the completed human comparison in the 20 October handover. These are observed activity bounds."
         },
         {
           "id": "oev-009",
@@ -1997,8 +2293,8 @@
           "note": "PR #1 merged and Pages deployment passed; the hub is publicly accessible.",
           "last_touched": "2026-10-22",
           "lane": "Hub delivery",
-          "start": null,
-          "end": null,
+          "start": "2026-10-22",
+          "end": "2026-10-22",
           "completed_on": "2026-10-22",
           "depends_on": [],
           "evidence": [
@@ -2007,7 +2303,9 @@
               "url": "https://github.com/JhnsonO/project-hub/pull/1",
               "label": "Source issue / delivery"
             }
-          ]
+          ],
+          "date_basis": "observed",
+          "date_note": "PR #1 creation and merge both occurred on 22 October; its commit and deployment history establish a same-day implementation period."
         },
         {
           "id": "ai-008",
@@ -2037,8 +2335,8 @@
           "note": "PR #10 delivered independent Light/HUD/Charcoal modes, project navigation, side-by-side panels and task-model validation; deployment and visual checks passed.",
           "last_touched": "2026-10-22",
           "lane": "Hub delivery",
-          "start": null,
-          "end": null,
+          "start": "2026-10-22",
+          "end": "2026-10-22",
           "completed_on": "2026-10-22",
           "depends_on": [],
           "evidence": [
@@ -2047,7 +2345,9 @@
               "url": "https://github.com/JhnsonO/project-hub/pull/10",
               "label": "Source issue / delivery"
             }
-          ]
+          ],
+          "date_basis": "observed",
+          "date_note": "PR #10 code, validation, merge and deployment were recorded on 22 October."
         },
         {
           "id": "ai-010",
@@ -2139,8 +2439,8 @@
           "note": "Compared all ten reference screens and the source layout rules. Corrected theme geometry, Light details, responsive flow, ledger alignment, typography and task-detail navigation. Responsive checks and deployment evidence are recorded in the visual audit.",
           "last_touched": "2026-10-22",
           "lane": "Project Hub",
-          "start": null,
-          "end": null,
+          "start": "2026-10-22",
+          "end": "2026-10-22",
           "completed_on": "2026-10-22",
           "depends_on": [],
           "evidence": [
@@ -2149,7 +2449,9 @@
               "url": "https://github.com/JhnsonO/project-hub/blob/main/docs/visual-audit-2026-10-22.md",
               "label": "Detailed visual audit and verification"
             }
-          ]
+          ],
+          "date_basis": "observed",
+          "date_note": "PR #12 and the visual audit record this work and verification on 22 October."
         }
       ]
     }

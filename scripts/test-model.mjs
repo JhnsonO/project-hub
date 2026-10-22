@@ -14,6 +14,7 @@ const tm=timeline(tasks);assert.equal(tm.weeks.length,2);assert.equal(tm.dated.l
 assert.equal(timeline([{id:'a',start:null,end:null}]).weeks.length,0);
 const history=timeline([{id:'past',status:'done',completed_on:'2026-10-04'},{id:'unknown',status:'done',completed_on:null},{id:'future',status:'todo'}]);
 assert.equal(history.dated[0].milestone,true);assert.equal(history.dated[0].start,'2026-10-04');assert.equal(history.undated.length,2);
+const observed=timeline([{id:'activity',status:'done',start:'2026-08-10',end:'2026-08-15',date_basis:'observed',completed_on:'2026-08-15'}]);assert.equal(observed.dated[0].milestone,undefined);assert.equal(observed.dated[0].date_basis,'observed');assert.equal(observed.dated[0].start,'2026-08-10');
 const base=JSON.parse(await readFile(new URL('../data/projects.json',import.meta.url),'utf8'));
 const dir=await mkdtemp(join(tmpdir(),'hub-validator-'));
 const file=join(dir,'fixture.json');
@@ -26,6 +27,8 @@ try {
   const dangling=structuredClone(base);dangling.projects[0].tasks[0].depends_on=['web-missing'];assert.match((await run(dangling)).stderr,/Unknown dependency/);
   const futureCompletion=structuredClone(base);futureCompletion.projects[0].tasks[1].completed_on='2026-10-20';assert.match((await run(futureCompletion)).stderr,/only done/);
   const invalidEvidence=structuredClone(base);invalidEvidence.projects[0].tasks[0].evidence=[{provider:'GitHub',url:'https://example.com/private',label:'Source'}];assert.match((await run(invalidEvidence)).stderr,/provider and HTTPS host/);
+  const invalidBasis=structuredClone(base);invalidBasis.projects[0].tasks[0].date_basis='guessed';assert.match((await run(invalidBasis)).stderr,/valid basis/);
+  const missingDateEvidence=structuredClone(base);Object.assign(missingDateEvidence.projects[0].tasks[0],{date_basis:'observed',date_note:'Observed dates'});assert.match((await run(missingDateEvidence)).stderr,/source evidence/);
   const invalidDate=structuredClone(base);invalidDate.projects[0].tasks[0].start='2026-02-30';assert.match((await run(invalidDate)).stderr,/invalid start/);
 } finally {await rm(dir,{recursive:true,force:true});}
 console.log('Model and validator regression checks passed.');

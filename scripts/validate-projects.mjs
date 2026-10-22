@@ -42,7 +42,7 @@ for (const project of data.projects) {
   if (!Array.isArray(project.milestones) || project.milestones.length < 2) fail(`${project.id} needs at least two milestones`);
   if (project.milestones.some((phase) => !phase.name || Object.keys(phase).some((key) => !['name', 'status'].includes(key)) || !allowedStatuses.has(phase.status))) fail(`${project.id} has an invalid milestone`);
   if (project.tasks !== undefined) {
-    const taskKeys = new Set(['id','name','status','owner','note','last_touched','lane','start','end','depends_on','completed_on','evidence']);
+    const taskKeys = new Set(['id','name','status','owner','note','last_touched','lane','start','end','depends_on','completed_on','evidence','date_basis','date_note']);
     if (!Array.isArray(project.tasks) || !project.tasks.length) fail(`${project.id}: tasks must be a nonempty array`);
     const taskIds = new Set();
     for (const task of project.tasks) {
@@ -63,6 +63,7 @@ for (const project of data.projects) {
           validateLink(link,`${task.id}.evidence`);
         }
       }
+      if (task.date_basis != null && (!['observed','planned'].includes(task.date_basis) || !task.start || !task.end || typeof task.date_note!=='string' || !task.date_note.trim() || !task.evidence?.length)) fail(`${task.id}: dated activity needs valid basis, note and source evidence`);
       if (Boolean(task.start)!==Boolean(task.end) || (task.start && task.start>task.end)) fail(`${task.id}: invalid date range`);
     }
     const dates=project.tasks.flatMap(t=>[t.start,t.end,t.completed_on]).filter(Boolean).map(Date.parse);
