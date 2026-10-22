@@ -119,6 +119,39 @@ function makeMilestoneList(project) {
   return board;
 }
 
+function makeProjectViews(project) {
+  const views = document.createElement('div');
+  views.className = 'project-views';
+  const tabs = document.createElement('div');
+  tabs.className = 'view-tabs';
+  const pane = document.createElement('div');
+  pane.className = 'view-pane';
+  const render = (kind) => {
+    tabs.querySelectorAll('button').forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.view === kind)));
+    pane.replaceChildren();
+    if (kind === 'flow') {
+      pane.append(makeMilestoneList(project));
+      const note = document.createElement('p'); note.className = 'view-note'; note.textContent = 'Curated phase flow · ordered from the latest project snapshot.'; pane.append(note);
+    } else if (kind === 'kanban') {
+      const board = document.createElement('div'); board.className = 'kanban-board';
+      [['todo','To do'],['doing','In progress'],['blocked','Blocked'],['done','Done']].forEach(([status,label]) => {
+        const lane = document.createElement('section'); lane.className = `kanban-lane ${status}`;
+        const head = document.createElement('h5'); const tasks = project.milestones.filter((m) => m.status === status); head.textContent = `${label} · ${tasks.length}`;
+        const list = document.createElement('div'); list.className = 'kanban-cards';
+        tasks.forEach((m) => { const card = document.createElement('article'); card.className='kanban-card'; card.textContent=m.name; list.append(card); });
+        lane.append(head,list); board.append(lane);
+      });
+      pane.append(board);
+    } else {
+      const roadmap = document.createElement('div'); roadmap.className = 'roadmap-list';
+      project.milestones.forEach((m,i) => { const row=document.createElement('div'); row.className=`roadmap-row ${m.status}`; const n=document.createElement('span'); n.textContent=String(i+1).padStart(2,'0'); const title=document.createElement('strong'); title.textContent=m.name; const state=document.createElement('small'); state.textContent=m.status.toUpperCase(); row.append(n,title,state); roadmap.append(row); });
+      const note=document.createElement('p'); note.className='view-note'; note.textContent='Sequence only · dates and dependencies are not recorded in this snapshot.'; pane.append(roadmap,note);
+    }
+  };
+  [['flow','Flow'],['kanban','Kanban'],['roadmap','Roadmap']].forEach(([kind,label],i) => { const b=document.createElement('button'); b.type='button'; b.dataset.view=kind; b.textContent=label; b.setAttribute('aria-pressed',String(i===0)); b.addEventListener('click',()=>render(kind)); tabs.append(b); });
+  views.append(tabs,pane); render('flow'); return views;
+}
+
 function makeProjectCard(project) {
   const card = document.createElement('article');
   card.className = `project-card ${project.featured ? 'is-featured' : ''}`;
@@ -162,7 +195,7 @@ function makeProjectCard(project) {
   const projectSummary = document.createElement('p');
   projectSummary.className = 'project-summary';
   projectSummary.textContent = project.summary;
-  detailBody.append(projectSummary, makeMilestoneList(project));
+  detailBody.append(projectSummary, makeProjectViews(project));
   if (project.blocker || project.watch) {
     const fullAlert = document.createElement('p');
     fullAlert.className = 'detail-alert';
@@ -257,8 +290,20 @@ function renderGroups() {
 }
 
 function renderOverview(snapshotDate) {
-  const active = projects.filter((project) => project.milestones.some((phase) => phase.status === 'doing')).length;
-  document.querySelector('#active-count').textContent = String(active).padStart(2, '0');
+  const phases = projects.flatMap((project) => project.milestones);
+  const count = (s) => phases.filter((phase) => phase.status === s).length;
+  const done=count('done'), doing=count('doing'), blocked=count('blocked'), todo=count('todo');
+  const pct=phases.length ? Math.round(done/phases.length*100) : 0;
+  document.querySelector('#done-count').textContent=done;
+  document.querySelector('#doing-count').textContent=doing;
+  document.querySelector('#blocked-count').textContent=blocked;
+  document.querySelector('#todo-count').textContent=todo;
+  document.querySelector('#completion-rate').textContent=`${pct}%`;
+  document.querySelector('#progress-gauge').style.setProperty('--progress',`${pct}%`);
+  const actions=projects.filter(p=>p.milestones.some(m=>['doing','blocked'].includes(m.status)));
+  document.querySelector('#today-summary').textContent=`TODAY // ${actions.length} NEXT ACTIONS // ${blocked} BLOCKED OVERALL`;
+  const today=document.querySelector('#today-items');
+  actions.forEach((p)=>{ const row=document.createElement('article');row.className='today-row';const left=document.createElement('div');const name=document.createElement('small');name.textContent=`${p.name} · ${p.group}`;const action=document.createElement('strong');action.textContent=p.next_step;left.append(name,action);if(p.blocker){const blocker=document.createElement('p');blocker.textContent=p.blocker;left.append(blocker);}const link=externalLink(p.workspace,'Open');link.classList.add('today-open');row.append(left,link);today.append(row); });
   const date = new Date(`${snapshotDate}T00:00:00Z`);
   const label = Number.isNaN(date.getTime()) ? snapshotDate : date.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric', timeZone: 'UTC' }).toUpperCase();
   document.querySelector('#updated-label').textContent = `UPDATED ${label}`;
