@@ -1,72 +1,12 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0a0a0a">
-  <meta name="description" content="Johnson's project progress dashboard.">
-  <title>Project Hub — Johnson</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Newsreader:ital,wght@0,500;1,500&family=Rajdhani:wght@500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css?v=7">
-  <script src="./app.js?v=8" defer></script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0a0a0a"><meta name="description" content="Johnson's project hub, boards and roadmaps.">
+<title>Project Hub — Johnson</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Share+Tech+Mono&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:wght@500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./dashboard.css?v=10"><script type="module" src="./app.js?v=10"></script>
 </head>
-<body>
-  <div id="app" class="app-shell" data-theme="dark">
-    <a class="skip-link" href="#main">Skip to projects</a>
-    <aside class="sidebar" aria-label="Project navigation">
-      <a class="brand" href="./" aria-label="Johnson's project hub home"><span class="brand-mark">J</span><span>PROJECT HUB</span></a>
-      <div class="side-label">PROJECTS</div>
-      <nav id="group-nav" class="group-nav" aria-label="Filter projects"></nav>
-      <div class="side-rule"></div>
-      <div class="status-legend" aria-label="Project phase legend">
-        <span><i class="status-swatch done" aria-hidden="true"></i>Done</span>
-        <span><i class="status-swatch doing" aria-hidden="true"></i>Active</span>
-        <span><i class="status-swatch blocked" aria-hidden="true"></i>Blocked</span>
-        <span><i class="status-swatch todo" aria-hidden="true"></i>Next</span>
-      </div>
-      <div class="side-spacer"></div>
-    </aside>
-
-    <main id="main" class="main-content">
-      <header class="topbar">
-        <div class="topbar-meta"><span class="signal" aria-hidden="true"></span><span id="updated-label">LOADING STATUS</span></div>
-        <fieldset class="theme-switch" aria-label="Display mode">
-          <legend class="sr-only">Display mode</legend>
-          <button type="button" data-theme-choice="light" aria-pressed="false">Light</button>
-          <button type="button" data-theme-choice="dark" aria-pressed="true">Dark HUD</button>
-          <button type="button" data-theme-choice="char" aria-pressed="false">Charcoal</button>
-        </fieldset>
-      </header>
-
-      <section class="hero" aria-labelledby="page-title">
-        <div class="hero-title-row"><h1 id="page-title">Project hub<span class="title-mark">.</span></h1></div>
-      </section>
-
-      <section class="overview-panel" aria-label="Overall progress">
-        <div class="overview-stat"><strong id="done-count">—</strong><span>DONE</span></div>
-        <div class="overview-stat"><strong id="doing-count">—</strong><span>IN PROGRESS</span></div>
-        <div class="progress-gauge" id="progress-gauge" role="img" aria-label="Listed project phases complete"><div><strong id="completion-rate">—%</strong><span>PHASES DONE</span></div></div>
-        <div class="overview-stat"><strong id="blocked-count">—</strong><span>BLOCKED</span></div>
-        <div class="overview-stat"><strong id="todo-count">—</strong><span>TO DO</span></div>
-      </section>
-
-      <details class="today-panel" id="today-panel"><summary><span id="today-summary">TODAY</span><span class="today-chevron">⌄</span></summary><div id="today-items" class="today-items"></div></details>
-
-      <section id="pick-up" class="pick-up" aria-label="Priority next action" hidden></section>
-
-      <section class="directory" aria-labelledby="directory-title">
-        <div class="section-heading">
-          <div><h2 id="directory-title">Project status</h2><span id="project-count" class="item-count" aria-live="polite"></span></div>
-          <label class="search-box"><span aria-hidden="true">⌕</span><span class="sr-only">Search projects</span><input id="project-search" type="search" placeholder="Search" autocomplete="off"></label>
-        </div>
-        <div id="mobile-group-nav" class="mobile-group-nav" aria-label="Filter by group"></div>
-        <div id="projects" class="project-groups"><p class="loading">Loading projects…</p></div>
-      </section>
-
-      <footer class="page-footer"><span>PHASE COUNTS ARE CURATED · NOT FULL TASK COUNTS</span></footer>
-    </main>
-  </div>
-</body>
+<body><div id="app" data-theme="dark"><p class="loading" role="status">Loading projects…</p></div><noscript>Enable JavaScript to view project boards.</noscript></body>
 </html>

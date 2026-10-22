@@ -1,332 +1,38 @@
-const app = document.querySelector('#app');
-const groupNav = document.querySelector('#group-nav');
-const mobileGroupNav = document.querySelector('#mobile-group-nav');
-const projectRoot = document.querySelector('#projects');
-const countLabel = document.querySelector('#project-count');
-const searchInput = document.querySelector('#project-search');
-const pickUp = document.querySelector('#pick-up');
-const groupNames = ['All projects', 'FFA', 'OEV', 'Personal'];
-const statuses = new Set(['done', 'doing', 'blocked', 'todo']);
-let projects = [];
-let selectedGroup = 'All';
-let searchTerm = '';
-
-function validExternalLink(link) {
-  if (!link || Object.keys(link).some((key) => !['provider', 'url'].includes(key))) return false;
-  const hosts = { Google: 'docs.google.com', GitHub: 'github.com' };
-  if (!Object.hasOwn(hosts, link.provider) || typeof link.url !== 'string') return false;
-  try {
-    const url = new URL(link.url);
-    return url.protocol === 'https:' && url.hostname === hosts[link.provider];
-  } catch (_) { return false; }
-}
-
-function validData(data) {
-  if (data.schema_version !== 2 || !Array.isArray(data.projects) || !Array.isArray(data.groups)) return false;
-  const ids = new Set();
-  return data.projects.every((project) => {
-    const allowed = ['id', 'name', 'mono', 'group', 'status', 'summary', 'milestones', 'next_step', 'blocker', 'watch', 'updated', 'workspace', 'roadmap', 'featured'];
-    if (Object.keys(project).some((key) => !allowed.includes(key))) return false;
-    if (!project.id || !project.name || !project.mono || !groupNames.slice(1).includes(project.group) || ids.has(project.id)) return false;
-    if (!project.status || !project.summary || !project.next_step || !Array.isArray(project.milestones) || project.milestones.length < 2) return false;
-    if (!project.milestones.every((phase) => phase.name && statuses.has(phase.status))) return false;
-    if (!project.updated || !validExternalLink(project.workspace) || (project.roadmap && !validExternalLink(project.roadmap))) return false;
-    ids.add(project.id);
-    return true;
-  });
-}
-
-function setTheme(theme) {
-  if (!['light', 'dark', 'char'].includes(theme)) theme = 'dark';
-  app.dataset.theme = theme;
-  document.querySelectorAll('[data-theme-choice]').forEach((button) => {
-    button.setAttribute('aria-pressed', String(button.dataset.themeChoice === theme));
-  });
-  try { localStorage.setItem('johnson-project-hub-theme', theme); } catch (_) { /* This visit still works. */ }
-}
-
-function getInitialTheme() {
-  try {
-    const saved = localStorage.getItem('johnson-project-hub-theme');
-    return ['light', 'dark', 'char'].includes(saved) ? saved : 'dark';
-  } catch (_) { return 'dark'; }
-}
-
-function externalLink(link, text) {
-  const anchor = document.createElement('a');
-  anchor.href = link.url;
-  anchor.target = '_blank';
-  anchor.rel = 'noopener noreferrer';
-  anchor.className = 'detail-link';
-  anchor.textContent = text;
-  anchor.setAttribute('aria-label', `${text} (opens in a new tab)`);
-  const arrow = document.createElement('span');
-  arrow.setAttribute('aria-hidden', 'true');
-  arrow.textContent = '↗';
-  anchor.append(arrow);
-  return anchor;
-}
-
-function makePhaseStrip(project) {
-  const wrap = document.createElement('div');
-  wrap.className = 'phase-strip';
-  wrap.setAttribute('aria-label', 'Roadmap phases');
-  const done = project.milestones.filter((phase) => phase.status === 'done').length;
-  const percent = Math.round(done / project.milestones.length * 100);
-  const gauge = document.createElement('div');
-  gauge.className = 'card-gauge';
-  gauge.style.setProperty('--progress', `${percent}%`);
-  gauge.setAttribute('aria-label', `${percent}% complete`);
-  const percentText = document.createElement('strong'); percentText.textContent = `${percent}%`; gauge.append(percentText);
-  const phases = document.createElement('div');
-  phases.className = 'phase-pips';
-  const blocked = project.milestones.filter((phase) => phase.status === 'blocked').length;
-  project.milestones.forEach((phase) => {
-    const item = document.createElement('span');
-    item.className = `phase-pip ${phase.status}`;
-    item.title = `${phase.name}: ${phase.status}`;
-    item.setAttribute('aria-label', `${phase.name}: ${phase.status}`);
-    phases.append(item);
-  });
-  const counter = document.createElement('span');
-  counter.className = 'phase-count';
-  counter.textContent = `${done}/${project.milestones.length}${blocked ? ` · ${blocked} BLOCKED` : ''}`;
-  wrap.append(gauge, phases, counter);
-  return wrap;
-}
-
-function makeMilestoneList(project) {
-  const board = document.createElement('div');
-  board.className = 'milestone-board';
-  const labels = { todo: 'Next', doing: 'Active', blocked: 'Blocked', done: 'Done' };
-  ['todo', 'doing', 'blocked', 'done'].forEach((status) => {
-    const phases = project.milestones.filter((phase) => phase.status === status);
-    if (!phases.length) return;
-    const lane = document.createElement('section');
-    lane.className = `milestone-lane ${status}`;
-    const heading = document.createElement('h5');
-    heading.textContent = `${labels[status]} · ${phases.length}`;
-    const list = document.createElement('ul');
-    list.className = 'milestone-list';
-    phases.forEach((phase) => {
-      const item = document.createElement('li');
-      item.className = `milestone ${status}`;
-      const mark = document.createElement('span');
-      mark.className = 'milestone-mark';
-      mark.setAttribute('aria-hidden', 'true');
-      const label = document.createElement('span');
-      label.textContent = phase.name;
-      item.append(mark, label);
-      list.append(item);
-    });
-    lane.append(heading, list);
-    board.append(lane);
-  });
-  return board;
-}
-
-function makeProjectViews(project) {
-  const views = document.createElement('div');
-  views.className = 'project-views';
-  const tabs = document.createElement('div');
-  tabs.className = 'view-tabs';
-  const pane = document.createElement('div');
-  pane.className = 'view-pane';
-  const render = (kind) => {
-    tabs.querySelectorAll('button').forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.view === kind)));
-    pane.replaceChildren();
-    if (kind === 'flow') {
-      pane.append(makeMilestoneList(project));
-      const note = document.createElement('p'); note.className = 'view-note'; note.textContent = 'Curated phase flow · ordered from the latest project snapshot.'; pane.append(note);
-    } else if (kind === 'kanban') {
-      const board = document.createElement('div'); board.className = 'kanban-board';
-      [['todo','To do'],['doing','In progress'],['blocked','Blocked'],['done','Done']].forEach(([status,label]) => {
-        const lane = document.createElement('section'); lane.className = `kanban-lane ${status}`;
-        const head = document.createElement('h5'); const tasks = project.milestones.filter((m) => m.status === status); head.textContent = `${label} · ${tasks.length}`;
-        const list = document.createElement('div'); list.className = 'kanban-cards';
-        tasks.forEach((m) => { const card = document.createElement('article'); card.className='kanban-card'; card.textContent=m.name; list.append(card); });
-        lane.append(head,list); board.append(lane);
-      });
-      pane.append(board);
-    } else {
-      const roadmap = document.createElement('div'); roadmap.className = 'roadmap-list';
-      project.milestones.forEach((m,i) => { const row=document.createElement('div'); row.className=`roadmap-row ${m.status}`; const n=document.createElement('span'); n.textContent=String(i+1).padStart(2,'0'); const title=document.createElement('strong'); title.textContent=m.name; const state=document.createElement('small'); state.textContent=m.status.toUpperCase(); row.append(n,title,state); roadmap.append(row); });
-      const note=document.createElement('p'); note.className='view-note'; note.textContent='Sequence only · dates and dependencies are not recorded in this snapshot.'; pane.append(roadmap,note);
-    }
-  };
-  [['flow','Flow'],['kanban','Kanban'],['roadmap','Roadmap']].forEach(([kind,label],i) => { const b=document.createElement('button'); b.type='button'; b.dataset.view=kind; b.textContent=label; b.setAttribute('aria-pressed',String(i===0)); b.addEventListener('click',()=>render(kind)); tabs.append(b); });
-  views.append(tabs,pane); render('flow'); return views;
-}
-
-function makeProjectCard(project) {
-  const card = document.createElement('article');
-  card.className = `project-card ${project.featured ? 'is-featured' : ''}`;
-  card.dataset.projectId = project.id;
-
-  const header = document.createElement('div');
-  header.className = 'card-heading';
-  const mono = document.createElement('span');
-  mono.className = 'project-mono';
-  mono.setAttribute('aria-hidden', 'true');
-  mono.textContent = project.mono;
-  const identity = document.createElement('div');
-  identity.className = 'project-identity';
-  const title = document.createElement('h4');
-  title.className = 'project-title';
-  title.textContent = project.name;
-  identity.append(title);
-  const badge = document.createElement('span');
-  badge.className = 'status-badge';
-  badge.textContent = project.status;
-  header.append(mono, identity, badge);
-
-  const phaseTitle = makePhaseStrip(project);
-
-  const details = document.createElement('details');
-  details.className = 'milestone-details';
-  const summaryButton = document.createElement('summary');
-  summaryButton.textContent = 'Details';
-
-  const detailBody = document.createElement('div');
-  detailBody.className = 'card-details-body';
-  const projectSummary = document.createElement('p');
-  projectSummary.className = 'project-summary';
-  projectSummary.textContent = project.summary;
-  detailBody.append(projectSummary, makeProjectViews(project));
-  if (project.blocker || project.watch) {
-    const fullAlert = document.createElement('p');
-    fullAlert.className = 'detail-alert';
-    fullAlert.textContent = `${project.blocker ? 'Blocked: ' : 'Watch: '}${project.blocker || project.watch}`;
-    detailBody.append(fullAlert);
-  }
-
-  const footer = document.createElement('div');
-  footer.className = 'card-footer';
-  footer.append(externalLink(project.workspace, 'Open tracker'));
-  if (project.roadmap) footer.append(externalLink(project.roadmap, 'Full roadmap'));
-  detailBody.append(footer);
-  details.append(summaryButton, detailBody);
-
-  card.append(header, phaseTitle);
-  card.append(details);
-  return card;
-}
-
-function makeGroupButton(name) {
-  const key = name === 'All projects' ? 'All' : name;
-  const count = key === 'All' ? projects.length : projects.filter((project) => project.group === key).length;
-  const button = document.createElement('button');
-  button.type = 'button';
-  button.className = 'group-filter';
-  button.dataset.group = key;
-  button.setAttribute('aria-pressed', String(selectedGroup === key));
-  const left = document.createElement('span');
-  left.className = 'group-left';
-  const square = document.createElement('span');
-  square.className = 'group-square';
-  square.setAttribute('aria-hidden', 'true');
-  const label = document.createElement('span');
-  label.textContent = name;
-  left.append(square, label);
-  const n = document.createElement('span');
-  n.className = 'group-count';
-  n.textContent = String(count).padStart(2, '0');
-  button.append(left, n);
-  button.addEventListener('click', () => { selectedGroup = key; renderGroups(); });
-  return button;
-}
-
-function renderPickUp() {
-  const project = projects.find((item) => item.featured) || projects.find((item) => item.milestones.some((phase) => phase.status === 'doing'));
-  if (!project) return;
-  pickUp.replaceChildren();
-  const copy = document.createElement('span');
-  copy.className = 'pick-copy';
-  const eyebrow = document.createElement('small');
-  eyebrow.textContent = `PICK UP HERE · ${project.group}`;
-  const title = document.createElement('strong');
-  title.textContent = project.name;
-  const next = document.createElement('span');
-  next.textContent = project.next_step;
-  copy.append(eyebrow, title, next);
-  const button = externalLink(project.workspace, 'OPEN TRACKER');
-  button.className = 'pick-open';
-  pickUp.append(copy, button);
-  pickUp.hidden = false;
-}
-
-function renderGroups() {
-  groupNav.replaceChildren(...groupNames.map(makeGroupButton));
-  mobileGroupNav.replaceChildren(...groupNames.map(makeGroupButton));
-  const needle = searchTerm.trim().toLocaleLowerCase();
-  const filtered = projects.filter((project) => {
-    const matchesGroup = selectedGroup === 'All' || project.group === selectedGroup;
-    const text = `${project.name} ${project.group} ${project.status} ${project.summary} ${project.next_step} ${project.blocker || ''} ${project.watch || ''}`;
-    return matchesGroup && (!needle || text.toLocaleLowerCase().includes(needle));
-  });
-  countLabel.textContent = `${String(filtered.length).padStart(2, '0')} SHOWN`;
-  projectRoot.replaceChildren();
-  [...new Set(filtered.map((project) => project.group))].forEach((groupName) => {
-    const section = document.createElement('section');
-    section.className = `project-group group-${groupName.toLowerCase()}`;
-    const heading = document.createElement('div');
-    heading.className = 'group-heading';
-    const title = document.createElement('h3');
-    title.textContent = groupName;
-    const groupProjects = filtered.filter((project) => project.group === groupName);
-    heading.append(title);
-    section.append(heading, ...groupProjects.map(makeProjectCard));
-    projectRoot.append(section);
-  });
-  if (!filtered.length) {
-    const empty = document.createElement('p');
-    empty.className = 'empty-state';
-    empty.textContent = 'No projects match.';
-    projectRoot.append(empty);
-  }
-}
-
-function renderOverview(snapshotDate) {
-  const phases = projects.flatMap((project) => project.milestones);
-  const count = (s) => phases.filter((phase) => phase.status === s).length;
-  const done=count('done'), doing=count('doing'), blocked=count('blocked'), todo=count('todo');
-  const pct=phases.length ? Math.round(done/phases.length*100) : 0;
-  document.querySelector('#done-count').textContent=done;
-  document.querySelector('#doing-count').textContent=doing;
-  document.querySelector('#blocked-count').textContent=blocked;
-  document.querySelector('#todo-count').textContent=todo;
-  document.querySelector('#completion-rate').textContent=`${pct}%`;
-  document.querySelector('#progress-gauge').style.setProperty('--progress',`${pct}%`);
-  const actions=projects.filter(p=>p.milestones.some(m=>['doing','blocked'].includes(m.status)));
-  document.querySelector('#today-summary').textContent=`TODAY // ${actions.length} NEXT ACTIONS // ${blocked} BLOCKED OVERALL`;
-  const today=document.querySelector('#today-items');
-  actions.forEach((p)=>{ const row=document.createElement('article');row.className='today-row';const left=document.createElement('div');const name=document.createElement('small');name.textContent=`${p.name} · ${p.group}`;const action=document.createElement('strong');action.textContent=p.next_step;left.append(name,action);if(p.blocker){const blocker=document.createElement('p');blocker.textContent=p.blocker;left.append(blocker);}const link=externalLink(p.workspace,'Open');link.classList.add('today-open');row.append(left,link);today.append(row); });
-  const date = new Date(`${snapshotDate}T00:00:00Z`);
-  const label = Number.isNaN(date.getTime()) ? snapshotDate : date.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric', timeZone: 'UTC' }).toUpperCase();
-  document.querySelector('#updated-label').textContent = `UPDATED ${label}`;
-  renderPickUp();
-}
-
-function showLoadError() {
-  projectRoot.replaceChildren();
-  const error = document.createElement('div');
-  error.className = 'error-state';
-  error.textContent = 'Project status could not load. Refresh to retry.';
-  projectRoot.append(error);
-  countLabel.textContent = 'Unavailable';
-}
-
-document.querySelectorAll('[data-theme-choice]').forEach((button) => {
-  button.addEventListener('click', () => setTheme(button.dataset.themeChoice));
-});
-setTheme(getInitialTheme());
-searchInput.addEventListener('input', () => { searchTerm = searchInput.value; renderGroups(); });
-fetch('./data/projects.json', { cache: 'no-store' })
-  .then((response) => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); })
-  .then((data) => {
-    if (!validData(data)) throw new Error('Invalid project status data');
-    projects = data.projects;
-    renderOverview(data.updated);
-    renderGroups();
-  })
-  .catch(showLoadError);
+import {statuses,labels,counts,dependencyLayers,todayTasks,timeline} from './model.mjs?v=10';
+const root=document.querySelector('#app');
+const state={theme:'dark',project:null,group:'All',today:false,expanded:new Set(),panels:{flow:true,kanban:false,roadmap:false},focus:null,inbox:[],unsaved:false};
+let data,projects=[];
+try{state.theme=['light','dark','char'].includes(localStorage.getItem('johnson-project-hub-theme'))?localStorage.getItem('johnson-project-hub-theme'):'dark';}catch{}
+const el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n;};
+const button=(text,action,cls='')=>{const b=el('button',cls,text);b.type='button';b.addEventListener('click',action);return b;};
+const owner=t=>t.owner==='claude'?'Claude':t.owner==='chatgpt'?'ChatGPT':'Unassigned';
+const date=d=>d?new Date(d+'T00:00:00Z').toLocaleDateString('en-GB',{day:'numeric',month:'short',timeZone:'UTC'}):'Date unset';
+function external(link,text){try{const u=new URL(link.url);if(u.protocol!=='https:'||!['docs.google.com','github.com'].includes(u.hostname))return el('span','','Source link unavailable');}catch{return el('span','','Source link unavailable');}const a=el('a','source-link',text+' ↗');a.href=link.url;a.target='_blank';a.rel='noopener noreferrer';return a;}
+function setTheme(t){state.theme=t;try{localStorage.setItem('johnson-project-hub-theme',t);}catch{}render();}
+function navigate(id){state.project=id;state.focus=null;state.panels={flow:true,kanban:false,roadmap:false};if(id)state.expanded.add(id);const hash=id?'#project/'+encodeURIComponent(id):'#';history.pushState(null,'',hash);render();if(id&&state.theme==='light'){document.getElementById('card-'+id)?.scrollIntoView({block:'start'});}else window.scrollTo({top:0});}
+function dot(status){return el('span','dot '+status);}
+function legend(){const n=el('div','legend');statuses.forEach(s=>{const i=el('span');i.append(dot(s),document.createTextNode(labels[s]));n.append(i);});return n;}
+function bar(tasks,segmented=false){const n=el('div',segmented?'segments':'stacked');n.setAttribute('aria-label','Status distribution');if(segmented){tasks.forEach(t=>{const pip=el('span',t.status);pip.title=t.name+': '+labels[t.status];n.append(pip);});}else{const c=counts(tasks);['done','doing','blocked'].forEach(s=>{const i=el('span',s);i.style.width=(c.total?100*c[s]/c.total:0)+'%';n.append(i);});}return n;}
+function gauge(tasks,small=false){const c=counts(tasks),n=el('div',small?'gauge small':'gauge');n.setAttribute('role','img');n.setAttribute('aria-label',`${c.done} of ${c.total} listed items done; ${c.doing} in progress; ${c.blocked} blocked`);['done','doing','blocked'].slice(0,small?2:3).forEach((s,i)=>{const ring=el('i','ring ring-'+i);ring.style.setProperty('--arc',(c.total?c[s]/c.total*100:0)+'%');n.append(ring);});const center=el('div','gauge-center');center.append(el('strong','',c.pct+'%'));if(!small)center.append(el('small','','PHASES DONE'));n.append(center);return n;}
+function overview(tasks){const c=counts(tasks);if(state.theme==='light')return document.createDocumentFragment();if(state.theme==='char'){const n=el('section','char-overview');const top=el('div','char-metrics');top.append(el('strong','',c.pct+'%'),el('span','',`${c.done} done · ${c.doing} in progress · ${c.blocked} blocked · ${c.total} items`));n.append(top,bar(tasks),legend());return n;}const n=el('section','hud-overview');n.setAttribute('aria-label','Project progress');const left=el('div','counters left'),right=el('div','counters right');[['done','DONE'],['doing','IN PROGRESS']].forEach(([s,l])=>{const v=el('div');v.append(el('strong','',c[s]),el('span','',l));left.append(v);});[['blocked','BLOCKED'],['todo','TO DO']].forEach(([s,l])=>{const v=el('div');v.append(el('strong','',c[s]),el('span','',l));right.append(v);});n.append(left,gauge(tasks),right);return n;}
+function header(){const isProject=state.project&&state.theme!=='light';const h=el('header','header');const title=el('div','header-title');if(isProject)title.append(button('← BACK',()=>navigate(null),'back'));const copy=el('div');copy.append(el('small','eyebrow','PROJECT HUB // '+date(data.updated)+' '+data.updated.slice(0,4)),el('h1','',isProject?projects.find(p=>p.id===state.project)?.name||'Project':state.theme==='light'?'Your projects':'Project Hub'));title.append(copy);const modes=el('div','modes');[['light','Light'],['dark','Dark HUD'],['char','Charcoal']].forEach(([t,l])=>{const b=button(l,()=>setTheme(t));b.setAttribute('aria-pressed',String(state.theme===t));modes.append(b);});h.append(title,modes);return h;}
+function sidebar(){const a=el('aside','sidebar');const brand=button('PROJECT HUB',()=>navigate(null),'brand');brand.prepend(el('b','','J'));a.append(brand);const nav=el('nav','groups');nav.setAttribute('aria-label','Project groups');['All',...new Set([...data.groups,'Work'])].forEach(g=>{const n=g==='All'?projects.length:projects.filter(p=>p.group===g).length;const b=button('',()=>{state.group=g;render();},'group-button');b.setAttribute('aria-pressed',String(g===state.group));const label=el('span','',g==='All'?'All projects':g);label.prepend(dot('done'));b.append(label,el('small','',String(n).padStart(2,'0')));nav.append(b);});a.append(nav,legend());return a;}
+function mutate(p,t,status){t.status=status;state.unsaved=true;render();}
+function addInbox(){const d=el('dialog','inbox-dialog');const f=el('form');f.method='dialog';f.append(el('h2','','Add to inbox'));const label=el('label','','Item name');const input=el('input');input.required=true;input.maxLength=160;label.append(input);const actions=el('div','actions');actions.append(button('Cancel',()=>d.close()));const submit=el('button','','Add');submit.type='submit';actions.append(submit);f.append(label,actions);f.addEventListener('submit',e=>{e.preventDefault();if(!input.value.trim())return;state.inbox.push({id:'inbox-'+Date.now(),name:input.value.trim()});state.unsaved=true;d.close();render();});d.addEventListener('close',()=>d.remove());d.append(f);root.append(d);d.showModal();input.focus();}
+function today(){const n=el('section','today');const items=todayTasks(projects),c=counts(projects.flatMap(p=>p.tasks));const h=el('div','today-head');const toggle=button((state.today?'▾':'▸')+`  Today // ${items.length} items // ${c.blocked} blocked overall`,()=>{state.today=!state.today;render();},'today-toggle');toggle.setAttribute('aria-expanded',String(state.today));h.append(toggle);if(state.today)h.append(button('+ Add',addInbox,'pill'));n.append(h);if(!state.today)return n;items.forEach(t=>{const p=t.project;const row=el('article','today-row');row.append(dot(t.status));const copy=el('div','today-copy');copy.append(el('small','',p.name+' · '+owner(t)),el('strong','',t.name),el('p','',t.status==='blocked'?'Needs you: '+(t.note||p.blocker||'Resolve the recorded blocker.'):(t.note||'')));const actions=el('div','actions');actions.append(button('Done',()=>mutate(p,p.tasks.find(v=>v.id===t.id),'done'),'pill'),button(t.status==='blocked'?'Unblock':'Block',()=>mutate(p,p.tasks.find(v=>v.id===t.id),t.status==='blocked'?'todo':'blocked'),'pill'),button('Open',()=>navigate(p.id),'pill'));row.append(copy,actions);n.append(row);});if(state.inbox.length){const inbox=el('div','inbox-list');inbox.append(el('small','eyebrow','INBOX · UNSORTED'));state.inbox.forEach(i=>inbox.append(el('div','inbox-item',i.name)));n.append(inbox);}return n;}
+function pickup(){const p=projects.find(p=>p.featured)||projects[0];const n=button('',()=>navigate(p.id),'pickup');const copy=el('div');copy.append(el('small','','▸ PICK UP'+(state.theme==='light'?' HERE · ':'  // ')+p.group),el('strong','',p.id==='oev'?'Scope Mercy’s corrections workflow':p.next_step));n.append(copy,el('span','',state.theme==='light'?'Open '+p.group+' ↗':'→'));return n;}
+function projectCard(p){const c=counts(p.tasks);if(state.theme==='char'){const b=button('',()=>navigate(p.id),'ledger-row');b.append(el('span','ledger-name',p.name),bar(p.tasks),el('small','',`${c.done}/${c.total}${c.blocked?' // '+c.blocked+' BLOCKED':''}`));return b;}if(state.theme==='dark'){const b=button('',()=>navigate(p.id),'hud-card');const copy=el('div','hud-card-copy');copy.append(el('b','',p.name),bar(p.tasks,true),el('small','',`${c.done}/${c.total} DONE${c.blocked?' // '+c.blocked+' BLOCKED':''}`));b.append(gauge(p.tasks,true),copy);return b;}const card=el('article','light-card');card.id='card-'+p.id;const top=el('div','card-top');top.append(el('span','monogram',p.mono),el('small','badge',p.status));const title=el('h2','',p.name);const progress=el('div','card-progress');progress.append(bar(p.tasks,true),el('small','',`${c.done}/${c.total}`));const next=el('div','next');next.append(el('small','','NEXT'),el('p','',p.next_step));const details=button('Details',()=>{state.expanded.has(p.id)?state.expanded.delete(p.id):state.expanded.add(p.id);render();},'pill details-button');details.setAttribute('aria-expanded',String(state.expanded.has(p.id)));card.append(top,title,progress,next,details);if(state.expanded.has(p.id)){const detail=el('div','light-detail');detail.append(el('p','project-summary',p.summary),statusChips(p),projectPanels(p),sourceLinks(p));card.append(detail);}return card;}
+function statusChips(p){const n=el('div','status-chips');const c=counts(p.tasks);statuses.forEach(s=>{const i=el('span');i.append(dot(s),document.createTextNode(`${labels[s]} ${c[s]}`));n.append(i);});return n;}
+function sourceLinks(p){const n=el('div','source-links');n.append(external(p.workspace,'Source tracker'));if(p.roadmap)n.append(external(p.roadmap,'Detailed roadmap'));return n;}
+function home(){const n=el('div','home');if(state.theme==='light'){n.append(pickup(),today());const cards=el('div','light-cards');projects.filter(p=>state.group==='All'||p.group===state.group).forEach(p=>cards.append(projectCard(p)));n.append(cards);}else{n.append(overview(projects.flatMap(p=>p.tasks)),today(),pickup());data.groups.forEach(g=>{const ps=projects.filter(p=>p.group===g);if(!ps.length)return;const s=el('section','project-group');s.append(el('h2','group-heading',(state.theme==='dark'?'// ':'')+g));const cards=el('div','project-cards');ps.forEach(p=>cards.append(projectCard(p)));s.append(cards);n.append(s);});if(state.theme==='dark')n.append(legend());}return n;}
+function taskDetail(p,t){const n=el('aside','task-detail');n.append(el('h3','',t.name));const meta=el('p','task-meta',`${labels[t.status]} // ${owner(t)} // ${date(t.last_touched)}`);n.append(meta,el('p','',t.note||'No note recorded.'));if(t.depends_on.length)n.append(el('p','', 'Needs: '+t.depends_on.map(id=>p.tasks.find(t=>t.id===id)?.name||id).join(', ')));else n.append(el('small','','Dependencies not recorded.'));n.append(button('Close',()=>{state.focus=null;render();},'pill'));return n;}
+function flow(p){const wrap=el('div','flow-wrap');const graph=el('div','flow');const layers=dependencyLayers(p.tasks);layers.forEach((tasks,i)=>{if(i)graph.append(el('span','flow-arrow','→'));const col=el('div','flow-layer');tasks.forEach(t=>{const b=button('',()=>{state.focus=state.focus===t.id?null:t.id;render();},'flow-node '+t.status);b.append(el('strong','',t.name),el('small','',t.depends_on.length?'← '+t.depends_on.length:'start'));b.setAttribute('aria-label',t.name+', '+labels[t.status]);col.append(b);});graph.append(col);});wrap.append(graph);if(!p.tasks.some(t=>t.depends_on.length))wrap.append(el('p','view-note','Dependencies not recorded.'));if(state.focus&&p.tasks.some(t=>t.id===state.focus))wrap.append(taskDetail(p,p.tasks.find(t=>t.id===state.focus)));return wrap;}
+function kanban(p){const n=el('div','kanban');statuses.forEach(s=>{const lane=el('section','kanban-lane');const tasks=p.tasks.filter(t=>t.status===s);const h=el('h3');h.append(dot(s),document.createTextNode(labels[s]+' · '+tasks.length));lane.append(h);tasks.forEach(t=>{const card=button('',()=>{state.focus=t.id;state.panels.flow=true;render();},'kanban-card');card.append(el('strong','',t.name),el('small','',owner(t)+' // '+date(t.last_touched)));lane.append(card);});n.append(lane);});return n;}
+function roadmap(p){const n=el('div','roadmap');const tm=timeline(p.tasks);if(tm.dated.length){const grid=el('div','gantt');grid.style.setProperty('--weeks',tm.weeks.length);const axis=el('div','gantt-row axis');axis.append(el('span'));const weeks=el('div','gantt-track');tm.weeks.forEach(w=>weeks.append(el('small','',w.toLocaleDateString('en-GB',{day:'numeric',month:'short',timeZone:'UTC'}))));axis.append(weeks);grid.append(axis);[...new Set(tm.dated.map(t=>t.lane||'General'))].forEach(lane=>{grid.append(el('h3','lane-label',lane));tm.dated.filter(t=>(t.lane||'General')===lane).forEach(t=>{const row=el('div','gantt-row');row.append(el('span','',t.name));const track=el('div','gantt-track task-track');const start=(Date.parse(t.start)-tm.start)/(tm.end-tm.start)*100,width=(Date.parse(t.end)+86400000-Date.parse(t.start))/(tm.end-tm.start)*100;const b=el('div','gantt-bar '+t.status,owner(t));b.style.left=start+'%';b.style.width=width+'%';b.title=t.name+': '+date(t.start)+' – '+date(t.end);track.append(b);const now=(Date.now()-tm.start)/(tm.end-tm.start)*100;if(now>=0&&now<=100){const today=el('i','today-line');today.style.left=now+'%';track.append(today);}row.append(track);grid.append(row);});});n.append(grid);}if(tm.undated.length){const u=el('div','undated');u.append(el('h3','lane-label','UNSCHEDULED'),el('p','view-note','Dates are not recorded for these items.'));tm.undated.forEach(t=>{const row=el('div','undated-row');row.append(dot(t.status),el('span','',t.name),el('small','',owner(t)));u.append(row);});n.append(u);}return n;}
+function projectPanels(p){const outer=el('div','project-views');const toggles=el('div','view-toggles');['flow','kanban','roadmap'].forEach(k=>{const b=button((state.panels[k]?'▾ ':'▸ ')+k,()=>{state.panels[k]=!state.panels[k];render();});b.setAttribute('aria-expanded',String(state.panels[k]));b.setAttribute('aria-controls',p.id+'-'+k);toggles.append(b);});const panels=el('div','panels');[['flow',flow],['kanban',kanban],['roadmap',roadmap]].forEach(([k,fn])=>{if(state.panels[k]){const pane=el('section','pane pane-'+k);pane.id=p.id+'-'+k;pane.setAttribute('aria-label',k);pane.append(fn(p));panels.append(pane);}});outer.append(toggles,panels);return outer;}
+function projectPage(p){const n=el('div','project-page');n.append(overview(p.tasks),el('p','project-status','STATUS // '+p.status),projectPanels(p),sourceLinks(p));return n;}
+function footer(){const n=el('footer','footer');n.append(el('span','','Curated phases · task dates and dependencies may be unset.'),el('span','',state.unsaved?'Unsaved preview changes · reload resets them.':'Done / Block / Add are preview only · changes reset on reload.'));if(state.unsaved)n.append(button('Reset preview',()=>{location.reload();},'reset'));return n;}
+function render(){root.replaceChildren();root.dataset.theme=state.theme;root.className=state.theme==='light'?'layout-light':'layout-dark';const skip=el('a','skip','Skip to projects');skip.href='#main';root.append(skip);if(state.theme==='light')root.append(sidebar());const main=el('main','main');main.id='main';main.append(header());const p=projects.find(p=>p.id===state.project);main.append(p&&state.theme!=='light'?projectPage(p):home(),footer());root.append(main);document.title=(p?p.name:'Project Hub')+' — Johnson';}
+function parseRoute(){let id='';try{id=decodeURIComponent(location.hash.replace(/^#project\//,''));}catch{}state.project=projects.some(p=>p.id===id)?id:null;if(state.project)state.expanded.add(state.project);}
+window.addEventListener('popstate',()=>{parseRoute();render();});
+fetch('./data/projects.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Status load failed');return r.json();}).then(d=>{data=d;projects=d.projects.map(p=>({...p,tasks:p.tasks||p.milestones.map((m,i)=>({...m,id:p.id+'-'+String(i+1).padStart(2,'0'),owner:null,last_touched:null,start:null,end:null,lane:'Phases',depends_on:[],note:m.status==='blocked'?p.blocker||'':m.status==='doing'?p.next_step:''}))}));projects.forEach(p=>{p.tasks=p.tasks.map(t=>({owner:null,last_touched:null,start:null,end:null,lane:'General',depends_on:[],note:'',...t}));dependencyLayers(p.tasks);});parseRoute();render();}).catch(()=>{root.replaceChildren(el('p','load-error','Could not load project records. Refresh to retry.'));});
