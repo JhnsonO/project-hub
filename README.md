@@ -1,6 +1,6 @@
 # Johnson's Project Hub
 
-This repository contains the public GitHub Pages entry point for Johnson's project workspaces. It lists approved project names and sign-in links only. Project task status, boards, roadmaps, evidence and code remain in their existing protected systems.
+This repository contains the public GitHub Pages entry point for Johnson's project workspaces. It lists approved project names and sign-in links only. Never add private data to this repository: no task status, owners, blockers, dates, board views, roadmaps, evidence, credentials or project code. Keep those in their existing protected systems.
 
 ## Local checks
 
