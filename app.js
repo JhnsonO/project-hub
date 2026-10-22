@@ -106,22 +106,17 @@ function makeProjectCard(project) {
   title.textContent = project.name;
   const meta = document.createElement('div');
   meta.className = 'project-meta';
-  const group = document.createElement('span');
-  group.textContent = project.group;
-  const sep = document.createElement('span');
-  sep.className = 'meta-sep';
-  sep.textContent = '//';
   const provider = document.createElement('span');
-  provider.textContent = `${project.workspace.provider} sign-in`;
-  meta.append(group, sep, provider);
+  provider.textContent = `${project.workspace.provider} // PRIVATE`;
+  meta.append(provider);
   info.append(title, meta);
   const actions = document.createElement('div');
   actions.className = 'project-actions';
-  const link = safeExternalLink(project.workspace, 'workspace-link', 'Open private workspace');
+  const link = safeExternalLink(project.workspace, 'workspace-link', 'Board');
   link.setAttribute('aria-label', `Sign in and open ${project.name} private workspace`);
   actions.append(link);
   if (project.roadmap) {
-    const roadmap = safeExternalLink(project.roadmap, 'workspace-link roadmap-link', 'Open roadmap');
+    const roadmap = safeExternalLink(project.roadmap, 'workspace-link roadmap-link', 'Roadmap');
     roadmap.setAttribute('aria-label', `Sign in and open ${project.name} roadmap`);
     actions.append(roadmap);
   }
@@ -138,7 +133,7 @@ function renderGroups() {
     const matchesSearch = !needle || `${project.name} ${project.group}`.toLocaleLowerCase().includes(needle);
     return matchesGroup && matchesSearch;
   });
-  countLabel.textContent = `${filtered.length} ${filtered.length === 1 ? 'workspace' : 'workspaces'}`;
+  countLabel.textContent = String(filtered.length).padStart(2, '0');
   projectRoot.replaceChildren();
   const displayedGroups = [...new Set(filtered.map((project) => project.group))];
   displayedGroups.forEach((groupName) => {
@@ -150,7 +145,7 @@ function renderGroups() {
     title.textContent = groupName;
     const n = document.createElement('span');
     const groupProjects = filtered.filter((project) => project.group === groupName);
-    n.textContent = `${String(groupProjects.length).padStart(2, '0')} PROJECT${groupProjects.length === 1 ? '' : 'S'}`;
+    n.textContent = String(groupProjects.length).padStart(2, '0');
     heading.append(title, n);
     group.append(heading, ...groupProjects.map(makeProjectCard));
     projectRoot.append(group);
@@ -158,13 +153,13 @@ function renderGroups() {
   if (!filtered.length) {
     const empty = document.createElement('p');
     empty.className = 'empty-state';
-    empty.textContent = 'No matching projects. Clear the search or choose another group.';
+    empty.textContent = 'No matches.';
     projectRoot.append(empty);
   }
 }
 
 function showLoadError() {
-  projectRoot.innerHTML = '<div class="error-state"><strong>Project directory unavailable</strong>Refresh the page in a moment. The private project boards are not affected.</div>';
+  projectRoot.innerHTML = '<div class="error-state">Projects unavailable. Refresh to retry.</div>';
   countLabel.textContent = 'Unavailable';
 }
 
@@ -176,14 +171,6 @@ searchInput.addEventListener('input', () => {
   searchTerm = searchInput.value;
   renderGroups();
 });
-document.querySelector('#access-toggle').addEventListener('click', (event) => {
-  const button = event.currentTarget;
-  const open = button.getAttribute('aria-expanded') !== 'true';
-  button.setAttribute('aria-expanded', String(open));
-  button.querySelector('.disclosure-mark').textContent = open ? '▾' : '▸';
-  document.querySelector('#access-details').hidden = !open;
-});
-
 fetch('./data/projects.json', { cache: 'no-store' })
   .then((response) => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); })
   .then((data) => {
