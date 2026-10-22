@@ -1,6 +1,7 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "updated": "2026-10-22",
+  "updated_by": "chatgpt",
   "groups": ["FFA", "OEV", "Personal"],
   "projects": [
     {
@@ -8,54 +9,87 @@
       "name": "FFA Website",
       "mono": "FW",
       "group": "FFA",
-      "workspace": {
-        "provider": "Google",
-        "url": "https://docs.google.com/document/d/1Ai973jkiOD_3WvG1ra2sFiIzPO3F3R1AlGIvKzZWWXA/edit"
-      }
+      "status": "Live · QA",
+      "summary": "The site and shop are live; launch checks and polish remain.",
+      "milestones": [
+        { "name": "Site + shop live", "status": "done" },
+        { "name": "Content + checkout QA", "status": "doing" },
+        { "name": "Device acceptance", "status": "todo" }
+      ],
+      "next_step": "Check the gilet form title, then finish device and checkout checks.",
+      "watch": "The gilet form heading currently says “Tracksuits”.",
+      "updated": "21 OCT",
+      "workspace": { "provider": "Google", "url": "https://docs.google.com/document/d/1Ai973jkiOD_3WvG1ra2sFiIzPO3F3R1AlGIvKzZWWXA/edit" }
     },
     {
       "id": "media",
       "name": "FFA Media",
       "mono": "FM",
       "group": "FFA",
-      "workspace": {
-        "provider": "GitHub",
-        "url": "https://github.com/users/JhnsonO/projects/5/views/1"
-      }
+      "status": "v2 beta",
+      "summary": "Beta sign-in loads; signed-in acceptance and release checks are open.",
+      "milestones": [
+        { "name": "Beta entry live", "status": "done" },
+        { "name": "v2 API + configuration", "status": "blocked" },
+        { "name": "Device + storage QA", "status": "todo" }
+      ],
+      "next_step": "Run the current v2 Postgres suite and resolve the deferred key configuration.",
+      "blocker": "Check #55 depends on key configuration; #54 still needs the current v2 suite. Signed-in acceptance is unverified.",
+      "updated": "21 OCT",
+      "workspace": { "provider": "GitHub", "url": "https://github.com/users/JhnsonO/projects/5/views/" }
     },
     {
       "id": "auto",
       "name": "FFA Automations",
       "mono": "FA",
       "group": "FFA",
-      "workspace": {
-        "provider": "Google",
-        "url": "https://docs.google.com/document/d/1UJB8kzBW1kOBgKizUuaw8we2bPYUqhF6vmeVv6oLPco/edit"
-      }
+      "status": "Validation",
+      "summary": "Runner fix is merged; manual encrypted handoff #65 passed.",
+      "milestones": [
+        { "name": "Runner fix + handoff", "status": "done" },
+        { "name": "06:50 scheduled run", "status": "doing" },
+        { "name": "GoPro resume evidence", "status": "todo" }
+      ],
+      "next_step": "Verify a scheduled 06:50 Europe/London run creates the encrypted artifact.",
+      "blocker": "The normal schedule and current GoPro resume behaviour still lack verified evidence.",
+      "updated": "22 OCT",
+      "workspace": { "provider": "Google", "url": "https://docs.google.com/document/d/1UJB8kzBW1kOBgKizUuaw8we2bPYUqhF6vmeVv6oLPco/edit" }
     },
     {
       "id": "oev",
       "name": "OEV Broadcast",
       "mono": "OE",
       "group": "OEV",
-      "workspace": {
-        "provider": "GitHub",
-        "url": "https://github.com/users/JhnsonO/projects/3/views/2"
-      },
-      "roadmap": {
-        "provider": "GitHub",
-        "url": "https://github.com/JhnsonO/oev/blob/main/docs/roadmap.md"
-      }
+      "status": "Corrections first",
+      "summary": "Camera brain C is selected; Mercy’s correction workflow is the current priority.",
+      "milestones": [
+        { "name": "Select camera brain", "status": "done" },
+        { "name": "Scope Mercy corrections", "status": "doing" },
+        { "name": "Validate a customer-ready broadcast", "status": "blocked" }
+      ],
+      "next_step": "Scope Mercy’s corrections workflow using C as the baseline before bulk frame collection.",
+      "blocker": "Match-ball evaluation and the M1/hardware acceptance evidence are still unresolved.",
+      "updated": "21 OCT",
+      "featured": true,
+      "workspace": { "provider": "GitHub", "url": "https://github.com/users/JhnsonO/projects/3/views/2" },
+      "roadmap": { "provider": "GitHub", "url": "https://github.com/JhnsonO/oev/blob/main/docs/roadmap.md" }
     },
     {
       "id": "ai",
       "name": "AI Workflow & Shared Context",
       "mono": "AI",
       "group": "Personal",
-      "workspace": {
-        "provider": "GitHub",
-        "url": "https://github.com/users/JhnsonO/projects/4/views/2"
-      }
+      "status": "Setup gaps",
+      "summary": "Shared rules and ChatGPT Drive access are in place; cross-account updates are not verified yet.",
+      "milestones": [
+        { "name": "Shared rules + handover", "status": "done" },
+        { "name": "Verify Claude Drive access", "status": "blocked" },
+        { "name": "Shared board updates", "status": "todo" }
+      ],
+      "next_step": "Verify Claude can read and update the shared Drive handover, then test a board update.",
+      "blocker": "Claude’s Drive read/write access has not been verified; static hub updates are not automatic.",
+      "updated": "22 OCT",
+      "workspace": { "provider": "GitHub", "url": "https://github.com/users/JhnsonO/projects/4/views/2" }
     }
   ]
 }

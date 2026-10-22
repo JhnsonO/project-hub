@@ -1,4 +1,4 @@
-name: Validate public project directory
+name: Validate project dashboard
 
 on:
   pull_request:
