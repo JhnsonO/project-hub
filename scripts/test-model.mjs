@@ -12,6 +12,8 @@ assert.throws(()=>dependencyLayers([{id:'a',depends_on:['missing']}]),/Unknown/)
 assert.deepEqual(todayTasks([{id:'web',tasks}]).map(t=>t.id),['web-d','web-b']);
 const tm=timeline(tasks);assert.equal(tm.weeks.length,2);assert.equal(tm.dated.length,1);assert.equal(tm.undated.length,3);
 assert.equal(timeline([{id:'a',start:null,end:null}]).weeks.length,0);
+const history=timeline([{id:'past',status:'done',completed_on:'2026-10-04'},{id:'unknown',status:'done',completed_on:null},{id:'future',status:'todo'}]);
+assert.equal(history.dated[0].milestone,true);assert.equal(history.dated[0].start,'2026-10-04');assert.equal(history.undated.length,2);
 const base=JSON.parse(await readFile(new URL('../data/projects.json',import.meta.url),'utf8'));
 const dir=await mkdtemp(join(tmpdir(),'hub-validator-'));
 const file=join(dir,'fixture.json');
@@ -22,6 +24,8 @@ try {
   const invalidStatus=structuredClone(base);invalidStatus.projects[0].tasks[0].status='maybe';assert.notEqual((await run(invalidStatus)).status,0);
   const cycle=structuredClone(base);cycle.projects[0].tasks[0].depends_on=['web-c'];assert.match((await run(cycle)).stderr,/cycle/);
   const dangling=structuredClone(base);dangling.projects[0].tasks[0].depends_on=['web-missing'];assert.match((await run(dangling)).stderr,/Unknown dependency/);
+  const futureCompletion=structuredClone(base);futureCompletion.projects[0].tasks[1].completed_on='2026-10-20';assert.match((await run(futureCompletion)).stderr,/only done/);
+  const invalidEvidence=structuredClone(base);invalidEvidence.projects[0].tasks[0].evidence=[{provider:'GitHub',url:'https://example.com/private',label:'Source'}];assert.match((await run(invalidEvidence)).stderr,/provider and HTTPS host/);
   const invalidDate=structuredClone(base);invalidDate.projects[0].tasks[0].start='2026-02-30';assert.match((await run(invalidDate)).stderr,/invalid start/);
 } finally {await rm(dir,{recursive:true,force:true});}
 console.log('Model and validator regression checks passed.');
