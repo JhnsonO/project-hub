@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta name="description" content="Public OEV entry page. Sign in to view the protected project board and roadmap.">
+  <title>OEV — Project Access</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Newsreader:ital,wght@0,500;1,500&family=Rajdhani:wght@500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div id="oev-shell" class="app-shell oev-shell" data-theme="dark">
+    <a class="skip-link" href="#main">Skip to OEV access</a>
+    <main id="main" class="oev-main">
+      <header class="oev-mast">
+        <a class="brand" href="./index.html"><span class="brand-mark">J</span><span>PROJECT HUB</span></a>
+        <fieldset class="theme-switch" aria-label="Display mode">
+          <legend class="sr-only">Display mode</legend>
+          <button type="button" data-theme-choice="light" aria-pressed="false">Light</button>
+          <button type="button" data-theme-choice="dark" aria-pressed="true">Dark HUD</button>
+          <button type="button" data-theme-choice="char" aria-pressed="false">Charcoal</button>
+        </fieldset>
+      </header>
+
+      <section class="oev-hero" aria-labelledby="oev-title">
+        <div class="eyebrow">OEV <span>//</span> PROJECT ACCESS</div>
+        <h1 id="oev-title">One project<span class="title-mark">.</span><br>One protected workspace<span class="title-mark">.</span></h1>
+        <p>This public entry page links to the OEV board and roadmap. Sign in to GitHub with an account that has access to open either one.</p>
+      </section>
+
+      <section class="oev-access" aria-labelledby="access-title">
+        <div class="eyebrow">SIGN-IN REQUIRED <span>//</span> GITHUB</div>
+        <h2 id="access-title">OEV workspace</h2>
+        <p>Tasks, project status, roadmap details, code and evidence remain in the protected OEV workspace.</p>
+        <div class="oev-actions">
+          <a class="workspace-link" href="https://github.com/users/JhnsonO/projects/3/views/2" target="_blank" rel="noopener noreferrer">Open OEV board <span aria-hidden="true">↗</span></a>
+          <a class="workspace-link" href="https://github.com/JhnsonO/oev/blob/main/docs/roadmap.md" target="_blank" rel="noopener noreferrer">Open OEV roadmap <span aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+
+      <footer class="page-footer"><span>OEV // PRIVATE PROJECT TRACKING</span><a href="./index.html">Back to all projects ↗</a></footer>
+    </main>
+  </div>
+  <script>
+    (() => {
+      const root = document.querySelector('#oev-shell');
+      const controls = [...document.querySelectorAll('[data-theme-choice]')];
+      const setTheme = (theme) => {
+        root.dataset.theme = theme;
+        controls.forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.themeChoice === theme)));
+        try { localStorage.setItem('johnson-project-hub-theme', theme); } catch (_) { /* Keep this visit usable. */ }
+      };
+      let saved = 'dark';
+      try { saved = localStorage.getItem('johnson-project-hub-theme') || 'dark'; } catch (_) { /* Use the default theme. */ }
+      if (!['light', 'dark', 'char'].includes(saved)) saved = 'dark';
+      setTheme(saved);
+      controls.forEach((button) => button.addEventListener('click', () => setTheme(button.dataset.themeChoice)));
+    })();
+  </script>
+</body>
+</html>
