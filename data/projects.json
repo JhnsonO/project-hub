@@ -452,7 +452,7 @@
           "name": "Complete booking, checkout and Apple Pay acceptance",
           "status": "todo",
           "owner": null,
-          "note": "Current handover retains booking payment and supported-device Apple Pay completion as unverified. Historical shop purchase checks are retained as completed work separately.",
+          "note": "5 October shop/cart checks and the 10 October desktop checkout walkthrough are already recorded. The latter stopped before payment: no paid booking, payment capture or supported-device Apple Pay pass was established. Finish those remaining acceptance checks.",
           "last_touched": "2026-10-22",
           "lane": "Booking QA",
           "start": null,
@@ -472,7 +472,7 @@
           "name": "Complete the MNL admin browser acceptance test",
           "status": "blocked",
           "owner": null,
-          "note": "Backend disposable-data checks passed; the full UI test was previously blocked by a 503/editor script limitation and still needs recorded end-to-end evidence.",
+          "note": "20 October: 16 disposable-data backend checks passed. The public draft returned 503 and the editor disabled embedded scripts, so interactive admin acceptance could not complete; staging was archived and fake data cleared. Later live standings verification is not the full admin test.",
           "last_touched": "2026-10-22",
           "lane": "Monday league",
           "start": null,
@@ -1026,10 +1026,10 @@
         },
         {
           "id": "media-022",
-          "name": "Review and accept the real-data backfill plan",
+          "name": "Review the corrected backfill dry run before applying",
           "status": "todo",
           "owner": null,
-          "note": "The guarded tool exists; the historical plan is not recorded as applied. Review the current dry run before any live application.",
+          "note": "An initial beta dry run was reviewed on 14–15 October. Its title/date matching gaps were fixed; offline simulation resolved 17 June–August lines to 15 sessions. The latest engineering entry explicitly says NOT applied to any database and requests a new beta dry-run review. Do not repeat the initial review as if untouched or interpret “61 backfilled” in its report as a live apply.",
           "last_touched": "2026-10-22",
           "lane": "Beta acceptance",
           "start": null,
@@ -1230,7 +1230,7 @@
           "status": "todo"
         }
       ],
-      "next_step": "Observe a fresh upload and verify the first unattended ChatGPT check-in; recheck the GoPro resume issue.",
+      "next_step": "Finish the Monday League metadata gap and verify the first 06:50 check-in delivery.",
       "blocker": "Live uploader/resume evidence and the first unattended ChatGPT run are still unverified; GitHub is manual-only for the check-in handoff.",
       "updated": "22 OCT",
       "workspace": {
@@ -1447,10 +1447,10 @@
         },
         {
           "id": "auto-011",
-          "name": "Observe a fresh upload and verify complete metadata",
+          "name": "Finish upload metadata acceptance: Monday link and provenance",
           "status": "todo",
           "owner": null,
-          "note": "A matching public title was seen, but the description and exact producing uploader version were not verified. Observe a new complete result.",
+          "note": "Two 14 October uploads were checked on 15 October: standard/POV titles, revised intro, direct booking link, shop link, hashtags and media ID were present. The separate Monday League paragraph/link was missing; no later repair or exact producing-version verification was found. Those residual checks remain open; the successful output review is auto-015.",
           "last_touched": "2026-10-22",
           "lane": "Uploader acceptance",
           "start": null,
@@ -1507,10 +1507,10 @@
         },
         {
           "id": "auto-014",
-          "name": "Verify the first unattended daily ChatGPT check-in",
+          "name": "Verify the 06:50 daily run and result delivery",
           "status": "todo",
           "owner": null,
-          "note": "Direct tests passed; the handover still requests evidence from the first 06:50 Europe/London unattended run. Do not substitute a manual GitHub run for this check.",
+          "note": "Two unattended evening tests on 22 October automatically pulled connector data and finished: 19:00 at 19:00:58 and 19:10 at 19:11:44 Europe/London. Recorded delivery status is unknown. Confirm the first 06:50 daily run and delivery; do not repeat unattended triggering as wholly untested. Evening test completion is auto-016.",
           "last_touched": "2026-10-22",
           "lane": "Check-in acceptance",
           "start": null,
@@ -1524,8 +1524,49 @@
               "label": "Automation board and evidence"
             }
           ]
+        },
+        {
+          "id": "auto-015",
+          "name": "Verify titles and core description fields on two real uploads",
+          "status": "done",
+          "owner": null,
+          "note": "15 October conversation checked both 14 October outputs: revised intro, booking/shop links, hashtags, media ID, standard title and manual POV suffix. Standard video 47RhOWe7qEc; POV LlrFomv76-s. Monday League paragraph/link was absent; exact uploader provenance remains open in auto-011. This is a historical output review, not a fresh upload test.",
+          "last_touched": "2026-10-22",
+          "lane": "Operations",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-15",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/project-hub/blob/main/docs/open-task-audit-2026-10-22.md",
+              "label": "Conversation and source reconciliation"
+            }
+          ]
+        },
+        {
+          "id": "auto-016",
+          "name": "Complete two unattended evening ChatGPT check-in tests",
+          "status": "done",
+          "owner": null,
+          "note": "Automation run records for 22 October show both scheduled evening tests completed with successful connector pulls and workout-data availability. Runs 1b0f7508-b468-832d-b0e4-8051a2e0f0c4 and 3f508748-ed74-832c-acca-6df24787f24b completed at 18:00:58Z and 18:11:44Z. Delivery is unknown; daily 06:50 acceptance remains auto-014. No health readings are published.",
+          "last_touched": "2026-10-22",
+          "lane": "Operations",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-22",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/project-hub/blob/main/docs/open-task-audit-2026-10-22.md",
+              "label": "Conversation and source reconciliation"
+            }
+          ]
         }
-      ]
+      ],
+      "watch": "Evening scheduled tests passed; first daily-run delivery and full upload metadata remain open."
     },
     {
       "id": "oev",
@@ -1548,7 +1589,7 @@
           "status": "blocked"
         }
       ],
-      "next_step": "Scope Mercy’s corrections workflow using C as the baseline before bulk frame collection.",
+      "next_step": "Finalise correction fields, storage and Mercy’s acceptance check; the high-level workflow already exists.",
       "blocker": "Match-ball evaluation and the M1/hardware acceptance evidence are still unresolved.",
       "updated": "22 OCT",
       "featured": true,
@@ -1875,10 +1916,10 @@
         },
         {
           "id": "oev-015",
-          "name": "Define Mercy’s corrections workflow and acceptance check",
+          "name": "Finalise Mercy’s correction fields, storage and acceptance",
           "status": "todo",
           "owner": null,
-          "note": "Current-phase issue #18 requests a small workflow spec and review criteria. The reviewed sources do not verify an implemented corrections interface.",
+          "note": "High-level correction workflows were already described on 5 September and 20 October: review/correct moments, label visibility and uncertainty, preserve examples for evaluation. Issue #18 still requests the bounded input/field/storage spec and a small acceptance check with Mercy. Absence of an implemented editor is not evidence that no planning occurred.",
           "last_touched": "2026-10-22",
           "lane": "Corrections",
           "start": null,
@@ -2026,10 +2067,10 @@
         },
         {
           "id": "oev-022",
-          "name": "Plan the foundational player-tracking engine",
+          "name": "Build the player-tracking engine",
           "status": "todo",
           "owner": null,
-          "note": "Existing legacy product backlog; not delivered and not a commitment for the current corrections phase.",
+          "note": "An initial feature outline already exists in the linked OEV backlog; recorded together in oev-027. This remaining task is implementation and validation, not writing the same outline again. Later product backlog; not a commitment for the current corrections phase.",
           "last_touched": "2026-10-22",
           "lane": "Later backlog",
           "start": null,
@@ -2046,10 +2087,10 @@
         },
         {
           "id": "oev-023",
-          "name": "Plan automatic goal and highlight clips",
+          "name": "Implement integrated automatic goal and highlight clips",
           "status": "todo",
           "owner": null,
-          "note": "Existing legacy product backlog; not delivered and not a commitment for the current corrections phase.",
+          "note": "An initial feature outline already exists in the linked OEV backlog; recorded together in oev-027. This remaining task is implementation and validation, not writing the same outline again. Later product backlog; not a commitment for the current corrections phase. An April conversation reports goal-review code in the separate ffa-clips branch; it does not establish a merged, accepted OEV broadcast integration.",
           "last_touched": "2026-10-22",
           "lane": "Later backlog",
           "start": null,
@@ -2066,10 +2107,10 @@
         },
         {
           "id": "oev-024",
-          "name": "Plan player heat maps and statistics",
+          "name": "Implement player heat maps and statistics",
           "status": "todo",
           "owner": null,
-          "note": "Existing legacy product backlog; not delivered and not a commitment for the current corrections phase.",
+          "note": "An initial feature outline already exists in the linked OEV backlog; recorded together in oev-027. This remaining task is implementation and validation, not writing the same outline again. Later product backlog; not a commitment for the current corrections phase.",
           "last_touched": "2026-10-22",
           "lane": "Later backlog",
           "start": null,
@@ -2091,10 +2132,10 @@
         },
         {
           "id": "oev-025",
-          "name": "Plan per-player highlights",
+          "name": "Implement per-player highlights",
           "status": "todo",
           "owner": null,
-          "note": "Existing legacy product backlog; not delivered and not a commitment for the current corrections phase.",
+          "note": "An initial feature outline already exists in the linked OEV backlog; recorded together in oev-027. This remaining task is implementation and validation, not writing the same outline again. Later product backlog; not a commitment for the current corrections phase.",
           "last_touched": "2026-10-22",
           "lane": "Later backlog",
           "start": null,
@@ -2111,10 +2152,10 @@
         },
         {
           "id": "oev-026",
-          "name": "Scope the custom dual-lens unit and venue hub",
+          "name": "Resolve dual-lens geometry and venue-hub responsibilities",
           "status": "todo",
           "owner": null,
-          "note": "Existing legacy product backlog; not delivered and not a commitment for the current corrections phase.",
+          "note": "The custom-unit concept and benefits are already outlined in issue #14; the venue-hub concept is agreed in #6. Detailed scoping remains: confirmed mount/optics, capture versus hub responsibilities, and hardware decisions with Moses. This does not mean the concept is unwritten or hardware built.",
           "last_touched": "2026-10-22",
           "lane": "Later backlog",
           "start": null,
@@ -2131,6 +2172,46 @@
               "provider": "GitHub",
               "url": "https://github.com/JhnsonO/oev/issues/6",
               "label": "Venue hub backlog"
+            }
+          ]
+        },
+        {
+          "id": "oev-027",
+          "name": "Outline the later player and highlight feature roadmap",
+          "status": "done",
+          "owner": null,
+          "note": "Existing issues #7, #9, #11–#13 already describe player tracking, automatic clips, heat maps/statistics and per-player reels, including the tracking/identity dependencies. This records the existing initial outline only. Detailed design, implementation and validation remain oev-022–025; no completion date is inferred from issue creation.",
+          "last_touched": "2026-10-22",
+          "lane": "Product backlog",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/oev/issues/7",
+              "label": "Player-tracking outline"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/oev/issues/9",
+              "label": "Automatic clip outline"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/oev/issues/11",
+              "label": "Heat-map outline"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/oev/issues/12",
+              "label": "Statistics outline"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/oev/issues/13",
+              "label": "Per-player highlights outline"
             }
           ]
         }
@@ -2157,7 +2238,7 @@
           "status": "todo"
         }
       ],
-      "next_step": "Verify Claude can read and update the shared Drive handover, then test a board update.",
+      "next_step": "Verify Claude’s Drive write/readback, then run a real cross-account update cycle.",
       "blocker": "Claude’s Drive read/write access has not been verified; static hub updates are not automatic.",
       "updated": "22 OCT",
       "workspace": {
@@ -2371,10 +2452,10 @@
         },
         {
           "id": "ai-011",
-          "name": "Verify Claude’s shared Drive read/write access",
+          "name": "Verify Claude Drive write/readback and reproducible access",
           "status": "blocked",
           "owner": null,
-          "note": "Current canonical setup records retain this as unverified. A working ChatGPT connector does not establish Claude access.",
+          "note": "A 21 October completion report says Claude read two Drive documents and reported the groups/rules. Later same-day reports say the account handover test was blocked at sign-in, so reproducible access is unresolved. No Claude write/readback is recorded. Preserve the earlier read report without claiming full account acceptance.",
           "last_touched": "2026-10-22",
           "lane": "Access",
           "start": null,
