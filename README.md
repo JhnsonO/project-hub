@@ -4,7 +4,7 @@ Public GitHub Pages dashboard at https://jhnsono.github.io/project-hub/.
 
 ## Reference implementation
 
-- Light: sidebar, cards with segmented progress and NEXT actions, expandable details.
+- Light: sidebar, cards with segmented progress and NEXT actions, compact expandable status chips and a mini timeline.
 - Dark HUD: independent done/doing/blocked rings, project gauges and full-width single-project groups.
 - Charcoal: percentage, stacked status bar and grouped ledger rows.
 - Dark modes open dedicated project screens. Flow, Kanban and Roadmap toggle independently.
@@ -27,3 +27,5 @@ node scripts/validate-projects.mjs
 ```
 
 The validator rejects duplicate task IDs, invalid states/dates, dangling dependencies and cycles. No framework or build step is required. `styles.css` is retained for the older OEV access page; the main dashboard uses `dashboard.css`.
+
+Detailed reference and responsive audit: [22 October visual audit](docs/visual-audit-2026-10-22.md).

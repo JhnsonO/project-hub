@@ -2130,6 +2130,26 @@
               "label": "Project hub audit and delivery log"
             }
           ]
+        },
+        {
+          "id": "ai-014",
+          "name": "Audit and refine the hub against the supplied mockups",
+          "status": "done",
+          "owner": "chatgpt",
+          "note": "Compared all ten reference screens and the source layout rules. Corrected theme geometry, Light details, responsive flow, ledger alignment, typography and task-detail navigation. Responsive checks and deployment evidence are recorded in the visual audit.",
+          "last_touched": "2026-10-22",
+          "lane": "Project Hub",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-22",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/project-hub/blob/main/docs/visual-audit-2026-10-22.md",
+              "label": "Detailed visual audit and verification"
+            }
+          ]
         }
       ]
     }
