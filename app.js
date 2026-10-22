@@ -243,10 +243,8 @@ function renderGroups() {
     heading.className = 'group-heading';
     const title = document.createElement('h3');
     title.textContent = groupName;
-    const n = document.createElement('span');
     const groupProjects = filtered.filter((project) => project.group === groupName);
-    n.textContent = `${String(groupProjects.length).padStart(2, '0')} PROJECT${groupProjects.length === 1 ? '' : 'S'}`;
-    heading.append(title, n);
+    heading.append(title);
     section.append(heading, ...groupProjects.map(makeProjectCard));
     projectRoot.append(section);
   });
