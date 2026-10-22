@@ -205,3 +205,15 @@
 .section-heading{justify-content:flex-end;border-bottom:0;padding:0}
 .section-heading>div:first-child{display:none}
 @media(max-width:640px){.section-heading{flex-direction:column;align-items:stretch}}
+.hero-title-row h1{font-size:clamp(30px,3.2vw,42px);letter-spacing:.12em}
+.phase-strip{display:flex;align-items:center;gap:13px;min-height:76px}
+.card-gauge{--progress:0%;width:76px;height:76px;flex:none;border-radius:50%;display:grid;place-items:center;position:relative;background:conic-gradient(var(--fg) var(--progress),var(--line) 0)}
+.card-gauge:before{content:"";position:absolute;inset:7px;border-radius:50%;background:var(--bg);border:5px solid var(--panel);box-shadow:inset 0 0 0 4px var(--line)}
+.card-gauge strong{position:relative;z-index:1;font:600 20px var(--display)}
+.phase-pips{display:flex;flex:1;flex-wrap:wrap;gap:4px}
+.phase-pip{width:12px;height:12px;border:1px solid var(--mid)}
+.phase-pip.done{background:var(--mid)}
+.phase-pip.doing{background:var(--fg)}
+.phase-pip.blocked{background:repeating-linear-gradient(135deg,var(--line) 0 2px,transparent 2px 4px)}
+.phase-count{color:var(--muted);font:9px var(--mono);white-space:nowrap}
+.milestone-details{margin-top:0}
