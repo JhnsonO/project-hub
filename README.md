@@ -29,3 +29,5 @@ node scripts/validate-projects.mjs
 The validator rejects duplicate task IDs, invalid states/dates, dangling dependencies and cycles. No framework or build step is required. `styles.css` is retained for the older OEV access page; the main dashboard uses `dashboard.css`.
 
 Detailed reference and responsive audit: [22 October visual audit](docs/visual-audit-2026-10-22.md).
+
+Timeline ranges can also record `date_basis` (`observed` activity or `planned`) and `date_note`; a supplied basis requires both dates, an explanatory note and source evidence. Bars are recorded work windows, not continuous effort. See [date reconciliation](docs/roadmap-date-evidence.md).

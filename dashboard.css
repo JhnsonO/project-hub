@@ -97,3 +97,5 @@
 .mini-bar{position:absolute;top:1px;height:12px;border:1px dashed var(--mid);border-radius:2px}.mini-bar.done{background:var(--mid);border-style:solid}.mini-bar.doing{background:var(--acc);border-style:solid}.mini-bar.blocked{background:repeating-linear-gradient(135deg,var(--line) 0 4px,transparent 4px 8px)}
 .footer{font-size:12px;line-height:1.5}
 @media(max-width:760px){.layout-light .modes button{font-size:12px}.footer{font-size:11px}}
+
+.gantt-label small{display:block;margin-top:3px;font:10px/1.4 var(--mono);color:var(--muted)}
