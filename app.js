@@ -4,32 +4,33 @@ const mobileGroupNav = document.querySelector('#mobile-group-nav');
 const projectRoot = document.querySelector('#projects');
 const countLabel = document.querySelector('#project-count');
 const searchInput = document.querySelector('#project-search');
-const pickUpLink = document.querySelector('#pick-up');
-const pickUpTitle = document.querySelector('#pick-up-title');
-const pickUpGroup = document.querySelector('#pick-up-group');
+const pickUp = document.querySelector('#pick-up');
 const groupNames = ['All projects', 'FFA', 'OEV', 'Personal'];
+const statuses = new Set(['done', 'doing', 'blocked', 'todo']);
 let projects = [];
 let selectedGroup = 'All';
 let searchTerm = '';
-const allowedHosts = { Google: 'docs.google.com', GitHub: 'github.com' };
 
-function validLink(link) {
+function validExternalLink(link) {
   if (!link || Object.keys(link).some((key) => !['provider', 'url'].includes(key))) return false;
-  if (!Object.hasOwn(allowedHosts, link.provider) || typeof link.url !== 'string') return false;
+  const hosts = { Google: 'docs.google.com', GitHub: 'github.com' };
+  if (!Object.hasOwn(hosts, link.provider) || typeof link.url !== 'string') return false;
   try {
     const url = new URL(link.url);
-    return url.protocol === 'https:' && url.hostname === allowedHosts[link.provider];
+    return url.protocol === 'https:' && url.hostname === hosts[link.provider];
   } catch (_) { return false; }
 }
 
-function validDirectory(data) {
-  if (!Array.isArray(data.projects) || !Array.isArray(data.groups)) return false;
+function validData(data) {
+  if (data.schema_version !== 2 || !Array.isArray(data.projects) || !Array.isArray(data.groups)) return false;
   const ids = new Set();
   return data.projects.every((project) => {
-    const keys = Object.keys(project);
-    if (keys.some((key) => !['id', 'name', 'mono', 'group', 'workspace', 'roadmap'].includes(key))) return false;
+    const allowed = ['id', 'name', 'mono', 'group', 'status', 'summary', 'milestones', 'next_step', 'blocker', 'watch', 'updated', 'workspace', 'roadmap', 'featured'];
+    if (Object.keys(project).some((key) => !allowed.includes(key))) return false;
     if (!project.id || !project.name || !project.mono || !groupNames.slice(1).includes(project.group) || ids.has(project.id)) return false;
-    if (!validLink(project.workspace) || (project.roadmap && !validLink(project.roadmap))) return false;
+    if (!project.status || !project.summary || !project.next_step || !Array.isArray(project.milestones) || project.milestones.length < 2) return false;
+    if (!project.milestones.every((phase) => phase.name && statuses.has(phase.status))) return false;
+    if (!project.updated || !validExternalLink(project.workspace) || (project.roadmap && !validExternalLink(project.roadmap))) return false;
     ids.add(project.id);
     return true;
   });
@@ -41,7 +42,7 @@ function setTheme(theme) {
   document.querySelectorAll('[data-theme-choice]').forEach((button) => {
     button.setAttribute('aria-pressed', String(button.dataset.themeChoice === theme));
   });
-  try { localStorage.setItem('johnson-project-hub-theme', theme); } catch (_) { /* Theme still works for this visit. */ }
+  try { localStorage.setItem('johnson-project-hub-theme', theme); } catch (_) { /* This visit still works. */ }
 }
 
 function getInitialTheme() {
@@ -51,7 +52,132 @@ function getInitialTheme() {
   } catch (_) { return 'dark'; }
 }
 
-function makeGroupButton(name, mobile = false) {
+function externalLink(link, text) {
+  const anchor = document.createElement('a');
+  anchor.href = link.url;
+  anchor.target = '_blank';
+  anchor.rel = 'noopener noreferrer';
+  anchor.className = 'detail-link';
+  anchor.textContent = text;
+  anchor.setAttribute('aria-label', `${text} (opens in a new tab)`);
+  const arrow = document.createElement('span');
+  arrow.setAttribute('aria-hidden', 'true');
+  arrow.textContent = '↗';
+  anchor.append(arrow);
+  return anchor;
+}
+
+function makePhaseStrip(project) {
+  const wrap = document.createElement('div');
+  wrap.className = 'phase-strip';
+  wrap.setAttribute('aria-label', 'Roadmap phases');
+  const phases = document.createElement('div');
+  phases.className = 'phase-pips';
+  const done = project.milestones.filter((phase) => phase.status === 'done').length;
+  project.milestones.forEach((phase) => {
+    const item = document.createElement('span');
+    item.className = `phase-pip ${phase.status}`;
+    item.title = `${phase.name}: ${phase.status}`;
+    item.setAttribute('aria-label', `${phase.name}: ${phase.status}`);
+    phases.append(item);
+  });
+  const counter = document.createElement('span');
+  counter.className = 'phase-count';
+  counter.textContent = `${done}/${project.milestones.length} PHASES`;
+  wrap.append(phases, counter);
+  return wrap;
+}
+
+function makeMilestoneList(project) {
+  const list = document.createElement('ol');
+  list.className = 'milestone-list';
+  project.milestones.forEach((phase) => {
+    const item = document.createElement('li');
+    item.className = `milestone ${phase.status}`;
+    const mark = document.createElement('span');
+    mark.className = 'milestone-mark';
+    mark.setAttribute('aria-hidden', 'true');
+    const label = document.createElement('span');
+    label.textContent = phase.name;
+    item.append(mark, label);
+    list.append(item);
+  });
+  return list;
+}
+
+function makeProjectCard(project) {
+  const card = document.createElement('article');
+  card.className = `project-card ${project.featured ? 'is-featured' : ''}`;
+  card.dataset.projectId = project.id;
+
+  const header = document.createElement('div');
+  header.className = 'card-heading';
+  const mono = document.createElement('span');
+  mono.className = 'project-mono';
+  mono.setAttribute('aria-hidden', 'true');
+  mono.textContent = project.mono;
+  const identity = document.createElement('div');
+  identity.className = 'project-identity';
+  const title = document.createElement('h4');
+  title.className = 'project-title';
+  title.textContent = project.name;
+  const updated = document.createElement('span');
+  updated.className = 'project-updated';
+  updated.textContent = `UPDATED ${project.updated}`;
+  identity.append(title, updated);
+  const badge = document.createElement('span');
+  badge.className = 'status-badge';
+  badge.textContent = project.status;
+  header.append(mono, identity, badge);
+
+  const summary = document.createElement('p');
+  summary.className = 'project-summary';
+  summary.textContent = project.summary;
+
+  const phaseTitle = document.createElement('div');
+  phaseTitle.className = 'roadmap-heading';
+  const roadmapLabel = document.createElement('span');
+  roadmapLabel.textContent = 'ROADMAP';
+  phaseTitle.append(roadmapLabel, makePhaseStrip(project));
+
+  const next = document.createElement('div');
+  next.className = 'card-callout next-callout';
+  const nextLabel = document.createElement('span');
+  nextLabel.className = 'callout-label';
+  nextLabel.textContent = 'NEXT';
+  const nextText = document.createElement('p');
+  nextText.textContent = project.next_step;
+  next.append(nextLabel, nextText);
+
+  const alert = document.createElement('div');
+  alert.className = `card-callout ${project.blocker ? 'blocked-callout' : 'watch-callout'}`;
+  if (project.blocker || project.watch) {
+    const alertLabel = document.createElement('span');
+    alertLabel.className = 'callout-label';
+    alertLabel.textContent = project.blocker ? 'BLOCKED' : 'WATCH';
+    const alertText = document.createElement('p');
+    alertText.textContent = project.blocker || project.watch;
+    alert.append(alertLabel, alertText);
+  }
+
+  const details = document.createElement('details');
+  details.className = 'milestone-details';
+  const summaryButton = document.createElement('summary');
+  summaryButton.textContent = 'View phase detail';
+  details.append(summaryButton, makeMilestoneList(project));
+
+  const footer = document.createElement('div');
+  footer.className = 'card-footer';
+  footer.append(externalLink(project.workspace, 'Open tracker'));
+  if (project.roadmap) footer.append(externalLink(project.roadmap, 'Full roadmap'));
+
+  card.append(header, summary, phaseTitle, next);
+  if (project.blocker || project.watch) card.append(alert);
+  card.append(details, footer);
+  return card;
+}
+
+function makeGroupButton(name) {
   const key = name === 'All projects' ? 'All' : name;
   const count = key === 'All' ? projects.length : projects.filter((project) => project.group === key).length;
   const button = document.createElement('button');
@@ -67,76 +193,47 @@ function makeGroupButton(name, mobile = false) {
   const label = document.createElement('span');
   label.textContent = name;
   left.append(square, label);
-  button.append(left);
-  if (!mobile) {
-    const n = document.createElement('span');
-    n.className = 'group-count';
-    n.textContent = String(count);
-    button.append(n);
-  }
-  button.addEventListener('click', () => {
-    selectedGroup = key;
-    renderGroups();
-  });
+  const n = document.createElement('span');
+  n.className = 'group-count';
+  n.textContent = String(count).padStart(2, '0');
+  button.append(left, n);
+  button.addEventListener('click', () => { selectedGroup = key; renderGroups(); });
   return button;
 }
 
-function safeExternalLink(link, className, label) {
-  const anchor = document.createElement('a');
-  anchor.className = className;
-  anchor.href = link.url;
-  anchor.target = '_blank';
-  anchor.rel = 'noopener noreferrer';
-  const text = document.createElement('span');
-  text.textContent = label;
-  const arrow = document.createElement('span');
-  arrow.setAttribute('aria-hidden', 'true');
-  arrow.textContent = '↗';
-  anchor.append(text, arrow);
-  return anchor;
-}
-
-function makeProjectCard(project) {
-  const card = document.createElement('article');
-  card.className = 'project-card';
-  const mono = document.createElement('span');
-  mono.className = 'project-mono';
-  mono.setAttribute('aria-hidden', 'true');
-  mono.textContent = project.mono;
-  const info = document.createElement('div');
-  const title = document.createElement('h4');
-  title.className = 'project-title';
+function renderPickUp() {
+  const project = projects.find((item) => item.featured) || projects.find((item) => item.milestones.some((phase) => phase.status === 'doing'));
+  if (!project) return;
+  pickUp.replaceChildren();
+  const copy = document.createElement('span');
+  copy.className = 'pick-copy';
+  const eyebrow = document.createElement('small');
+  eyebrow.textContent = `PICK UP HERE · ${project.group}`;
+  const title = document.createElement('strong');
   title.textContent = project.name;
-  info.append(title);
-  const actions = document.createElement('div');
-  actions.className = 'project-actions';
-  const link = safeExternalLink(project.workspace, 'workspace-link', 'Board');
-  link.setAttribute('aria-label', `Sign in and open ${project.name} private workspace`);
-  actions.append(link);
-  if (project.roadmap) {
-    const roadmap = safeExternalLink(project.roadmap, 'workspace-link roadmap-link', 'Roadmap');
-    roadmap.setAttribute('aria-label', `Sign in and open ${project.name} roadmap`);
-    actions.append(roadmap);
-  }
-  card.append(mono, info, actions);
-  return card;
+  const next = document.createElement('span');
+  next.textContent = project.next_step;
+  copy.append(eyebrow, title, next);
+  const button = externalLink(project.workspace, 'OPEN TRACKER');
+  button.className = 'pick-open';
+  pickUp.append(copy, button);
+  pickUp.hidden = false;
 }
 
 function renderGroups() {
-  groupNav.replaceChildren(...groupNames.map((name) => makeGroupButton(name)));
-  mobileGroupNav.replaceChildren(...groupNames.map((name) => makeGroupButton(name, true)));
+  groupNav.replaceChildren(...groupNames.map(makeGroupButton));
+  mobileGroupNav.replaceChildren(...groupNames.map(makeGroupButton));
   const needle = searchTerm.trim().toLocaleLowerCase();
   const filtered = projects.filter((project) => {
     const matchesGroup = selectedGroup === 'All' || project.group === selectedGroup;
-    const matchesSearch = !needle || `${project.name} ${project.group}`.toLocaleLowerCase().includes(needle);
-    return matchesGroup && matchesSearch;
+    const text = `${project.name} ${project.group} ${project.status} ${project.summary} ${project.next_step} ${project.blocker || ''} ${project.watch || ''}`;
+    return matchesGroup && (!needle || text.toLocaleLowerCase().includes(needle));
   });
-  countLabel.textContent = `${String(filtered.length).padStart(2, '0')} TOTAL`;
+  countLabel.textContent = `${String(filtered.length).padStart(2, '0')} SHOWN`;
   projectRoot.replaceChildren();
-  const displayedGroups = [...new Set(filtered.map((project) => project.group))];
-  displayedGroups.forEach((groupName) => {
-    const group = document.createElement('section');
-    group.className = 'project-group';
+  [...new Set(filtered.map((project) => project.group))].forEach((groupName) => {
+    const section = document.createElement('section');
+    section.className = `project-group group-${groupName.toLowerCase()}`;
     const heading = document.createElement('div');
     heading.className = 'group-heading';
     const title = document.createElement('h3');
@@ -145,19 +242,34 @@ function renderGroups() {
     const groupProjects = filtered.filter((project) => project.group === groupName);
     n.textContent = `${String(groupProjects.length).padStart(2, '0')} PROJECT${groupProjects.length === 1 ? '' : 'S'}`;
     heading.append(title, n);
-    group.append(heading, ...groupProjects.map(makeProjectCard));
-    projectRoot.append(group);
+    section.append(heading, ...groupProjects.map(makeProjectCard));
+    projectRoot.append(section);
   });
   if (!filtered.length) {
     const empty = document.createElement('p');
     empty.className = 'empty-state';
-    empty.textContent = 'No matches.';
+    empty.textContent = 'No projects match.';
     projectRoot.append(empty);
   }
 }
 
+function renderOverview(snapshotDate) {
+  const active = projects.filter((project) => project.milestones.some((phase) => phase.status === 'doing')).length;
+  const blocked = projects.reduce((total, project) => total + project.milestones.filter((phase) => phase.status === 'blocked').length, 0);
+  document.querySelector('#active-count').textContent = String(active).padStart(2, '0');
+  document.querySelector('#hero-summary').textContent = `${projects.length} projects · ${blocked} blocked phases`;
+  const date = new Date(`${snapshotDate}T00:00:00Z`);
+  const label = Number.isNaN(date.getTime()) ? snapshotDate : date.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric', timeZone: 'UTC' }).toUpperCase();
+  document.querySelector('#updated-label').textContent = `UPDATED ${label}`;
+  renderPickUp();
+}
+
 function showLoadError() {
-  projectRoot.innerHTML = '<div class="error-state">Projects unavailable. Refresh to retry.</div>';
+  projectRoot.replaceChildren();
+  const error = document.createElement('div');
+  error.className = 'error-state';
+  error.textContent = 'Project status could not load. Refresh to retry.';
+  projectRoot.append(error);
   countLabel.textContent = 'Unavailable';
 }
 
@@ -165,25 +277,13 @@ document.querySelectorAll('[data-theme-choice]').forEach((button) => {
   button.addEventListener('click', () => setTheme(button.dataset.themeChoice));
 });
 setTheme(getInitialTheme());
-searchInput.addEventListener('input', () => {
-  searchTerm = searchInput.value;
-  renderGroups();
-});
+searchInput.addEventListener('input', () => { searchTerm = searchInput.value; renderGroups(); });
 fetch('./data/projects.json', { cache: 'no-store' })
   .then((response) => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); })
   .then((data) => {
-    if (!validDirectory(data)) throw new Error('Invalid project directory');
+    if (!validData(data)) throw new Error('Invalid project status data');
     projects = data.projects;
-    const oevProject = projects.find((project) => project.id === 'oev');
-    if (oevProject) {
-      pickUpTitle.textContent = oevProject.name;
-      pickUpGroup.textContent = oevProject.group;
-      pickUpLink.href = oevProject.workspace.url;
-      pickUpLink.target = '_blank';
-      pickUpLink.rel = 'noopener noreferrer';
-      pickUpLink.setAttribute('aria-label', `Open ${oevProject.name} board; sign-in required`);
-      pickUpLink.hidden = false;
-    }
+    renderOverview(data.updated);
     renderGroups();
   })
   .catch(showLoadError);

@@ -4,27 +4,35 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0a0a0a">
-  <meta name="description" content="A single entry point for Johnson's private project workspaces.">
+  <meta name="description" content="Johnson's project progress dashboard.">
   <title>Project Hub — Johnson</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Newsreader:ital,wght@0,500;1,500&family=Rajdhani:wght@500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css?v=2">
-  <script src="./app.js" defer></script>
+  <link rel="stylesheet" href="./styles.css?v=3">
+  <script src="./app.js?v=3" defer></script>
 </head>
 <body>
   <div id="app" class="app-shell" data-theme="dark">
     <a class="skip-link" href="#main">Skip to projects</a>
     <aside class="sidebar" aria-label="Project navigation">
       <a class="brand" href="./" aria-label="Johnson's project hub home"><span class="brand-mark">J</span><span>PROJECT HUB</span></a>
+      <div class="side-label">PROJECTS</div>
       <nav id="group-nav" class="group-nav" aria-label="Filter projects"></nav>
       <div class="side-rule"></div>
-      <div class="access-key"><span class="access-lock" aria-hidden="true">▣</span><span>PRIVATE</span></div>
+      <div class="status-legend" aria-label="Project phase legend">
+        <span><i class="status-swatch done" aria-hidden="true"></i>Done</span>
+        <span><i class="status-swatch doing" aria-hidden="true"></i>Active</span>
+        <span><i class="status-swatch blocked" aria-hidden="true"></i>Blocked</span>
+        <span><i class="status-swatch todo" aria-hidden="true"></i>Next</span>
+      </div>
       <div class="side-spacer"></div>
+      <div class="access-key"><span class="access-lock" aria-hidden="true">▣</span><span>PROJECT WORKSPACE</span></div>
     </aside>
 
     <main id="main" class="main-content">
       <header class="topbar">
+        <div class="topbar-meta"><span class="signal" aria-hidden="true"></span><span id="updated-label">LOADING STATUS</span></div>
         <fieldset class="theme-switch" aria-label="Display mode">
           <legend class="sr-only">Display mode</legend>
           <button type="button" data-theme-choice="light" aria-pressed="false">Light</button>
@@ -34,22 +42,25 @@
       </header>
 
       <section class="hero" aria-labelledby="page-title">
-        <h1 id="page-title">Your projects<span class="title-mark">.</span></h1>
+        <div class="hero-title-row">
+          <h1 id="page-title">Your projects<span class="title-mark">.</span></h1>
+          <div class="hero-count"><strong id="active-count">—</strong><span>IN MOTION</span></div>
+        </div>
+        <div class="hero-summary" id="hero-summary" aria-live="polite"></div>
       </section>
 
-      <a id="pick-up" class="pick-up" href="#projects" hidden>
-        <span><small>PICK UP HERE <i aria-hidden="true">·</i> <span id="pick-up-group">OEV</span></small><strong id="pick-up-title">OEV Broadcast</strong></span>
-        <span class="pick-arrow">OPEN <span aria-hidden="true">↗</span></span>
-      </a>
+      <section id="pick-up" class="pick-up" aria-label="Priority next action" hidden></section>
 
       <section class="directory" aria-labelledby="directory-title">
-        <div class="section-heading"><h2 id="directory-title">Projects</h2><div id="project-count" class="item-count" aria-live="polite"></div></div>
-        <div class="filter-row">
+        <div class="section-heading">
+          <div><h2 id="directory-title">Project status</h2><span id="project-count" class="item-count" aria-live="polite"></span></div>
           <label class="search-box"><span aria-hidden="true">⌕</span><span class="sr-only">Search projects</span><input id="project-search" type="search" placeholder="Search" autocomplete="off"></label>
-          <div id="mobile-group-nav" class="mobile-group-nav" aria-label="Filter by group"></div>
         </div>
-        <div id="projects" class="project-groups"><p class="loading">Loading project directory…</p></div>
+        <div id="mobile-group-nav" class="mobile-group-nav" aria-label="Filter by group"></div>
+        <div id="projects" class="project-groups"><p class="loading">Loading projects…</p></div>
       </section>
+
+      <footer class="page-footer"><span>STATUS SNAPSHOT · SOURCE TRACKERS LINKED PER PROJECT</span><span id="data-note">Progress is based on verified project notes.</span></footer>
     </main>
   </div>
 </body>
