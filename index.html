@@ -17,19 +17,14 @@
     <a class="skip-link" href="#main">Skip to projects</a>
     <aside class="sidebar" aria-label="Project navigation">
       <a class="brand" href="./" aria-label="Johnson's project hub home"><span class="brand-mark">J</span><span>PROJECT HUB</span></a>
-      <div class="side-label">WORKSPACES</div>
       <nav id="group-nav" class="group-nav" aria-label="Filter projects"></nav>
       <div class="side-rule"></div>
-      <div class="side-label">ACCESS</div>
-      <p class="side-note">Project boards and roadmaps open in their protected Google or GitHub workspace.</p>
-      <div class="access-key"><span class="access-lock" aria-hidden="true">▣</span><span>Sign-in required</span></div>
+      <div class="access-key"><span class="access-lock" aria-hidden="true">▣</span><span>PRIVATE</span></div>
       <div class="side-spacer"></div>
-      <a class="side-oev" href="./oev-roadmap.html">OEV project entry <span aria-hidden="true">↗</span></a>
     </aside>
 
     <main id="main" class="main-content">
       <header class="topbar">
-        <div class="topbar-meta"><span class="signal" aria-hidden="true"></span><span>JOHNSON // PROJECT INDEX</span></div>
         <fieldset class="theme-switch" aria-label="Display mode">
           <legend class="sr-only">Display mode</legend>
           <button type="button" data-theme-choice="light" aria-pressed="false">Light</button>
@@ -39,36 +34,22 @@
       </header>
 
       <section class="hero" aria-labelledby="page-title">
-        <div class="eyebrow">ALL PROJECTS <span>//</span> PRIVATE WORKSPACES</div>
         <h1 id="page-title">Your projects<span class="title-mark">.</span></h1>
-        <p class="hero-copy">One doorway to every project. Open a workspace to view its board and roadmap.</p>
       </section>
 
-      <section class="access-notice" aria-label="Privacy notice">
-        <div class="notice-glyph" aria-hidden="true">▣</div>
-        <div><h2>Boards stay private</h2><p>This public page is a directory only. Project status, tasks, roadmaps, evidence and code stay behind Google or GitHub sign-in.</p></div>
-      </section>
-
-      <section class="pick-up" aria-label="Continue working">
-        <div class="pick-copy"><span class="eyebrow">PICK UP HERE</span><strong>Choose a project workspace</strong><span>Sign in with the account that has access.</span></div>
-        <a href="#projects" class="primary-link">View workspaces <span aria-hidden="true">↓</span></a>
-      </section>
+      <a id="pick-up" class="pick-up" href="#projects" hidden>
+        <span><small>PICK UP HERE <i aria-hidden="true">·</i> <span id="pick-up-group">OEV</span></small><strong id="pick-up-title">OEV Broadcast</strong></span>
+        <span class="pick-arrow">OPEN <span aria-hidden="true">↗</span></span>
+      </a>
 
       <section class="directory" aria-labelledby="directory-title">
-        <div class="section-heading"><div><span class="eyebrow">DIRECTORY</span><h2 id="directory-title">All workspaces</h2></div><div id="project-count" class="item-count" aria-live="polite"></div></div>
+        <div class="section-heading"><h2 id="directory-title">Projects</h2><div id="project-count" class="item-count" aria-live="polite"></div></div>
         <div class="filter-row">
-          <label class="search-box"><span aria-hidden="true">⌕</span><span class="sr-only">Search projects</span><input id="project-search" type="search" placeholder="Find a project" autocomplete="off"></label>
+          <label class="search-box"><span aria-hidden="true">⌕</span><span class="sr-only">Search projects</span><input id="project-search" type="search" placeholder="Search" autocomplete="off"></label>
           <div id="mobile-group-nav" class="mobile-group-nav" aria-label="Filter by group"></div>
         </div>
         <div id="projects" class="project-groups"><p class="loading">Loading project directory…</p></div>
       </section>
-
-      <section class="today-disclosure">
-        <button id="access-toggle" type="button" class="disclosure-button" aria-expanded="false" aria-controls="access-details"><span class="disclosure-mark" aria-hidden="true">▸</span><span>ACCESS // HOW THIS HUB WORKS</span></button>
-        <div id="access-details" class="disclosure-content" hidden><p>Use the cards above to open each project's existing private workspace. Google Docs ask you to sign in with the account that has access. GitHub boards and private repositories ask you to sign in to GitHub. This site never copies private project data into the public directory.</p></div>
-      </section>
-
-      <footer class="page-footer"><span>PROJECT HUB // PUBLIC ENTRY POINT</span><span>Boards and roadmaps require sign-in</span></footer>
     </main>
   </div>
 </body>
