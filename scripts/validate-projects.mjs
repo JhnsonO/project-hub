@@ -1,6 +1,7 @@
 import { readFile } from 'node:fs/promises';
+import { dependencyLayers } from '../model.mjs';
 
-const file = new URL('../data/projects.json', import.meta.url);
+const file = process.argv[2] || new URL('../data/projects.json', import.meta.url);
 let source;
 try { source = await readFile(file, 'utf8'); }
 catch { throw new Error('Could not find data/projects.json'); }
@@ -11,7 +12,7 @@ catch { throw new Error('data/projects.json is not valid JSON'); }
 const allowedGroups = new Set(['FFA', 'OEV', 'Personal']);
 const allowedStatuses = new Set(['done', 'doing', 'blocked', 'todo']);
 const allowedHosts = new Map([['Google', 'docs.google.com'], ['GitHub', 'github.com']]);
-const projectKeys = new Set(['id', 'name', 'mono', 'group', 'status', 'summary', 'milestones', 'next_step', 'blocker', 'watch', 'updated', 'workspace', 'roadmap', 'featured']);
+const projectKeys = new Set(['id', 'name', 'mono', 'group', 'status', 'summary', 'milestones', 'next_step', 'blocker', 'watch', 'updated', 'workspace', 'roadmap', 'featured', 'tasks']);
 const fail = (message) => { console.error(`Project status validation failed: ${message}`); process.exit(1); };
 
 if (data.schema_version !== 2) fail('unsupported schema_version');
@@ -23,6 +24,7 @@ if (data.groups.some((group) => !allowedGroups.has(group))) fail('unknown group'
 if (data.projects.length === 0) fail('no projects found');
 
 const ids = new Set();
+const allTaskIds = new Set();
 function validateLink(link, where) {
   if (!link || typeof link.url !== 'string' || !allowedHosts.has(link.provider)) fail(`${where}: invalid link record`);
   if (Object.keys(link).some((key) => !['provider', 'url'].includes(key))) fail(`${where}: unexpected link field`);
@@ -39,6 +41,25 @@ for (const project of data.projects) {
   if (!/^\d{2} [A-Z]{3}$/.test(project.updated || '')) fail(`${project.id}.updated must be DD MON`);
   if (!Array.isArray(project.milestones) || project.milestones.length < 2) fail(`${project.id} needs at least two milestones`);
   if (project.milestones.some((phase) => !phase.name || Object.keys(phase).some((key) => !['name', 'status'].includes(key)) || !allowedStatuses.has(phase.status))) fail(`${project.id} has an invalid milestone`);
+  if (project.tasks !== undefined) {
+    const taskKeys = new Set(['id','name','status','owner','note','last_touched','lane','start','end','depends_on']);
+    if (!Array.isArray(project.tasks) || !project.tasks.length) fail(`${project.id}: tasks must be a nonempty array`);
+    const taskIds = new Set();
+    for (const task of project.tasks) {
+      if (!task.id || !task.name || !allowedStatuses.has(task.status) || Object.keys(task).some(k=>!taskKeys.has(k))) fail(`${project.id}: invalid task`);
+      if (!task.id.startsWith(project.id+'-') || allTaskIds.has(task.id)) fail(`${task.id}: task IDs must be unique and prefixed by project ID`);
+      allTaskIds.add(task.id);
+      if (taskIds.has(task.id)) fail(`${project.id}: duplicate task id`);
+      taskIds.add(task.id);
+      if (task.owner != null && !['claude','chatgpt'].includes(task.owner)) fail(`${task.id}: invalid owner`);
+      if (!Array.isArray(task.depends_on) || new Set(task.depends_on).size !== task.depends_on.length) fail(`${task.id}: invalid dependencies`);
+      for (const key of ['start','end','last_touched']) if (task[key] != null && (!/^\d{4}-\d{2}-\d{2}$/.test(task[key]) || Number.isNaN(Date.parse(task[key])) || new Date(task[key]).toISOString().slice(0,10) !== task[key])) fail(`${task.id}: invalid ${key}`);
+      if (Boolean(task.start)!==Boolean(task.end) || (task.start && task.start>task.end)) fail(`${task.id}: invalid date range`);
+    }
+    const dates=project.tasks.flatMap(t=>[t.start,t.end]).filter(Boolean).map(Date.parse);
+    if(dates.length && Math.max(...dates)-Math.min(...dates)>5*366*86400000) fail(`${project.id}: timeline exceeds five years`);
+    try { dependencyLayers(project.tasks); } catch (error) { fail(`${project.id}: ${error.message}`); }
+  }
   validateLink(project.workspace, `${project.id}.workspace`);
   if (project.roadmap) validateLink(project.roadmap, `${project.id}.roadmap`);
   for (const key of ['blocker', 'watch']) if (project[key] !== undefined && typeof project[key] !== 'string') fail(`${project.id}.${key} must be text`);
