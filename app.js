@@ -6,6 +6,7 @@ const countLabel = document.querySelector('#project-count');
 const searchInput = document.querySelector('#project-search');
 const pickUpLink = document.querySelector('#pick-up');
 const pickUpTitle = document.querySelector('#pick-up-title');
+const pickUpGroup = document.querySelector('#pick-up-group');
 const groupNames = ['All projects', 'FFA', 'OEV', 'Personal'];
 let projects = [];
 let selectedGroup = 'All';
@@ -176,6 +177,7 @@ fetch('./data/projects.json', { cache: 'no-store' })
     const oevProject = projects.find((project) => project.id === 'oev');
     if (oevProject) {
       pickUpTitle.textContent = oevProject.name;
+      pickUpGroup.textContent = oevProject.group;
       pickUpLink.href = oevProject.workspace.url;
       pickUpLink.target = '_blank';
       pickUpLink.rel = 'noopener noreferrer';
