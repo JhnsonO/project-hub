@@ -26,6 +26,7 @@
 .hero h1{margin:0;font-size:clamp(38px,4.2vw,54px);letter-spacing:-.01em}
 .hero .eyebrow{display:none}
 .pick-up{min-height:76px;padding:14px 20px;background:var(--fg);color:var(--bg);text-decoration:none;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.pick-up[hidden]{display:none}
 .pick-up:hover{filter:brightness(.92)}
 .pick-up>span:first-child{display:flex;flex-direction:column;gap:2px}
 .pick-up small{font:11px var(--mono);letter-spacing:.1em;opacity:.72}
@@ -47,7 +48,7 @@
 .project-title{font:600 21px/1.12 var(--display)}
 .project-meta{margin-top:6px}
 .project-actions{grid-column:1/-1;grid-row:3;justify-content:flex-start;border-top:1px solid var(--line);padding-top:9px}
-.workspace-link{min-height:38px;padding:0 11px;font-size:10px;text-transform:uppercase;letter-spacing:.08em}
+.workspace-link{min-height:44px;padding:0 11px;font-size:10px;text-transform:uppercase;letter-spacing:.08em}
 .page-footer{padding-top:10px}
 .app-shell[data-theme="light"] .pick-up{border-radius:14px}
 .app-shell[data-theme="light"] .pick-arrow{border-radius:50%}
