@@ -71,9 +71,15 @@ function makePhaseStrip(project) {
   const wrap = document.createElement('div');
   wrap.className = 'phase-strip';
   wrap.setAttribute('aria-label', 'Roadmap phases');
+  const done = project.milestones.filter((phase) => phase.status === 'done').length;
+  const percent = Math.round(done / project.milestones.length * 100);
+  const gauge = document.createElement('div');
+  gauge.className = 'card-gauge';
+  gauge.style.setProperty('--progress', `${percent}%`);
+  gauge.setAttribute('aria-label', `${percent}% complete`);
+  const percentText = document.createElement('strong'); percentText.textContent = `${percent}%`; gauge.append(percentText);
   const phases = document.createElement('div');
   phases.className = 'phase-pips';
-  const done = project.milestones.filter((phase) => phase.status === 'done').length;
   const blocked = project.milestones.filter((phase) => phase.status === 'blocked').length;
   project.milestones.forEach((phase) => {
     const item = document.createElement('span');
@@ -85,7 +91,7 @@ function makePhaseStrip(project) {
   const counter = document.createElement('span');
   counter.className = 'phase-count';
   counter.textContent = `${done}/${project.milestones.length}${blocked ? ` · ${blocked} BLOCKED` : ''}`;
-  wrap.append(phases, counter);
+  wrap.append(gauge, phases, counter);
   return wrap;
 }
 
@@ -176,15 +182,6 @@ function makeProjectCard(project) {
 
   const phaseTitle = makePhaseStrip(project);
 
-  const next = document.createElement('div');
-  next.className = 'card-callout next-callout';
-  const nextLabel = document.createElement('span');
-  nextLabel.className = 'callout-label';
-  nextLabel.textContent = 'NEXT';
-  const nextText = document.createElement('p');
-  nextText.textContent = project.next_step;
-  next.append(nextLabel, nextText);
-
   const details = document.createElement('details');
   details.className = 'milestone-details';
   const summaryButton = document.createElement('summary');
@@ -210,7 +207,7 @@ function makeProjectCard(project) {
   detailBody.append(footer);
   details.append(summaryButton, detailBody);
 
-  card.append(header, phaseTitle, next);
+  card.append(header, phaseTitle);
   card.append(details);
   return card;
 }
