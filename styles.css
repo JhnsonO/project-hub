@@ -51,7 +51,7 @@
 .workspace-link{min-height:44px;padding:0 11px;font-size:10px;text-transform:uppercase;letter-spacing:.08em}
 .page-footer{padding-top:10px}
 .app-shell[data-theme="light"] .pick-up{border-radius:14px}
-.app-shell[data-theme="light"] .pick-arrow{border-radius:50%}
+.app-shell[data-theme="light"] .pick-arrow{border-radius:999px}
 .app-shell[data-theme="light"] .project-card{border-radius:14px}
 .app-shell[data-theme="char"] .project-card{grid-template-columns:38px minmax(0,1fr);grid-template-rows:auto 1fr auto;min-height:150px;padding:15px;border:1px solid var(--line);background:var(--panel)}
 .app-shell[data-theme="char"] .project-mono{display:grid}
