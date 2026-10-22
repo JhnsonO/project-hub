@@ -74,6 +74,7 @@ function makePhaseStrip(project) {
   const phases = document.createElement('div');
   phases.className = 'phase-pips';
   const done = project.milestones.filter((phase) => phase.status === 'done').length;
+  const blocked = project.milestones.filter((phase) => phase.status === 'blocked').length;
   project.milestones.forEach((phase) => {
     const item = document.createElement('span');
     item.className = `phase-pip ${phase.status}`;
@@ -83,26 +84,39 @@ function makePhaseStrip(project) {
   });
   const counter = document.createElement('span');
   counter.className = 'phase-count';
-  counter.textContent = `${done}/${project.milestones.length} PHASES`;
+  counter.textContent = `${done}/${project.milestones.length}${blocked ? ` · ${blocked} BLOCKED` : ''}`;
   wrap.append(phases, counter);
   return wrap;
 }
 
 function makeMilestoneList(project) {
-  const list = document.createElement('ol');
-  list.className = 'milestone-list';
-  project.milestones.forEach((phase) => {
-    const item = document.createElement('li');
-    item.className = `milestone ${phase.status}`;
-    const mark = document.createElement('span');
-    mark.className = 'milestone-mark';
-    mark.setAttribute('aria-hidden', 'true');
-    const label = document.createElement('span');
-    label.textContent = phase.name;
-    item.append(mark, label);
-    list.append(item);
+  const board = document.createElement('div');
+  board.className = 'milestone-board';
+  const labels = { todo: 'Next', doing: 'Active', blocked: 'Blocked', done: 'Done' };
+  ['todo', 'doing', 'blocked', 'done'].forEach((status) => {
+    const phases = project.milestones.filter((phase) => phase.status === status);
+    if (!phases.length) return;
+    const lane = document.createElement('section');
+    lane.className = `milestone-lane ${status}`;
+    const heading = document.createElement('h5');
+    heading.textContent = `${labels[status]} · ${phases.length}`;
+    const list = document.createElement('ul');
+    list.className = 'milestone-list';
+    phases.forEach((phase) => {
+      const item = document.createElement('li');
+      item.className = `milestone ${status}`;
+      const mark = document.createElement('span');
+      mark.className = 'milestone-mark';
+      mark.setAttribute('aria-hidden', 'true');
+      const label = document.createElement('span');
+      label.textContent = phase.name;
+      item.append(mark, label);
+      list.append(item);
+    });
+    lane.append(heading, list);
+    board.append(lane);
   });
-  return list;
+  return board;
 }
 
 function makeProjectCard(project) {
@@ -121,24 +135,13 @@ function makeProjectCard(project) {
   const title = document.createElement('h4');
   title.className = 'project-title';
   title.textContent = project.name;
-  const updated = document.createElement('span');
-  updated.className = 'project-updated';
-  updated.textContent = `UPDATED ${project.updated}`;
-  identity.append(title, updated);
+  identity.append(title);
   const badge = document.createElement('span');
   badge.className = 'status-badge';
   badge.textContent = project.status;
   header.append(mono, identity, badge);
 
-  const summary = document.createElement('p');
-  summary.className = 'project-summary';
-  summary.textContent = project.summary;
-
-  const phaseTitle = document.createElement('div');
-  phaseTitle.className = 'roadmap-heading';
-  const roadmapLabel = document.createElement('span');
-  roadmapLabel.textContent = 'ROADMAP';
-  phaseTitle.append(roadmapLabel, makePhaseStrip(project));
+  const phaseTitle = makePhaseStrip(project);
 
   const next = document.createElement('div');
   next.className = 'card-callout next-callout';
@@ -149,31 +152,33 @@ function makeProjectCard(project) {
   nextText.textContent = project.next_step;
   next.append(nextLabel, nextText);
 
-  const alert = document.createElement('div');
-  alert.className = `card-callout ${project.blocker ? 'blocked-callout' : 'watch-callout'}`;
-  if (project.blocker || project.watch) {
-    const alertLabel = document.createElement('span');
-    alertLabel.className = 'callout-label';
-    alertLabel.textContent = project.blocker ? 'BLOCKED' : 'WATCH';
-    const alertText = document.createElement('p');
-    alertText.textContent = project.blocker || project.watch;
-    alert.append(alertLabel, alertText);
-  }
-
   const details = document.createElement('details');
   details.className = 'milestone-details';
   const summaryButton = document.createElement('summary');
-  summaryButton.textContent = 'View phase detail';
-  details.append(summaryButton, makeMilestoneList(project));
+  summaryButton.textContent = 'Details';
+
+  const detailBody = document.createElement('div');
+  detailBody.className = 'card-details-body';
+  const projectSummary = document.createElement('p');
+  projectSummary.className = 'project-summary';
+  projectSummary.textContent = project.summary;
+  detailBody.append(projectSummary, makeMilestoneList(project));
+  if (project.blocker || project.watch) {
+    const fullAlert = document.createElement('p');
+    fullAlert.className = 'detail-alert';
+    fullAlert.textContent = `${project.blocker ? 'Blocked: ' : 'Watch: '}${project.blocker || project.watch}`;
+    detailBody.append(fullAlert);
+  }
 
   const footer = document.createElement('div');
   footer.className = 'card-footer';
   footer.append(externalLink(project.workspace, 'Open tracker'));
   if (project.roadmap) footer.append(externalLink(project.roadmap, 'Full roadmap'));
+  detailBody.append(footer);
+  details.append(summaryButton, detailBody);
 
-  card.append(header, summary, phaseTitle, next);
-  if (project.blocker || project.watch) card.append(alert);
-  card.append(details, footer);
+  card.append(header, phaseTitle, next);
+  card.append(details);
   return card;
 }
 
@@ -255,9 +260,7 @@ function renderGroups() {
 
 function renderOverview(snapshotDate) {
   const active = projects.filter((project) => project.milestones.some((phase) => phase.status === 'doing')).length;
-  const blocked = projects.reduce((total, project) => total + project.milestones.filter((phase) => phase.status === 'blocked').length, 0);
   document.querySelector('#active-count').textContent = String(active).padStart(2, '0');
-  document.querySelector('#hero-summary').textContent = `${projects.length} projects · ${blocked} blocked phases`;
   const date = new Date(`${snapshotDate}T00:00:00Z`);
   const label = Number.isNaN(date.getTime()) ? snapshotDate : date.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric', timeZone: 'UTC' }).toUpperCase();
   document.querySelector('#updated-label').textContent = `UPDATED ${label}`;
