@@ -4,6 +4,8 @@ const mobileGroupNav = document.querySelector('#mobile-group-nav');
 const projectRoot = document.querySelector('#projects');
 const countLabel = document.querySelector('#project-count');
 const searchInput = document.querySelector('#project-search');
+const pickUpLink = document.querySelector('#pick-up');
+const pickUpTitle = document.querySelector('#pick-up-title');
 const groupNames = ['All projects', 'FFA', 'OEV', 'Personal'];
 let projects = [];
 let selectedGroup = 'All';
@@ -104,12 +106,7 @@ function makeProjectCard(project) {
   const title = document.createElement('h4');
   title.className = 'project-title';
   title.textContent = project.name;
-  const meta = document.createElement('div');
-  meta.className = 'project-meta';
-  const provider = document.createElement('span');
-  provider.textContent = `${project.workspace.provider} // PRIVATE`;
-  meta.append(provider);
-  info.append(title, meta);
+  info.append(title);
   const actions = document.createElement('div');
   actions.className = 'project-actions';
   const link = safeExternalLink(project.workspace, 'workspace-link', 'Board');
@@ -133,7 +130,7 @@ function renderGroups() {
     const matchesSearch = !needle || `${project.name} ${project.group}`.toLocaleLowerCase().includes(needle);
     return matchesGroup && matchesSearch;
   });
-  countLabel.textContent = String(filtered.length).padStart(2, '0');
+  countLabel.textContent = `${String(filtered.length).padStart(2, '0')} TOTAL`;
   projectRoot.replaceChildren();
   const displayedGroups = [...new Set(filtered.map((project) => project.group))];
   displayedGroups.forEach((groupName) => {
@@ -145,7 +142,7 @@ function renderGroups() {
     title.textContent = groupName;
     const n = document.createElement('span');
     const groupProjects = filtered.filter((project) => project.group === groupName);
-    n.textContent = String(groupProjects.length).padStart(2, '0');
+    n.textContent = `${String(groupProjects.length).padStart(2, '0')} PROJECT${groupProjects.length === 1 ? '' : 'S'}`;
     heading.append(title, n);
     group.append(heading, ...groupProjects.map(makeProjectCard));
     projectRoot.append(group);
@@ -176,6 +173,15 @@ fetch('./data/projects.json', { cache: 'no-store' })
   .then((data) => {
     if (!validDirectory(data)) throw new Error('Invalid project directory');
     projects = data.projects;
+    const oevProject = projects.find((project) => project.id === 'oev');
+    if (oevProject) {
+      pickUpTitle.textContent = oevProject.name;
+      pickUpLink.href = oevProject.workspace.url;
+      pickUpLink.target = '_blank';
+      pickUpLink.rel = 'noopener noreferrer';
+      pickUpLink.setAttribute('aria-label', `Open ${oevProject.name} board; sign-in required`);
+      pickUpLink.hidden = false;
+    }
     renderGroups();
   })
   .catch(showLoadError);
