@@ -42,7 +42,7 @@ for (const project of data.projects) {
   if (!Array.isArray(project.milestones) || project.milestones.length < 2) fail(`${project.id} needs at least two milestones`);
   if (project.milestones.some((phase) => !phase.name || Object.keys(phase).some((key) => !['name', 'status'].includes(key)) || !allowedStatuses.has(phase.status))) fail(`${project.id} has an invalid milestone`);
   if (project.tasks !== undefined) {
-    const taskKeys = new Set(['id','name','status','owner','note','last_touched','lane','start','end','depends_on']);
+    const taskKeys = new Set(['id','name','status','owner','note','last_touched','lane','start','end','depends_on','completed_on','evidence']);
     if (!Array.isArray(project.tasks) || !project.tasks.length) fail(`${project.id}: tasks must be a nonempty array`);
     const taskIds = new Set();
     for (const task of project.tasks) {
@@ -53,10 +53,19 @@ for (const project of data.projects) {
       taskIds.add(task.id);
       if (task.owner != null && !['claude','chatgpt'].includes(task.owner)) fail(`${task.id}: invalid owner`);
       if (!Array.isArray(task.depends_on) || new Set(task.depends_on).size !== task.depends_on.length) fail(`${task.id}: invalid dependencies`);
-      for (const key of ['start','end','last_touched']) if (task[key] != null && (!/^\d{4}-\d{2}-\d{2}$/.test(task[key]) || Number.isNaN(Date.parse(task[key])) || new Date(task[key]).toISOString().slice(0,10) !== task[key])) fail(`${task.id}: invalid ${key}`);
+      for (const key of ['start','end','last_touched','completed_on']) if (task[key] != null && (!/^\d{4}-\d{2}-\d{2}$/.test(task[key]) || Number.isNaN(Date.parse(task[key])) || new Date(task[key]).toISOString().slice(0,10) !== task[key])) fail(`${task.id}: invalid ${key}`);
+      if (task.completed_on && task.status!=='done') fail(`${task.id}: only done items can have a completion date`);
+      if (task.evidence !== undefined) {
+        if (!Array.isArray(task.evidence) || !task.evidence.length) fail(`${task.id}: invalid evidence`);
+        for (const evidence of task.evidence) {
+          const {label,...link}=evidence;
+          if (typeof label!=='string' || !label) fail(`${task.id}: missing evidence label`);
+          validateLink(link,`${task.id}.evidence`);
+        }
+      }
       if (Boolean(task.start)!==Boolean(task.end) || (task.start && task.start>task.end)) fail(`${task.id}: invalid date range`);
     }
-    const dates=project.tasks.flatMap(t=>[t.start,t.end]).filter(Boolean).map(Date.parse);
+    const dates=project.tasks.flatMap(t=>[t.start,t.end,t.completed_on]).filter(Boolean).map(Date.parse);
     if(dates.length && Math.max(...dates)-Math.min(...dates)>5*366*86400000) fail(`${project.id}: timeline exceeds five years`);
     try { dependencyLayers(project.tasks); } catch (error) { fail(`${project.id}: ${error.message}`); }
   }

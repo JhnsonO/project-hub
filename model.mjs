@@ -25,11 +25,17 @@ export function todayTasks(projects) {
     .sort((a,b)=>({blocked:0,doing:1,todo:2}[a.status]-{blocked:0,doing:1,todo:2}[b.status])||a.project.id.localeCompare(b.project.id)||a.id.localeCompare(b.id)).slice(0,5);
 }
 export function timeline(tasks) {
-  const dated=tasks.filter(t=>/^\d{4}-\d{2}-\d{2}$/.test(t.start||'')&&/^\d{4}-\d{2}-\d{2}$/.test(t.end||''));
-  if(!dated.length)return {dated,undated:tasks,weeks:[],start:0,end:0};
+  const dated=[], undated=[];
+  const isDate=d=>/^\d{4}-\d{2}-\d{2}$/.test(d||'');
+  tasks.forEach(t=>{
+    if(isDate(t.start)&&isDate(t.end))dated.push(t);
+    else if(t.status==='done'&&isDate(t.completed_on))dated.push({...t,start:t.completed_on,end:t.completed_on,milestone:true});
+    else undated.push(t);
+  });
+  if(!dated.length)return {dated,undated,weeks:[],start:0,end:0};
   const day=86400000; let start=Math.min(...dated.map(t=>Date.parse(t.start)));const dow=new Date(start).getUTCDay();start-=((dow+6)%7)*day;
   let end=Math.max(...dated.map(t=>Date.parse(t.end)))+day; end=start+Math.ceil((end-start)/(7*day))*7*day;
   if ((end-start)/(7*day)>262) throw new Error('Timeline exceeds five years');
   const weeks=[];for(let d=start;d<end;d+=7*day)weeks.push(new Date(d));
-  return {dated,undated:tasks.filter(t=>!dated.includes(t)),weeks,start,end};
+  return {dated,undated,weeks,start,end};
 }

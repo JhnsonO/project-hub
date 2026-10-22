@@ -2,7 +2,11 @@
   "schema_version": 2,
   "updated": "2026-10-22",
   "updated_by": "chatgpt",
-  "groups": ["FFA", "OEV", "Personal"],
+  "groups": [
+    "FFA",
+    "OEV",
+    "Personal"
+  ],
   "projects": [
     {
       "id": "web",
@@ -12,14 +16,468 @@
       "status": "Live · QA",
       "summary": "The site and shop are live; launch checks and polish remain.",
       "milestones": [
-        { "name": "Site + shop live", "status": "done" },
-        { "name": "Content + checkout QA", "status": "doing" },
-        { "name": "Device acceptance", "status": "todo" }
+        {
+          "name": "Site + shop live",
+          "status": "done"
+        },
+        {
+          "name": "Content + checkout QA",
+          "status": "doing"
+        },
+        {
+          "name": "Device acceptance",
+          "status": "todo"
+        }
       ],
       "next_step": "Check the gilet form title, then finish device and checkout checks.",
       "watch": "The gilet form heading currently says “Tracksuits”.",
-      "updated": "21 OCT",
-      "workspace": { "provider": "Google", "url": "https://docs.google.com/document/d/1Ai973jkiOD_3WvG1ra2sFiIzPO3F3R1AlGIvKzZWWXA/edit" }
+      "updated": "22 OCT",
+      "workspace": {
+        "provider": "Google",
+        "url": "https://docs.google.com/document/d/1Ai973jkiOD_3WvG1ra2sFiIzPO3F3R1AlGIvKzZWWXA/edit"
+      },
+      "tasks": [
+        {
+          "id": "web-001",
+          "name": "Publish the rebuilt native homepage",
+          "status": "done",
+          "owner": null,
+          "note": "Eight native sections completed, responsive walkthrough recorded and publication approved. Historical implementation evidence; later live homepage loaded on 21 October.",
+          "last_touched": "2026-10-04",
+          "lane": "Website",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-04",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1Ai973jkiOD_3WvG1ra2sFiIzPO3F3R1AlGIvKzZWWXA/edit",
+              "label": "Website master handover"
+            }
+          ]
+        },
+        {
+          "id": "web-002",
+          "name": "Build the Book Football page and Acuity embed",
+          "status": "done",
+          "owner": null,
+          "note": "Native booking page and the real Acuity embed implemented; booking payment acceptance remains a separate open check.",
+          "last_touched": "2026-10-04",
+          "lane": "Booking",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-04",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1Ai973jkiOD_3WvG1ra2sFiIzPO3F3R1AlGIvKzZWWXA/edit",
+              "label": "Website master handover"
+            }
+          ]
+        },
+        {
+          "id": "web-003",
+          "name": "Migrate booking links and redirect to /book",
+          "status": "done",
+          "owner": null,
+          "note": "Homepage/session/navigation links point to /book; /book-football redirects to it.",
+          "last_touched": "2026-10-05",
+          "lane": "Booking",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-05",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1Ai973jkiOD_3WvG1ra2sFiIzPO3F3R1AlGIvKzZWWXA/edit",
+              "label": "Website master handover"
+            }
+          ]
+        },
+        {
+          "id": "web-004",
+          "name": "Publish the shop rebuild",
+          "status": "done",
+          "owner": null,
+          "note": "Shop launch and a purchase-flow pass are recorded in the historical handover. This does not close the current Apple Pay and device acceptance checks.",
+          "last_touched": "2026-10-05",
+          "lane": "Shop",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-05",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1Ai973jkiOD_3WvG1ra2sFiIzPO3F3R1AlGIvKzZWWXA/edit",
+              "label": "Website master handover"
+            }
+          ]
+        },
+        {
+          "id": "web-005",
+          "name": "Correct shop variants, swatches and cart questions",
+          "status": "done",
+          "owner": null,
+          "note": "Lounge Set variants and matching images, Active Set swatch and duplicate cart question corrected and selections checked.",
+          "last_touched": "2026-10-06",
+          "lane": "Shop",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-06",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1Ai973jkiOD_3WvG1ra2sFiIzPO3F3R1AlGIvKzZWWXA/edit",
+              "label": "Website master handover"
+            }
+          ]
+        },
+        {
+          "id": "web-006",
+          "name": "Repair the tablet pricing and card layout",
+          "status": "done",
+          "owner": null,
+          "note": "The approximately 936px overlap was corrected and verified after reload.",
+          "last_touched": "2026-10-06",
+          "lane": "Website",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-06",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1Ai973jkiOD_3WvG1ra2sFiIzPO3F3R1AlGIvKzZWWXA/edit",
+              "label": "Website master handover"
+            }
+          ]
+        },
+        {
+          "id": "web-007",
+          "name": "Clean and correct the FAQ",
+          "status": "done",
+          "owner": null,
+          "note": "Duplicate content and artefacts removed; booking, naming and contact copy corrected.",
+          "last_touched": "2026-10-02",
+          "lane": "Content",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-02",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1Ai973jkiOD_3WvG1ra2sFiIzPO3F3R1AlGIvKzZWWXA/edit",
+              "label": "Website master handover"
+            }
+          ]
+        },
+        {
+          "id": "web-008",
+          "name": "Publish the updated About Us page",
+          "status": "done",
+          "owner": null,
+          "note": "Approved copy and responsive typography/spacing were saved and verified.",
+          "last_touched": "2026-10-03",
+          "lane": "Content",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-03",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1Ai973jkiOD_3WvG1ra2sFiIzPO3F3R1AlGIvKzZWWXA/edit",
+              "label": "Website master handover"
+            }
+          ]
+        },
+        {
+          "id": "web-009",
+          "name": "Update the Partners page",
+          "status": "done",
+          "owner": null,
+          "note": "Partner links and responsive cards checked; placeholders removed and enquiry form retained.",
+          "last_touched": "2026-10-03",
+          "lane": "Content",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-03",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1Ai973jkiOD_3WvG1ra2sFiIzPO3F3R1AlGIvKzZWWXA/edit",
+              "label": "Website master handover"
+            }
+          ]
+        },
+        {
+          "id": "web-010",
+          "name": "Add membership graphics and benefits",
+          "status": "done",
+          "owner": null,
+          "note": "Membership graphics, tier benefits and booking instructions implemented. Current tier copy was reviewed again on 21 October.",
+          "last_touched": "2026-10-05",
+          "lane": "Shop",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-05",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1Ai973jkiOD_3WvG1ra2sFiIzPO3F3R1AlGIvKzZWWXA/edit",
+              "label": "Website master handover"
+            }
+          ]
+        },
+        {
+          "id": "web-011",
+          "name": "Set the gilet to £30 and verify the cart path",
+          "status": "done",
+          "owner": null,
+          "note": "ChatGPT completion report records the price saved across six sizes. The handover confirms £30 on the live product and a disposable cart check, then cart cleanup; no purchase was submitted.",
+          "last_touched": "2026-10-21",
+          "lane": "Shop",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-21",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1Ai973jkiOD_3WvG1ra2sFiIzPO3F3R1AlGIvKzZWWXA/edit",
+              "label": "Website master handover"
+            }
+          ]
+        },
+        {
+          "id": "web-012",
+          "name": "Publish the MNL keeper and sin-bin rules",
+          "status": "done",
+          "owner": null,
+          "note": "Recorded live completion in the 18 October rules conversation: keeper hand signal/countdown, continued play and five-minute yellow-card sin bins. Historical chat evidence, not a new live test.",
+          "last_touched": "2026-10-18",
+          "lane": "Monday league",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-18",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1Ai973jkiOD_3WvG1ra2sFiIzPO3F3R1AlGIvKzZWWXA/edit",
+              "label": "Website master handover"
+            }
+          ]
+        },
+        {
+          "id": "web-013",
+          "name": "Add shirt-pulling and tactical-foul cautions",
+          "status": "done",
+          "owner": null,
+          "note": "Recorded as live in the 20 October rules conversation. Additional suggested rules were proposals and are not counted as delivered.",
+          "last_touched": "2026-10-20",
+          "lane": "Monday league",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-20",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1Ai973jkiOD_3WvG1ra2sFiIzPO3F3R1AlGIvKzZWWXA/edit",
+              "label": "Website master handover"
+            }
+          ]
+        },
+        {
+          "id": "web-014",
+          "name": "Publish the MNL admin page and verify access",
+          "status": "done",
+          "owner": null,
+          "note": "The admin page was published and the requested password removal/access check was recorded. This does not claim the full UI acceptance test passed.",
+          "last_touched": "2026-10-20",
+          "lane": "Monday league",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-20",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1Ai973jkiOD_3WvG1ra2sFiIzPO3F3R1AlGIvKzZWWXA/edit",
+              "label": "Website master handover"
+            }
+          ]
+        },
+        {
+          "id": "web-015",
+          "name": "Run disposable-data MNL backend checks",
+          "status": "done",
+          "owner": null,
+          "note": "The prior completion report records 16 backend checks passed and staging cleanup. Full browser UI testing was blocked by a 503/editor limitation; production data was not used for the test.",
+          "last_touched": "2026-10-20",
+          "lane": "Monday league",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-20",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1Ai973jkiOD_3WvG1ra2sFiIzPO3F3R1AlGIvKzZWWXA/edit",
+              "label": "Website master handover"
+            }
+          ]
+        },
+        {
+          "id": "web-016",
+          "name": "Update the league result, points and discipline",
+          "status": "done",
+          "owner": null,
+          "note": "Recorded completion of the 19 October fixture update: result, winning-team points, goals/assists and cautions. Live ranking was subsequently checked in that conversation.",
+          "last_touched": "2026-10-20",
+          "lane": "Monday league",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-20",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1Ai973jkiOD_3WvG1ra2sFiIzPO3F3R1AlGIvKzZWWXA/edit",
+              "label": "Website master handover"
+            }
+          ]
+        },
+        {
+          "id": "web-017",
+          "name": "Correct the league ranking tie-break order",
+          "status": "done",
+          "owner": null,
+          "note": "Recorded live order: points, goals, assists, then alphabetical.",
+          "last_touched": "2026-10-20",
+          "lane": "Monday league",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-20",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1Ai973jkiOD_3WvG1ra2sFiIzPO3F3R1AlGIvKzZWWXA/edit",
+              "label": "Website master handover"
+            }
+          ]
+        },
+        {
+          "id": "web-018",
+          "name": "Remove public MNL admin commentary",
+          "status": "done",
+          "owner": null,
+          "note": "Public match narrative was cleaned; internal notes were retained. Recorded completion in the MNL conversation.",
+          "last_touched": "2026-10-20",
+          "lane": "Monday league",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-20",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1Ai973jkiOD_3WvG1ra2sFiIzPO3F3R1AlGIvKzZWWXA/edit",
+              "label": "Website master handover"
+            }
+          ]
+        },
+        {
+          "id": "web-019",
+          "name": "Correct the gilet customisation heading",
+          "status": "todo",
+          "owner": null,
+          "note": "21 October review found the dialog heading still says Tracksuits. No later verified repair was found.",
+          "last_touched": "2026-10-22",
+          "lane": "Shop QA",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1Ai973jkiOD_3WvG1ra2sFiIzPO3F3R1AlGIvKzZWWXA/edit",
+              "label": "Website master handover"
+            }
+          ]
+        },
+        {
+          "id": "web-020",
+          "name": "Finish real-device layout and image checks",
+          "status": "todo",
+          "owner": null,
+          "note": "Check current phone/tablet layouts, product crops and controls after the latest changes. Earlier local/layout checks are not blanket acceptance.",
+          "last_touched": "2026-10-22",
+          "lane": "Website QA",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1Ai973jkiOD_3WvG1ra2sFiIzPO3F3R1AlGIvKzZWWXA/edit",
+              "label": "Website master handover"
+            }
+          ]
+        },
+        {
+          "id": "web-021",
+          "name": "Complete booking, checkout and Apple Pay acceptance",
+          "status": "todo",
+          "owner": null,
+          "note": "Current handover retains booking payment and supported-device Apple Pay completion as unverified. Historical shop purchase checks are retained as completed work separately.",
+          "last_touched": "2026-10-22",
+          "lane": "Booking QA",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1Ai973jkiOD_3WvG1ra2sFiIzPO3F3R1AlGIvKzZWWXA/edit",
+              "label": "Website master handover"
+            }
+          ]
+        },
+        {
+          "id": "web-022",
+          "name": "Complete the MNL admin browser acceptance test",
+          "status": "blocked",
+          "owner": null,
+          "note": "Backend disposable-data checks passed; the full UI test was previously blocked by a 503/editor script limitation and still needs recorded end-to-end evidence.",
+          "last_touched": "2026-10-22",
+          "lane": "Monday league",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1Ai973jkiOD_3WvG1ra2sFiIzPO3F3R1AlGIvKzZWWXA/edit",
+              "label": "Website master handover"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "media",
@@ -29,14 +487,470 @@
       "status": "v2 beta",
       "summary": "Beta sign-in loads; signed-in acceptance and release checks are open.",
       "milestones": [
-        { "name": "Beta entry live", "status": "done" },
-        { "name": "v2 API + configuration", "status": "blocked" },
-        { "name": "Device + storage QA", "status": "todo" }
+        {
+          "name": "Beta entry live",
+          "status": "done"
+        },
+        {
+          "name": "v2 API + configuration",
+          "status": "blocked"
+        },
+        {
+          "name": "Device + storage QA",
+          "status": "todo"
+        }
       ],
       "next_step": "Run the current v2 Postgres suite and resolve the deferred key configuration.",
       "blocker": "Check #55 depends on key configuration; #54 still needs the current v2 suite. Signed-in acceptance is unverified.",
-      "updated": "21 OCT",
-      "workspace": { "provider": "GitHub", "url": "https://github.com/users/JhnsonO/projects/5/views/" }
+      "updated": "22 OCT",
+      "workspace": {
+        "provider": "GitHub",
+        "url": "https://github.com/users/JhnsonO/projects/5/views/"
+      },
+      "tasks": [
+        {
+          "id": "media-001",
+          "name": "Ship the edit-review lifecycle",
+          "status": "done",
+          "owner": null,
+          "note": "Merged edit review, comments, resubmission and approval flow; 336 tests and a phone-width end-to-end sequence recorded. Beta release acceptance remains separate.",
+          "last_touched": "2026-09-23",
+          "lane": "Existing app",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-09-23",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/ai-project-state.md",
+              "label": "Media implementation log"
+            }
+          ]
+        },
+        {
+          "id": "media-002",
+          "name": "Add favourites and edit replacement controls",
+          "status": "done",
+          "owner": null,
+          "note": "Merged batch A: favourites-first picker and guarded edit management. 368 tests and local browser checks recorded across batches A/B.",
+          "last_touched": "2026-09-24",
+          "lane": "Existing app",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-09-24",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/ai-project-state.md",
+              "label": "Media implementation log"
+            }
+          ]
+        },
+        {
+          "id": "media-003",
+          "name": "Add pipeline counts and guarded legacy handling",
+          "status": "done",
+          "owner": null,
+          "note": "Merged batch B: pipeline strip, live-edit rejection guard and consistent earlier-session cutoff.",
+          "last_touched": "2026-09-24",
+          "lane": "Existing app",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-09-24",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/ai-project-state.md",
+              "label": "Media implementation log"
+            }
+          ]
+        },
+        {
+          "id": "media-004",
+          "name": "Add goal awards and duplicate-session suggestions",
+          "status": "done",
+          "owner": null,
+          "note": "Merged batch B: goal awards and safe duplicate suggestions; no automatic session merge.",
+          "last_touched": "2026-09-24",
+          "lane": "Existing app",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-09-24",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/ai-project-state.md",
+              "label": "Media implementation log"
+            }
+          ]
+        },
+        {
+          "id": "media-005",
+          "name": "Implement v2 camera types and session placement",
+          "status": "done",
+          "owner": null,
+          "note": "Camera type labels, usual sessions, automatic placement and Needs placing tray implemented. Local SQLite tests and v2 browser suite recorded; no live-device acceptance claim.",
+          "last_touched": "2026-10-13",
+          "lane": "Beta implementation",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-13",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/ai-project-state.md",
+              "label": "Media implementation log"
+            }
+          ]
+        },
+        {
+          "id": "media-006",
+          "name": "Implement paste-a-link intake and retry status",
+          "status": "done",
+          "owner": null,
+          "note": "V2 link intake reports real status and retries failed videos when pasted again; local verification recorded.",
+          "last_touched": "2026-10-13",
+          "lane": "Beta implementation",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-13",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/ai-project-state.md",
+              "label": "Media implementation log"
+            }
+          ]
+        },
+        {
+          "id": "media-007",
+          "name": "Implement v2 player, sync and download controls",
+          "status": "done",
+          "owner": null,
+          "note": "Recorded v2 native player, sync, downloads and source-file handling. Implementation evidence is from the beta branch and local checks; live acceptance is still open.",
+          "last_touched": "2026-10-14",
+          "lane": "Beta implementation",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-14",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/ai-project-state.md",
+              "label": "Media implementation log"
+            }
+          ]
+        },
+        {
+          "id": "media-008",
+          "name": "Implement session review and rework hand-offs",
+          "status": "done",
+          "owner": null,
+          "note": "Clip-level uploads, review/rework and rejected-session workflow implemented and locally tested. Not a claim that all historical sessions were processed.",
+          "last_touched": "2026-10-14",
+          "lane": "Beta implementation",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-14",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/ai-project-state.md",
+              "label": "Media implementation log"
+            }
+          ]
+        },
+        {
+          "id": "media-009",
+          "name": "Build the guarded historical backfill dry-run tool",
+          "status": "done",
+          "owner": null,
+          "note": "Dry-run plans, confirmation controls and reviewer report implemented. The later log explicitly says the plan was not applied to a database; applying/accepting it remains open.",
+          "last_touched": "2026-10-14",
+          "lane": "Beta implementation",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-14",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/ai-project-state.md",
+              "label": "Media implementation log"
+            }
+          ]
+        },
+        {
+          "id": "media-010",
+          "name": "Implement drag moves on the Progress board",
+          "status": "done",
+          "owner": null,
+          "note": "Mouse and held-touch moves, permissions, undo and review-stage actions passed local tests/emulation. Real devices and beta acceptance are separate.",
+          "last_touched": "2026-10-16",
+          "lane": "Beta implementation",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-16",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/ai-project-state.md",
+              "label": "Media implementation log"
+            }
+          ]
+        },
+        {
+          "id": "media-011",
+          "name": "Show watch progress and authorised bin/restore controls",
+          "status": "done",
+          "owner": null,
+          "note": "Logger progress visibility and clip bin/restore permissions implemented; local SQLite and browser tests recorded.",
+          "last_touched": "2026-10-16",
+          "lane": "Beta implementation",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-16",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/ai-project-state.md",
+              "label": "Media implementation log"
+            }
+          ]
+        },
+        {
+          "id": "media-012",
+          "name": "Repair beta access, contrast and error handling",
+          "status": "done",
+          "owner": null,
+          "note": "Rail/dialog access, contrast, touch targets and useful retry messages fixed in local QA. Real-device exceptions remain open.",
+          "last_touched": "2026-10-16",
+          "lane": "Beta QA",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-16",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/ai-project-state.md",
+              "label": "Media implementation log"
+            }
+          ]
+        },
+        {
+          "id": "media-013",
+          "name": "Separate Shorts from the logging queue",
+          "status": "done",
+          "owner": null,
+          "note": "Shorts routing and stats UI implemented with local tests. Live stats depend on the deferred beta configuration task.",
+          "last_touched": "2026-10-19",
+          "lane": "Beta implementation",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-19",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/ai-project-state.md",
+              "label": "Media implementation log"
+            }
+          ]
+        },
+        {
+          "id": "media-014",
+          "name": "Implement clip flags, issue reports and categories",
+          "status": "done",
+          "owner": null,
+          "note": "Flags, Report or suggest, categories and feedback attachment flow implemented. Local browser checks passed; live feedback storage upload remains unverified.",
+          "last_touched": "2026-10-19",
+          "lane": "Beta implementation",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-19",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/ai-project-state.md",
+              "label": "Media implementation log"
+            }
+          ]
+        },
+        {
+          "id": "media-015",
+          "name": "Implement late-sync angles and download selection",
+          "status": "done",
+          "owner": null,
+          "note": "Late-sync alternate cuts and per-angle download controls implemented and tested locally; real late-synced beta acceptance remains open.",
+          "last_touched": "2026-10-19",
+          "lane": "Beta implementation",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-19",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/ai-project-state.md",
+              "label": "Media implementation log"
+            }
+          ]
+        },
+        {
+          "id": "media-016",
+          "name": "Add share previews and square app icons",
+          "status": "done",
+          "owner": null,
+          "note": "Share metadata and icons added; the recorded local suite passed 544 tests and the v2 browser run. Cached old previews may persist.",
+          "last_touched": "2026-10-19",
+          "lane": "Beta implementation",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-19",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/ai-project-state.md",
+              "label": "Media implementation log"
+            }
+          ]
+        },
+        {
+          "id": "media-017",
+          "name": "Verify the deployed beta sign-in entry",
+          "status": "done",
+          "owner": null,
+          "note": "The deployed sign-in page loaded. No authenticated beta action, database test or storage write was performed in that check.",
+          "last_touched": "2026-10-21",
+          "lane": "Beta QA",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-21",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/current-state.md",
+              "label": "Media current state"
+            }
+          ]
+        },
+        {
+          "id": "media-018",
+          "name": "Resume deferred beta API configuration",
+          "status": "blocked",
+          "owner": null,
+          "note": "Canonical issue #53 remains open; Johnson deferred key work. No credential changes are part of this history audit.",
+          "last_touched": "2026-10-22",
+          "lane": "Beta acceptance",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/issues/53",
+              "label": "Source issue / delivery"
+            }
+          ]
+        },
+        {
+          "id": "media-019",
+          "name": "Run the current Postgres API suite",
+          "status": "todo",
+          "owner": null,
+          "note": "Issue #54 remains open; older September migration passes do not verify the current October v2 suite.",
+          "last_touched": "2026-10-22",
+          "lane": "Beta acceptance",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/issues/54",
+              "label": "Source issue / delivery"
+            }
+          ]
+        },
+        {
+          "id": "media-020",
+          "name": "Accept one real Short and one late-synced beta session",
+          "status": "blocked",
+          "owner": null,
+          "note": "Issue #55 remains open and depends on the deferred beta configuration and authorised application access.",
+          "last_touched": "2026-10-22",
+          "lane": "Beta acceptance",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [
+            "media-018"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/issues/55",
+              "label": "Source issue / delivery"
+            }
+          ]
+        },
+        {
+          "id": "media-021",
+          "name": "Verify real-device playback and feedback uploads",
+          "status": "todo",
+          "owner": null,
+          "note": "Phone/iPad touch, playback and live feedback-storage success have not been established by local emulation.",
+          "last_touched": "2026-10-22",
+          "lane": "Beta acceptance",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/current-state.md",
+              "label": "Media current state"
+            }
+          ]
+        },
+        {
+          "id": "media-022",
+          "name": "Review and accept the real-data backfill plan",
+          "status": "todo",
+          "owner": null,
+          "note": "The guarded tool exists; the historical plan is not recorded as applied. Review the current dry run before any live application.",
+          "last_touched": "2026-10-22",
+          "lane": "Beta acceptance",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/ai-project-state.md",
+              "label": "Media implementation log"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "auto",
@@ -44,16 +958,310 @@
       "mono": "FA",
       "group": "FFA",
       "status": "Validation",
-      "summary": "Runner fix is merged; manual encrypted handoff #65 passed.",
+      "summary": "Uploader and runner fixes are recorded; direct ChatGPT check-in tests passed. Unattended and live uploader acceptance remain open.",
       "milestones": [
-        { "name": "Runner fix + handoff", "status": "done" },
-        { "name": "06:50 scheduled run", "status": "doing" },
-        { "name": "GoPro resume evidence", "status": "todo" }
+        {
+          "name": "Runner fix + handoff",
+          "status": "done"
+        },
+        {
+          "name": "Daily ChatGPT check-in acceptance",
+          "status": "doing"
+        },
+        {
+          "name": "GoPro resume evidence",
+          "status": "todo"
+        }
       ],
-      "next_step": "Verify a scheduled 06:50 Europe/London run creates the encrypted artifact.",
-      "blocker": "The normal schedule and current GoPro resume behaviour still lack verified evidence.",
+      "next_step": "Observe a fresh upload and verify the first unattended ChatGPT check-in; recheck the GoPro resume issue.",
+      "blocker": "Live uploader/resume evidence and the first unattended ChatGPT run are still unverified; GitHub is manual-only for the check-in handoff.",
       "updated": "22 OCT",
-      "workspace": { "provider": "Google", "url": "https://docs.google.com/document/d/1UJB8kzBW1kOBgKizUuaw8we2bPYUqhF6vmeVv6oLPco/edit" }
+      "workspace": {
+        "provider": "Google",
+        "url": "https://docs.google.com/document/d/1UJB8kzBW1kOBgKizUuaw8we2bPYUqhF6vmeVv6oLPco/edit"
+      },
+      "tasks": [
+        {
+          "id": "auto-001",
+          "name": "Harden runner storage after the disk-full incident",
+          "status": "done",
+          "owner": null,
+          "note": "Recorded resolved incident: persistent browser profile relocated to the data volume; root space recovered and the runner queue resumed.",
+          "last_touched": "2026-08-20",
+          "lane": "Runner reliability",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-08-20",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-automations/blob/main/docs/ai-project-state.md",
+              "label": "Automation engineering log"
+            }
+          ]
+        },
+        {
+          "id": "auto-002",
+          "name": "Install weekly runner disk maintenance",
+          "status": "done",
+          "owner": null,
+          "note": "A weekly cleanup timer/service was installed during the incident recovery. This records that installation, not a fresh runtime verification.",
+          "last_touched": "2026-08-20",
+          "lane": "Runner reliability",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-08-20",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-automations/blob/main/docs/ai-project-state.md",
+              "label": "Automation engineering log"
+            }
+          ]
+        },
+        {
+          "id": "auto-003",
+          "name": "Deploy the uploader-to-worker cookie handoff",
+          "status": "done",
+          "owner": null,
+          "note": "Engineering log records a successful storage handoff and consumer deployment. A real downstream probe remained unverified; no credential value is included.",
+          "last_touched": "2026-10-22",
+          "lane": "Uploader",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-automations/blob/main/docs/ai-project-state.md",
+              "label": "Automation engineering log"
+            }
+          ]
+        },
+        {
+          "id": "auto-004",
+          "name": "Implement camera-neutral upload titles and descriptions",
+          "status": "done",
+          "owner": null,
+          "note": "Merged on main; nine metadata unit tests recorded passing. First complete post-change live-output acceptance remains separate.",
+          "last_touched": "2026-10-15",
+          "lane": "Uploader",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-15",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-automations/blob/main/docs/ai-project-state.md",
+              "label": "Automation engineering log"
+            }
+          ]
+        },
+        {
+          "id": "auto-005",
+          "name": "Repair the check-in workflow schedule gate",
+          "status": "done",
+          "owner": null,
+          "note": "PR #69 repaired the narrow runner-clock condition. A later decision moved the daily check-in to ChatGPT, so this historical fix is not the current daily trigger.",
+          "last_touched": "2026-10-22",
+          "lane": "Check-in integration",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-22",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1UJB8kzBW1kOBgKizUuaw8we2bPYUqhF6vmeVv6oLPco/edit",
+              "label": "Automation board and evidence"
+            }
+          ]
+        },
+        {
+          "id": "auto-006",
+          "name": "Correct unrelated deployment preview handling",
+          "status": "done",
+          "owner": null,
+          "note": "The configured application root and ignored-build behaviour were corrected; the unrelated main-branch preview was properly skipped.",
+          "last_touched": "2026-10-22",
+          "lane": "Runner reliability",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-22",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1UJB8kzBW1kOBgKizUuaw8we2bPYUqhF6vmeVv6oLPco/edit",
+              "label": "Automation board and evidence"
+            }
+          ]
+        },
+        {
+          "id": "auto-007",
+          "name": "Verify the manual encrypted artifact handoff",
+          "status": "done",
+          "owner": null,
+          "note": "Manual run #65 passed fetch, validation, encryption and upload. No health readings or secrets are included in this record.",
+          "last_touched": "2026-10-22",
+          "lane": "Check-in integration",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-22",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1UJB8kzBW1kOBgKizUuaw8we2bPYUqhF6vmeVv6oLPco/edit",
+              "label": "Automation board and evidence"
+            }
+          ]
+        },
+        {
+          "id": "auto-008",
+          "name": "Verify the connected ChatGPT check-in and workout data path",
+          "status": "done",
+          "owner": null,
+          "note": "The read-only connector returned current source data and the workout section in the documented direct test. This is integration-test evidence only; no readings are published.",
+          "last_touched": "2026-10-22",
+          "lane": "Check-in integration",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-22",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1UJB8kzBW1kOBgKizUuaw8we2bPYUqhF6vmeVv6oLPco/edit",
+              "label": "Automation board and evidence"
+            }
+          ]
+        },
+        {
+          "id": "auto-009",
+          "name": "Configure and directly test the daily ChatGPT check-in",
+          "status": "done",
+          "owner": null,
+          "note": "The automation completed a direct live-data test and was scheduled for 06:50 Europe/London. First unattended daily-run acceptance is still open.",
+          "last_touched": "2026-10-22",
+          "lane": "Check-in integration",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-22",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1UJB8kzBW1kOBgKizUuaw8we2bPYUqhF6vmeVv6oLPco/edit",
+              "label": "Automation board and evidence"
+            }
+          ]
+        },
+        {
+          "id": "auto-010",
+          "name": "Remove the daily GitHub cron after the trigger migration",
+          "status": "done",
+          "owner": null,
+          "note": "Temporary scheduled tests and the daily cron were removed; the GitHub workflow remains manually runnable. It no longer supplies the daily trigger.",
+          "last_touched": "2026-10-22",
+          "lane": "Check-in integration",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-22",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1UJB8kzBW1kOBgKizUuaw8we2bPYUqhF6vmeVv6oLPco/edit",
+              "label": "Automation board and evidence"
+            }
+          ]
+        },
+        {
+          "id": "auto-011",
+          "name": "Observe a fresh upload and verify complete metadata",
+          "status": "todo",
+          "owner": null,
+          "note": "A matching public title was seen, but the description and exact producing uploader version were not verified. Observe a new complete result.",
+          "last_touched": "2026-10-22",
+          "lane": "Uploader acceptance",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-automations/blob/main/docs/ai-project-state.md",
+              "label": "Automation engineering log"
+            }
+          ]
+        },
+        {
+          "id": "auto-012",
+          "name": "Reproduce and repair the GoPro resume gap",
+          "status": "todo",
+          "owner": null,
+          "note": "Issue #53 is still open: a successful cookie refresh must resume the original upload or visibly fail.",
+          "last_touched": "2026-10-22",
+          "lane": "Uploader acceptance",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-automations/issues/53",
+              "label": "Source issue / delivery"
+            }
+          ]
+        },
+        {
+          "id": "auto-013",
+          "name": "Recheck relay scheduling and the downstream probe",
+          "status": "todo",
+          "owner": null,
+          "note": "Older schedule diagnoses and a successful handoff do not prove current downstream upload/probe success. Gather a current run before changing runner infrastructure.",
+          "last_touched": "2026-10-22",
+          "lane": "Uploader acceptance",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-automations/blob/main/docs/ai-project-state.md",
+              "label": "Automation engineering log"
+            }
+          ]
+        },
+        {
+          "id": "auto-014",
+          "name": "Verify the first unattended daily ChatGPT check-in",
+          "status": "todo",
+          "owner": null,
+          "note": "Direct tests passed; the handover still requests evidence from the first 06:50 Europe/London unattended run. Do not substitute a manual GitHub run for this check.",
+          "last_touched": "2026-10-22",
+          "lane": "Check-in acceptance",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1UJB8kzBW1kOBgKizUuaw8we2bPYUqhF6vmeVv6oLPco/edit",
+              "label": "Automation board and evidence"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "oev",
@@ -63,16 +1271,574 @@
       "status": "Corrections first",
       "summary": "Camera brain C is selected; Mercy’s correction workflow is the current priority.",
       "milestones": [
-        { "name": "Select camera brain", "status": "done" },
-        { "name": "Scope Mercy corrections", "status": "doing" },
-        { "name": "Validate a customer-ready broadcast", "status": "blocked" }
+        {
+          "name": "Select camera brain",
+          "status": "done"
+        },
+        {
+          "name": "Scope Mercy corrections",
+          "status": "doing"
+        },
+        {
+          "name": "Validate a customer-ready broadcast",
+          "status": "blocked"
+        }
       ],
       "next_step": "Scope Mercy’s corrections workflow using C as the baseline before bulk frame collection.",
       "blocker": "Match-ball evaluation and the M1/hardware acceptance evidence are still unresolved.",
-      "updated": "21 OCT",
+      "updated": "22 OCT",
       "featured": true,
-      "workspace": { "provider": "GitHub", "url": "https://github.com/users/JhnsonO/projects/3/views/2" },
-      "roadmap": { "provider": "GitHub", "url": "https://github.com/JhnsonO/oev/blob/main/docs/roadmap.md" }
+      "workspace": {
+        "provider": "GitHub",
+        "url": "https://github.com/users/JhnsonO/projects/3/views/2"
+      },
+      "roadmap": {
+        "provider": "GitHub",
+        "url": "https://github.com/JhnsonO/oev/blob/main/docs/roadmap.md"
+      },
+      "tasks": [
+        {
+          "id": "oev-001",
+          "name": "Build the two-camera cylindrical stitch projection",
+          "status": "done",
+          "owner": null,
+          "note": "The reconciled roadmap records the cylindrical implementation and locked framing config. The older claim that M1 was cleared is superseded by the unresolved current acceptance gate; this records the implementation only.",
+          "last_touched": "2026-10-22",
+          "lane": "Stitching",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/oev/blob/main/docs/roadmap.md",
+              "label": "OEV reconciled roadmap"
+            }
+          ]
+        },
+        {
+          "id": "oev-002",
+          "name": "Fix zero-copy GPU rendering corruption",
+          "status": "done",
+          "owner": null,
+          "note": "The engineering log records the shared-buffer repair merged and rolled into standard workflows. The rejected shared-image approach is not counted as a shipped fix.",
+          "last_touched": "2026-10-22",
+          "lane": "Rendering",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-automations/blob/main/docs/ai-project-state.md",
+              "label": "Automation engineering log"
+            }
+          ]
+        },
+        {
+          "id": "oev-003",
+          "name": "Complete detector-resolution and throughput investigation",
+          "status": "done",
+          "owner": null,
+          "note": "The progress log records the 640–2560px investigation concluded at 1920px with real throughput measurements. This was an engineering result, not whole-product acceptance.",
+          "last_touched": "2026-10-22",
+          "lane": "Detection",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/oev/blob/main/docs/roadmap.md",
+              "label": "OEV reconciled roadmap"
+            }
+          ]
+        },
+        {
+          "id": "oev-004",
+          "name": "Implement pitch-region filtering",
+          "status": "done",
+          "owner": null,
+          "note": "The roadmap progress log records ROI filtering to stop the camera wandering onto neighbouring pitches.",
+          "last_touched": "2026-10-22",
+          "lane": "Detection",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/oev/blob/main/docs/roadmap.md",
+              "label": "OEV reconciled roadmap"
+            }
+          ]
+        },
+        {
+          "id": "oev-005",
+          "name": "Implement backward ball-state bridging",
+          "status": "done",
+          "owner": null,
+          "note": "The log records bridging recovery and its coverage improvement. Remaining camera-containment and identity failures are not marked fixed by this entry.",
+          "last_touched": "2026-10-22",
+          "lane": "Tracking",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-automations/blob/main/docs/ai-project-state.md",
+              "label": "Automation engineering log"
+            }
+          ]
+        },
+        {
+          "id": "oev-006",
+          "name": "Harden experimental GPU allocation and compatibility checks",
+          "status": "done",
+          "owner": null,
+          "note": "The experiment allocator was hardened after incompatible hosts and detector smoke failures. Capacity/host reliability is still variable.",
+          "last_touched": "2026-10-22",
+          "lane": "Evaluation",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-automations/blob/main/docs/ai-project-state.md",
+              "label": "Automation engineering log"
+            }
+          ]
+        },
+        {
+          "id": "oev-007",
+          "name": "Render and compare the standard multi-sample controls",
+          "status": "done",
+          "owner": null,
+          "note": "Multiple sample renders and a stride-1 control completed. The stride-3 experiment exposed severe regression on another sample and was not accepted as the default.",
+          "last_touched": "2026-10-22",
+          "lane": "Evaluation",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-automations/blob/main/docs/ai-project-state.md",
+              "label": "Automation engineering log"
+            }
+          ]
+        },
+        {
+          "id": "oev-008",
+          "name": "Complete the human comparison of camera-brain variants",
+          "status": "done",
+          "owner": null,
+          "note": "Thirty visible-ball disagreement moments were scored across sessions. C was selected as the working v1 baseline and B1 was runner-up; this small evaluation does not establish product reliability.",
+          "last_touched": "2026-10-21",
+          "lane": "Evaluation",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/oev/blob/main/docs/roadmap.md",
+              "label": "OEV reconciled roadmap"
+            }
+          ]
+        },
+        {
+          "id": "oev-009",
+          "name": "Classify the selected baseline’s failure cases",
+          "status": "done",
+          "owner": null,
+          "note": "The current review separates nine wrong-ball choices from five ball-not-seen misses and notes unused uncertain/restart states. It records analysis completed, not all failures resolved.",
+          "last_touched": "2026-10-21",
+          "lane": "Evaluation",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/oev/blob/main/docs/roadmap.md",
+              "label": "OEV reconciled roadmap"
+            }
+          ]
+        },
+        {
+          "id": "oev-010",
+          "name": "Evaluate stray-ball rules across sessions",
+          "status": "done",
+          "owner": null,
+          "note": "The experiment helped on the first session and failed to generalise. Evaluation completed; the rules are parked rather than treated as an accepted improvement.",
+          "last_touched": "2026-10-21",
+          "lane": "Evaluation",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/oev/blob/main/docs/roadmap.md",
+              "label": "OEV reconciled roadmap"
+            }
+          ]
+        },
+        {
+          "id": "oev-011",
+          "name": "Review the bounded WASB pilot and test-set limits",
+          "status": "done",
+          "owner": null,
+          "note": "The pilot evidence and contaminated/unannotated evaluation-set limits were reviewed. Visual confirmation was insufficient; no detector replacement or training success is claimed.",
+          "last_touched": "2026-10-21",
+          "lane": "Evaluation",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/oev/blob/main/docs/roadmap.md",
+              "label": "OEV reconciled roadmap"
+            }
+          ]
+        },
+        {
+          "id": "oev-012",
+          "name": "Reconcile the current roadmap and correction priority",
+          "status": "done",
+          "owner": null,
+          "note": "Current follow-cam evidence, historical gate conflicts and issue #18 were reconciled. Mercy’s corrections workflow is the next priority, not a completed implementation.",
+          "last_touched": "2026-10-21",
+          "lane": "Planning",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-21",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/oev/blob/main/docs/roadmap.md",
+              "label": "OEV reconciled roadmap"
+            }
+          ]
+        },
+        {
+          "id": "oev-013",
+          "name": "Reconcile the customer-demo / M1 acceptance evidence",
+          "status": "blocked",
+          "owner": null,
+          "note": "The current review says the actual acceptance ticket is still open with no newer accepted clip/checklist. Historical implementation progress must not close this gate.",
+          "last_touched": "2026-10-22",
+          "lane": "Product gates",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-automations/issues/28",
+              "label": "Source issue / delivery"
+            }
+          ]
+        },
+        {
+          "id": "oev-014",
+          "name": "Confirm current hardware, module FOV and housing status",
+          "status": "blocked",
+          "owner": null,
+          "note": "Current BOM/housing/Track A acceptance is not confirmed. Historical dates and physical completion cannot be inferred from open tickets.",
+          "last_touched": "2026-10-22",
+          "lane": "Hardware",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/oev/blob/main/docs/roadmap.md",
+              "label": "OEV reconciled roadmap"
+            }
+          ]
+        },
+        {
+          "id": "oev-015",
+          "name": "Define Mercy’s corrections workflow and acceptance check",
+          "status": "todo",
+          "owner": null,
+          "note": "Current-phase issue #18 requests a small workflow spec and review criteria. The reviewed sources do not verify an implemented corrections interface.",
+          "last_touched": "2026-10-22",
+          "lane": "Corrections",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/oev/issues/18",
+              "label": "Source issue / delivery"
+            }
+          ]
+        },
+        {
+          "id": "oev-016",
+          "name": "Create a fresh annotated development and unseen evaluation set",
+          "status": "blocked",
+          "owner": null,
+          "note": "Aylestone has no annotations and is no longer unseen. Define the correction loop and secure fresh footage before treating a set as an acceptance benchmark.",
+          "last_touched": "2026-10-22",
+          "lane": "Evaluation",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [
+            "oev-015"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/oev/blob/main/docs/roadmap.md",
+              "label": "OEV reconciled roadmap"
+            }
+          ]
+        },
+        {
+          "id": "oev-017",
+          "name": "Revisit detector work using the labelled failure mix",
+          "status": "todo",
+          "owner": null,
+          "note": "OEV-005 has no verified model, labels or training run. Choose a bounded pilot after corrected evaluation evidence exists; no GPU spend is authorised here.",
+          "last_touched": "2026-10-22",
+          "lane": "Detection",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [
+            "oev-016"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/oev/blob/main/docs/roadmap.md",
+              "label": "OEV reconciled roadmap"
+            }
+          ]
+        },
+        {
+          "id": "oev-018",
+          "name": "Diagnose unused uncertainty and restart states",
+          "status": "todo",
+          "owner": null,
+          "note": "Use reviewed examples after defining the correction/evaluation loop. Do not assume another hand-tuned stray-ball rule will generalise.",
+          "last_touched": "2026-10-22",
+          "lane": "Tracking",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [
+            "oev-015"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/oev/blob/main/docs/roadmap.md",
+              "label": "OEV reconciled roadmap"
+            }
+          ]
+        },
+        {
+          "id": "oev-019",
+          "name": "Resolve the licensing path before commercial deployment",
+          "status": "blocked",
+          "owner": null,
+          "note": "The current roadmap retains a commercial licensing decision as open. This is an existing project gate, not a new legal conclusion.",
+          "last_touched": "2026-10-22",
+          "lane": "Commercial gates",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/oev/blob/main/docs/roadmap.md",
+              "label": "OEV reconciled roadmap"
+            }
+          ]
+        },
+        {
+          "id": "oev-020",
+          "name": "Validate full-match clock-sync drift on new modules",
+          "status": "blocked",
+          "owner": null,
+          "note": "The current roadmap records the drift gate as dependent on available new camera modules. Historical month-by-month dates are not current commitments.",
+          "last_touched": "2026-10-22",
+          "lane": "Hardware",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [
+            "oev-014"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/oev/blob/main/docs/roadmap.md",
+              "label": "OEV reconciled roadmap"
+            }
+          ]
+        },
+        {
+          "id": "oev-021",
+          "name": "Prove the unattended upload-to-broadcast chain",
+          "status": "blocked",
+          "owner": null,
+          "note": "A green test workflow is not evidence that a whole customer-ready recording was delivered without intervention. Current acceptance and hardware evidence remain prerequisites.",
+          "last_touched": "2026-10-22",
+          "lane": "Product gates",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [
+            "oev-013",
+            "oev-014"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/oev/blob/main/docs/roadmap.md",
+              "label": "OEV reconciled roadmap"
+            }
+          ]
+        },
+        {
+          "id": "oev-022",
+          "name": "Plan the foundational player-tracking engine",
+          "status": "todo",
+          "owner": null,
+          "note": "Existing legacy product backlog; not delivered and not a commitment for the current corrections phase.",
+          "last_touched": "2026-10-22",
+          "lane": "Later backlog",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/oev/issues/7",
+              "label": "Source issue / delivery"
+            }
+          ]
+        },
+        {
+          "id": "oev-023",
+          "name": "Plan automatic goal and highlight clips",
+          "status": "todo",
+          "owner": null,
+          "note": "Existing legacy product backlog; not delivered and not a commitment for the current corrections phase.",
+          "last_touched": "2026-10-22",
+          "lane": "Later backlog",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/oev/issues/9",
+              "label": "Source issue / delivery"
+            }
+          ]
+        },
+        {
+          "id": "oev-024",
+          "name": "Plan player heat maps and statistics",
+          "status": "todo",
+          "owner": null,
+          "note": "Existing legacy product backlog; not delivered and not a commitment for the current corrections phase.",
+          "last_touched": "2026-10-22",
+          "lane": "Later backlog",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/oev/issues/11",
+              "label": "Source issue / delivery"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/oev/issues/12",
+              "label": "Stats backlog"
+            }
+          ]
+        },
+        {
+          "id": "oev-025",
+          "name": "Plan per-player highlights",
+          "status": "todo",
+          "owner": null,
+          "note": "Existing legacy product backlog; not delivered and not a commitment for the current corrections phase.",
+          "last_touched": "2026-10-22",
+          "lane": "Later backlog",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/oev/issues/13",
+              "label": "Source issue / delivery"
+            }
+          ]
+        },
+        {
+          "id": "oev-026",
+          "name": "Scope the custom dual-lens unit and venue hub",
+          "status": "todo",
+          "owner": null,
+          "note": "Existing legacy product backlog; not delivered and not a commitment for the current corrections phase.",
+          "last_touched": "2026-10-22",
+          "lane": "Later backlog",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/oev/issues/14",
+              "label": "Source issue / delivery"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/oev/issues/6",
+              "label": "Venue hub backlog"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "ai",
@@ -80,16 +1846,292 @@
       "mono": "AI",
       "group": "Personal",
       "status": "Setup gaps",
-      "summary": "Shared rules and ChatGPT Drive access are in place; cross-account updates are not verified yet.",
+      "summary": "Shared rules, canonical links and the GitHub Pages hub are delivered. Claude access and a complete cross-account update cycle remain unverified.",
       "milestones": [
-        { "name": "Shared rules + handover", "status": "done" },
-        { "name": "Verify Claude Drive access", "status": "blocked" },
-        { "name": "Shared board updates", "status": "todo" }
+        {
+          "name": "Shared rules + handover",
+          "status": "done"
+        },
+        {
+          "name": "Verify Claude Drive access",
+          "status": "blocked"
+        },
+        {
+          "name": "Shared board updates",
+          "status": "todo"
+        }
       ],
       "next_step": "Verify Claude can read and update the shared Drive handover, then test a board update.",
       "blocker": "Claude’s Drive read/write access has not been verified; static hub updates are not automatic.",
       "updated": "22 OCT",
-      "workspace": { "provider": "GitHub", "url": "https://github.com/users/JhnsonO/projects/4/views/2" }
+      "workspace": {
+        "provider": "GitHub",
+        "url": "https://github.com/users/JhnsonO/projects/4/views/2"
+      },
+      "tasks": [
+        {
+          "id": "ai-001",
+          "name": "Establish the shared Drive reference folder",
+          "status": "done",
+          "owner": null,
+          "note": "The shared folder and its canonical project documents are in use. This is a shared file layer; built-in model memory is not synchronised.",
+          "last_touched": "2026-10-22",
+          "lane": "Shared context",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1I_jypC-RByq36z_5wGR6bo_qKbg3X_vq4KX2tv9RsnM/edit",
+              "label": "Project hub audit and delivery log"
+            }
+          ]
+        },
+        {
+          "id": "ai-002",
+          "name": "Publish the shared rules and handover process",
+          "status": "done",
+          "owner": null,
+          "note": "The rules define canonical sources, verification, privacy boundaries and end-of-session updates.",
+          "last_touched": "2026-10-22",
+          "lane": "Shared context",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1KDqx8qFqywIdekRA-09djS1aPNGyF6sf1ncLhsm-Ft0/edit",
+              "label": "Shared rules and handover"
+            }
+          ]
+        },
+        {
+          "id": "ai-003",
+          "name": "Verify ChatGPT can read and update shared handovers",
+          "status": "done",
+          "owner": "chatgpt",
+          "note": "Native Drive reads, guarded writes and readbacks were completed during the hub work. This does not verify Claude’s access.",
+          "last_touched": "2026-10-22",
+          "lane": "Access",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-22",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1I_jypC-RByq36z_5wGR6bo_qKbg3X_vq4KX2tv9RsnM/edit",
+              "label": "Project hub audit and delivery log"
+            }
+          ]
+        },
+        {
+          "id": "ai-004",
+          "name": "Create and verify canonical project delivery-board links",
+          "status": "done",
+          "owner": null,
+          "note": "The Media board and portfolio Kanban links were recorded as created/opened and checked in the 21 October setup conversation.",
+          "last_touched": "2026-10-21",
+          "lane": "Project organisation",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-21",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1I_jypC-RByq36z_5wGR6bo_qKbg3X_vq4KX2tv9RsnM/edit",
+              "label": "Project hub audit and delivery log"
+            }
+          ]
+        },
+        {
+          "id": "ai-005",
+          "name": "Create concise repository state entry points",
+          "status": "done",
+          "owner": null,
+          "note": "Media and Automations current-state summaries were reconciled with their historical logs so existing work can be resumed.",
+          "last_touched": "2026-10-22",
+          "lane": "Shared context",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1I_jypC-RByq36z_5wGR6bo_qKbg3X_vq4KX2tv9RsnM/edit",
+              "label": "Project hub audit and delivery log"
+            }
+          ]
+        },
+        {
+          "id": "ai-006",
+          "name": "Replace fixed coding/model routing with current-tool ownership",
+          "status": "done",
+          "owner": null,
+          "note": "Current shared rules and repository summaries say the active AI owns the task when capable, rather than routing coding to one account by default.",
+          "last_touched": "2026-10-22",
+          "lane": "Shared context",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1KDqx8qFqywIdekRA-09djS1aPNGyF6sf1ncLhsm-Ft0/edit",
+              "label": "Shared rules and handover"
+            }
+          ]
+        },
+        {
+          "id": "ai-007",
+          "name": "Publish the project hub on GitHub Pages",
+          "status": "done",
+          "owner": "chatgpt",
+          "note": "PR #1 merged and Pages deployment passed; the hub is publicly accessible.",
+          "last_touched": "2026-10-22",
+          "lane": "Hub delivery",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-22",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/project-hub/pull/1",
+              "label": "Source issue / delivery"
+            }
+          ]
+        },
+        {
+          "id": "ai-008",
+          "name": "Publish approved project progress on the hub",
+          "status": "done",
+          "owner": "chatgpt",
+          "note": "PR #4 exposed approved project status, next actions and general blockers on the page.",
+          "last_touched": "2026-10-22",
+          "lane": "Hub delivery",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-22",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/project-hub/pull/4",
+              "label": "Source issue / delivery"
+            }
+          ]
+        },
+        {
+          "id": "ai-009",
+          "name": "Implement the three reference layouts and project views",
+          "status": "done",
+          "owner": "chatgpt",
+          "note": "PR #10 delivered independent Light/HUD/Charcoal modes, project navigation, side-by-side panels and task-model validation; deployment and visual checks passed.",
+          "last_touched": "2026-10-22",
+          "lane": "Hub delivery",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-22",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/project-hub/pull/10",
+              "label": "Source issue / delivery"
+            }
+          ]
+        },
+        {
+          "id": "ai-010",
+          "name": "Reconcile completed work across all five project records",
+          "status": "done",
+          "owner": "chatgpt",
+          "note": "This history audit reads canonical handovers, implementation logs, issues and recent completion reports. Unverified delivery dates remain unset; historical implementation is distinguished from live acceptance.",
+          "last_touched": "2026-10-22",
+          "lane": "Hub delivery",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-22",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1I_jypC-RByq36z_5wGR6bo_qKbg3X_vq4KX2tv9RsnM/edit",
+              "label": "Project hub audit and delivery log"
+            }
+          ]
+        },
+        {
+          "id": "ai-011",
+          "name": "Verify Claude’s shared Drive read/write access",
+          "status": "blocked",
+          "owner": null,
+          "note": "Current canonical setup records retain this as unverified. A working ChatGPT connector does not establish Claude access.",
+          "last_touched": "2026-10-22",
+          "lane": "Access",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1I_jypC-RByq36z_5wGR6bo_qKbg3X_vq4KX2tv9RsnM/edit",
+              "label": "Project hub audit and delivery log"
+            }
+          ]
+        },
+        {
+          "id": "ai-012",
+          "name": "Verify an actual cross-account board update cycle",
+          "status": "blocked",
+          "owner": null,
+          "note": "Both accounts should read the latest canonical snapshot and preserve unrelated changes; a complete round trip remains unverified.",
+          "last_touched": "2026-10-22",
+          "lane": "Shared updates",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [
+            "ai-011"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1I_jypC-RByq36z_5wGR6bo_qKbg3X_vq4KX2tv9RsnM/edit",
+              "label": "Project hub audit and delivery log"
+            }
+          ]
+        },
+        {
+          "id": "ai-013",
+          "name": "Make browser task actions persist securely",
+          "status": "todo",
+          "owner": null,
+          "note": "Current Done/Block/Add buttons are explicitly preview-only. Persistent writes require an authenticated service or supported account tools; no repository credential is embedded in the public page.",
+          "last_touched": "2026-10-22",
+          "lane": "Shared updates",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1I_jypC-RByq36z_5wGR6bo_qKbg3X_vq4KX2tv9RsnM/edit",
+              "label": "Project hub audit and delivery log"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
