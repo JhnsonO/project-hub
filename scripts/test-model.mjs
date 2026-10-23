@@ -3,7 +3,7 @@ import {readFile,mkdtemp,writeFile,rm} from 'node:fs/promises';
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
 import {spawnSync} from 'node:child_process';
-import {counts,dependencyLayers,todayTasks,timeline} from '../model.mjs';
+import {counts,dependencyLayers,todayTasks,timeline,gaps} from '../model.mjs';
 const tasks=[{id:'web-a',name:'A',status:'done',depends_on:[],start:'2026-10-12',end:'2026-10-20'},{id:'web-b',name:'B',status:'doing',depends_on:['web-a']},{id:'web-c',name:'C',status:'todo',depends_on:['web-b']},{id:'web-d',name:'D',status:'blocked',depends_on:[]}];
 assert.equal(counts(tasks).pct,25);
 assert.deepEqual(dependencyLayers(tasks).map(layer=>layer.map(t=>t.id)),[['web-a','web-d'],['web-b'],['web-c']]);
@@ -15,6 +15,8 @@ assert.equal(timeline([{id:'a',start:null,end:null}]).weeks.length,0);
 const history=timeline([{id:'past',status:'done',completed_on:'2026-10-04'},{id:'unknown',status:'done',completed_on:null},{id:'future',status:'todo'}]);
 assert.equal(history.dated[0].milestone,true);assert.equal(history.dated[0].start,'2026-10-04');assert.equal(history.undated.length,2);
 const observed=timeline([{id:'activity',status:'done',start:'2026-08-10',end:'2026-08-15',date_basis:'observed',completed_on:'2026-08-15'}]);assert.equal(observed.dated[0].milestone,undefined);assert.equal(observed.dated[0].date_basis,'observed');assert.equal(observed.dated[0].start,'2026-08-10');
+{const G=[{id:'p',name:'P',tasks:[{id:'a',name:'A',status:'doing',last_touched:'2026-09-01'},{id:'b',name:'B',status:'todo'}],questions:[{id:'q1',text:'Who owns B?'}]},{id:'z',name:'Z',target:'2026-12-01',tasks:[{id:'c',name:'C',status:'done'}]}];
+const g=gaps(G,'2026-10-23');assert.deepEqual(g.map(x=>x.kind),['asked','stale','target']);assert.equal(gaps([G[1]],'2026-10-23').length,0);}
 const base=JSON.parse(await readFile(new URL('../data/projects.json',import.meta.url),'utf8'));
 const dir=await mkdtemp(join(tmpdir(),'hub-validator-'));
 const file=join(dir,'fixture.json');
@@ -30,6 +32,8 @@ try {
   const invalidBasis=structuredClone(base);invalidBasis.projects[0].tasks[0].date_basis='guessed';assert.match((await run(invalidBasis)).stderr,/valid basis/);
   const missingDateEvidence=structuredClone(base);Object.assign(missingDateEvidence.projects[0].tasks[0],{date_basis:'observed',date_note:'Observed dates'});assert.match((await run(missingDateEvidence)).stderr,/source evidence/);
   const badReason=structuredClone(base);badReason.projects[0].tasks[0].blocked_reason='not blocked';assert.match((await run(badReason)).stderr,/blocked_reason/);
+  const badQ=structuredClone(base);badQ.projects[0].questions=[{id:'q',text:'x'.repeat(81)}];assert.match((await run(badQ)).stderr,/questions/);
+  const goodQ=structuredClone(base);goodQ.projects[0].questions=[{id:'q',text:'Target date?'}];assert.equal((await run(goodQ)).status,0);
   const badTarget=structuredClone(base);badTarget.projects[0].target='soon';assert.match((await run(badTarget)).stderr,/target/);
   const invalidDate=structuredClone(base);invalidDate.projects[0].tasks[0].start='2026-02-30';assert.match((await run(invalidDate)).stderr,/invalid start/);
 } finally {await rm(dir,{recursive:true,force:true});}

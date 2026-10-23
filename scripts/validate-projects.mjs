@@ -12,7 +12,7 @@ catch { throw new Error('data/projects.json is not valid JSON'); }
 const allowedGroups = new Set(['FFA', 'OEV', 'Personal']);
 const allowedStatuses = new Set(['done', 'doing', 'blocked', 'todo']);
 const allowedHosts = new Map([['Google', 'docs.google.com'], ['GitHub', 'github.com']]);
-const projectKeys = new Set(['id', 'name', 'mono', 'group', 'status', 'summary', 'milestones', 'next_step', 'blocker', 'watch', 'updated', 'workspace', 'roadmap', 'featured', 'target', 'tasks']);
+const projectKeys = new Set(['id', 'name', 'mono', 'group', 'status', 'summary', 'milestones', 'next_step', 'blocker', 'watch', 'updated', 'workspace', 'roadmap', 'featured', 'target', 'questions', 'tasks']);
 const fail = (message) => { console.error(`Project status validation failed: ${message}`); process.exit(1); };
 
 if (data.schema_version !== 2) fail('unsupported schema_version');
@@ -70,6 +70,17 @@ for (const project of data.projects) {
     const dates=project.tasks.flatMap(t=>[t.start,t.end,t.completed_on]).filter(Boolean).map(Date.parse);
     if(dates.length && Math.max(...dates)-Math.min(...dates)>5*366*86400000) fail(`${project.id}: timeline exceeds five years`);
     try { dependencyLayers(project.tasks); } catch (error) { fail(`${project.id}: ${error.message}`); }
+  }
+  if (project.questions !== undefined) {
+    if (!Array.isArray(project.questions)) fail(`${project.id}.questions must be an array`);
+    const qids = new Set();
+    for (const q of project.questions) {
+      if (!q || typeof q !== 'object' || Object.keys(q).some(k => !['id', 'text', 'asked_on'].includes(k))) fail(`${project.id}.questions entries allow only id, text, asked_on`);
+      if (typeof q.id !== 'string' || !q.id || qids.has(q.id)) fail(`${project.id}.questions needs unique ids`);
+      qids.add(q.id);
+      if (typeof q.text !== 'string' || !q.text.trim() || q.text.length > 80) fail(`${project.id}.questions text must be 1-80 characters`);
+      if (q.asked_on !== undefined && (!/^\d{4}-\d{2}-\d{2}$/.test(q.asked_on) || Number.isNaN(Date.parse(q.asked_on)))) fail(`${project.id}.questions asked_on must be an ISO date`);
+    }
   }
   if (project.target !== undefined && (!/^\d{4}-\d{2}-\d{2}$/.test(project.target) || Number.isNaN(Date.parse(project.target)))) fail(`${project.id}.target must be an ISO date`);
   validateLink(project.workspace, `${project.id}.workspace`);

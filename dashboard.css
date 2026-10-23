@@ -151,3 +151,5 @@
 .road-view .rv-grid{--lane:104px;--col:112px}
 @media(max-width:600px){.road-view .rv-grid{--lane:0px;--col:92px}.road-view .rv-lane{display:none}}
 .group-button[aria-pressed=true] small{color:var(--fg)}
+
+.needs{border:1px dashed var(--mid);padding:12px 16px;display:flex;flex-direction:column;gap:6px;background:transparent}.needs>small{font:12px var(--mono);letter-spacing:.1em;color:var(--muted)}.needs-list{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:4px}.needs-list li{font-size:16px;line-height:1.35}.layout-light .needs{border-radius:14px}.needs .needs-hint{letter-spacing:.03em}
