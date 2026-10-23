@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "updated": "2026-10-23",
-  "updated_by": "claude",
+  "updated_by": "chatgpt",
   "groups": [
     "FFA",
     "OEV",
@@ -2232,7 +2232,7 @@
       "mono": "AI",
       "group": "Personal",
       "status": "Drive + GitHub publishing verified",
-      "summary": "Both active accounts have saved per-task hub-refresh instructions. Claude and ChatGPT passed a shared Drive file round-trip, and Claude has published hub changes by feature branch, pull request, merge and live Pages readback.",
+      "summary": "Personal Gmail owns the shared Home and Rules docs; the FFA account remains an editor for the current connectors. Claude and ChatGPT access is tested. Claude’s hub updates publish through PRs; both accounts have per-task refresh instructions, with no background sync.",
       "milestones": [
         {
           "name": "Shared rules + handover",
@@ -2256,10 +2256,10 @@
       "tasks": [
         {
           "id": "ai-001",
-          "name": "Establish the shared Drive reference folder",
+          "name": "Establish shared Drive reference docs in personal Gmail",
           "status": "done",
           "owner": null,
-          "note": "The shared folder and its canonical project documents are in use. This is a shared file layer; built-in model memory is not synchronised.",
+          "note": "The personal Gmail owns the canonical Home and Rules documents. The FFA Gmail remains an editor so existing AI connectors can read and update them. Built-in model memory still does not synchronize.",
           "last_touched": "2026-10-22",
           "lane": "Shared context",
           "start": null,
@@ -2269,8 +2269,8 @@
           "evidence": [
             {
               "provider": "Google",
-              "url": "https://docs.google.com/document/d/1I_jypC-RByq36z_5wGR6bo_qKbg3X_vq4KX2tv9RsnM/edit",
-              "label": "Project hub audit and delivery log"
+              "url": "https://docs.google.com/document/d/1yO92jAmM0f1sN02165yW_zm1wbE9O8AiN1lNShnVDrI/edit",
+              "label": "Personal-owned project hub Home"
             }
           ]
         },
@@ -2289,8 +2289,8 @@
           "evidence": [
             {
               "provider": "Google",
-              "url": "https://docs.google.com/document/d/1KDqx8qFqywIdekRA-09djS1aPNGyF6sf1ncLhsm-Ft0/edit",
-              "label": "Shared rules and handover"
+              "url": "https://docs.google.com/document/d/1hR0JQ8eOJ34bScs8tp2H3B8yCvpH2FLiNX_bgXa1YNY/edit",
+              "label": "Personal-owned shared rules and handover"
             }
           ]
         },
@@ -2299,7 +2299,7 @@
           "name": "Verify ChatGPT can read and update shared handovers",
           "status": "done",
           "owner": "chatgpt",
-          "note": "Native Drive reads, guarded writes and readbacks were completed during the hub work. This does not verify Claude’s access.",
+          "note": "ChatGPT read and edited the personal-owned Home and Rules docs through its existing Drive connector; changes were read back. The FFA account remains an editor.",
           "last_touched": "2026-10-22",
           "lane": "Access",
           "start": null,
@@ -2309,8 +2309,8 @@
           "evidence": [
             {
               "provider": "Google",
-              "url": "https://docs.google.com/document/d/1I_jypC-RByq36z_5wGR6bo_qKbg3X_vq4KX2tv9RsnM/edit",
-              "label": "Project hub audit and delivery log"
+              "url": "https://docs.google.com/document/d/1yO92jAmM0f1sN02165yW_zm1wbE9O8AiN1lNShnVDrI/edit",
+              "label": "Personal-owned project hub Home"
             }
           ]
         },
@@ -2329,8 +2329,8 @@
           "evidence": [
             {
               "provider": "Google",
-              "url": "https://docs.google.com/document/d/1I_jypC-RByq36z_5wGR6bo_qKbg3X_vq4KX2tv9RsnM/edit",
-              "label": "Project hub audit and delivery log"
+              "url": "https://docs.google.com/document/d/1yO92jAmM0f1sN02165yW_zm1wbE9O8AiN1lNShnVDrI/edit",
+              "label": "Personal-owned project hub Home"
             }
           ]
         },
@@ -2349,8 +2349,8 @@
           "evidence": [
             {
               "provider": "Google",
-              "url": "https://docs.google.com/document/d/1I_jypC-RByq36z_5wGR6bo_qKbg3X_vq4KX2tv9RsnM/edit",
-              "label": "Project hub audit and delivery log"
+              "url": "https://docs.google.com/document/d/1yO92jAmM0f1sN02165yW_zm1wbE9O8AiN1lNShnVDrI/edit",
+              "label": "Personal-owned project hub Home"
             }
           ]
         },
@@ -2369,8 +2369,8 @@
           "evidence": [
             {
               "provider": "Google",
-              "url": "https://docs.google.com/document/d/1KDqx8qFqywIdekRA-09djS1aPNGyF6sf1ncLhsm-Ft0/edit",
-              "label": "Shared rules and handover"
+              "url": "https://docs.google.com/document/d/1hR0JQ8eOJ34bScs8tp2H3B8yCvpH2FLiNX_bgXa1YNY/edit",
+              "label": "Personal-owned shared rules and handover"
             }
           ]
         },
@@ -2453,8 +2453,8 @@
           "evidence": [
             {
               "provider": "Google",
-              "url": "https://docs.google.com/document/d/1I_jypC-RByq36z_5wGR6bo_qKbg3X_vq4KX2tv9RsnM/edit",
-              "label": "Project hub audit and delivery log"
+              "url": "https://docs.google.com/document/d/1yO92jAmM0f1sN02165yW_zm1wbE9O8AiN1lNShnVDrI/edit",
+              "label": "Personal-owned project hub Home"
             }
           ]
         },
@@ -2463,7 +2463,7 @@
           "name": "Verify Claude shared Drive read/write round-trip",
           "status": "done",
           "owner": "chatgpt",
-          "note": "Claude read the shared Home and rules, created and read back a harmless test file in the shared folder, and ChatGPT independently read the same file. This verifies shared Drive file read/write across accounts; editing existing Google Docs remains untested.",
+          "note": "Verified 23 October against personal-owned copies: Claude read both Home and Rules, appended a temporary marker to Rules, read it back, removed only that marker, and confirmed it was gone. ChatGPT read and edited the same personal-owned docs through its FFA-authenticated connector. The original FFA copies remain intact.",
           "last_touched": "2026-10-23",
           "lane": "Access",
           "start": null,
@@ -2473,8 +2473,13 @@
           "evidence": [
             {
               "provider": "Google",
-              "url": "https://docs.google.com/document/d/1I_jypC-RByq36z_5wGR6bo_qKbg3X_vq4KX2tv9RsnM/edit",
-              "label": "Current account test status"
+              "url": "https://docs.google.com/document/d/1yO92jAmM0f1sN02165yW_zm1wbE9O8AiN1lNShnVDrI/edit",
+              "label": "Personal-owned Home and cross-account read test"
+            },
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1hR0JQ8eOJ34bScs8tp2H3B8yCvpH2FLiNX_bgXa1YNY/edit",
+              "label": "Claude existing-document write/readback test"
             }
           ]
         },
@@ -2483,7 +2488,7 @@
           "name": "Verify a complete Claude-to-hub publication cycle",
           "status": "done",
           "owner": null,
-          "note": "Verified 23 October: Claude changed the hub through branches and pull requests, checks passed, changes merged and the live Pages site was read back after each deploy.",
+          "note": "Verified 23 October: Claude Code published the hub through PR #21, checks, merge and live Pages JSON readback. PR #23 then merged the static-snapshot update procedure; its local schema/model/syntax checks passed.",
           "last_touched": "2026-10-23",
           "lane": "Shared updates",
           "start": null,
@@ -2496,7 +2501,12 @@
             {
               "provider": "GitHub",
               "url": "https://github.com/JhnsonO/project-hub/pull/21",
-              "label": "Verified publish: pull request 21"
+              "label": "Verified publish cycle"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/project-hub/pull/23",
+              "label": "Snapshot update procedure"
             }
           ]
         },
@@ -2553,12 +2563,12 @@
           "end": null,
           "lane": "Access",
           "depends_on": [],
-          "note": "Verified 23 October from Claude: feature branch pushed, pull request opened and merged after checks passed.",
+          "note": "Verified 23 October from Claude Code: feature branch pushed, PR #21 opened and merged after checks passed; live snapshot was read back.",
           "evidence": [
             {
               "provider": "GitHub",
               "url": "https://github.com/JhnsonO/project-hub/pull/21",
-              "label": "Verified publish: pull request 21"
+              "label": "Verified publish cycle"
             }
           ]
         },
@@ -2573,12 +2583,37 @@
           "end": null,
           "lane": "Account setup",
           "depends_on": [],
-          "note": "ChatGPT custom instructions and Claude preferences were updated and reopened to confirm both require verified, public-safe hub updates after substantial project tasks. Both state that updates are per-task and there is no background sync.",
+          "note": "ChatGPT custom instructions and Claude preferences were updated and reopened to confirm the personal-owned Home/Rules links and per-task refresh rule. Claude's redundant default Codex routing was removed. Both state there is no background sync.",
           "evidence": [
             {
               "provider": "Google",
-              "url": "https://docs.google.com/document/d/1I_jypC-RByq36z_5wGR6bo_qKbg3X_vq4KX2tv9RsnM/edit",
+              "url": "https://docs.google.com/document/d/1yO92jAmM0f1sN02165yW_zm1wbE9O8AiN1lNShnVDrI/edit",
               "label": "Shared account setup status"
+            },
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1hR0JQ8eOJ34bScs8tp2H3B8yCvpH2FLiNX_bgXa1YNY/edit",
+              "label": "Personal-owned bootstrap instructions"
+            }
+          ]
+        },
+        {
+          "id": "ai-017",
+          "name": "Move shared AI memory docs to personal Gmail",
+          "status": "done",
+          "owner": "chatgpt",
+          "note": "Created personal-owned copies of Home and Rules, shared them with footffa@gmail.com as editor for connector compatibility, updated account instructions and links, and preserved the FFA originals.",
+          "completed_on": "2026-10-23",
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1yO92jAmM0f1sN02165yW_zm1wbE9O8AiN1lNShnVDrI/edit",
+              "label": "Personal-owned Home"
+            },
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1hR0JQ8eOJ34bScs8tp2H3B8yCvpH2FLiNX_bgXa1YNY/edit",
+              "label": "Personal-owned Rules"
             }
           ]
         }
