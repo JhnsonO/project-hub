@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "updated": "2026-10-23",
-  "updated_by": "chatgpt",
+  "updated_by": "claude",
   "groups": [
     "FFA",
     "OEV",
@@ -2840,7 +2840,7 @@
       "name": "TEST Claude Hub Roundtrip",
       "mono": "TC",
       "group": "Personal",
-      "status": "Disposable test · setup done",
+      "status": "Disposable test · 2 of 3 done",
       "summary": "Disposable workflow test: complete a three-step launch checklist. Separate from real projects; left in place until cleanup is requested.",
       "milestones": [
         {
@@ -2849,14 +2849,14 @@
         },
         {
           "name": "Draft sample checklist",
-          "status": "todo"
+          "status": "done"
         },
         {
           "name": "Review checklist",
           "status": "todo"
         }
       ],
-      "next_step": "Draft the sample checklist.",
+      "next_step": "Review the checklist.",
       "updated": "23 OCT",
       "workspace": {
         "provider": "Google",
@@ -2885,19 +2885,27 @@
         {
           "id": "test-002",
           "name": "Draft a sample checklist",
-          "status": "todo",
-          "owner": null,
-          "note": "Not started.",
+          "status": "done",
+          "owner": "claude",
+          "note": "Sample checklist drafted.",
           "last_touched": "2026-10-23",
           "lane": "Test",
-          "depends_on": []
+          "depends_on": [],
+          "completed_on": "2026-10-23",
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1cvceY89uoYYmyz5gMuDl0eUujbfn5OE5X20-GyK0FU0/edit",
+              "label": "Board, roadmap and handover"
+            }
+          ]
         },
         {
           "id": "test-003",
           "name": "Review the checklist",
           "status": "todo",
           "owner": null,
-          "note": "Starts after the checklist is drafted.",
+          "note": "Ready to start; the checklist is drafted.",
           "last_touched": "2026-10-23",
           "lane": "Test",
           "depends_on": [

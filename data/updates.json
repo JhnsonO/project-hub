@@ -50,6 +50,16 @@
         "test-chatgpt-roundtrip"
       ],
       "snapshot_hash": "f49af309e85e605a2a8837e1d4a20f0c1f2b612ebf2dee3890322eb1e9b38a79"
+    },
+    {
+      "id": "claude-20261023-test-roundtrip-02",
+      "fingerprint": "fdef108fb8ce97d59126ed778b0d9713657da5f333f82f535873a7add9e9ace4",
+      "date": "2026-10-23",
+      "editor": "claude",
+      "projects": [
+        "test"
+      ],
+      "snapshot_hash": "798d33a64905e13faeb142d118a9f17b83acb6ee47ec5f1b1423a14772baab2c"
     }
   ]
 }
