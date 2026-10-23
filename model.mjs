@@ -39,3 +39,12 @@ export function timeline(tasks) {
   const weeks=[];for(let d=start;d<end;d+=7*day)weeks.push(new Date(d));
   return {dated,undated,weeks,start,end};
 }
+
+export function gaps(projects, today = new Date().toISOString().slice(0, 10)) {
+  const age = d => (Date.parse(today) - Date.parse(d)) / 86400000;
+  const out = [];
+  for (const p of projects) for (const q of p.questions || []) out.push({ id: p.id + ':' + q.id, project: p, kind: 'asked', text: q.text });
+  for (const p of projects) for (const t of p.tasks) if (t.status === 'doing' && t.last_touched && age(t.last_touched) > 14) out.push({ id: t.id, project: p, kind: 'stale', text: 'Still in progress? ' + t.name });
+  for (const p of projects) if (!p.target && p.tasks.some(t => t.status !== 'done')) out.push({ id: p.id + ':target', project: p, kind: 'target', text: 'Target date for ' + p.name + '?' });
+  return out;
+}
