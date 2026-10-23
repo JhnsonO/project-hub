@@ -106,13 +106,13 @@
 .road-view{display:flex;flex-direction:column;gap:14px}
 .road-view .rv-meta{font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--muted)}
 .road-view .rv-scroll{overflow-x:auto;padding-bottom:4px}.road-view .rv-grid{display:grid}
-.road-view .rv-cell{position:relative;height:122px}
+.road-view .rv-cell{position:relative;height:136px}
 .road-view .rv-lane{position:absolute;left:0;top:30px;max-width:70px;overflow-wrap:anywhere;font:10px var(--mono);letter-spacing:.14em;color:var(--muted);text-transform:uppercase}
 .road-view .rv-stop{position:relative;z-index:1;width:100%;height:100%;min-height:0;display:flex;flex-direction:column;align-items:center;padding:0;border:0;background:transparent;color:var(--fg);text-align:center}
 .road-view .rv-tagrow{display:block;height:22px}
 .road-view .rv-tag{display:inline-block;font:10px var(--mono);letter-spacing:.16em;color:var(--onacc,var(--bg));background:var(--acc);padding:3px 7px;border-radius:2px}
 .road-view .rv-nodewrap{display:flex;align-items:center;justify-content:center;height:34px}
-.road-view .rv-label{margin-top:8px;padding:0 4px;font-size:14px;line-height:1.2;font-weight:500}
+.road-view .rv-label{margin-top:8px;padding:0 4px;font-size:14px;line-height:1.2;font-weight:500;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;max-width:100%}
 .road-view .rv-label.doing,.road-view .rv-label.finish{font-weight:600}.road-view .rv-label.todo{color:var(--muted)}
 .road-view .rv-label.finish{font:11px var(--mono);letter-spacing:.08em;text-transform:uppercase}
 .road-view .rv-sub{margin-top:3px;padding:0 4px;font:10px/1.25 var(--mono);letter-spacing:.04em;color:var(--muted)}
@@ -133,3 +133,5 @@
 .road-view .rv-dot.done{background:var(--mid)}.road-view .rv-dot.doing{background:var(--acc)}.road-view .rv-dot.todo{border:2px dashed var(--mid)}
 .road-view .rv-dot.blocked{border-radius:3px;background:repeating-linear-gradient(135deg,var(--mid) 0,var(--mid) 3px,var(--panel) 3px,var(--panel) 6px);border:2px solid var(--fg)}
 .road-view .rv-dot.finish{width:18px;border-radius:0;border:2px solid var(--fg);background:repeating-conic-gradient(var(--fg) 0 25%,var(--panel) 0 50%) 0 0/8px 8px}
+
+.road-view .rv-more a{display:inline-flex;align-items:center;min-height:44px}
