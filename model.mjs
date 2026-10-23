@@ -22,7 +22,7 @@ export function dependencyLayers(tasks) {
 export function todayTasks(projects) {
   const all=projects.flatMap(p=>p.tasks.map(t=>({...t,project:p})));
   return all.filter(t=>t.status!=='done' && (t.status!=='todo'||(t.depends_on||[]).every(id=>t.project.tasks.some(d=>d.id===id&&d.status==='done'))))
-    .sort((a,b)=>({blocked:0,doing:1,todo:2}[a.status]-{blocked:0,doing:1,todo:2}[b.status])||a.project.id.localeCompare(b.project.id)||a.id.localeCompare(b.id)).slice(0,5);
+    .sort((a,b)=>({doing:0,todo:1,blocked:2}[a.status]-{doing:0,todo:1,blocked:2}[b.status])||a.project.id.localeCompare(b.project.id)||a.id.localeCompare(b.id)).slice(0,5);
 }
 export function timeline(tasks) {
   const dated=[], undated=[];

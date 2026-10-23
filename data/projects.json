@@ -485,7 +485,8 @@
               "url": "https://docs.google.com/document/d/1Ai973jkiOD_3WvG1ra2sFiIzPO3F3R1AlGIvKzZWWXA/edit",
               "label": "Website master handover"
             }
-          ]
+          ],
+          "blocked_reason": "Editor blocked admin test scripts"
         }
       ]
     },
@@ -960,7 +961,8 @@
               "url": "https://github.com/JhnsonO/ffa-media/issues/53",
               "label": "Source issue / delivery"
             }
-          ]
+          ],
+          "blocked_reason": "Key work deferred (#53)"
         },
         {
           "id": "media-019",
@@ -1002,7 +1004,8 @@
               "url": "https://github.com/JhnsonO/ffa-media/issues/55",
               "label": "Source issue / delivery"
             }
-          ]
+          ],
+          "blocked_reason": "Needs deferred setup and app access"
         },
         {
           "id": "media-021",
@@ -1892,7 +1895,8 @@
               "url": "https://github.com/JhnsonO/ffa-automations/issues/28",
               "label": "Source issue / delivery"
             }
-          ]
+          ],
+          "blocked_reason": "No newer accepted clip"
         },
         {
           "id": "oev-014",
@@ -1912,7 +1916,8 @@
               "url": "https://github.com/JhnsonO/oev/blob/main/docs/roadmap.md",
               "label": "OEV reconciled roadmap"
             }
-          ]
+          ],
+          "blocked_reason": "Hardware, FOV, housing unconfirmed"
         },
         {
           "id": "oev-015",
@@ -1954,7 +1959,8 @@
               "url": "https://github.com/JhnsonO/oev/blob/main/docs/roadmap.md",
               "label": "OEV reconciled roadmap"
             }
-          ]
+          ],
+          "blocked_reason": "Needs fresh annotated footage"
         },
         {
           "id": "oev-017",
@@ -2018,7 +2024,8 @@
               "url": "https://github.com/JhnsonO/oev/blob/main/docs/roadmap.md",
               "label": "OEV reconciled roadmap"
             }
-          ]
+          ],
+          "blocked_reason": "Licensing decision open"
         },
         {
           "id": "oev-020",
@@ -2040,7 +2047,8 @@
               "url": "https://github.com/JhnsonO/oev/blob/main/docs/roadmap.md",
               "label": "OEV reconciled roadmap"
             }
-          ]
+          ],
+          "blocked_reason": "Needs new camera modules"
         },
         {
           "id": "oev-021",
@@ -2063,7 +2071,8 @@
               "url": "https://github.com/JhnsonO/oev/blob/main/docs/roadmap.md",
               "label": "OEV reconciled roadmap"
             }
-          ]
+          ],
+          "blocked_reason": "Needs acceptance and hardware proof"
         },
         {
           "id": "oev-022",
@@ -2490,14 +2499,15 @@
               "url": "https://docs.google.com/document/d/1I_jypC-RByq36z_5wGR6bo_qKbg3X_vq4KX2tv9RsnM/edit",
               "label": "Current account test status"
             }
-          ]
+          ],
+          "blocked_reason": "Claude publish cycle unverified"
         },
         {
           "id": "ai-013",
           "name": "Make browser task actions persist securely",
           "status": "todo",
           "owner": null,
-          "note": "Current Done/Block/Add buttons are explicitly preview-only. Persistent writes require an authenticated service or supported account tools; no repository credential is embedded in the public page.",
+          "note": "Done/Block were removed from the public page because they could not save; Add now saves on this device only. Shared persistent writes still need an authenticated service or supported account tools; no repository credential is embedded in the public page.",
           "last_touched": "2026-10-22",
           "lane": "Shared updates",
           "start": null,
@@ -2552,7 +2562,8 @@
               "url": "https://docs.google.com/document/d/1I_jypC-RByq36z_5wGR6bo_qKbg3X_vq4KX2tv9RsnM/edit",
               "label": "Current account test status"
             }
-          ]
+          ],
+          "blocked_reason": "Claude write access unverified"
         },
         {
           "id": "ai-016",

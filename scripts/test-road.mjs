@@ -18,6 +18,11 @@ for (const r of roads) {
   assert.equal(r.done + r.toGo, r.total, r.id + ': counts');
   assert.ok(r.byId.get(r.id + '-finish').deps.length, r.id + ': finish unreachable');
 }
+const oev = roads.find((r) => r.id === 'oev');
+const grp = oev.nodes.find((n) => n.kind === 'group');
+assert.ok(grp && grp.members.length >= 2, 'later backlog should be stacked into one node');
+assert.ok(!oev.byId.get('oev-finish').deps.includes(grp.id), 'parked work must not gate the finish');
+assert.ok(oev.nodes.filter((n) => n.status === 'blocked').every((n) => n.blocked_reason), 'blocked stops need a reason');
 const sample = buildRoads([{ id: 'x', name: 'X', group: 'FFA', tasks: [{ id: 'x-1', name: 'a', status: 'done', depends_on: [] }] }]);
 assert.equal(sample[0].toGo, 0);
 console.log(`Road model OK for ${roads.length} projects.`);

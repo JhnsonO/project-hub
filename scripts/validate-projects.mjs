@@ -12,7 +12,7 @@ catch { throw new Error('data/projects.json is not valid JSON'); }
 const allowedGroups = new Set(['FFA', 'OEV', 'Personal']);
 const allowedStatuses = new Set(['done', 'doing', 'blocked', 'todo']);
 const allowedHosts = new Map([['Google', 'docs.google.com'], ['GitHub', 'github.com']]);
-const projectKeys = new Set(['id', 'name', 'mono', 'group', 'status', 'summary', 'milestones', 'next_step', 'blocker', 'watch', 'updated', 'workspace', 'roadmap', 'featured', 'tasks']);
+const projectKeys = new Set(['id', 'name', 'mono', 'group', 'status', 'summary', 'milestones', 'next_step', 'blocker', 'watch', 'updated', 'workspace', 'roadmap', 'featured', 'target', 'tasks']);
 const fail = (message) => { console.error(`Project status validation failed: ${message}`); process.exit(1); };
 
 if (data.schema_version !== 2) fail('unsupported schema_version');
@@ -42,7 +42,7 @@ for (const project of data.projects) {
   if (!Array.isArray(project.milestones) || project.milestones.length < 2) fail(`${project.id} needs at least two milestones`);
   if (project.milestones.some((phase) => !phase.name || Object.keys(phase).some((key) => !['name', 'status'].includes(key)) || !allowedStatuses.has(phase.status))) fail(`${project.id} has an invalid milestone`);
   if (project.tasks !== undefined) {
-    const taskKeys = new Set(['id','name','status','owner','note','last_touched','lane','start','end','depends_on','completed_on','evidence','date_basis','date_note']);
+    const taskKeys = new Set(['id','name','status','owner','note','last_touched','lane','start','end','depends_on','completed_on','evidence','date_basis','date_note','blocked_reason']);
     if (!Array.isArray(project.tasks) || !project.tasks.length) fail(`${project.id}: tasks must be a nonempty array`);
     const taskIds = new Set();
     for (const task of project.tasks) {
@@ -51,6 +51,7 @@ for (const project of data.projects) {
       allTaskIds.add(task.id);
       if (taskIds.has(task.id)) fail(`${project.id}: duplicate task id`);
       taskIds.add(task.id);
+      if (task.blocked_reason !== undefined && (task.status !== 'blocked' || typeof task.blocked_reason !== 'string' || !task.blocked_reason.trim() || task.blocked_reason.length > 80)) fail(`${task.id}: blocked_reason must be short text on a blocked task`);
       if (task.owner != null && !['claude','chatgpt'].includes(task.owner)) fail(`${task.id}: invalid owner`);
       if (!Array.isArray(task.depends_on) || new Set(task.depends_on).size !== task.depends_on.length) fail(`${task.id}: invalid dependencies`);
       for (const key of ['start','end','last_touched','completed_on']) if (task[key] != null && (!/^\d{4}-\d{2}-\d{2}$/.test(task[key]) || Number.isNaN(Date.parse(task[key])) || new Date(task[key]).toISOString().slice(0,10) !== task[key])) fail(`${task.id}: invalid ${key}`);
@@ -70,6 +71,7 @@ for (const project of data.projects) {
     if(dates.length && Math.max(...dates)-Math.min(...dates)>5*366*86400000) fail(`${project.id}: timeline exceeds five years`);
     try { dependencyLayers(project.tasks); } catch (error) { fail(`${project.id}: ${error.message}`); }
   }
+  if (project.target !== undefined && (!/^\d{4}-\d{2}-\d{2}$/.test(project.target) || Number.isNaN(Date.parse(project.target)))) fail(`${project.id}.target must be an ISO date`);
   validateLink(project.workspace, `${project.id}.workspace`);
   if (project.roadmap) validateLink(project.roadmap, `${project.id}.roadmap`);
   for (const key of ['blocker', 'watch']) if (project[key] !== undefined && typeof project[key] !== 'string') fail(`${project.id}.${key} must be text`);
