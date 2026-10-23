@@ -31,6 +31,7 @@ const parkedOnly = buildRoads([{id:'optional',name:'Optional',group:'Personal',t
 ]}])[0];
 const parkedCells=parkedOnly.nodes.map(n=>n.row+','+n.col);
 assert.equal(new Set(parkedCells).size,parkedCells.length,'optional-only roadmap must not overlap its finish');
+assert.notEqual(parkedOnly.byId.get('optional-later').row,parkedOnly.byId.get('optional-finish').row,'optional branch must stay off the completion path');
 assert.ok(!parkedOnly.byId.get('optional-finish').deps.includes('optional-later'),'optional work must not gate completion');
 console.log(`Road model OK for ${roads.length} projects.`);
 
