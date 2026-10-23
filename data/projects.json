@@ -2615,7 +2615,10 @@
               "url": "https://docs.google.com/document/d/1hR0JQ8eOJ34bScs8tp2H3B8yCvpH2FLiNX_bgXa1YNY/edit",
               "label": "Personal-owned Rules"
             }
-          ]
+          ],
+          "last_touched": "2026-10-23",
+          "lane": "Shared context",
+          "depends_on": []
         }
       ]
     }
