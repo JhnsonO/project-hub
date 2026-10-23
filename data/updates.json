@@ -20,6 +20,16 @@
         "ai"
       ],
       "snapshot_hash": "5a280227724ffba6463c7636761513f93d7a6b5b9fc5d2f0b6fd45e99509b5bb"
+    },
+    {
+      "id": "claude-20261023-test-roundtrip-01",
+      "fingerprint": "692189ae691f1bfbf4a3a4a10b386eb6cf711e13d426a770f13c0cf8155f7fc1",
+      "date": "2026-10-23",
+      "editor": "claude",
+      "projects": [
+        "test"
+      ],
+      "snapshot_hash": "9d4d18b99608d70bd2d011399588847b2beabbd271eabaeed3c72dcad667cfd7"
     }
   ]
 }

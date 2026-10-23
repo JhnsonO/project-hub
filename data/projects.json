@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "updated": "2026-10-23",
-  "updated_by": "chatgpt",
+  "updated_by": "claude",
   "groups": [
     "FFA",
     "OEV",
@@ -2747,6 +2747,77 @@
         }
       ],
       "target_asked_on": "2026-10-23"
+    },
+    {
+      "id": "test",
+      "name": "TEST Claude Hub Roundtrip",
+      "mono": "TC",
+      "group": "Personal",
+      "status": "Disposable test · setup done",
+      "summary": "Disposable workflow test: complete a three-step launch checklist. Separate from real projects; left in place until cleanup is requested.",
+      "milestones": [
+        {
+          "name": "Define test goal",
+          "status": "done"
+        },
+        {
+          "name": "Draft sample checklist",
+          "status": "todo"
+        },
+        {
+          "name": "Review checklist",
+          "status": "todo"
+        }
+      ],
+      "next_step": "Draft the sample checklist.",
+      "updated": "23 OCT",
+      "workspace": {
+        "provider": "Google",
+        "url": "https://docs.google.com/document/d/1cvceY89uoYYmyz5gMuDl0eUujbfn5OE5X20-GyK0FU0/edit"
+      },
+      "target_asked_on": "2026-10-23",
+      "tasks": [
+        {
+          "id": "test-001",
+          "name": "Define the test goal",
+          "status": "done",
+          "owner": "claude",
+          "note": "Goal set: complete a three-step launch checklist.",
+          "last_touched": "2026-10-23",
+          "completed_on": "2026-10-23",
+          "lane": "Test",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1cvceY89uoYYmyz5gMuDl0eUujbfn5OE5X20-GyK0FU0/edit",
+              "label": "Board, roadmap and handover"
+            }
+          ]
+        },
+        {
+          "id": "test-002",
+          "name": "Draft a sample checklist",
+          "status": "todo",
+          "owner": null,
+          "note": "Not started.",
+          "last_touched": "2026-10-23",
+          "lane": "Test",
+          "depends_on": []
+        },
+        {
+          "id": "test-003",
+          "name": "Review the checklist",
+          "status": "todo",
+          "owner": null,
+          "note": "Starts after the checklist is drafted.",
+          "last_touched": "2026-10-23",
+          "lane": "Test",
+          "depends_on": [
+            "test-002"
+          ]
+        }
+      ]
     }
   ]
 }
