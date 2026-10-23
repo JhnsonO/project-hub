@@ -2623,6 +2623,26 @@
           "last_touched": "2026-10-23",
           "lane": "Shared context",
           "depends_on": []
+        },
+        {
+          "id": "ai-018",
+          "name": "Make shared project updates more reliable",
+          "status": "done",
+          "owner": "chatgpt",
+          "note": "Needs you gaps now sort by when they were first raised or surfaced. Missing target prompts carry a first-surfaced date, question dates are required, and impossible ISO dates are rejected. Shared rules now define conversation triggers for new projects, dates, completion, blockers and scope changes without a fixed questionnaire. PR #28 and its regression checks passed.",
+          "last_touched": "2026-10-23",
+          "lane": "Shared updates",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-23",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/project-hub/pull/28",
+              "label": "Gap ordering, date validation and test changes"
+            }
+          ]
         }
       ],
       "target_asked_on": "2026-10-23"
