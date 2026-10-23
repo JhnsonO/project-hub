@@ -7,10 +7,8 @@ on:
       - 'app.js'
       - 'package.json'
       - 'model.mjs'
-      - 'road.mjs'
-      - 'road.js'
-      - 'road.css'
-      - 'road.html'
+      - 'road-model.mjs'
+      - 'road-view.mjs'
       - 'scripts/test-road.mjs'
       - 'dashboard.css'
       - 'index.html'
@@ -23,10 +21,8 @@ on:
       - 'app.js'
       - 'package.json'
       - 'model.mjs'
-      - 'road.mjs'
-      - 'road.js'
-      - 'road.css'
-      - 'road.html'
+      - 'road-model.mjs'
+      - 'road-view.mjs'
       - 'scripts/test-road.mjs'
       - 'dashboard.css'
       - 'index.html'
@@ -47,5 +43,5 @@ jobs:
       - run: node --check app.js
       - run: node scripts/validate-projects.mjs
       - run: node scripts/test-model.mjs
-      - run: node --check road.js
+      - run: node --check road-view.mjs
       - run: node scripts/test-road.mjs
