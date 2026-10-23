@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "updated": "2026-10-23",
-  "updated_by": "chatgpt",
+  "updated_by": "claude",
   "groups": [
     "FFA",
     "OEV",
@@ -2231,8 +2231,8 @@
       "name": "AI Workflow & Shared Context",
       "mono": "AI",
       "group": "Personal",
-      "status": "Drive verified · GitHub publishing blocked",
-      "summary": "Both active accounts have saved per-task hub-refresh instructions. Claude and ChatGPT passed a shared Drive file round-trip; Claude’s GitHub publishing path still needs verification.",
+      "status": "Drive + GitHub publishing verified",
+      "summary": "Both active accounts have saved per-task hub-refresh instructions. Claude and ChatGPT passed a shared Drive file round-trip, and Claude has published hub changes by feature branch, pull request, merge and live Pages readback.",
       "milestones": [
         {
           "name": "Shared rules + handover",
@@ -2244,11 +2244,10 @@
         },
         {
           "name": "Test shared hub publication",
-          "status": "blocked"
+          "status": "done"
         }
       ],
-      "next_step": "Confirm Claude can propose a GitHub change, then merge a test snapshot and verify the live Pages update.",
-      "blocker": "Claude’s GitHub write/publish access is unverified. The static hub has no background sync; it changes only after a snapshot is published and deployed.",
+      "next_step": "Decide whether shared browser task actions need an authenticated service; until then the public page is read-only.",
       "updated": "23 OCT",
       "workspace": {
         "provider": "GitHub",
@@ -2482,25 +2481,24 @@
         {
           "id": "ai-012",
           "name": "Verify a complete Claude-to-hub publication cycle",
-          "status": "blocked",
+          "status": "done",
           "owner": null,
-          "note": "The shared Drive round-trip passed and both active accounts have the per-task refresh instruction. Claude’s GitHub write path has not been verified, so an actual change, PR, merge and live Pages readback from Claude remain outstanding.",
+          "note": "Verified 23 October: Claude changed the hub through branches and pull requests, checks passed, changes merged and the live Pages site was read back after each deploy.",
           "last_touched": "2026-10-23",
           "lane": "Shared updates",
           "start": null,
           "end": null,
-          "completed_on": null,
+          "completed_on": "2026-10-23",
           "depends_on": [
             "ai-015"
           ],
           "evidence": [
             {
-              "provider": "Google",
-              "url": "https://docs.google.com/document/d/1I_jypC-RByq36z_5wGR6bo_qKbg3X_vq4KX2tv9RsnM/edit",
-              "label": "Current account test status"
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/project-hub/pull/21",
+              "label": "Verified publish: pull request 21"
             }
-          ],
-          "blocked_reason": "Claude publish cycle unverified"
+          ]
         },
         {
           "id": "ai-013",
@@ -2547,23 +2545,22 @@
         {
           "id": "ai-015",
           "name": "Verify Claude’s GitHub feature-branch and publish access",
-          "status": "blocked",
+          "status": "done",
           "owner": null,
           "last_touched": "2026-10-23",
-          "completed_on": null,
+          "completed_on": "2026-10-23",
           "start": null,
           "end": null,
           "lane": "Access",
           "depends_on": [],
-          "note": "No GitHub write connector was available in the Claude test chat. A feature-branch/PR workflow and live Pages readback still need to be tested from Claude.",
+          "note": "Verified 23 October from Claude: feature branch pushed, pull request opened and merged after checks passed.",
           "evidence": [
             {
-              "provider": "Google",
-              "url": "https://docs.google.com/document/d/1I_jypC-RByq36z_5wGR6bo_qKbg3X_vq4KX2tv9RsnM/edit",
-              "label": "Current account test status"
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/project-hub/pull/21",
+              "label": "Verified publish: pull request 21"
             }
-          ],
-          "blocked_reason": "Claude write access unverified"
+          ]
         },
         {
           "id": "ai-016",
