@@ -25,4 +25,12 @@ assert.ok(!oev.byId.get('oev-finish').deps.includes(grp.id), 'parked work must n
 assert.ok(oev.nodes.filter((n) => n.status === 'blocked').every((n) => n.blocked_reason), 'blocked stops need a reason');
 const sample = buildRoads([{ id: 'x', name: 'X', group: 'FFA', tasks: [{ id: 'x-1', name: 'a', status: 'done', depends_on: [] }] }]);
 assert.equal(sample[0].toGo, 0);
+const parkedOnly = buildRoads([{id:'optional',name:'Optional',group:'Personal',tasks:[
+  {id:'optional-a',name:'Later A',status:'todo',lane:'Later / optional',depends_on:[]},
+  {id:'optional-b',name:'Later B',status:'todo',lane:'Later / optional',depends_on:[]}
+]}])[0];
+const parkedCells=parkedOnly.nodes.map(n=>n.row+','+n.col);
+assert.equal(new Set(parkedCells).size,parkedCells.length,'optional-only roadmap must not overlap its finish');
+assert.ok(!parkedOnly.byId.get('optional-finish').deps.includes('optional-later'),'optional work must not gate completion');
 console.log(`Road model OK for ${roads.length} projects.`);
+

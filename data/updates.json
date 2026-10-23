@@ -22,44 +22,14 @@
       "snapshot_hash": "5a280227724ffba6463c7636761513f93d7a6b5b9fc5d2f0b6fd45e99509b5bb"
     },
     {
-      "id": "chatgpt-20261023-dummy-create-01",
-      "fingerprint": "b4b0bb2b0aaaa8321efdd9c4f66dca81ff7acc09210f9ffc24e49ba7bc131f03",
+      "id": "chatgpt-20261023-roundtrip-cleanup-01",
+      "fingerprint": "744d98f3c22a43366789ee061558fa13f89da37f497b64e46b97785a8ed74191",
       "date": "2026-10-23",
       "editor": "chatgpt",
       "projects": [
-        "test-chatgpt-roundtrip"
+        "ai"
       ],
-      "snapshot_hash": "c153d4f18687707f5d44649670bd5c9e8cad56707a7133a3d38e5ee2137c7363"
-    },
-    {
-      "id": "claude-20261023-test-roundtrip-01",
-      "fingerprint": "692189ae691f1bfbf4a3a4a10b386eb6cf711e13d426a770f13c0cf8155f7fc1",
-      "date": "2026-10-23",
-      "editor": "claude",
-      "projects": [
-        "test"
-      ],
-      "snapshot_hash": "a1a7c650acf8cfde12ec2488d4ec6ce85ce077753cfdd878a8c27d87f1f16ada"
-    },
-    {
-      "id": "chatgpt-20261023-dummy-status-02",
-      "fingerprint": "a82f0873ec789ba3a18ef7958bb6924484fcfba43cd964edbcf361a727f04d6a",
-      "date": "2026-10-23",
-      "editor": "chatgpt",
-      "projects": [
-        "test-chatgpt-roundtrip"
-      ],
-      "snapshot_hash": "f49af309e85e605a2a8837e1d4a20f0c1f2b612ebf2dee3890322eb1e9b38a79"
-    },
-    {
-      "id": "claude-20261023-test-roundtrip-02",
-      "fingerprint": "fdef108fb8ce97d59126ed778b0d9713657da5f333f82f535873a7add9e9ace4",
-      "date": "2026-10-23",
-      "editor": "claude",
-      "projects": [
-        "test"
-      ],
-      "snapshot_hash": "798d33a64905e13faeb142d118a9f17b83acb6ee47ec5f1b1423a14772baab2c"
+      "snapshot_hash": "702a05ca98a9373b2a7b0b3fcaaf81c01cdc5f9a888975f81fe8375a18b63a4c"
     }
   ]
 }

@@ -61,3 +61,14 @@ If history search is unavailable, record a failed conversation scan and separate
 - Claude account access is verified in the connected browser. The guarded-update preferences were saved and reopened; a daily 21:30 task was created and run. Its first scheduled test read shared Docs but reported no conversation-search tool or repository access. Interactive chat search works and memory/search settings are enabled, but no way to grant that tool to the scheduled session was found. The saved routine is paused to avoid repeated failures; re-enable after a capability test passes. Do not claim it is working.
 - The spare ChatGPT account remains outside the setup.
 - This helper is a guarded shared publishing preparation step, not a server that continuously monitors accounts or independently synchronizes all sources.
+
+
+## Interactive acceptance test — 23 October 2026
+
+The primary workflow passed a real test in the active ChatGPT conversation and a fresh Claude conversation: each created a disposable project, saved its canonical board/roadmap/handover, then published a conversation-driven task completion. Both live records reached 2/3 done with the remaining dependency-ready task. All five real project objects were preserved through the tests. Claude independently resolved a merge conflict by rebuilding on latest main. Evidence: PRs #32, #34, #35 and #36.
+
+The first Claude handover edit failed: its Drive creator and Docs editor used different existing accounts. Only the two generic dummy Docs were granted the existing personal-account writer access; Claude then edited/read back its original source and published successfully. New shared source setup must verify edit/readback access through the identities and tools both accounts use before publishing. Create/read access alone is insufficient. Use an existing shared workspace and verify identity; never make a source public or expose credentials to solve this.
+
+Johnson confirmed daily scanning is optional fallback. Scheduled publication acceptance and the paused Claude schedule remain parked optional work, not a blocker for interactive updates. Instructions guide future behavior; these tests do not prove universal compliance in every future chat.
+
+After verification, the two disposable project entries and their four QA receipts are removed in an explicitly scoped test rollback; their commit/PR evidence remains in Git history. This is not permission to remove real project history or journal entries. Dummy source Docs are archived in place. The real AI-workflow acceptance record and a fresh normal receipt remain in the hub.
