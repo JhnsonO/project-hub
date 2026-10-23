@@ -135,3 +135,4 @@
 .road-view .rv-dot.finish{width:18px;border-radius:0;border:2px solid var(--fg);background:repeating-conic-gradient(var(--fg) 0 25%,var(--panel) 0 50%) 0 0/8px 8px}
 
 .road-view .rv-more a{display:inline-flex;align-items:center;min-height:44px}
+.done-toggle{display:inline-flex;align-items:center;margin:0 0 10px;padding:0 14px;border:1px solid var(--line);background:transparent;color:var(--muted);font:12px var(--mono);letter-spacing:.1em;text-transform:uppercase}.light-status-group>.done-toggle{margin:0}
