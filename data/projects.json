@@ -2747,6 +2747,92 @@
         }
       ],
       "target_asked_on": "2026-10-23"
+    },
+    {
+      "id": "test-chatgpt-roundtrip",
+      "name": "TEST ChatGPT Hub Roundtrip",
+      "mono": "TC",
+      "group": "Personal",
+      "status": "Disposable QA test",
+      "summary": "Generic conversation-driven project creation test; remove after verification.",
+      "milestones": [
+        {
+          "name": "Goal defined",
+          "status": "done"
+        },
+        {
+          "name": "Checklist drafted",
+          "status": "todo"
+        },
+        {
+          "name": "Checklist reviewed",
+          "status": "todo"
+        }
+      ],
+      "next_step": "Draft a sample checklist.",
+      "updated": "23 OCT",
+      "workspace": {
+        "provider": "Google",
+        "url": "https://docs.google.com/document/d/1LwXV0kcFWR-deeGwzke3CMuh4QKwHoa9ygs2XmZN8nE/edit"
+      },
+      "roadmap": {
+        "provider": "Google",
+        "url": "https://docs.google.com/document/d/1LwXV0kcFWR-deeGwzke3CMuh4QKwHoa9ygs2XmZN8nE/edit"
+      },
+      "target_asked_on": "2026-10-23",
+      "tasks": [
+        {
+          "id": "test-chatgpt-roundtrip-001",
+          "name": "Define the test goal",
+          "status": "done",
+          "completed_on": "2026-10-23",
+          "depends_on": [],
+          "owner": "chatgpt",
+          "last_touched": "2026-10-23",
+          "lane": "Disposable test",
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1LwXV0kcFWR-deeGwzke3CMuh4QKwHoa9ygs2XmZN8nE/edit",
+              "label": "Disposable canonical board, roadmap and handover"
+            }
+          ]
+        },
+        {
+          "id": "test-chatgpt-roundtrip-002",
+          "name": "Draft a sample checklist",
+          "status": "todo",
+          "depends_on": [],
+          "owner": "chatgpt",
+          "last_touched": "2026-10-23",
+          "lane": "Disposable test",
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1LwXV0kcFWR-deeGwzke3CMuh4QKwHoa9ygs2XmZN8nE/edit",
+              "label": "Disposable canonical board, roadmap and handover"
+            }
+          ]
+        },
+        {
+          "id": "test-chatgpt-roundtrip-003",
+          "name": "Review the checklist",
+          "status": "todo",
+          "depends_on": [
+            "test-chatgpt-roundtrip-002"
+          ],
+          "owner": "chatgpt",
+          "last_touched": "2026-10-23",
+          "lane": "Disposable test",
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1LwXV0kcFWR-deeGwzke3CMuh4QKwHoa9ygs2XmZN8nE/edit",
+              "label": "Disposable canonical board, roadmap and handover"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

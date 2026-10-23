@@ -20,6 +20,16 @@
         "ai"
       ],
       "snapshot_hash": "5a280227724ffba6463c7636761513f93d7a6b5b9fc5d2f0b6fd45e99509b5bb"
+    },
+    {
+      "id": "chatgpt-20261023-dummy-create-01",
+      "fingerprint": "b4b0bb2b0aaaa8321efdd9c4f66dca81ff7acc09210f9ffc24e49ba7bc131f03",
+      "date": "2026-10-23",
+      "editor": "chatgpt",
+      "projects": [
+        "test-chatgpt-roundtrip"
+      ],
+      "snapshot_hash": "c153d4f18687707f5d44649670bd5c9e8cad56707a7133a3d38e5ee2137c7363"
     }
   ]
 }
