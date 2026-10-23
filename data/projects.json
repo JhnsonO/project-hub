@@ -2235,8 +2235,8 @@
       "name": "AI Workflow & Shared Context",
       "mono": "AI",
       "group": "Personal",
-      "status": "Daily catch-up setup · acceptance pending",
-      "summary": "Shared project records and per-task updates are established. A guarded publishing helper checks conflicts, repeated updates and retained history. ChatGPT evening catch-up is configured; its unattended test and Claude setup remain pending.",
+      "status": "Both preferences saved · daily scan limits",
+      "summary": "Both active accounts have shared project update instructions. ChatGPT completed a daily catch-up with selective history search. Claude’s preferences are saved; its daily task is paused because the scheduled test lacked chat search and repository access.",
       "milestones": [
         {
           "name": "Shared rules + handover",
@@ -2251,7 +2251,7 @@
           "status": "done"
         }
       ],
-      "next_step": "Verify the scheduled ChatGPT catch-up, then sign in to Claude to configure and test its own daily scan.",
+      "next_step": "Resolve Claude scheduled-session capabilities and verify a scheduled change-to-publication cycle.",
       "updated": "23 OCT",
       "workspace": {
         "provider": "GitHub",
@@ -2688,9 +2688,9 @@
         },
         {
           "id": "ai-021",
-          "name": "Verify an unattended ChatGPT catch-up run",
+          "name": "Verify a scheduled change-to-publication cycle",
           "status": "todo",
-          "note": "Check the completed scheduled run for source access, actual conversation coverage, deduplication and correct saved/published states. Enabling the schedule alone is not acceptance.",
+          "note": "ChatGPT completed a cloud catch-up: shared records and selective history search were accessible, no new verified changes were found, the existing live receipt was checked, and private checkpoints saved. A new canonical change published by the scheduled routine remains untested.",
           "depends_on": [
             "ai-020"
           ],
@@ -2711,8 +2711,8 @@
           "id": "ai-022",
           "name": "Configure and test Claude daily project catch-up",
           "status": "blocked",
-          "blocked_reason": "Claude sign-in is required in the current browser.",
-          "note": "Use the same shared protocol and its own preceding 24 hours of conversations. Preferences, schedule and a real run remain unverified in this session.",
+          "blocked_reason": "Scheduled Claude test lacked chat search and repository access.",
+          "note": "Signed-in connected browser verified. Preferences saved and reopened; daily 21:30 task created and test executed. Scheduled session read Home/Rules but had no conversation-search tool or repository access, and saved an honest failure checkpoint. Configuration is complete; conversation-scan acceptance is blocked. Interactive Claude chat search works and search/memory settings are enabled. Scheduled task paused after the failed test to avoid repeated unsuccessful scans.",
           "depends_on": [],
           "owner": "chatgpt",
           "last_touched": "2026-10-23",
@@ -2724,6 +2724,24 @@
               "provider": "GitHub",
               "url": "https://github.com/JhnsonO/project-hub/blob/main/docs/ai-update-protocol.md",
               "label": "Shared update protocol and acceptance status"
+            }
+          ]
+        },
+        {
+          "id": "ai-023",
+          "name": "Save Claude guarded-update preferences and daily routine",
+          "status": "done",
+          "owner": "chatgpt",
+          "last_touched": "2026-10-23",
+          "completed_on": "2026-10-23",
+          "lane": "Account setup",
+          "depends_on": [],
+          "note": "Connected browser account settings reopened to confirm the added update protocol persisted. Claude daily task detail confirmed Active and Daily at 9:30 PM; Run now produced a checkpoint. Successful chat scanning remains a separate open acceptance task. The routine was paused after the capability test; the saved configuration is retained for repair.",
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1hR0JQ8eOJ34bScs8tp2H3B8yCvpH2FLiNX_bgXa1YNY/edit",
+              "label": "Account configuration and observed test result"
             }
           ]
         }

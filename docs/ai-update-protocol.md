@@ -57,7 +57,7 @@ If history search is unavailable, record a failed conversation scan and separate
 
 - Existing per-task Drive/GitHub access was verified previously; this session read both personal docs and latest main.
 - Interactive ChatGPT history search retrieved relevant discussions but explicitly could not confirm exhaustive 24-hour coverage. Results included older material, so timestamp and current-source checks are required.
-- ChatGPT daily catch-up is configured for the evening, around 21:00 Europe/London; an unattended run still needs checking.
-- Claude is signed out in the current browser. Its scheduling/preferences update and equivalent history-search test remain pending sign-in. Do not mark this as complete.
+- ChatGPT daily catch-up is enabled for the evening, around 21:00 Europe/London. A cloud test completed, retrieved selective history, read shared sources, verified the existing publication and saved private checkpoints. A new source-change-to-publication cycle remains untested.
+- Claude account access is verified in the connected browser. The guarded-update preferences were saved and reopened; a daily 21:30 task was created and run. Its first scheduled test read shared Docs but reported no conversation-search tool or repository access. Interactive chat search works and memory/search settings are enabled, but no way to grant that tool to the scheduled session was found. The saved routine is paused to avoid repeated failures; re-enable after a capability test passes. Do not claim it is working.
 - The spare ChatGPT account remains outside the setup.
 - This helper is a guarded shared publishing preparation step, not a server that continuously monitors accounts or independently synchronizes all sources.
