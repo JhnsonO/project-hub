@@ -12,11 +12,12 @@ catch { throw new Error('data/projects.json is not valid JSON'); }
 const allowedGroups = new Set(['FFA', 'OEV', 'Personal']);
 const allowedStatuses = new Set(['done', 'doing', 'blocked', 'todo']);
 const allowedHosts = new Map([['Google', 'docs.google.com'], ['GitHub', 'github.com']]);
-const projectKeys = new Set(['id', 'name', 'mono', 'group', 'status', 'summary', 'milestones', 'next_step', 'blocker', 'watch', 'updated', 'workspace', 'roadmap', 'featured', 'target', 'questions', 'tasks']);
+const projectKeys = new Set(['id', 'name', 'mono', 'group', 'status', 'summary', 'milestones', 'next_step', 'blocker', 'watch', 'updated', 'workspace', 'roadmap', 'featured', 'target', 'target_asked_on', 'questions', 'tasks']);
+const isIsoDate = (value) => typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value) && !Number.isNaN(Date.parse(value)) && new Date(value).toISOString().slice(0, 10) === value;
 const fail = (message) => { console.error(`Project status validation failed: ${message}`); process.exit(1); };
 
 if (data.schema_version !== 2) fail('unsupported schema_version');
-if (!/^\d{4}-\d{2}-\d{2}$/.test(data.updated || '')) fail('updated must be an ISO date');
+if (!isIsoDate(data.updated)) fail('updated must be a real ISO calendar date');
 if (!['claude', 'chatgpt'].includes(data.updated_by)) fail('updated_by must identify the editing assistant');
 if (!Array.isArray(data.groups) || !Array.isArray(data.projects)) fail('groups and projects must be arrays');
 if (new Set(data.groups).size !== data.groups.length) fail('duplicate groups');
@@ -79,10 +80,12 @@ for (const project of data.projects) {
       if (typeof q.id !== 'string' || !q.id || qids.has(q.id)) fail(`${project.id}.questions needs unique ids`);
       qids.add(q.id);
       if (typeof q.text !== 'string' || !q.text.trim() || q.text.length > 80) fail(`${project.id}.questions text must be 1-80 characters`);
-      if (q.asked_on !== undefined && (!/^\d{4}-\d{2}-\d{2}$/.test(q.asked_on) || Number.isNaN(Date.parse(q.asked_on)))) fail(`${project.id}.questions asked_on must be an ISO date`);
+      if (!isIsoDate(q.asked_on)) fail(`${project.id}.questions asked_on must be a real ISO calendar date`);
     }
   }
-  if (project.target !== undefined && (!/^\d{4}-\d{2}-\d{2}$/.test(project.target) || Number.isNaN(Date.parse(project.target)))) fail(`${project.id}.target must be an ISO date`);
+  if (project.target != null && !isIsoDate(project.target)) fail(`${project.id}.target must be a real ISO calendar date`);
+  if (project.target_asked_on !== undefined && (!isIsoDate(project.target_asked_on) || project.target != null)) fail(`${project.id}.target_asked_on must be a real date only while target is missing`);
+  if (project.tasks?.some(task => task.status !== 'done') && project.target == null && !isIsoDate(project.target_asked_on)) fail(`${project.id}.target_asked_on must record when its missing target was first surfaced`);
   validateLink(project.workspace, `${project.id}.workspace`);
   if (project.roadmap) validateLink(project.roadmap, `${project.id}.roadmap`);
   for (const key of ['blocker', 'watch']) if (project[key] !== undefined && typeof project[key] !== 'string') fail(`${project.id}.${key} must be text`);

@@ -43,8 +43,9 @@ export function timeline(tasks) {
 export function gaps(projects, today = new Date().toISOString().slice(0, 10)) {
   const age = d => (Date.parse(today) - Date.parse(d)) / 86400000;
   const out = [];
-  for (const p of projects) for (const q of p.questions || []) out.push({ id: p.id + ':' + q.id, project: p, kind: 'asked', text: q.text });
-  for (const p of projects) for (const t of p.tasks) if (t.status === 'doing' && t.last_touched && age(t.last_touched) > 14) out.push({ id: t.id, project: p, kind: 'stale', text: 'Still in progress? ' + t.name });
-  for (const p of projects) if (!p.target && p.tasks.some(t => t.status !== 'done')) out.push({ id: p.id + ':target', project: p, kind: 'target', text: 'Target date for ' + p.name + '?' });
-  return out;
+  const add = (gap, openedOn) => out.push({ ...gap, openedOn: openedOn || today, order: out.length });
+  for (const p of projects) for (const q of p.questions || []) add({ id: p.id + ':' + q.id, project: p, kind: 'asked', text: q.text }, q.asked_on);
+  for (const p of projects) for (const t of p.tasks) if (t.status === 'doing' && t.last_touched && age(t.last_touched) > 14) add({ id: t.id, project: p, kind: 'stale', text: 'Still in progress? ' + t.name }, t.last_touched);
+  for (const p of projects) if (!p.target && p.tasks.some(t => t.status !== 'done')) add({ id: p.id + ':target', project: p, kind: 'target', text: 'Target date for ' + p.name + '?' }, p.target_asked_on);
+  return out.sort((a, b) => a.openedOn.localeCompare(b.openedOn) || a.order - b.order).map(({ openedOn, order, ...gap }) => gap);
 }
