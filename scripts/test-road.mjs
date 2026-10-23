@@ -1,6 +1,6 @@
 import { readFile } from 'node:fs/promises';
 import assert from 'node:assert/strict';
-import { buildRoads } from '../road.mjs';
+import { buildRoads } from '../road-model.mjs';
 const data = JSON.parse(await readFile(new URL('../data/projects.json', import.meta.url), 'utf8'));
 const roads = buildRoads(data.projects.filter((p) => p.tasks));
 assert.ok(roads.length >= 1, 'no roads');
