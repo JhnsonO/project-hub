@@ -9,13 +9,13 @@ Public GitHub Pages dashboard at https://jhnsono.github.io/project-hub/.
 - Charcoal: percentage, stacked status bar and grouped ledger rows.
 - Dark modes open dedicated project screens. Flow, Kanban and Roadmap toggle independently.
 - Today ranks blocked items, active items, then dependency-ready to-do items; at most five.
-- Done/Block/Add are **in-memory previews only**. Reload resets them. No credentials or client write token are stored.
+- The public dashboard is read-only. Add notes are saved in this browser on this device only; they do not update the shared snapshot. Done/Block controls are not available. No credentials or client write token are stored.
 
 ## Canonical snapshot
 
 `data/projects.json` contains completed deliverables and outstanding items reconciled from canonical handovers, logs, issues and recent completion reports. The legacy milestone summaries are retained as a fallback. Each task includes an evidence link. Dates, dependencies, owners and last-touched metadata are left unset when unverified. Progress is the share of recorded work items done, not an estimate of an exhaustive final product scope. A completed local implementation does not close a separate live acceptance check.
 
-For verified task records, a project may add a `tasks` array. Tasks require stable `id`, `name`, `status`, and `depends_on`; optional nullable fields are `owner` (`claude`/`chatgpt`), `note`, `last_touched`, `lane`, `start`, `end`, `completed_on`, and `evidence` (labelled Google/GitHub source links). If `tasks` exists it is displayed instead of milestones. Do not copy mockup sample data. The flow calculates dependency layers. Roadmap renders dated items as weekly lane-based Gantt bars and lists open undated items under Unscheduled. Completed items without a known date have their own Completed section. Known completion dates appear as diamond milestones; no start dates or durations are invented for historical work.
+Projects may also include `questions` (short questions the AI needs answered) to surface missing information in the Needs you card. For verified task records, a project may add a `tasks` array. Tasks require stable `id`, `name`, `status`, and `depends_on`; optional nullable fields are `owner` (`claude`/`chatgpt`), `note`, `last_touched`, `lane`, `start`, `end`, `completed_on`, and `evidence` (labelled Google/GitHub source links). If `tasks` exists it is displayed instead of milestones. Do not copy mockup sample data. The flow calculates dependency layers. Roadmap renders dated items as weekly lane-based Gantt bars and lists open undated items under Unscheduled. Completed items without a known date have their own Completed section. Known completion dates appear as diamond milestones; no start dates or durations are invented for historical work.
 
 Both AIs should read current canonical trackers, reconcile only verified changes to the snapshot, update the date/editor, and publish via a feature branch and PR. This is shared file access, not automatic chat-memory synchronisation. The snapshot never updates itself; see [Updating the snapshot](DEPLOYMENT.md#updating-the-snapshot).
 

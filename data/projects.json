@@ -2602,7 +2602,7 @@
           "name": "Move shared AI memory docs to personal Gmail",
           "status": "done",
           "owner": "chatgpt",
-          "note": "Created personal-owned copies of Home and Rules, shared them with footffa@gmail.com as editor for connector compatibility, updated account instructions and links, and preserved the FFA originals.",
+          "note": "Created personal-owned copies of Home and Rules, shared with the existing FFA-authenticated Drive connector for compatibility, updated account instructions and links, and preserved the FFA originals.",
           "completed_on": "2026-10-23",
           "evidence": [
             {
