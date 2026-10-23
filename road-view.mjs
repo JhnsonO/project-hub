@@ -1,4 +1,4 @@
-import { buildRoad } from './road-model.mjs';
+import { buildRoad } from './road-model.mjs?v=2';
 const LABEL = { todo: 'To do', doing: 'In progress', blocked: 'Blocked', done: 'Done', finish: 'Finish line' };
 const AGENT = { claude: 'Claude', chatgpt: 'ChatGPT' };
 const memory = new Map(); // per-project selection survives re-renders of the page
@@ -35,19 +35,19 @@ function diagram(m, sel) {
         const on = sel.id === x.id, next = m.next.includes(x);
         html += `<button class="rv-stop" data-id="${esc(x.id)}" aria-pressed="${on}" aria-label="${esc(x.name + ', ' + LABEL[x.status])}">`
           + `<span class="rv-tagrow">${next ? '<span class="rv-tag">' + (x.status === 'doing' ? 'HERE' : 'NEXT') + '</span>' : ''}</span>`
-          + `<span class="rv-nodewrap"><span class="rv-node ${x.status}${on ? ' sel' : ''}"></span></span><span class="rv-label ${x.status}">${esc(x.name)}</span>${x.status === 'blocked' ? '<span class="rv-sub">Blocked</span>' : ''}</button>`;
+          + `<span class="rv-nodewrap"><span class="rv-node ${x.status}${on ? ' sel' : ''}"></span></span><span class="rv-label ${x.status}" title="${esc(x.name)}">${esc(x.name)}</span>${x.status === 'blocked' ? '<span class="rv-sub">Blocked</span>' : ''}</button>`;
       }
       html += '</div>';
     }
   }
-  const cols = '76px ' + Array.from({ length: K }, (v, k) => (k % 2 === 0 ? 'minmax(96px,1fr)' : '26px')).join(' ');
-  return `<div class="rv-scroll"><div class="rv-grid" style="min-width:${76 + m.nCols * 96 + (m.nCols - 1) * 26}px;grid-template-columns:${cols}">${html}</div></div>`;
+  const cols = '76px ' + Array.from({ length: K }, (v, k) => (k % 2 === 0 ? 'minmax(112px,1fr)' : '26px')).join(' ');
+  return `<div class="rv-scroll"><div class="rv-grid" style="min-width:${76 + m.nCols * 112 + (m.nCols - 1) * 26}px;grid-template-columns:${cols}">${html}</div></div>`;
 }
 
 function panel(m, sel) {
   const x = m.byId.get(sel.id); if (!x) return '';
   const needs = x.deps.map((d) => m.byId.get(d)?.name).filter(Boolean), unlocks = m.nodes.filter((y) => y.deps.includes(x.id)).map((y) => y.name);
-  const after = (needs.length ? 'Needs: ' + needs.join(', ') : 'Starts the road') + '  //  ' + (unlocks.length ? 'Unlocks: ' + unlocks.join(', ') : 'End of the road');
+  const after = (needs.length > 3 ? 'Needs: ' + needs.length + ' stops' : needs.length ? 'Needs: ' + needs.join(', ') : 'Starts the road') + '  //  ' + (unlocks.length > 3 ? 'Unlocks: ' + unlocks.length + ' stops' : unlocks.length ? 'Unlocks: ' + unlocks.join(', ') : 'End of the road');
   const rest = (x.note || '').length > first(x.note).length;
   let h = `<div class="rv-detail"><div class="rv-title"><b>${esc(x.name)}</b><span class="rv-meta">${esc(LABEL[x.status] + (x.owner ? ' // ' + AGENT[x.owner] : '') + (x.lane ? ' // ' + x.lane : ''))}</span></div><span>${esc(first(x.note))}</span><span class="rv-meta">${esc(after)}</span>`;
   if (x.kind === 'stop' && (rest || (x.evidence || []).length || x.last_touched)) {

@@ -1,5 +1,5 @@
 import {statuses,labels,counts,dependencyLayers,todayTasks,timeline} from './model.mjs?v=13';
-import { roadView } from './road-view.mjs';
+import { roadView } from './road-view.mjs?v=2';
 const root=document.querySelector('#app');
 const state={theme:'dark',project:null,group:'All',today:false,expanded:new Set(),panels:{flow:true,kanban:false,roadmap:false,gantt:false},focus:null,inbox:[],unsaved:false};
 let data,projects=[];
