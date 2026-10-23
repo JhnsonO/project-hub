@@ -31,3 +31,10 @@ The validator rejects duplicate task IDs, invalid states/dates, dangling depende
 Detailed reference and responsive audit: [22 October visual audit](docs/visual-audit-2026-10-22.md).
 
 Timeline ranges can also record `date_basis` (`observed` activity or `planned`) and `date_note`; a supplied basis requires both dates, an explanatory note and source evidence. Bars are recorded work windows, not continuous effort. See [date reconciliation](docs/roadmap-date-evidence.md).
+
+
+## Reliable AI updates and daily catch-up
+
+Both assistants follow [the shared update protocol](docs/ai-update-protocol.md). `scripts/hub-update.mjs` prepares only affected projects with conflict/history checks and a matching public receipt in `data/updates.json`; source receipts stay private. CI rejects a snapshot that lacks its matching receipt. After merge, the helper can compare the live JSON with the expected publication. This is a guarded publishing workflow using existing authenticated tools, not independent synchronization of arbitrary Drive trackers.
+
+Each account's daily catch-up supplements per-task updates. It reports actual chat-search coverage, checks current evidence and skips already-recorded changes. ChatGPT's evening schedule is configured; unattended execution and Claude's setup still require acceptance checks. See the protocol for current limits.

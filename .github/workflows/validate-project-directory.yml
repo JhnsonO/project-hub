@@ -14,6 +14,10 @@ on:
       - 'index.html'
       - 'scripts/validate-projects.mjs'
       - 'scripts/test-model.mjs'
+      - 'scripts/hub-update.mjs'
+      - 'scripts/test-hub-update.mjs'
+      - 'scripts/validate-updates.mjs'
+      - 'data/updates.json'
       - '.github/workflows/validate-project-directory.yml'
   push:
     paths:
@@ -28,6 +32,10 @@ on:
       - 'index.html'
       - 'scripts/validate-projects.mjs'
       - 'scripts/test-model.mjs'
+      - 'scripts/hub-update.mjs'
+      - 'scripts/test-hub-update.mjs'
+      - 'scripts/validate-updates.mjs'
+      - 'data/updates.json'
       - '.github/workflows/validate-project-directory.yml'
 
 jobs:
@@ -45,3 +53,6 @@ jobs:
       - run: node scripts/test-model.mjs
       - run: node --check road-view.mjs
       - run: node scripts/test-road.mjs
+
+      - run: node scripts/validate-updates.mjs
+      - run: node scripts/test-hub-update.mjs

@@ -2235,8 +2235,8 @@
       "name": "AI Workflow & Shared Context",
       "mono": "AI",
       "group": "Personal",
-      "status": "Drive + GitHub publishing verified",
-      "summary": "Personal Gmail owns the shared Home and Rules docs; the FFA account remains an editor for the current connectors. Claude and ChatGPT access is tested. Claude’s hub updates publish through PRs; both accounts have per-task refresh instructions, with no background sync.",
+      "status": "Daily catch-up setup · acceptance pending",
+      "summary": "Shared project records and per-task updates are established. A guarded publishing helper checks conflicts, repeated updates and retained history. ChatGPT evening catch-up is configured; its unattended test and Claude setup remain pending.",
       "milestones": [
         {
           "name": "Shared rules + handover",
@@ -2251,7 +2251,7 @@
           "status": "done"
         }
       ],
-      "next_step": "Decide whether shared browser task actions need an authenticated service; until then the public page is read-only.",
+      "next_step": "Verify the scheduled ChatGPT catch-up, then sign in to Claude to configure and test its own daily scan.",
       "updated": "23 OCT",
       "workspace": {
         "provider": "GitHub",
@@ -2641,6 +2641,89 @@
               "provider": "GitHub",
               "url": "https://github.com/JhnsonO/project-hub/pull/28",
               "label": "Gap ordering, date validation and test changes"
+            }
+          ]
+        },
+        {
+          "id": "ai-019",
+          "name": "Add guarded shared update preparation and publication receipts",
+          "status": "done",
+          "note": "Helper checks stale project hashes, replayed updates, lost task history and live snapshot matching. It prepares the public projection after canonical readback; authenticated source writes and PR publication remain steps owned by the active AI.",
+          "completed_on": "2026-10-23",
+          "depends_on": [
+            "ai-018"
+          ],
+          "owner": "chatgpt",
+          "last_touched": "2026-10-23",
+          "lane": "Shared updates",
+          "start": null,
+          "end": null,
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/project-hub/blob/main/docs/ai-update-protocol.md",
+              "label": "Shared update protocol and acceptance status"
+            }
+          ]
+        },
+        {
+          "id": "ai-020",
+          "name": "Configure the ChatGPT evening project catch-up",
+          "status": "done",
+          "note": "Daily evening catch-up is enabled. Interactive history search returned useful material but cannot prove exhaustive 24-hour coverage. A scheduled run still needs acceptance checking.",
+          "completed_on": "2026-10-23",
+          "depends_on": [],
+          "owner": "chatgpt",
+          "last_touched": "2026-10-23",
+          "lane": "Shared updates",
+          "start": null,
+          "end": null,
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/project-hub/blob/main/docs/ai-update-protocol.md",
+              "label": "Shared update protocol and acceptance status"
+            }
+          ]
+        },
+        {
+          "id": "ai-021",
+          "name": "Verify an unattended ChatGPT catch-up run",
+          "status": "todo",
+          "note": "Check the completed scheduled run for source access, actual conversation coverage, deduplication and correct saved/published states. Enabling the schedule alone is not acceptance.",
+          "depends_on": [
+            "ai-020"
+          ],
+          "owner": "chatgpt",
+          "last_touched": "2026-10-23",
+          "lane": "Shared updates",
+          "start": null,
+          "end": null,
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/project-hub/blob/main/docs/ai-update-protocol.md",
+              "label": "Shared update protocol and acceptance status"
+            }
+          ]
+        },
+        {
+          "id": "ai-022",
+          "name": "Configure and test Claude daily project catch-up",
+          "status": "blocked",
+          "blocked_reason": "Claude sign-in is required in the current browser.",
+          "note": "Use the same shared protocol and its own preceding 24 hours of conversations. Preferences, schedule and a real run remain unverified in this session.",
+          "depends_on": [],
+          "owner": "chatgpt",
+          "last_touched": "2026-10-23",
+          "lane": "Shared updates",
+          "start": null,
+          "end": null,
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/project-hub/blob/main/docs/ai-update-protocol.md",
+              "label": "Shared update protocol and acceptance status"
             }
           ]
         }
