@@ -2222,7 +2222,7 @@
       "name": "AI Workflow & Shared Context",
       "mono": "AI",
       "group": "Personal",
-      "status": "Drive access verified · GitHub path open",
+      "status": "Drive verified · GitHub publishing blocked",
       "summary": "Both active accounts have saved per-task hub-refresh instructions. Claude and ChatGPT passed a shared Drive file round-trip; Claude’s GitHub publishing path still needs verification.",
       "milestones": [
         {
