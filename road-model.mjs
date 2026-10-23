@@ -37,6 +37,9 @@ export function buildRoad(project) {
   // rows: one lane may need several tracks when stops share a column
   const lanes = [...new Set(nodesIn.map((s) => s.lane || 'General'))];
   const tracks = []; // {lane, cells:Set(col)}
+  // When everything left is optional, keep that branch off the direct
+  // start-to-finish path rather than drawing completion through its node.
+  if (group && !flat.length) tracks.push({ lane: 'Road', cells: new Set(), label: true });
   const laneTracks = new Map(lanes.map((l) => [l, []]));
   const place = (n, lane) => {
     const mine = laneTracks.get(lane);
