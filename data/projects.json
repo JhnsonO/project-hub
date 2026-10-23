@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "updated": "2026-10-23",
-  "updated_by": "claude",
+  "updated_by": "chatgpt",
   "groups": [
     "FFA",
     "OEV",
@@ -2762,14 +2762,14 @@
         },
         {
           "name": "Checklist drafted",
-          "status": "todo"
+          "status": "done"
         },
         {
           "name": "Checklist reviewed",
           "status": "todo"
         }
       ],
-      "next_step": "Draft a sample checklist.",
+      "next_step": "Review the checklist.",
       "updated": "23 OCT",
       "workspace": {
         "provider": "Google",
@@ -2801,7 +2801,7 @@
         {
           "id": "test-chatgpt-roundtrip-002",
           "name": "Draft a sample checklist",
-          "status": "todo",
+          "status": "done",
           "depends_on": [],
           "owner": "chatgpt",
           "last_touched": "2026-10-23",
@@ -2812,7 +2812,8 @@
               "url": "https://docs.google.com/document/d/1LwXV0kcFWR-deeGwzke3CMuh4QKwHoa9ygs2XmZN8nE/edit",
               "label": "Disposable canonical board, roadmap and handover"
             }
-          ]
+          ],
+          "completed_on": "2026-10-23"
         },
         {
           "id": "test-chatgpt-roundtrip-003",
