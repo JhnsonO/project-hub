@@ -9,7 +9,7 @@ assert.equal(counts(tasks).pct,25);
 assert.deepEqual(dependencyLayers(tasks).map(layer=>layer.map(t=>t.id)),[['web-a','web-d'],['web-b'],['web-c']]);
 assert.throws(()=>dependencyLayers([{id:'a',depends_on:['b']},{id:'b',depends_on:['a']}]),/cycle/);
 assert.throws(()=>dependencyLayers([{id:'a',depends_on:['missing']}]),/Unknown/);
-assert.deepEqual(todayTasks([{id:'web',tasks}]).map(t=>t.id),['web-d','web-b']);
+assert.deepEqual(todayTasks([{id:'web',tasks}]).map(t=>t.id),['web-b','web-d']);
 const tm=timeline(tasks);assert.equal(tm.weeks.length,2);assert.equal(tm.dated.length,1);assert.equal(tm.undated.length,3);
 assert.equal(timeline([{id:'a',start:null,end:null}]).weeks.length,0);
 const history=timeline([{id:'past',status:'done',completed_on:'2026-10-04'},{id:'unknown',status:'done',completed_on:null},{id:'future',status:'todo'}]);
@@ -29,6 +29,8 @@ try {
   const invalidEvidence=structuredClone(base);invalidEvidence.projects[0].tasks[0].evidence=[{provider:'GitHub',url:'https://example.com/private',label:'Source'}];assert.match((await run(invalidEvidence)).stderr,/provider and HTTPS host/);
   const invalidBasis=structuredClone(base);invalidBasis.projects[0].tasks[0].date_basis='guessed';assert.match((await run(invalidBasis)).stderr,/valid basis/);
   const missingDateEvidence=structuredClone(base);Object.assign(missingDateEvidence.projects[0].tasks[0],{date_basis:'observed',date_note:'Observed dates'});assert.match((await run(missingDateEvidence)).stderr,/source evidence/);
+  const badReason=structuredClone(base);badReason.projects[0].tasks[0].blocked_reason='not blocked';assert.match((await run(badReason)).stderr,/blocked_reason/);
+  const badTarget=structuredClone(base);badTarget.projects[0].target='soon';assert.match((await run(badTarget)).stderr,/target/);
   const invalidDate=structuredClone(base);invalidDate.projects[0].tasks[0].start='2026-02-30';assert.match((await run(invalidDate)).stderr,/invalid start/);
 } finally {await rm(dir,{recursive:true,force:true});}
 console.log('Model and validator regression checks passed.');

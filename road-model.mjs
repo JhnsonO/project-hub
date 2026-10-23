@@ -10,7 +10,15 @@ export function buildRoad(project) {
   const start = { id: startId, kind: 'start', name: 'Done so far: ' + done.length, status: 'done', note: done.length + ' tasks finished' + (last ? '; most recent ' + last : '') + '.', deps: [], lane: '' };
   const stops = open.map((t) => ({ ...t, kind: 'stop', deps: [...new Set((t.depends_on || []).map((d) => (openIds.has(d) ? d : startId)))] }));
   stops.forEach((s) => { if (!s.deps.length) s.deps = [startId]; });
-  const byId = new Map([[startId, start], ...stops.map((s) => [s.id, s])]);
+  // parked work (lane named Later/Backlog, nothing depends on it) is stacked into one node so the road stays short
+  const parked = stops.filter((s) => /later|backlog/i.test(s.lane || '') && s.status === 'todo' && s.deps.length === 1 && s.deps[0] === startId && !stops.some((y) => y.deps.includes(s.id)));
+  let group = null;
+  if (parked.length >= 2) {
+    group = { id: project.id + '-later', kind: 'group', name: 'Later: ' + parked.length, status: 'todo', note: 'Parked for later: ' + parked.length + ' items.', members: parked.map((s) => s.name), deps: [startId], lane: parked[0].lane };
+  }
+  const flat = group ? stops.filter((s) => !parked.includes(s)) : stops;
+  const nodesIn = group ? [...flat, group] : flat;
+  const byId = new Map([[startId, start], ...nodesIn.map((s) => [s.id, s])]);
   const memo = new Map();
   const depth = (id) => {
     if (memo.has(id)) return memo.get(id);
@@ -18,14 +26,14 @@ export function buildRoad(project) {
     const d = n.deps.length ? 1 + Math.max(...n.deps.map(depth)) : 0;
     memo.set(id, d); return d;
   };
-  [start, ...stops].forEach((n) => { n.col = depth(n.id); });
-  const maxc = Math.max(0, ...stops.map((s) => s.col));
-  const sinks = [start, ...stops].filter((n) => ![start, ...stops].some((y) => y.deps.includes(n.id))).map((n) => n.id);
+  [start, ...nodesIn].forEach((n) => { n.col = depth(n.id); });
+  const maxc = Math.max(0, ...flat.map((s) => s.col));
+  const sinks = [start, ...flat].filter((n) => ![start, ...flat].some((y) => y.deps.includes(n.id))).map((n) => n.id);
   const finish = { id: finishId, kind: 'finish', name: project.name + ' complete', status: 'finish', note: 'The finish line for this road.', deps: sinks, col: maxc + 1, lane: '' };
-  const nodes = [start, ...stops, finish];
+  const nodes = [start, ...nodesIn, finish];
 
   // rows: one lane may need several tracks when stops share a column
-  const lanes = [...new Set(stops.map((s) => s.lane || 'General'))];
+  const lanes = [...new Set(nodesIn.map((s) => s.lane || 'General'))];
   const tracks = []; // {lane, cells:Set(col)}
   const laneTracks = new Map(lanes.map((l) => [l, []]));
   const place = (n, lane) => {
@@ -35,7 +43,7 @@ export function buildRoad(project) {
     t.cells.add(n.col); n.row = tracks.indexOf(t);
   };
   // start and finish sit on track 0 once it exists
-  const order = [...stops].sort((a, b) => a.col - b.col || lanes.indexOf(a.lane || 'General') - lanes.indexOf(b.lane || 'General') || a.id.localeCompare(b.id));
+  const order = [...nodesIn].sort((a, b) => a.col - b.col || lanes.indexOf(a.lane || 'General') - lanes.indexOf(b.lane || 'General') || a.id.localeCompare(b.id));
   if (!order.length) { tracks.push({ lane: 'Road', cells: new Set(), label: true }); }
   order.forEach((s) => place(s, s.lane || 'General'));
   start.row = 0; tracks[0].cells.add(0);
