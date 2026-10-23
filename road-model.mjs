@@ -27,7 +27,9 @@ export function buildRoad(project) {
     memo.set(id, d); return d;
   };
   [start, ...nodesIn].forEach((n) => { n.col = depth(n.id); });
-  const maxc = Math.max(0, ...flat.map((s) => s.col));
+  // Optional work still occupies a grid cell even though it does not gate
+  // completion. Keep the finish beyond it when all remaining work is parked.
+  const maxc = Math.max(0, ...nodesIn.map((s) => s.col));
   const sinks = [start, ...flat].filter((n) => ![start, ...flat].some((y) => y.deps.includes(n.id))).map((n) => n.id);
   const finish = { id: finishId, kind: 'finish', name: project.name + ' complete', status: 'finish', note: 'The finish line for this road.', deps: sinks, col: maxc + 1, lane: '' };
   const nodes = [start, ...nodesIn, finish];
@@ -35,6 +37,9 @@ export function buildRoad(project) {
   // rows: one lane may need several tracks when stops share a column
   const lanes = [...new Set(nodesIn.map((s) => s.lane || 'General'))];
   const tracks = []; // {lane, cells:Set(col)}
+  // When everything left is optional, keep that branch off the direct
+  // start-to-finish path rather than drawing completion through its node.
+  if (group && !flat.length) tracks.push({ lane: 'Road', cells: new Set(), label: true });
   const laneTracks = new Map(lanes.map((l) => [l, []]));
   const place = (n, lane) => {
     const mine = laneTracks.get(lane);
@@ -59,3 +64,4 @@ export function buildRoad(project) {
   };
 }
 export const buildRoads = (projects) => projects.map(buildRoad).sort((a, b) => a.toGo - b.toGo || a.name.localeCompare(b.name));
+

@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "updated": "2026-10-23",
-  "updated_by": "claude",
+  "updated_by": "chatgpt",
   "groups": [
     "FFA",
     "OEV",
@@ -2235,8 +2235,8 @@
       "name": "AI Workflow & Shared Context",
       "mono": "AI",
       "group": "Personal",
-      "status": "Both preferences saved · daily scan limits",
-      "summary": "Both active accounts have shared project update instructions. ChatGPT completed a daily catch-up with selective history search. Claude’s preferences are saved; its daily task is paused because the scheduled test lacked chat search and repository access.",
+      "status": "Conversation updates verified",
+      "summary": "Both AIs created and updated disposable projects through conversation, saved canonical records and published verified hub changes. A new-source Drive access mismatch was repaired and retested. Daily scans remain optional fallback.",
       "milestones": [
         {
           "name": "Shared rules + handover",
@@ -2251,7 +2251,7 @@
           "status": "done"
         }
       ],
-      "next_step": "Resolve Claude scheduled-session capabilities and verify a scheduled change-to-publication cycle.",
+      "next_step": "Use the verified per-task workflow; check new source edit access before publishing.",
       "updated": "23 OCT",
       "workspace": {
         "provider": "GitHub",
@@ -2519,9 +2519,9 @@
           "name": "Make browser task actions persist securely",
           "status": "todo",
           "owner": null,
-          "note": "Done/Block were removed from the public page because they could not save; Add now saves on this device only. Shared persistent writes still need an authenticated service or supported account tools; no repository credential is embedded in the public page.",
+          "note": "Done/Block were removed from the public page because they could not save; Add now saves on this device only. Shared persistent writes still need an authenticated service or supported account tools; no repository credential is embedded in the public page. Optional follow-up; not required for the verified conversation workflow.",
           "last_touched": "2026-10-22",
-          "lane": "Shared updates",
+          "lane": "Later / optional",
           "start": null,
           "end": null,
           "completed_on": null,
@@ -2690,13 +2690,13 @@
           "id": "ai-021",
           "name": "Verify a scheduled change-to-publication cycle",
           "status": "todo",
-          "note": "ChatGPT completed a cloud catch-up: shared records and selective history search were accessible, no new verified changes were found, the existing live receipt was checked, and private checkpoints saved. A new canonical change published by the scheduled routine remains untested.",
+          "note": "ChatGPT completed a cloud catch-up: shared records and selective history search were accessible, no new verified changes were found, the existing live receipt was checked, and private checkpoints saved. A new canonical change published by the scheduled routine remains untested. Optional follow-up; not required for the verified conversation workflow.",
           "depends_on": [
             "ai-020"
           ],
           "owner": "chatgpt",
           "last_touched": "2026-10-23",
-          "lane": "Shared updates",
+          "lane": "Later / optional",
           "start": null,
           "end": null,
           "evidence": [
@@ -2709,14 +2709,13 @@
         },
         {
           "id": "ai-022",
-          "name": "Configure and test Claude daily project catch-up",
-          "status": "blocked",
-          "blocked_reason": "Scheduled Claude test lacked chat search and repository access.",
-          "note": "Signed-in connected browser verified. Preferences saved and reopened; daily 21:30 task created and test executed. Scheduled session read Home/Rules but had no conversation-search tool or repository access, and saved an honest failure checkpoint. Configuration is complete; conversation-scan acceptance is blocked. Interactive Claude chat search works and search/memory settings are enabled. Scheduled task paused after the failed test to avoid repeated unsuccessful scans.",
+          "name": "Optional: enable Claude scheduled conversation catch-up",
+          "status": "todo",
+          "note": "Signed-in connected browser verified. Preferences saved and reopened; daily 21:30 task created and test executed. Scheduled session read Home/Rules but had no conversation-search tool or repository access, and saved an honest failure checkpoint. Configuration is complete; conversation-scan acceptance is blocked. Interactive Claude chat search works and search/memory settings are enabled. Scheduled task paused after the failed test to avoid repeated unsuccessful scans. Johnson confirmed automation is only a fallback; parked rather than gating per-task delivery.",
           "depends_on": [],
           "owner": "chatgpt",
           "last_touched": "2026-10-23",
-          "lane": "Shared updates",
+          "lane": "Later / optional",
           "start": null,
           "end": null,
           "evidence": [
@@ -2744,175 +2743,42 @@
               "label": "Account configuration and observed test result"
             }
           ]
+        },
+        {
+          "id": "ai-024",
+          "name": "Verify conversation-driven project creation and updates in both AIs",
+          "status": "done",
+          "owner": "chatgpt",
+          "last_touched": "2026-10-23",
+          "completed_on": "2026-10-23",
+          "lane": "Shared updates",
+          "depends_on": [],
+          "note": "ChatGPT (active conversation) and Claude (fresh conversation) each created a disposable project and published a task completion update. Source records, dependencies, green PR checks and live JSON receipts were verified. Claude resolved a concurrent merge conflict. Initial handover write failed because Drive and Docs identities differed; only dummy Docs received the existing personal-account writer access, then Claude edited/read back its existing source and published successfully. QA entries are removed by a scoped rollback, with evidence retained in the PR history. Cleanup also caught and fixed an optional-only roadmap finish/group overlap; the regression test passes.",
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/project-hub/pull/32",
+              "label": "Conversation QA PR #32"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/project-hub/pull/34",
+              "label": "Conversation QA PR #34"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/project-hub/pull/35",
+              "label": "Conversation QA PR #35"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/project-hub/pull/36",
+              "label": "Conversation QA PR #36"
+            }
+          ]
         }
       ],
       "target_asked_on": "2026-10-23"
-    },
-    {
-      "id": "test-chatgpt-roundtrip",
-      "name": "TEST ChatGPT Hub Roundtrip",
-      "mono": "TC",
-      "group": "Personal",
-      "status": "Disposable QA test",
-      "summary": "Generic conversation-driven project creation test; remove after verification.",
-      "milestones": [
-        {
-          "name": "Goal defined",
-          "status": "done"
-        },
-        {
-          "name": "Checklist drafted",
-          "status": "done"
-        },
-        {
-          "name": "Checklist reviewed",
-          "status": "todo"
-        }
-      ],
-      "next_step": "Review the checklist.",
-      "updated": "23 OCT",
-      "workspace": {
-        "provider": "Google",
-        "url": "https://docs.google.com/document/d/1LwXV0kcFWR-deeGwzke3CMuh4QKwHoa9ygs2XmZN8nE/edit"
-      },
-      "roadmap": {
-        "provider": "Google",
-        "url": "https://docs.google.com/document/d/1LwXV0kcFWR-deeGwzke3CMuh4QKwHoa9ygs2XmZN8nE/edit"
-      },
-      "target_asked_on": "2026-10-23",
-      "tasks": [
-        {
-          "id": "test-chatgpt-roundtrip-001",
-          "name": "Define the test goal",
-          "status": "done",
-          "completed_on": "2026-10-23",
-          "depends_on": [],
-          "owner": "chatgpt",
-          "last_touched": "2026-10-23",
-          "lane": "Disposable test",
-          "evidence": [
-            {
-              "provider": "Google",
-              "url": "https://docs.google.com/document/d/1LwXV0kcFWR-deeGwzke3CMuh4QKwHoa9ygs2XmZN8nE/edit",
-              "label": "Disposable canonical board, roadmap and handover"
-            }
-          ]
-        },
-        {
-          "id": "test-chatgpt-roundtrip-002",
-          "name": "Draft a sample checklist",
-          "status": "done",
-          "depends_on": [],
-          "owner": "chatgpt",
-          "last_touched": "2026-10-23",
-          "lane": "Disposable test",
-          "evidence": [
-            {
-              "provider": "Google",
-              "url": "https://docs.google.com/document/d/1LwXV0kcFWR-deeGwzke3CMuh4QKwHoa9ygs2XmZN8nE/edit",
-              "label": "Disposable canonical board, roadmap and handover"
-            }
-          ],
-          "completed_on": "2026-10-23"
-        },
-        {
-          "id": "test-chatgpt-roundtrip-003",
-          "name": "Review the checklist",
-          "status": "todo",
-          "depends_on": [
-            "test-chatgpt-roundtrip-002"
-          ],
-          "owner": "chatgpt",
-          "last_touched": "2026-10-23",
-          "lane": "Disposable test",
-          "evidence": [
-            {
-              "provider": "Google",
-              "url": "https://docs.google.com/document/d/1LwXV0kcFWR-deeGwzke3CMuh4QKwHoa9ygs2XmZN8nE/edit",
-              "label": "Disposable canonical board, roadmap and handover"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "test",
-      "name": "TEST Claude Hub Roundtrip",
-      "mono": "TC",
-      "group": "Personal",
-      "status": "Disposable test · 2 of 3 done",
-      "summary": "Disposable workflow test: complete a three-step launch checklist. Separate from real projects; left in place until cleanup is requested.",
-      "milestones": [
-        {
-          "name": "Define test goal",
-          "status": "done"
-        },
-        {
-          "name": "Draft sample checklist",
-          "status": "done"
-        },
-        {
-          "name": "Review checklist",
-          "status": "todo"
-        }
-      ],
-      "next_step": "Review the checklist.",
-      "updated": "23 OCT",
-      "workspace": {
-        "provider": "Google",
-        "url": "https://docs.google.com/document/d/1cvceY89uoYYmyz5gMuDl0eUujbfn5OE5X20-GyK0FU0/edit"
-      },
-      "target_asked_on": "2026-10-23",
-      "tasks": [
-        {
-          "id": "test-001",
-          "name": "Define the test goal",
-          "status": "done",
-          "owner": "claude",
-          "note": "Goal set: complete a three-step launch checklist.",
-          "last_touched": "2026-10-23",
-          "completed_on": "2026-10-23",
-          "lane": "Test",
-          "depends_on": [],
-          "evidence": [
-            {
-              "provider": "Google",
-              "url": "https://docs.google.com/document/d/1cvceY89uoYYmyz5gMuDl0eUujbfn5OE5X20-GyK0FU0/edit",
-              "label": "Board, roadmap and handover"
-            }
-          ]
-        },
-        {
-          "id": "test-002",
-          "name": "Draft a sample checklist",
-          "status": "done",
-          "owner": "claude",
-          "note": "Sample checklist drafted.",
-          "last_touched": "2026-10-23",
-          "lane": "Test",
-          "depends_on": [],
-          "completed_on": "2026-10-23",
-          "evidence": [
-            {
-              "provider": "Google",
-              "url": "https://docs.google.com/document/d/1cvceY89uoYYmyz5gMuDl0eUujbfn5OE5X20-GyK0FU0/edit",
-              "label": "Board, roadmap and handover"
-            }
-          ]
-        },
-        {
-          "id": "test-003",
-          "name": "Review the checklist",
-          "status": "todo",
-          "owner": null,
-          "note": "Ready to start; the checklist is drafted.",
-          "last_touched": "2026-10-23",
-          "lane": "Test",
-          "depends_on": [
-            "test-002"
-          ]
-        }
-      ]
     }
   ]
 }
