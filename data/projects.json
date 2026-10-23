@@ -488,7 +488,8 @@
           ],
           "blocked_reason": "Editor blocked admin test scripts"
         }
-      ]
+      ],
+      "target_asked_on": "2026-10-23"
     },
     {
       "id": "media",
@@ -1210,7 +1211,8 @@
           ]
         }
       ],
-      "watch": "The compact 21 October current-state summary missed later entries in the historical log. Use the dated cutover and native-clip evidence; live acceptance remains separate."
+      "watch": "The compact 21 October current-state summary missed later entries in the historical log. Use the dated cutover and native-clip evidence; live acceptance remains separate.",
+      "target_asked_on": "2026-10-23"
     },
     {
       "id": "auto",
@@ -1569,7 +1571,8 @@
           ]
         }
       ],
-      "watch": "Evening scheduled tests passed; first daily-run delivery and full upload metadata remain open."
+      "watch": "Evening scheduled tests passed; first daily-run delivery and full upload metadata remain open.",
+      "target_asked_on": "2026-10-23"
     },
     {
       "id": "oev",
@@ -2224,7 +2227,8 @@
             }
           ]
         }
-      ]
+      ],
+      "target_asked_on": "2026-10-23"
     },
     {
       "id": "ai",
@@ -2620,7 +2624,8 @@
           "lane": "Shared context",
           "depends_on": []
         }
-      ]
+      ],
+      "target_asked_on": "2026-10-23"
     }
   ]
 }
