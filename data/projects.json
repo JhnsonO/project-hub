@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "updated": "2026-10-22",
+  "updated": "2026-10-23",
   "updated_by": "chatgpt",
   "groups": [
     "FFA",
@@ -2222,25 +2222,25 @@
       "name": "AI Workflow & Shared Context",
       "mono": "AI",
       "group": "Personal",
-      "status": "Setup gaps",
-      "summary": "Shared rules, canonical links and the GitHub Pages hub are delivered. Claude access and a complete cross-account update cycle remain unverified.",
+      "status": "Drive access verified · GitHub path open",
+      "summary": "Both active accounts have saved per-task hub-refresh instructions. Claude and ChatGPT passed a shared Drive file round-trip; Claude’s GitHub publishing path still needs verification.",
       "milestones": [
         {
           "name": "Shared rules + handover",
           "status": "done"
         },
         {
-          "name": "Verify Claude Drive access",
-          "status": "blocked"
+          "name": "Verify Claude Drive file access",
+          "status": "done"
         },
         {
-          "name": "Shared board updates",
-          "status": "todo"
+          "name": "Test shared hub publication",
+          "status": "blocked"
         }
       ],
-      "next_step": "Verify Claude’s Drive write/readback, then run a real cross-account update cycle.",
-      "blocker": "Claude’s Drive read/write access has not been verified; static hub updates are not automatic.",
-      "updated": "22 OCT",
+      "next_step": "Confirm Claude can propose a GitHub change, then merge a test snapshot and verify the live Pages update.",
+      "blocker": "Claude’s GitHub write/publish access is unverified. The static hub has no background sync; it changes only after a snapshot is published and deployed.",
+      "updated": "23 OCT",
       "workspace": {
         "provider": "GitHub",
         "url": "https://github.com/users/JhnsonO/projects/4/views/2"
@@ -2452,43 +2452,43 @@
         },
         {
           "id": "ai-011",
-          "name": "Verify Claude Drive write/readback and reproducible access",
-          "status": "blocked",
-          "owner": null,
-          "note": "A 21 October completion report says Claude read two Drive documents and reported the groups/rules. Later same-day reports say the account handover test was blocked at sign-in, so reproducible access is unresolved. No Claude write/readback is recorded. Preserve the earlier read report without claiming full account acceptance.",
-          "last_touched": "2026-10-22",
+          "name": "Verify Claude shared Drive read/write round-trip",
+          "status": "done",
+          "owner": "chatgpt",
+          "note": "Claude read the shared Home and rules, created and read back a harmless test file in the shared folder, and ChatGPT independently read the same file. This verifies shared Drive file read/write across accounts; editing existing Google Docs remains untested.",
+          "last_touched": "2026-10-23",
           "lane": "Access",
           "start": null,
           "end": null,
-          "completed_on": null,
+          "completed_on": "2026-10-23",
           "depends_on": [],
           "evidence": [
             {
               "provider": "Google",
               "url": "https://docs.google.com/document/d/1I_jypC-RByq36z_5wGR6bo_qKbg3X_vq4KX2tv9RsnM/edit",
-              "label": "Project hub audit and delivery log"
+              "label": "Current account test status"
             }
           ]
         },
         {
           "id": "ai-012",
-          "name": "Verify an actual cross-account board update cycle",
+          "name": "Verify a complete Claude-to-hub publication cycle",
           "status": "blocked",
           "owner": null,
-          "note": "Both accounts should read the latest canonical snapshot and preserve unrelated changes; a complete round trip remains unverified.",
-          "last_touched": "2026-10-22",
+          "note": "The shared Drive round-trip passed and both active accounts have the per-task refresh instruction. Claude’s GitHub write path has not been verified, so an actual change, PR, merge and live Pages readback from Claude remain outstanding.",
+          "last_touched": "2026-10-23",
           "lane": "Shared updates",
           "start": null,
           "end": null,
           "completed_on": null,
           "depends_on": [
-            "ai-011"
+            "ai-015"
           ],
           "evidence": [
             {
               "provider": "Google",
               "url": "https://docs.google.com/document/d/1I_jypC-RByq36z_5wGR6bo_qKbg3X_vq4KX2tv9RsnM/edit",
-              "label": "Project hub audit and delivery log"
+              "label": "Current account test status"
             }
           ]
         },
@@ -2533,6 +2533,46 @@
           ],
           "date_basis": "observed",
           "date_note": "PR #12 and the visual audit record this work and verification on 22 October."
+        },
+        {
+          "id": "ai-015",
+          "name": "Verify Claude’s GitHub feature-branch and publish access",
+          "status": "blocked",
+          "owner": null,
+          "last_touched": "2026-10-23",
+          "completed_on": null,
+          "start": null,
+          "end": null,
+          "lane": "Access",
+          "depends_on": [],
+          "note": "No GitHub write connector was available in the Claude test chat. A feature-branch/PR workflow and live Pages readback still need to be tested from Claude.",
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1I_jypC-RByq36z_5wGR6bo_qKbg3X_vq4KX2tv9RsnM/edit",
+              "label": "Current account test status"
+            }
+          ]
+        },
+        {
+          "id": "ai-016",
+          "name": "Save per-task hub-refresh instructions in both active accounts",
+          "status": "done",
+          "owner": "chatgpt",
+          "last_touched": "2026-10-23",
+          "completed_on": "2026-10-23",
+          "start": null,
+          "end": null,
+          "lane": "Account setup",
+          "depends_on": [],
+          "note": "ChatGPT custom instructions and Claude preferences were updated and reopened to confirm both require verified, public-safe hub updates after substantial project tasks. Both state that updates are per-task and there is no background sync.",
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1I_jypC-RByq36z_5wGR6bo_qKbg3X_vq4KX2tv9RsnM/edit",
+              "label": "Shared account setup status"
+            }
+          ]
         }
       ]
     }
