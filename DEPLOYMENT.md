@@ -16,3 +16,6 @@ After substantial project work:
 2. Reconcile only verified, public-safe changes into the snapshot. Never include credentials, tokens, or private, employer, health or financial data; keep that evidence in the protected trackers.
 3. Publish through a feature branch and pull request, with the validator and checks passing.
 4. After merge, open the live Pages site and its `data/projects.json` to confirm the change is visible.
+
+
+Use `docs/ai-update-protocol.md` and `scripts/hub-update.mjs` for new updates. The matching snapshot and public receipt must be included in the same PR. Canonical source receipts and pending publication checkpoints remain in the private handover. Required checks include `node scripts/validate-updates.mjs` and `node scripts/test-hub-update.mjs`. Verify the deployed snapshot and receipt before marking publication complete.
