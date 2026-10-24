@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "updated": "2026-10-23",
+  "updated": "2026-10-24",
   "updated_by": "chatgpt",
   "groups": [
     "FFA",
@@ -2235,8 +2235,8 @@
       "name": "AI Workflow & Shared Context",
       "mono": "AI",
       "group": "Personal",
-      "status": "Conversation updates verified",
-      "summary": "Both AIs created and updated disposable projects through conversation, saved canonical records and published verified hub changes. A new-source Drive access mismatch was repaired and retested. Daily scans remain optional fallback.",
+      "status": "Natural workflow refactor planned",
+      "summary": "Technical update and publication tests passed. Ordinary conversation behaviour still needs realistic cross-AI testing; shared-context simplification is the next phase.",
       "milestones": [
         {
           "name": "Shared rules + handover",
@@ -2251,8 +2251,8 @@
           "status": "done"
         }
       ],
-      "next_step": "Use the verified per-task workflow; check new source edit access before publishing.",
-      "updated": "23 OCT",
+      "next_step": "Audit normal web/mobile context access before choosing private Markdown and simplifying updates.",
+      "updated": "24 OCT",
       "workspace": {
         "provider": "GitHub",
         "url": "https://github.com/users/JhnsonO/projects/4/views/2"
@@ -2774,6 +2774,70 @@
               "provider": "GitHub",
               "url": "https://github.com/JhnsonO/project-hub/pull/36",
               "label": "Conversation QA PR #36"
+            }
+          ]
+        },
+        {
+          "id": "ai-025",
+          "name": "Audit shared-context architecture and normal account access",
+          "status": "todo",
+          "owner": "chatgpt",
+          "note": "Audit current records, permissions and private Markdown read/write support in both AIs' normal web/mobile conversations. Architecture choice remains conditional on observed capabilities.",
+          "last_touched": "2026-10-24",
+          "lane": "Natural conversation",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1hR0JQ8eOJ34bScs8tp2H3B8yCvpH2FLiNX_bgXa1YNY/edit",
+              "label": "Confirmed refactor scope and acceptance criteria"
+            }
+          ]
+        },
+        {
+          "id": "ai-026",
+          "name": "Simplify shared context after access tests pass",
+          "status": "todo",
+          "owner": "chatgpt",
+          "note": "Prefer private GitHub Markdown when verified; retain one authoritative source per information type and derive dashboard summaries where viable. Preserve existing Docs until replacement verification; no new background service.",
+          "last_touched": "2026-10-24",
+          "lane": "Natural conversation",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [
+            "ai-025"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1hR0JQ8eOJ34bScs8tp2H3B8yCvpH2FLiNX_bgXa1YNY/edit",
+              "label": "Confirmed refactor scope and acceptance criteria"
+            }
+          ]
+        },
+        {
+          "id": "ai-027",
+          "name": "Verify natural conversation and cross-AI continuation",
+          "status": "todo",
+          "owner": "chatgpt",
+          "note": "Test ordinary conversation without explicit save commands: proposals versus confirmed decisions, retrieval, meaningful updates, genuine cross-AI handover/follow-up, conflict preservation, duplicate avoidance, public updates and honest tool failures. Earlier dummy tests demonstrate mechanics only.",
+          "last_touched": "2026-10-24",
+          "lane": "Natural conversation",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [
+            "ai-026"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1hR0JQ8eOJ34bScs8tp2H3B8yCvpH2FLiNX_bgXa1YNY/edit",
+              "label": "Confirmed refactor scope and acceptance criteria"
             }
           ]
         }
