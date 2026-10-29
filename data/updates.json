@@ -60,6 +60,16 @@
         "web"
       ],
       "snapshot_hash": "98617a9ae56f99f414b5fac51adb9e81fd5af521420b17f99a28fb5ac55026d0"
+    },
+    {
+      "id": "chatgpt-20261029-merch-index-01",
+      "fingerprint": "a0fa1ddfb9f1109023754d818373944782298464a0119b9a502f0864a3fc6b60",
+      "date": "2026-10-29",
+      "editor": "chatgpt",
+      "projects": [
+        "merch"
+      ],
+      "snapshot_hash": "e0d704ec34b462f4e4472628a52ab93c705dc65ffda71f2b1ed58db31a9d68db"
     }
   ]
 }
