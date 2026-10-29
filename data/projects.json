@@ -2863,6 +2863,165 @@
         }
       ],
       "target_asked_on": "2026-10-23"
+    },
+    {
+      "id": "merch",
+      "name": "FFA Merch & Rewards",
+      "mono": "FM",
+      "group": "FFA",
+      "status": "Draft · approval pending",
+      "summary": "Live order and supplier-draft spreadsheets are established. Final quantities, production approval and reward artwork remain open.",
+      "milestones": [
+        {
+          "name": "Order records established",
+          "status": "done"
+        },
+        {
+          "name": "Final scope and artwork",
+          "status": "todo"
+        },
+        {
+          "name": "Production approval",
+          "status": "todo"
+        }
+      ],
+      "next_step": "Verify source records and confirm draft details before production approval.",
+      "watch": "A supplier quote draft is not a placed order.",
+      "updated": "29 OCT",
+      "workspace": {
+        "provider": "Google",
+        "url": "https://docs.google.com/document/d/1yO92jAmM0f1sN02165yW_zm1wbE9O8AiN1lNShnVDrI/edit"
+      },
+      "tasks": [
+        {
+          "id": "merch-register",
+          "name": "Establish live order and supplier-draft spreadsheets",
+          "status": "done",
+          "owner": "chatgpt",
+          "note": "Native records created on 28 October; existence and draft-only status independently verified on 29 October. Order details remain in the protected source.",
+          "last_touched": "2026-10-29",
+          "lane": "Restock",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-28",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1yO92jAmM0f1sN02165yW_zm1wbE9O8AiN1lNShnVDrI/edit",
+              "label": "Merch project index and verification"
+            }
+          ]
+        },
+        {
+          "id": "merch-r01",
+          "name": "Verify historical source against the current register",
+          "status": "todo",
+          "owner": "chatgpt",
+          "note": "The current tracker link is recovered; historical order/source reconciliation is still open.",
+          "last_touched": "2026-10-29",
+          "lane": "Restock",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1yO92jAmM0f1sN02165yW_zm1wbE9O8AiN1lNShnVDrI/edit",
+              "label": "Merch project index and verification"
+            }
+          ]
+        },
+        {
+          "id": "merch-r02",
+          "name": "Confirm final draft items and production details",
+          "status": "todo",
+          "owner": "chatgpt",
+          "note": "Confirm quantities, sizes, stock and branding in the private source. Draft proposals are not purchase approval.",
+          "last_touched": "2026-10-29",
+          "lane": "Restock",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [
+            "merch-register",
+            "merch-r01"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1yO92jAmM0f1sN02165yW_zm1wbE9O8AiN1lNShnVDrI/edit",
+              "label": "Merch project index and verification"
+            }
+          ]
+        },
+        {
+          "id": "merch-r03",
+          "name": "Verify final approval and purchase before production",
+          "status": "todo",
+          "owner": "chatgpt",
+          "note": "No placed supplier order, production or fulfilment is verified.",
+          "last_touched": "2026-10-29",
+          "lane": "Restock",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [
+            "merch-r02"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1yO92jAmM0f1sN02165yW_zm1wbE9O8AiN1lNShnVDrI/edit",
+              "label": "Merch project index and verification"
+            }
+          ]
+        },
+        {
+          "id": "merch-club-d02",
+          "name": "Check corrected 500 Club artwork against the garment",
+          "status": "todo",
+          "owner": "chatgpt",
+          "note": "Retain the accepted larger-insignia direction; corrected artwork still needs comparison with the source garment.",
+          "last_touched": "2026-10-29",
+          "lane": "500 Club",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1yO92jAmM0f1sN02165yW_zm1wbE9O8AiN1lNShnVDrI/edit",
+              "label": "Merch project index and verification"
+            }
+          ]
+        },
+        {
+          "id": "merch-club-d03",
+          "name": "Confirm final reward garment and artwork",
+          "status": "todo",
+          "owner": "chatgpt",
+          "note": "Final specification and production approval remain open.",
+          "last_touched": "2026-10-29",
+          "lane": "500 Club",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [
+            "merch-club-d02"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1yO92jAmM0f1sN02165yW_zm1wbE9O8AiN1lNShnVDrI/edit",
+              "label": "Merch project index and verification"
+            }
+          ]
+        }
+      ],
+      "target_asked_on": "2026-10-29"
     }
   ]
 }
