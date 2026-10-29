@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "updated": "2026-10-24",
+  "updated": "2026-10-29",
   "updated_by": "chatgpt",
   "groups": [
     "FFA",
@@ -14,7 +14,7 @@
       "mono": "FW",
       "group": "FFA",
       "status": "Live · QA",
-      "summary": "The site and shop are live; launch checks and polish remain.",
+      "summary": "The live site and shop remain active; SEO metadata is improved, with page and image-description gaps still under review.",
       "milestones": [
         {
           "name": "Site + shop live",
@@ -29,9 +29,9 @@
           "status": "todo"
         }
       ],
-      "next_step": "Check the gilet form title, then finish device and checkout checks.",
-      "watch": "The gilet form heading currently says “Tracksuits”.",
-      "updated": "22 OCT",
+      "next_step": "Refresh the SEO dashboard count, locate the remaining page gaps, and complete image alt text after the Squarespace AI Terms decision.",
+      "watch": "The dashboard last showed 23/26 pages with metadata and 160 images missing alt text; two legal pages were updated afterward, but the score did not refresh.",
+      "updated": "29 OCT",
       "workspace": {
         "provider": "Google",
         "url": "https://docs.google.com/document/d/1Ai973jkiOD_3WvG1ra2sFiIzPO3F3R1AlGIvKzZWWXA/edit"
@@ -487,6 +487,26 @@
             }
           ],
           "blocked_reason": "Editor blocked admin test scripts"
+        },
+        {
+          "id": "web-023",
+          "name": "Improve page metadata and image alt text",
+          "status": "doing",
+          "owner": null,
+          "note": "On 29 October, metadata for the Privacy Policy and Terms and Conditions pages was added and read back from live page settings. The last dashboard read showed 23/26 pages with metadata and 160 images missing alt text; the legal-page edits did not change the displayed count. Squarespace bulk actions prompted for AI Terms, which were not accepted; no AI credits were used. Remaining page gaps and alt text work remain open.",
+          "last_touched": "2026-10-29",
+          "lane": "SEO",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1Ai973jkiOD_3WvG1ra2sFiIzPO3F3R1AlGIvKzZWWXA/edit",
+              "label": "Website master handover"
+            }
+          ]
         }
       ],
       "target_asked_on": "2026-10-23"
