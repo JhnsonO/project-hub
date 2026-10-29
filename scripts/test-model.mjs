@@ -38,7 +38,7 @@ try {
   const badTarget=structuredClone(base);badTarget.projects[0].target='soon';assert.match((await run(badTarget)).stderr,/target/);
   const impossibleTarget=structuredClone(base);impossibleTarget.projects[0].target='2026-02-30';delete impossibleTarget.projects[0].target_asked_on;assert.match((await run(impossibleTarget)).stderr,/calendar date/);
   const impossibleQuestionDate=structuredClone(base);impossibleQuestionDate.projects[0].questions=[{id:'q',text:'Target date?',asked_on:'2026-02-30'}];assert.match((await run(impossibleQuestionDate)).stderr,/calendar date/);
-  const missingTargetQuestionDate=structuredClone(base);delete missingTargetQuestionDate.projects[0].target_asked_on;assert.match((await run(missingTargetQuestionDate)).stderr,/first surfaced/);
+  const missingTargetQuestionDate=structuredClone(base);delete missingTargetQuestionDate.projects[0].target;delete missingTargetQuestionDate.projects[0].target_asked_on;assert.match((await run(missingTargetQuestionDate)).stderr,/first surfaced/);
   const invalidDate=structuredClone(base);invalidDate.projects[0].tasks[0].start='2026-02-30';assert.match((await run(invalidDate)).stderr,/invalid start/);
 } finally {await rm(dir,{recursive:true,force:true});}
 console.log('Model and validator regression checks passed.');
