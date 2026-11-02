@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "updated": "2026-11-02",
-  "updated_by": "chatgpt",
+  "updated_by": "claude",
   "groups": [
     "FFA",
     "OEV",
@@ -1474,6 +1474,31 @@
               "provider": "GitHub",
               "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/current-state.md",
               "label": "Current state, 2 Nov"
+            }
+          ]
+        },
+        {
+          "id": "media-035",
+          "name": "Fix GoPro +1 hour timestamp error",
+          "status": "done",
+          "owner": null,
+          "note": "GoPro local time was read as UTC, so BST footage showed an hour ahead in YouTube and the app. Fixed for new footage; older records left as they are. Next: check the next real GoPro upload.",
+          "last_touched": "2026-11-02",
+          "lane": "Existing app",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-11-02",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/76",
+              "label": "App fix #76"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-automations/pull/71",
+              "label": "Uploader fix #71"
             }
           ]
         }
