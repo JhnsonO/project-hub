@@ -14,7 +14,7 @@
       "mono": "FW",
       "group": "FFA",
       "status": "Live · QA",
-      "summary": "MNL section order now matches desktop and mobile navigation; Goals stays expanded on desktop and appears only in its selected mobile panel. Wider site QA remains open.",
+      "summary": "MNL Week 3 returners are listed with their Week 1 sides; six player placements and wider site QA remain open.",
       "milestones": [
         {
           "name": "Site + shop live",
@@ -29,7 +29,7 @@
           "status": "todo"
         }
       ],
-      "next_step": "Complete real-device touch/Safari, multi-angle and highlight-reel variant checks; retain SEO and checkout backlog.",
+      "next_step": "Confirm placement for the remaining six Week 3 players; continue real-device touch/Safari, multi-angle and highlight-reel variant checks, plus SEO and checkout backlog.",
       "watch": "The dashboard last showed 23/26 pages with metadata and 160 images missing alt text; two legal pages were updated afterward, but the score did not refresh.",
       "updated": "02 NOV",
       "workspace": {
@@ -586,6 +586,26 @@
           "depends_on": [
             "web-026"
           ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1Ai973jkiOD_3WvG1ra2sFiIzPO3F3R1AlGIvKzZWWXA/edit",
+              "label": "Website master handover"
+            }
+          ]
+        },
+        {
+          "id": "web-028",
+          "name": "Publish Week 3 returners on the MNL page",
+          "status": "done",
+          "owner": "chatgpt",
+          "note": "Listed seven Team A and five Team B returners under their Week 1 sides. Clean public reload confirmed both lists remain visible; six other Week 3 players are still awaiting placement. Week 1/2 totals were already present in the live standings, so no duplicate result update was made. Public page: https://www.officialffa.co.uk/mnl?v=14#teams.",
+          "last_touched": "2026-11-02",
+          "lane": "Monday league",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-11-02",
+          "depends_on": [],
           "evidence": [
             {
               "provider": "Google",
