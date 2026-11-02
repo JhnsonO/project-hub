@@ -1501,6 +1501,30 @@
               "label": "Uploader fix #71"
             }
           ]
+        },
+        {
+          "id": "media-036",
+          "name": "Play saved game copies when YouTube is down",
+          "status": "doing",
+          "owner": null,
+          "note": "Built and tested locally; PR open with CI green but not merged. Not yet tried in a real browser or on a phone. Needs Johnson's go to merge.",
+          "last_touched": "2026-11-01",
+          "lane": "Existing app",
+          "start": null,
+          "end": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/62",
+              "label": "Playback PR #62"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/current-state.md",
+              "label": "Current state, 1 Nov"
+            }
+          ]
         }
       ],
       "watch": "The compact 21 October current-state summary missed later entries in the historical log. Use the dated cutover and native-clip evidence; live acceptance remains separate.",
