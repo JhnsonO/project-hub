@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "updated": "2026-10-29",
+  "updated": "2026-11-02",
   "updated_by": "chatgpt",
   "groups": [
     "FFA",
@@ -534,7 +534,7 @@
       ],
       "next_step": "Run the current v2 Postgres suite and resolve the deferred key configuration.",
       "blocker": "Check #55 depends on key configuration; #54 still needs the current v2 suite. Signed-in acceptance is unverified.",
-      "updated": "22 OCT",
+      "updated": "02 NOV",
       "workspace": {
         "provider": "GitHub",
         "url": "https://github.com/users/JhnsonO/projects/5/views/"
@@ -1229,10 +1229,59 @@
               "label": "Dated implementation and test log"
             }
           ]
+        },
+        {
+          "id": "media-029",
+          "name": "Research FFA Highlights workflows and confirm public/internal scope",
+          "status": "done",
+          "owner": null,
+          "note": "2 November discovery compared established football platforms and renderer options; Johnson confirmed Mercy's templates/music/editor remain internal and the public archive links to YouTube after 21 days. Discovery only, not implementation or acceptance.",
+          "last_touched": "2026-11-02",
+          "lane": "Highlights",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-11-02",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/issues/68",
+              "label": "Research and confirmed scope"
+            }
+          ]
+        },
+        {
+          "id": "media-030",
+          "name": "Pilot the Highlights gallery and Mercy internal template workflow",
+          "status": "todo",
+          "owner": null,
+          "note": "Test one session, player tag moderation, available camera angles, internal templates/reordering/music, 21-day hosted playback and day-22 Watch on YouTube timestamp links. Depends on technical QA and access policy; not started.",
+          "last_touched": "2026-11-02",
+          "lane": "Highlights",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [
+            "media-029"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/issues/68",
+              "label": "Proposed pilot scope"
+            }
+          ]
         }
       ],
-      "watch": "The compact 21 October current-state summary missed later entries in the historical log. Use the dated cutover and native-clip evidence; live acceptance remains separate.",
-      "target_asked_on": "2026-10-23"
+      "watch": "FFA Media Postgres/API, key-dependent beta and real-device/storage acceptance remain open. The proposed Highlights gallery is discovery-only: Mercy editing/music stay internal; public playback runs 21 days then links to YouTube.",
+      "target_asked_on": "2026-10-23",
+      "questions": [
+        {
+          "id": "media-q-highlights-access-20261102",
+          "text": "Should FFA Highlights be open to everyone or members only?",
+          "asked_on": "2026-11-02"
+        }
+      ]
     },
     {
       "id": "auto",
