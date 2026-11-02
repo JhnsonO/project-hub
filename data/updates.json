@@ -130,6 +130,16 @@
         "media"
       ],
       "snapshot_hash": "4dc94dcfa870234ac02e46f7e5b56bc8327024ff3e7ab4354ce061c568ca668a"
+    },
+    {
+      "id": "claude-20261102-local-playback-01",
+      "fingerprint": "e0d405dc55c2201ec39b999bc81ce9e60f0a0d263d2fdad6ccc287cf27447734",
+      "date": "2026-11-02",
+      "editor": "claude",
+      "projects": [
+        "media"
+      ],
+      "snapshot_hash": "86372bc78d92adb1bfa28c8488cea8aea45a7d155b5008dd4ae3f8b4c95bc2ea"
     }
   ]
 }
