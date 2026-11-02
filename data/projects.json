@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "updated": "2026-11-02",
-  "updated_by": "claude",
+  "updated_by": "chatgpt",
   "groups": [
     "FFA",
     "OEV",
@@ -14,7 +14,7 @@
       "mono": "FW",
       "group": "FFA",
       "status": "Live · QA",
-      "summary": "The live site and shop remain active; SEO metadata is improved, with page and image-description gaps still under review.",
+      "summary": "MNL clip layout repaired on desktop; the live site and shop remain active, with wider QA and SEO work open.",
       "milestones": [
         {
           "name": "Site + shop live",
@@ -29,9 +29,9 @@
           "status": "todo"
         }
       ],
-      "next_step": "Refresh the SEO dashboard count, locate the remaining page gaps, and complete image alt text after the Squarespace AI Terms decision.",
+      "next_step": "Finish MNL responsive navigation, clip-player keyboard and deep-link checks; retain the remaining SEO and checkout backlog.",
       "watch": "The dashboard last showed 23/26 pages with metadata and 160 images missing alt text; two legal pages were updated afterward, but the score did not refresh.",
-      "updated": "29 OCT",
+      "updated": "02 NOV",
       "workspace": {
         "provider": "Google",
         "url": "https://docs.google.com/document/d/1Ai973jkiOD_3WvG1ra2sFiIzPO3F3R1AlGIvKzZWWXA/edit"
@@ -500,6 +500,48 @@
           "end": null,
           "completed_on": null,
           "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1Ai973jkiOD_3WvG1ra2sFiIzPO3F3R1AlGIvKzZWWXA/edit",
+              "label": "Website master handover"
+            }
+          ]
+        },
+        {
+          "id": "web-024",
+          "name": "Repair the MNL desktop goals layout",
+          "status": "done",
+          "owner": null,
+          "note": "Published scoped Squarespace styling: removed empty column, introduced three-column goal grid, aligned card styling and repaired Goals navigation highlighting. Week selection and one video load verified; league data preserved.",
+          "last_touched": "2026-11-02",
+          "lane": "Monday league",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-11-02",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1Ai973jkiOD_3WvG1ra2sFiIzPO3F3R1AlGIvKzZWWXA/edit",
+              "label": "Website master handover"
+            }
+          ]
+        },
+        {
+          "id": "web-025",
+          "name": "Complete MNL clips responsive and accessibility QA",
+          "status": "todo",
+          "owner": null,
+          "note": "Narrow-screen Goals tab and single-column rules checked in browser emulation; full tablet, modal focus, deep links and highlight-reel layouts remain open.",
+          "last_touched": "2026-11-02",
+          "lane": "Monday league",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [
+            "web-024"
+          ],
           "evidence": [
             {
               "provider": "Google",
