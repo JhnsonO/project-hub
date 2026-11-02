@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "updated": "2026-10-29",
-  "updated_by": "chatgpt",
+  "updated": "2026-11-02",
+  "updated_by": "claude",
   "groups": [
     "FFA",
     "OEV",
@@ -516,8 +516,8 @@
       "name": "FFA Media",
       "mono": "FM",
       "group": "FFA",
-      "status": "v2 live · acceptance",
-      "summary": "The dated log records v2 cutover on 20 October and native-clip work on 21 October; remaining API, real-device and deferred configuration checks stay open.",
+      "status": "v2 live · MNL feed live",
+      "summary": "v2 cutover (20 Oct) and native clips are recorded. On 2 Nov the Monday Night League website feed went live with goal clips, a Goals tab and main/POV angles; API, real-device and deferred configuration checks stay open.",
       "milestones": [
         {
           "name": "Beta entry live",
@@ -532,9 +532,9 @@
           "status": "todo"
         }
       ],
-      "next_step": "Run the current v2 Postgres suite and resolve the deferred key configuration.",
+      "next_step": "Finish the week 1 clip and POV renders, then build the Match Log sheet writer; keep the Postgres suite and key configuration open.",
       "blocker": "Check #55 depends on key configuration; #54 still needs the current v2 suite. Signed-in acceptance is unverified.",
-      "updated": "22 OCT",
+      "updated": "02 NOV",
       "workspace": {
         "provider": "GitHub",
         "url": "https://github.com/users/JhnsonO/projects/5/views/"
@@ -1227,6 +1227,147 @@
               "provider": "GitHub",
               "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/ai-project-state.md",
               "label": "Dated implementation and test log"
+            }
+          ]
+        },
+        {
+          "id": "media-029",
+          "name": "Publish Monday Night League goal clips to the website feed",
+          "status": "done",
+          "owner": null,
+          "note": "Public feed and auto-rendered goal clips are live on the MNL page, table first with clips behind a Goals tab. Week 1 backfill was still rendering at last check (10 of 16 clips; week 2 14 of 15).",
+          "last_touched": "2026-11-02",
+          "lane": "Website",
+          "start": "2026-11-02",
+          "end": "2026-11-02",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/63",
+              "label": "Website feed"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/64",
+              "label": "Immediate goal-clip rendering"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/current-state.md",
+              "label": "Current state, 2 Nov"
+            }
+          ],
+          "completed_on": "2026-11-02",
+          "date_basis": "observed",
+          "date_note": "Merged PRs #63 and #64 on 2 November 2026; live page checked the same day."
+        },
+        {
+          "id": "media-030",
+          "name": "Add off-camera goals and Match Log sheet rows",
+          "status": "done",
+          "owner": null,
+          "note": "App has an Off camera goal button; the website shows Not on camera. A sheet-rows endpoint exists. Unit-tested only; the writer into the Google sheet is not built.",
+          "last_touched": "2026-11-02",
+          "lane": "Website",
+          "start": "2026-11-02",
+          "end": "2026-11-02",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/65",
+              "label": "Sheet rows endpoint"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/66",
+              "label": "Off-camera goals"
+            }
+          ],
+          "completed_on": "2026-11-02",
+          "date_basis": "observed",
+          "date_note": "Merged PRs #65 and #66 on 2 November 2026."
+        },
+        {
+          "id": "media-031",
+          "name": "Offer main cam and POV cam angles on the website",
+          "status": "done",
+          "owner": null,
+          "note": "Clips with more than one ready camera show a Main cam / POV cam switcher. Two clips show both angles so far; POV cuts for the other goal clips were queued and are still rendering.",
+          "last_touched": "2026-11-02",
+          "lane": "Website",
+          "start": "2026-11-02",
+          "end": "2026-11-02",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/67",
+              "label": "Alternate angles"
+            }
+          ],
+          "completed_on": "2026-11-02",
+          "date_basis": "observed",
+          "date_note": "Merged PR #67 on 2 November 2026; switcher checked on the live page with a real two-angle clip."
+        },
+        {
+          "id": "media-032",
+          "name": "Add a Goals tab to the Monday Night League page",
+          "status": "done",
+          "owner": null,
+          "note": "Goals chip in the sub-nav and Watch the goals hero button open the clips on desktop; a real sixth tab on mobile. Phone width was simulated, not tested on a device.",
+          "last_touched": "2026-11-02",
+          "lane": "Website",
+          "start": "2026-11-02",
+          "end": "2026-11-02",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/current-state.md",
+              "label": "Current state, 2 Nov"
+            }
+          ],
+          "completed_on": "2026-11-02",
+          "date_basis": "observed",
+          "date_note": "Added to the Squarespace page on 2 November 2026 and checked live."
+        },
+        {
+          "id": "media-033",
+          "name": "Write new Monday Night League weeks into the Match Log sheet",
+          "status": "todo",
+          "owner": null,
+          "note": "Agreed rule: append new weeks only and never touch existing rows or notes. The app-side rows endpoint is ready; the sheet writer is not built.",
+          "last_touched": "2026-11-02",
+          "lane": "Website",
+          "start": null,
+          "end": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/current-state.md",
+              "label": "Current state, 2 Nov"
+            }
+          ]
+        },
+        {
+          "id": "media-034",
+          "name": "Confirm week 1 clips and POV cuts finish rendering",
+          "status": "todo",
+          "owner": null,
+          "note": "Remaining week 1 clip renders and queued POV cuts are in the worker queue; check the live feed reaches full coverage.",
+          "last_touched": "2026-11-02",
+          "lane": "Website",
+          "start": null,
+          "end": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/current-state.md",
+              "label": "Current state, 2 Nov"
             }
           ]
         }
