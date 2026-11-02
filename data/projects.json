@@ -14,7 +14,7 @@
       "mono": "FW",
       "group": "FFA",
       "status": "Live · QA",
-      "summary": "MNL clip layout repaired on desktop; the live site and shop remain active, with wider QA and SEO work open.",
+      "summary": "MNL clips layout and navigation repaired; desktop, phone and tablet browser checks passed for core navigation and player focus. Wider site QA remains open.",
       "milestones": [
         {
           "name": "Site + shop live",
@@ -29,7 +29,7 @@
           "status": "todo"
         }
       ],
-      "next_step": "Finish MNL responsive navigation, clip-player keyboard and deep-link checks; retain the remaining SEO and checkout backlog.",
+      "next_step": "Complete real-device touch/Safari, multi-angle and highlight-reel variant checks; retain SEO and checkout backlog.",
       "watch": "The dashboard last showed 23/26 pages with metadata and 160 images missing alt text; two legal pages were updated afterward, but the score did not refresh.",
       "updated": "02 NOV",
       "workspace": {
@@ -533,12 +533,34 @@
           "name": "Complete MNL clips responsive and accessibility QA",
           "status": "todo",
           "owner": null,
-          "note": "Narrow-screen Goals tab and single-column rules checked in browser emulation; full tablet, modal focus, deep links and highlight-reel layouts remain open.",
+          "note": "Desktop and emulated phone/tablet tab switching, direct Goals links, player focus wrap/Escape and player-specific goal/assist panels checked on 2 November. Remaining: real-device touch/Safari and clips with multiple camera angles or populated highlight reels.",
           "last_touched": "2026-11-02",
           "lane": "Monday league",
           "start": null,
           "end": null,
           "completed_on": null,
+          "depends_on": [
+            "web-024"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1Ai973jkiOD_3WvG1ra2sFiIzPO3F3R1AlGIvKzZWWXA/edit",
+              "label": "Website master handover"
+            }
+          ]
+        },
+        {
+          "id": "web-026",
+          "name": "Repair MNL tab selection, deep links and player keyboard focus",
+          "status": "done",
+          "owner": null,
+          "note": "Replaced conflicting tab controllers with one scoped MNL controller using named sections. Verified all desktop and mobile tabs, tablet selection, direct Goals reload, modal focus wrap/Escape/return, and a player-specific goal/assist panel. No league data edits.",
+          "last_touched": "2026-11-02",
+          "lane": "Monday league",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-11-02",
           "depends_on": [
             "web-024"
           ],
