@@ -14,7 +14,7 @@
       "mono": "FW",
       "group": "FFA",
       "status": "Live · QA",
-      "summary": "MNL clips layout and navigation repaired; desktop, phone and tablet browser checks passed for core navigation and player focus. Wider site QA remains open.",
+      "summary": "MNL section order now matches desktop and mobile navigation; Goals stays expanded on desktop and appears only in its selected mobile panel. Wider site QA remains open.",
       "milestones": [
         {
           "name": "Site + shop live",
@@ -563,6 +563,28 @@
           "completed_on": "2026-11-02",
           "depends_on": [
             "web-024"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1Ai973jkiOD_3WvG1ra2sFiIzPO3F3R1AlGIvKzZWWXA/edit",
+              "label": "Website master handover"
+            }
+          ]
+        },
+        {
+          "id": "web-027",
+          "name": "Align MNL section order and desktop/mobile Goals behaviour",
+          "status": "done",
+          "owner": null,
+          "note": "Published shared Table, Teams, Goals, Stats, Rules, Venue order for both navigation bars and page sections. Goals is always expanded on desktop and isolated to its mobile panel. Verified six desktop links, six mobile panels, repeat switching, week selection and fresh Goals deep link; no league data edits.",
+          "last_touched": "2026-11-02",
+          "lane": "Monday league",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-11-02",
+          "depends_on": [
+            "web-026"
           ],
           "evidence": [
             {
