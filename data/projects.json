@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "updated": "2026-11-02",
+  "updated": "2026-11-03",
   "updated_by": "claude",
   "groups": [
     "FFA",
@@ -640,7 +640,7 @@
       ],
       "next_step": "Finish the week 1 clip and POV renders, then build the Match Log sheet writer; keep the Postgres suite and key configuration open.",
       "blocker": "Check #55 depends on key configuration; #54 still needs the current v2 suite. Signed-in acceptance is unverified.",
-      "updated": "02 NOV",
+      "updated": "03 NOV",
       "workspace": {
         "provider": "GitHub",
         "url": "https://github.com/users/JhnsonO/projects/5/views/"
@@ -1523,6 +1523,47 @@
               "provider": "GitHub",
               "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/current-state.md",
               "label": "Current state, 1 Nov"
+            }
+          ]
+        },
+        {
+          "id": "media-037",
+          "name": "Add bib colours, own goals and Swap player to Watch",
+          "status": "done",
+          "owner": null,
+          "note": "Per-session bib colours, own goals (credited to the team, not tallied against the scorer), a Swap player dialog for mid-game changes and no clock times in goal titles. Live 3 Nov. Swaps are kept on the device only. Not yet tried on a real session, phone or iPad.",
+          "last_touched": "2026-11-03",
+          "lane": "Existing app",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-11-03",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/81",
+              "label": "Watch redesign #81"
+            }
+          ]
+        },
+        {
+          "id": "media-038",
+          "name": "Try bib colours, own goals and Swap player on a real Monday session",
+          "status": "todo",
+          "owner": null,
+          "note": "Check on a real phone and iPad, then confirm the website Monday Night League scores still read correctly.",
+          "last_touched": "2026-11-03",
+          "lane": "Existing app",
+          "start": null,
+          "end": null,
+          "depends_on": [
+            "media-037"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/current-state.md",
+              "label": "Current state, 3 Nov"
             }
           ]
         }
