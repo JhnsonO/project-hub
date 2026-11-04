@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "updated": "2026-11-03",
+  "updated": "2026-11-04",
   "updated_by": "claude",
   "groups": [
     "FFA",
@@ -622,8 +622,8 @@
       "name": "FFA Media",
       "mono": "FM",
       "group": "FFA",
-      "status": "v2 live · MNL feed live",
-      "summary": "v2 cutover (20 Oct) and native clips are recorded. On 2 Nov the Monday Night League website feed went live with goal clips, a Goals tab and main/POV angles; API, real-device and deferred configuration checks stay open.",
+      "status": "v2 live · MNL feed + sheet writer live",
+      "summary": "v2 cutover (20 Oct) and native clips are recorded. The Monday Night League website feed is live with goal clips, a Goals tab and main/POV angles, and from 4 Nov finished sessions are sent to the Match Log sheet from the app. API, real-device and deferred configuration checks stay open.",
       "milestones": [
         {
           "name": "Beta entry live",
@@ -638,9 +638,9 @@
           "status": "todo"
         }
       ],
-      "next_step": "Finish the week 1 clip and POV renders, then build the Match Log sheet writer; keep the Postgres suite and key configuration open.",
+      "next_step": "Confirm the week 2 Zac clip and week 1 clips, check the Goals tab on a real phone, then keep the Postgres suite and key configuration open.",
       "blocker": "Check #55 depends on key configuration; #54 still needs the current v2 suite. Signed-in acceptance is unverified.",
-      "updated": "03 NOV",
+      "updated": "04 NOV",
       "workspace": {
         "provider": "GitHub",
         "url": "https://github.com/users/JhnsonO/projects/5/views/"
@@ -1442,10 +1442,10 @@
         {
           "id": "media-033",
           "name": "Write new Monday Night League weeks into the Match Log sheet",
-          "status": "todo",
+          "status": "done",
           "owner": null,
-          "note": "Agreed rule: append new weeks only and never touch existing rows or notes. The app-side rows endpoint is ready; the sheet writer is not built.",
-          "last_touched": "2026-11-02",
+          "note": "Live 4 Nov. Finishing a session in the app sends it to the Match Log sheet; the website table updates. Existing scored rows (19 and 26 Oct) and the notes column are never changed, and repeat sends add nothing. Week 3 (4-5) was sent and shows on the website. Limit: the sheet script only accepts two equal teams of 18 in total, so uneven sessions are refused.",
+          "last_touched": "2026-11-04",
           "lane": "Website",
           "start": null,
           "end": null,
@@ -1453,18 +1453,24 @@
           "evidence": [
             {
               "provider": "GitHub",
-              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/current-state.md",
-              "label": "Current state, 2 Nov"
+              "url": "https://github.com/JhnsonO/ffa-media/pull/84",
+              "label": "Sheet writer #84"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/86",
+              "label": "Current state, 4 Nov"
             }
-          ]
+          ],
+          "completed_on": "2026-11-04"
         },
         {
           "id": "media-034",
           "name": "Confirm week 1 clips and POV cuts finish rendering",
           "status": "todo",
           "owner": null,
-          "note": "Remaining week 1 clip renders and queued POV cuts are in the worker queue; check the live feed reaches full coverage.",
-          "last_touched": "2026-11-02",
+          "note": "Week 3 shows 9 of 9 clips. Week 2 is 14 of 15: the Zac goal was missed because the main camera started late; the fix (#85) is live and its clip is re-queued, not yet confirmed. Week 1 still to confirm.",
+          "last_touched": "2026-11-04",
           "lane": "Website",
           "start": null,
           "end": null,
@@ -1474,6 +1480,11 @@
               "provider": "GitHub",
               "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/current-state.md",
               "label": "Current state, 2 Nov"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/85",
+              "label": "Goal clip fix #85"
             }
           ]
         },
@@ -1587,6 +1598,27 @@
               "provider": "GitHub",
               "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/current-state.md",
               "label": "Current state, 3 Nov"
+            }
+          ]
+        },
+        {
+          "id": "media-040",
+          "name": "Check the Goals tab and clips on a real phone",
+          "status": "todo",
+          "owner": null,
+          "note": "Johnson to open the website Monday Night League page on a phone and play a goal clip from the Goals tab, switching between Main cam and POV cam.",
+          "last_touched": "2026-11-04",
+          "lane": "Existing app",
+          "start": null,
+          "end": null,
+          "depends_on": [
+            "media-034"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/current-state.md",
+              "label": "Current state, 4 Nov"
             }
           ]
         }
