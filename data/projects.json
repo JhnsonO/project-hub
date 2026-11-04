@@ -1551,11 +1551,34 @@
           "name": "Try bib colours, own goals and Swap player on a real Monday session",
           "status": "todo",
           "owner": null,
-          "note": "Check on a real phone and iPad, then confirm the website Monday Night League scores still read correctly.",
+          "note": "Check on a real phone and iPad, including the new Watch layout, then confirm the website Monday Night League scores still read correctly.",
           "last_touched": "2026-11-03",
           "lane": "Existing app",
           "start": null,
           "end": null,
+          "depends_on": [
+            "media-037",
+            "media-039"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/current-state.md",
+              "label": "Current state, 3 Nov"
+            }
+          ]
+        },
+        {
+          "id": "media-039",
+          "name": "Match the Watch page to the design on phone, iPad and desktop",
+          "status": "done",
+          "owner": null,
+          "note": "Live 3 Nov. Score, Who scored and Clips are separate cards with the scrubber under the video; phone is leaner (one-line sync chip, one Start/End clip button, Clips collapsed). Drag-to-sort was dropped; tap A or B. Checked in a 390px test render, not on a real phone.",
+          "last_touched": "2026-11-03",
+          "lane": "Existing app",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-11-03",
           "depends_on": [
             "media-037"
           ],
