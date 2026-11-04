@@ -623,7 +623,7 @@
       "mono": "FM",
       "group": "FFA",
       "status": "v2 live · MNL feed + sheet writer live",
-      "summary": "v2 cutover (20 Oct) and native clips are recorded. The Monday Night League website feed is live with goal clips, a Goals tab and main/POV angles, and from 4 Nov finished sessions are sent to the Match Log sheet from the app. API, real-device and deferred configuration checks stay open.",
+      "summary": "v2 cutover (20 Oct) and native clips are recorded. The Monday Night League website feed is live with goal clips, a Goals tab and main/POV angles, and the clip player now has share, download and like (4 Nov), and from 4 Nov finished sessions are sent to the Match Log sheet from the app. API, real-device and deferred configuration checks stay open.",
       "milestones": [
         {
           "name": "Beta entry live",
@@ -638,7 +638,7 @@
           "status": "todo"
         }
       ],
-      "next_step": "Confirm the week 2 Zac clip and week 1 clips, check the Goals tab on a real phone, then keep the Postgres suite and key configuration open.",
+      "next_step": "Try Share and Download on a real phone, confirm the week 2 Zac clip and week 1 clips, then keep the Postgres suite and key configuration open.",
       "blocker": "Check #55 depends on key configuration; #54 still needs the current v2 suite. Signed-in acceptance is unverified.",
       "updated": "04 NOV",
       "workspace": {
@@ -1613,6 +1613,54 @@
           "end": null,
           "depends_on": [
             "media-034"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/current-state.md",
+              "label": "Current state, 4 Nov"
+            }
+          ]
+        },
+        {
+          "id": "media-041",
+          "name": "Add share, download, likes and a goal strip to the Monday Night League clip player",
+          "status": "done",
+          "owner": null,
+          "note": "Live 4 Nov. Share sheet (WhatsApp, Instagram, TikTok, X, Messages, Facebook, Email), Download sheet, FFA logo on the video, scorer and assist chips, goal strip, likes. HD 1080p and 9:16 copies with the logo were made and played back on one real clip; originals stay clean. Not tried on a real phone, and native file share to Instagram/TikTok is untested.",
+          "last_touched": "2026-11-04",
+          "lane": "Existing app",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-11-04",
+          "depends_on": [
+            "media-034"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/90",
+              "label": "Share copies and likes, PR 90"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/current-state.md",
+              "label": "Current state, 4 Nov"
+            }
+          ]
+        },
+        {
+          "id": "media-042",
+          "name": "Try Share and Download on a real phone",
+          "status": "todo",
+          "owner": null,
+          "note": "Johnson to open a goal clip on a phone: tap Share (check the Instagram/TikTok file share), Download (HD) and Like.",
+          "last_touched": "2026-11-04",
+          "lane": "Existing app",
+          "start": null,
+          "end": null,
+          "depends_on": [
+            "media-041"
           ],
           "evidence": [
             {
