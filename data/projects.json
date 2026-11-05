@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "updated": "2026-11-05",
-  "updated_by": "chatgpt",
+  "updated_by": "claude",
   "groups": [
     "FFA",
     "OEV",
@@ -640,7 +640,7 @@
       ],
       "next_step": "Try Share and Download on a real phone, confirm the week 2 Zac clip and week 1 clips, then keep the Postgres suite and key configuration open.",
       "blocker": "Check #55 depends on key configuration; #54 still needs the current v2 suite. Signed-in acceptance is unverified.",
-      "updated": "04 NOV",
+      "updated": "05 NOV",
       "workspace": {
         "provider": "GitHub",
         "url": "https://github.com/users/JhnsonO/projects/5/views/"
@@ -1667,6 +1667,51 @@
               "provider": "GitHub",
               "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/current-state.md",
               "label": "Current state, 4 Nov"
+            }
+          ]
+        },
+        {
+          "id": "media-043",
+          "name": "Write goal timestamps into YouTube descriptions",
+          "status": "doing",
+          "owner": null,
+          "note": "Built 5 Nov: when goals are clipped, each camera's YouTube description gets a Goals list (0:00 Start, then each goal) so viewers can jump to them. Checks pass (710 tests, Admin card checked in a browser). PR open, not merged, nothing runs until YouTube is connected. Not yet tried against real YouTube.",
+          "last_touched": "2026-11-05",
+          "lane": "Existing app",
+          "start": null,
+          "end": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/94",
+              "label": "YouTube goal timestamps, PR 94"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/issues/95",
+              "label": "Tracking issue 95"
+            }
+          ]
+        },
+        {
+          "id": "media-044",
+          "name": "Connect FFA Media to YouTube and test one real session",
+          "status": "todo",
+          "owner": null,
+          "note": "Johnson: merge PR 94, create the Google OAuth client, add the two keys on the web and worker services, press Connect YouTube in Admin > System, then run the dry run on one session before the first real write.",
+          "last_touched": "2026-11-05",
+          "lane": "Existing app",
+          "start": null,
+          "end": null,
+          "depends_on": [
+            "media-043"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/94",
+              "label": "YouTube goal timestamps, PR 94"
             }
           ]
         }
