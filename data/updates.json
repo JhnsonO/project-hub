@@ -190,6 +190,16 @@
         "linkedin"
       ],
       "snapshot_hash": "50f71df355c5c783c280c6c1ed8585814066350b3cf6354535c4509cfacc6d35"
+    },
+    {
+      "id": "claude-20261105-media-youtube-goal-timestamps-01",
+      "fingerprint": "9a386d0ba3ba083b0ac65667cbc1f95e18d95d6d78dc1c27839c0125c74a1a36",
+      "date": "2026-11-05",
+      "editor": "claude",
+      "projects": [
+        "media"
+      ],
+      "snapshot_hash": "5f8ea14b058d794938ebde0ea72fd7c724bde32ec77b27af30c60b7eacfc1ed9"
     }
   ]
 }
