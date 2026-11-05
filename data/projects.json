@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "updated": "2026-11-04",
-  "updated_by": "claude",
+  "updated": "2026-11-05",
+  "updated_by": "chatgpt",
   "groups": [
     "FFA",
     "OEV",
@@ -3462,6 +3462,124 @@
         }
       ],
       "target_asked_on": "2026-10-29"
+    },
+    {
+      "id": "linkedin",
+      "name": "FFA LinkedIn Presence",
+      "mono": "LI",
+      "group": "FFA",
+      "status": "Planning · setup pending",
+      "summary": "Building FFA's LinkedIn presence, starting in Leicester, with possible expansion to other cities later. The current page state and launch work still need verification.",
+      "milestones": [
+        {
+          "name": "Verify current company page",
+          "status": "todo"
+        },
+        {
+          "name": "Complete Leicester profile + first content",
+          "status": "todo"
+        },
+        {
+          "name": "Review before expanding to other cities",
+          "status": "todo"
+        }
+      ],
+      "next_step": "Inspect the live FFA page and verify its current saved details; then update the board with direct evidence.",
+      "watch": "A prior conversation reported tagline and About edits, but this page state has not been independently verified.",
+      "updated": "05 NOV",
+      "target_asked_on": "2026-11-05",
+      "questions": [
+        {
+          "id": "linkedin-target",
+          "text": "When should the Leicester LinkedIn presence be ready?",
+          "asked_on": "2026-11-05"
+        }
+      ],
+      "workspace": {
+        "provider": "Google",
+        "url": "https://docs.google.com/document/d/12unca6zjjSVQkisqQRa2qNbyFE730NGRporg4Emr-Vg/edit"
+      },
+      "roadmap": {
+        "provider": "Google",
+        "url": "https://docs.google.com/document/d/12unca6zjjSVQkisqQRa2qNbyFE730NGRporg4Emr-Vg/edit"
+      },
+      "tasks": [
+        {
+          "id": "linkedin-001",
+          "name": "Verify the current company page and reported copy edits",
+          "status": "todo",
+          "owner": "chatgpt",
+          "note": "Direct page readback is needed before marking prior tagline/About edits done.",
+          "last_touched": "2026-11-05",
+          "lane": "Page setup",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/12unca6zjjSVQkisqQRa2qNbyFE730NGRporg4Emr-Vg/edit",
+              "label": "Project board and handover"
+            }
+          ]
+        },
+        {
+          "id": "linkedin-002",
+          "name": "Complete Leicester-first profile and visual identity",
+          "status": "todo",
+          "owner": null,
+          "note": "Confirm current page state, then resolve remaining profile and cover work.",
+          "last_touched": "2026-11-05",
+          "lane": "Page setup",
+          "depends_on": [
+            "linkedin-001"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/12unca6zjjSVQkisqQRa2qNbyFE730NGRporg4Emr-Vg/edit",
+              "label": "Project roadmap"
+            }
+          ]
+        },
+        {
+          "id": "linkedin-003",
+          "name": "Prepare the introductory post and ongoing content plan",
+          "status": "todo",
+          "owner": null,
+          "note": "The introductory post and cadence remain open in the handover.",
+          "last_touched": "2026-11-05",
+          "lane": "Content",
+          "depends_on": [
+            "linkedin-001"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/12unca6zjjSVQkisqQRa2qNbyFE730NGRporg4Emr-Vg/edit",
+              "label": "Project roadmap"
+            }
+          ]
+        },
+        {
+          "id": "linkedin-004",
+          "name": "Review outcomes before considering other cities",
+          "status": "todo",
+          "owner": null,
+          "note": "Expansion is a future option; no timing or criteria have been set.",
+          "last_touched": "2026-11-05",
+          "lane": "Growth",
+          "depends_on": [
+            "linkedin-002",
+            "linkedin-003"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/12unca6zjjSVQkisqQRa2qNbyFE730NGRporg4Emr-Vg/edit",
+              "label": "Project roadmap"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

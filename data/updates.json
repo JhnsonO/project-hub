@@ -180,6 +180,16 @@
         "media"
       ],
       "snapshot_hash": "024ab48ddb1d2db575ae04b2d6caf90d52d88506838407002c61d3bbe7cdcce6"
+    },
+    {
+      "id": "chatgpt-20261105-ffa-linkedin-01",
+      "fingerprint": "9f0f0876e483123c1e3e34877f58ade0df7b1aa8a423f9c9c9d079e9dae1d0f3",
+      "date": "2026-11-05",
+      "editor": "chatgpt",
+      "projects": [
+        "linkedin"
+      ],
+      "snapshot_hash": "50f71df355c5c783c280c6c1ed8585814066350b3cf6354535c4509cfacc6d35"
     }
   ]
 }
