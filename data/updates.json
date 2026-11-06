@@ -210,6 +210,16 @@
         "media"
       ],
       "snapshot_hash": "8c7dc9d221c0d3c22cf48c632a9725f4c20437fe82e856cf587120dceb13178b"
+    },
+    {
+      "id": "claude-20261106-media-youtube-auto-on-02",
+      "fingerprint": "dcad974b50cc82e7bb58eb36046e960b9d10c9845d4fae13427e99330ee2103e",
+      "date": "2026-11-06",
+      "editor": "claude",
+      "projects": [
+        "media"
+      ],
+      "snapshot_hash": "d5a350694fb0aeaa9bd0ca34792af5b2f78b64a5d099198d047c797383f35802"
     }
   ]
 }
