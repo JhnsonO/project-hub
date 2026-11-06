@@ -200,6 +200,16 @@
         "media"
       ],
       "snapshot_hash": "5f8ea14b058d794938ebde0ea72fd7c724bde32ec77b27af30c60b7eacfc1ed9"
+    },
+    {
+      "id": "claude-20261106-media-youtube-connected-01",
+      "fingerprint": "ddf9158dcffb03dbed8af328dd503b8d3b50331f2f4d830b0df8ec87e67009b4",
+      "date": "2026-11-06",
+      "editor": "claude",
+      "projects": [
+        "media"
+      ],
+      "snapshot_hash": "8c7dc9d221c0d3c22cf48c632a9725f4c20437fe82e856cf587120dceb13178b"
     }
   ]
 }
