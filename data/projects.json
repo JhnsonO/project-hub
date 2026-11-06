@@ -638,7 +638,7 @@
           "status": "todo"
         }
       ],
-      "next_step": "Johnson to say go for the first real write of the Goals list on one session.",
+      "next_step": "Johnson to check the first automatic description update on YouTube.",
       "blocker": "Check #55 depends on key configuration; #54 still needs the current v2 suite. Signed-in acceptance is unverified.",
       "updated": "06 NOV",
       "workspace": {
@@ -1675,7 +1675,7 @@
           "name": "Write goal timestamps into YouTube descriptions",
           "status": "done",
           "owner": null,
-          "note": "Live 6 Nov: PR 94 merged and deployed. When goals are clipped, each camera's YouTube description gets a Goals list so viewers can jump to them. Connected to the FFA channel and a dry run on a real session (2 Nov, 2 cameras, 9 goals) produced the right lists. Nothing has been written to YouTube yet.",
+          "note": "Live 6 Nov: merged and deployed. Goals changes now update each camera's YouTube description by themselves about 90 seconds later. Connected to the FFA channel; a dry run on a real session (2 Nov, 2 cameras, 9 goals) produced the right lists. Automatic writes are on.",
           "last_touched": "2026-11-06",
           "lane": "Existing app",
           "start": null,
@@ -1699,7 +1699,7 @@
           "name": "Connect FFA Media to YouTube and test one real session",
           "status": "done",
           "owner": null,
-          "note": "Done 6 Nov: Google sign-in set up, keys added to web and worker, Connect YouTube completed as the FFA channel, dry run checked on one real session. No YouTube description was changed.",
+          "note": "Done 6 Nov: Google sign-in set up, keys added to web and worker, Connect YouTube completed as the FFA channel, dry run checked on one real session.",
           "last_touched": "2026-11-06",
           "lane": "Existing app",
           "start": null,
@@ -1717,10 +1717,10 @@
         },
         {
           "id": "media-045",
-          "name": "First real write to YouTube on one session",
+          "name": "Check the first automatic update on YouTube",
           "status": "todo",
           "owner": null,
-          "note": "Johnson to say go: write the Goals list into one session's two cameras and check them on YouTube. After that, new goals update descriptions by themselves.",
+          "note": "Johnson: after the next goal or clip change, open that session's two videos on YouTube and check the Goals list in each description. Pause any time with Disconnect in Admin > System.",
           "last_touched": "2026-11-06",
           "lane": "Existing app",
           "start": null,
