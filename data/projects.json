@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "updated": "2026-11-06",
-  "updated_by": "chatgpt",
+  "updated": "2026-11-07",
+  "updated_by": "claude",
   "groups": [
     "FFA",
     "OEV",
@@ -623,7 +623,7 @@
       "mono": "FM",
       "group": "FFA",
       "status": "v2 live · MNL feed + sheet writer live",
-      "summary": "v2 cutover (20 Oct) and native clips are recorded. The Monday Night League website feed is live with goal clips, a Goals tab and main/POV angles, and the clip player now has share, download and like (4 Nov), and from 4 Nov finished sessions are sent to the Match Log sheet from the app. API, real-device and deferred configuration checks stay open.",
+      "summary": "v2 cutover (20 Oct) and native clips are recorded. The Monday Night League website feed is live with goal clips, a Goals tab and main/POV angles, and the clip player now has share, download and like (4 Nov), and from 4 Nov finished sessions are sent to the Match Log sheet from the app. API, real-device and deferred configuration checks stay open. On 7 Nov the game results page design (all sessions, list and calendar, mockup only) was agreed and a code check recorded; the page is not built.",
       "milestones": [
         {
           "name": "Beta entry live",
@@ -640,7 +640,7 @@
       ],
       "next_step": "Johnson to check the first automatic description update on YouTube.",
       "blocker": "Check #55 depends on key configuration; #54 still needs the current v2 suite. Signed-in acceptance is unverified.",
-      "updated": "06 NOV",
+      "updated": "07 NOV",
       "workspace": {
         "provider": "GitHub",
         "url": "https://github.com/users/JhnsonO/projects/5/views/"
@@ -1752,10 +1752,53 @@
               "label": "Clip review controls issue"
             }
           ]
+        },
+        {
+          "id": "media-047",
+          "name": "Agree the game results page design",
+          "status": "done",
+          "owner": null,
+          "note": "Done 7 Nov: mockup agreed for all sessions (list, calendar, player filter, edge cases). Mockup only; nothing built or deployed.",
+          "last_touched": "2026-11-07",
+          "lane": "Results page",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/99",
+              "label": "Results page design and code check, PR 99"
+            }
+          ]
+        },
+        {
+          "id": "media-048",
+          "name": "Build the game results page",
+          "status": "todo",
+          "owner": null,
+          "note": "Not started; needs Johnson's go. Code check found two gaps: league week number is not stored, and teams and bib colours exist only for league sessions.",
+          "last_touched": "2026-11-07",
+          "lane": "Results page",
+          "depends_on": [
+            "media-047"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/99",
+              "label": "Results page design and code check, PR 99"
+            }
+          ]
         }
       ],
       "watch": "The compact 21 October current-state summary missed later entries in the historical log; use dated evidence and keep live acceptance separate. The 6 November clip-review controls are backed by a mockup and issue only; implementation and device acceptance remain open.",
-      "target_asked_on": "2026-10-23"
+      "target_asked_on": "2026-10-23",
+      "questions": [
+        {
+          "id": "media-results-bibs",
+          "text": "Record teams and bib colours for non-league sessions too?",
+          "asked_on": "2026-11-07"
+        }
+      ]
     },
     {
       "id": "auto",
