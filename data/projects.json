@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "updated": "2026-11-07",
-  "updated_by": "claude",
+  "updated_by": "chatgpt",
   "groups": [
     "FFA",
     "OEV",
@@ -3713,8 +3713,8 @@
       "name": "FFA Player Cards & Loyalty",
       "mono": "PC",
       "group": "FFA",
-      "status": "Planning · January start",
-      "summary": "Planning a persistent player-card and loyalty system for January 2027, with baby cards, temporary form, permanent progression, attendance and punctuality streaks, and the 500 Club as the first major milestone.",
+      "status": "Planning · v1 design drafted",
+      "summary": "January 2027 player-card and loyalty concept now has a documented v1 proposal: permanent baby-to-Elite card progression, temporary form badges, verified streaks, founding-player backfill, and a separate earned 500-hours Club. Exact thresholds remain proposed.",
       "milestones": [
         {
           "name": "Verify attendance data",
@@ -3729,9 +3729,9 @@
           "status": "todo"
         }
       ],
-      "next_step": "Verify the Squarespace and TicketSource attendance sources, define deduplication, and calculate a small sample before setting eligibility.",
-      "watch": "The start month is January 2027, but the exact launch date and verified historical attendance totals are not set.",
-      "updated": "06 NOV",
+      "next_step": "Approve proposed tier/form thresholds and January launch day; then verify Squarespace/Acuity and TicketSource identity matching, attendance and played hours before issuing cards.",
+      "watch": "Proposed numeric triggers are not approved; historical attendance, player totals, check-in reliability and 500-hour eligibility are unverified. No product is built or launched.",
+      "updated": "07 NOV",
       "target_asked_on": "2026-11-06",
       "questions": [
         {
@@ -3771,8 +3771,8 @@
           "name": "Define baby-card maturity, tiers and permanent progression",
           "status": "doing",
           "owner": null,
-          "note": "Direction is agreed; thresholds and exact tier rules remain open.",
-          "last_touched": "2026-11-06",
+          "note": "7 November concept document proposes Baby 1–4, Junior 5–9, Mature 10–24, Bronze 25–49, Silver 50–99, Gold 100–249, Elite 250+ verified appearances. Numbers await Johnson approval.",
+          "last_touched": "2026-11-07",
           "lane": "Rules",
           "depends_on": [],
           "evidence": [
@@ -3788,8 +3788,8 @@
           "name": "Define temporary form and streak signals",
           "status": "todo",
           "owner": null,
-          "note": "Form is temporary; attendance, punctuality, goals, assists and wins need verified source rules.",
-          "last_touched": "2026-11-06",
+          "note": "7 November concept proposes temporary fire, assist, win and personal form-dip signals, subject to source verification and approval of thresholds. Form must not permanently lower career tier.",
+          "last_touched": "2026-11-07",
           "lane": "Rules",
           "depends_on": [
             "cards-001"
@@ -3807,8 +3807,8 @@
           "name": "Backfill verified progress toward the 500 Club",
           "status": "todo",
           "owner": null,
-          "note": "Count verified attendance from the start of the Squarespace history; no player totals are claimed yet.",
-          "last_touched": "2026-11-06",
+          "note": "500 Club is earned at 500 verified HOURS of football, not simply 500 bookings. Source durations/identities and attendance remain unverified.",
+          "last_touched": "2026-11-07",
           "lane": "Data",
           "depends_on": [
             "cards-001"
@@ -3862,6 +3862,24 @@
               "provider": "Google",
               "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
               "label": "Player cards roadmap"
+            }
+          ]
+        },
+        {
+          "id": "cards-007",
+          "name": "Document the v1 card and loyalty concept for review",
+          "status": "done",
+          "owner": "chatgpt",
+          "note": "Documented testable design proposal and separated confirmed decisions from unapproved numeric thresholds. Read back the Google Doc; no code, card issuance or player-total validation was done.",
+          "last_touched": "2026-11-07",
+          "lane": "Concept",
+          "completed_on": "2026-11-07",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
+              "label": "7 Nov card concept and handover"
             }
           ]
         }
