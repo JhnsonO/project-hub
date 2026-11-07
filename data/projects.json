@@ -3713,8 +3713,8 @@
       "name": "FFA Player Cards & Loyalty",
       "mono": "PC",
       "group": "FFA",
-      "status": "Planning · v1 design drafted",
-      "summary": "January 2027 player-card concept is documented. Full maturity must mean Regular status; the exact Regular qualification rule and other numerical thresholds remain unapproved.",
+      "status": "Planning · profile lifecycle defined",
+      "summary": "January 2027 FIFA-style evolving player profiles: first card earned after several verified attendances (exact threshold open), physical maturation into Regular, one current card per player, and retirement/archive for prolonged inactivity.",
       "milestones": [
         {
           "name": "Verify attendance data",
@@ -3729,8 +3729,8 @@
           "status": "todo"
         }
       ],
-      "next_step": "Choose the Regular qualification rule and approve the remaining tier/form thresholds and January launch day; then verify attendance identities and played hours.",
-      "watch": "Full maturity is tied to Regular status, but 24 appearances versus weekly consistency is unresolved. Historical attendance, player totals and check-in reliability remain unverified; no product is launched.",
+      "next_step": "Agree first-card eligibility and inactivity/retirement thresholds; settle Regular maturity rule, then verify attendance sources and develop a one-card-per-player active directory with archived profiles.",
+      "watch": "No cards on first visit. Exact first-card minimum, Regular qualification, retirement timing, returner reactivation and January launch day remain to be approved. Attendance data and 500-hour eligibility are unverified.",
       "updated": "07 NOV",
       "target_asked_on": "2026-11-06",
       "questions": [
@@ -3742,6 +3742,16 @@
         {
           "id": "cards-regular-rule",
           "text": "Should Regular require attendance in 8 of the last 12 weeks?",
+          "asked_on": "2026-11-07"
+        },
+        {
+          "id": "cards-first-card",
+          "text": "How many verified sessions before a player unlocks their first baby card?",
+          "asked_on": "2026-11-07"
+        },
+        {
+          "id": "cards-retirement",
+          "text": "After how many absent weeks should a player's card retire?",
           "asked_on": "2026-11-07"
         }
       ],
@@ -3776,7 +3786,7 @@
           "name": "Define baby-card maturity, Regular status and permanent progression",
           "status": "doing",
           "owner": null,
-          "note": "Johnson confirmed full maturity must equal Regular status. Existing tier numbers, including Mature at 10–24, remain proposals; the Regular qualification rule is unresolved.",
+          "note": "Johnson confirmed full maturity equals Regular. Characters physically age; attendance weeks versus sessions rule still unapproved. First baby card must be earned after several verified sessions, not the first attendance.",
           "last_touched": "2026-11-07",
           "lane": "Rules",
           "depends_on": [],
@@ -3831,8 +3841,8 @@
           "name": "Launch initial cards for eligible consistent players",
           "status": "todo",
           "owner": null,
-          "note": "January 2027 is the confirmed start month; the exact launch date is still missing.",
-          "last_touched": "2026-11-06",
+          "note": "January 2027 is the agreed start month. First card is not issued at the first session; existing consistent players may receive a verified eligible card at launch. Exact first-card rule and launch date remain open.",
+          "last_touched": "2026-11-07",
           "lane": "Launch",
           "start": "2027-01-01",
           "end": "2027-01-31",
@@ -3885,6 +3895,44 @@
               "provider": "Google",
               "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
               "label": "7 Nov card concept and handover"
+            }
+          ]
+        },
+        {
+          "id": "cards-008",
+          "name": "Specify single evolving FIFA-style profile and lifecycle",
+          "status": "done",
+          "owner": "chatgpt",
+          "note": "Documented first-card eligibility gate, single public active card/profile, expanded stats and trophy history, inactivity retirement/archive, and no loss of earned character. Thresholds are proposals; no implementation.",
+          "last_touched": "2026-11-07",
+          "lane": "Concept",
+          "completed_on": "2026-11-07",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
+              "label": "Player profile lifecycle handover"
+            }
+          ]
+        },
+        {
+          "id": "cards-009",
+          "name": "Define and implement eligibility, active roster and retirement archive",
+          "status": "todo",
+          "owner": null,
+          "note": "Confirm multiple-session unlock threshold and weeks to Inactive/Retired, plus returner reactivation. One main player card in active directory; preserve historical editions, stats and 500-hour progress.",
+          "last_touched": "2026-11-07",
+          "lane": "Build",
+          "depends_on": [
+            "cards-001",
+            "cards-002"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
+              "label": "Player profile lifecycle handover"
             }
           ]
         }
