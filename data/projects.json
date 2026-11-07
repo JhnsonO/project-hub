@@ -3714,7 +3714,7 @@
       "mono": "PC",
       "group": "FFA",
       "status": "Planning · v1 design drafted",
-      "summary": "January 2027 player-card and loyalty concept now has a documented v1 proposal: permanent baby-to-Elite card progression, temporary form badges, verified streaks, founding-player backfill, and a separate earned 500-hours Club. Exact thresholds remain proposed.",
+      "summary": "January 2027 player-card concept is documented. Full maturity must mean Regular status; the exact Regular qualification rule and other numerical thresholds remain unapproved.",
       "milestones": [
         {
           "name": "Verify attendance data",
@@ -3729,8 +3729,8 @@
           "status": "todo"
         }
       ],
-      "next_step": "Approve proposed tier/form thresholds and January launch day; then verify Squarespace/Acuity and TicketSource identity matching, attendance and played hours before issuing cards.",
-      "watch": "Proposed numeric triggers are not approved; historical attendance, player totals, check-in reliability and 500-hour eligibility are unverified. No product is built or launched.",
+      "next_step": "Choose the Regular qualification rule and approve the remaining tier/form thresholds and January launch day; then verify attendance identities and played hours.",
+      "watch": "Full maturity is tied to Regular status, but 24 appearances versus weekly consistency is unresolved. Historical attendance, player totals and check-in reliability remain unverified; no product is launched.",
       "updated": "07 NOV",
       "target_asked_on": "2026-11-06",
       "questions": [
@@ -3738,6 +3738,11 @@
           "id": "cards-launch-date",
           "text": "What January date should the first player cards launch?",
           "asked_on": "2026-11-06"
+        },
+        {
+          "id": "cards-regular-rule",
+          "text": "Should Regular require attendance in 8 of the last 12 weeks?",
+          "asked_on": "2026-11-07"
         }
       ],
       "workspace": {
@@ -3768,10 +3773,10 @@
         },
         {
           "id": "cards-002",
-          "name": "Define baby-card maturity, tiers and permanent progression",
+          "name": "Define baby-card maturity, Regular status and permanent progression",
           "status": "doing",
           "owner": null,
-          "note": "7 November concept document proposes Baby 1–4, Junior 5–9, Mature 10–24, Bronze 25–49, Silver 50–99, Gold 100–249, Elite 250+ verified appearances. Numbers await Johnson approval.",
+          "note": "Johnson confirmed full maturity must equal Regular status. Existing tier numbers, including Mature at 10–24, remain proposals; the Regular qualification rule is unresolved.",
           "last_touched": "2026-11-07",
           "lane": "Rules",
           "depends_on": [],
