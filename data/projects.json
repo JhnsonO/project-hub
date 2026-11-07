@@ -3713,12 +3713,12 @@
       "name": "FFA Player Cards & Loyalty",
       "mono": "PC",
       "group": "FFA",
-      "status": "Planning · profile lifecycle defined",
-      "summary": "January 2027 FIFA-style evolving player profiles: first card earned after several verified attendances (exact threshold open), physical maturation into Regular, one current card per player, and retirement/archive for prolonged inactivity.",
+      "status": "Planning · booking history reconstructed",
+      "summary": "Reconstructed a partial historical booking evidence base from 272 TicketSource event CSVs and a prior Stripe identity audit. Lifetime individual bookings remain provisional; physical attendance and loyalty milestone eligibility are unverified.",
       "milestones": [
         {
           "name": "Verify attendance data",
-          "status": "todo"
+          "status": "doing"
         },
         {
           "name": "Define progression + card design",
@@ -3729,8 +3729,8 @@
           "status": "todo"
         }
       ],
-      "next_step": "Agree first-card eligibility and inactivity/retirement thresholds; settle Regular maturity rule, then verify attendance sources and develop a one-card-per-player active directory with archived profiles.",
-      "watch": "No cards on first visit. Exact first-card minimum, Regular qualification, retirement timing, returner reactivation and January launch day remain to be approved. Attendance data and 500-hour eligibility are unverified.",
+      "next_step": "Recover missing TicketSource events and full Acuity/Squarespace appointment and check-in statuses; reconcile identity aliases and no-shows before calculating verified lifetime sessions and awarding cards.",
+      "watch": "Booking/payment records are not proof of attendance. Historical TicketSource events, unregistered/manual attendance, and authoritative check-in flags remain missing.",
       "updated": "07 NOV",
       "target_asked_on": "2026-11-06",
       "questions": [
@@ -3767,10 +3767,10 @@
         {
           "id": "cards-001",
           "name": "Verify attendance sources and deduplication rules",
-          "status": "todo",
+          "status": "doing",
           "owner": null,
-          "note": "Confirm which Squarespace and TicketSource records represent attendance and prevent duplicate counts.",
-          "last_touched": "2026-11-06",
+          "note": "Recovered 272 historical TicketSource event booking CSVs and compared with the October Stripe identity audit. Source coverage, identity matching and physical attendance verification remain incomplete. Private detailed work is in the canonical handover.",
+          "last_touched": "2026-11-07",
           "lane": "Data",
           "depends_on": [],
           "evidence": [
@@ -3933,6 +3933,43 @@
               "provider": "Google",
               "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
               "label": "Player profile lifecycle handover"
+            }
+          ]
+        },
+        {
+          "id": "cards-010",
+          "name": "Reconstruct and review historic booking evidence",
+          "status": "done",
+          "owner": "chatgpt",
+          "note": "Recovered 272 TicketSource event booking CSV files; prepared a private reconciliation workbook and flagged missing source/attendance evidence. This is source recovery, not certified player attendance.",
+          "last_touched": "2026-11-07",
+          "lane": "Data",
+          "completed_on": "2026-11-07",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
+              "label": "Historic booking reconstruction handover"
+            }
+          ]
+        },
+        {
+          "id": "cards-011",
+          "name": "Verify physical attendance and resolve historic player identities",
+          "status": "todo",
+          "owner": null,
+          "note": "Resolve anonymous/shared bookings, overlapping payment records and cancelled/no-show cases using complete Acuity/TicketSource exports and session check-in data. Do not publish individual data or award milestones until verified.",
+          "last_touched": "2026-11-07",
+          "lane": "Data",
+          "depends_on": [
+            "cards-010"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
+              "label": "Historic booking reconstruction handover"
             }
           ]
         }
