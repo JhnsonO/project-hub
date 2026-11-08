@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "updated": "2026-11-08",
-  "updated_by": "claude",
+  "updated_by": "chatgpt",
   "groups": [
     "FFA",
     "OEV",
@@ -3843,8 +3843,8 @@
       "name": "FFA Player Cards & Loyalty",
       "mono": "PC",
       "group": "FFA",
-      "status": "Planning · booking history reconstructed",
-      "summary": "Reconstructed a partial historical booking evidence base from 272 TicketSource event CSVs and a prior Stripe identity audit. Lifetime individual bookings remain provisional; physical attendance and loyalty milestone eligibility are unverified. Player cards will have their own page, separate from the game results page.",
+      "status": "Planning · visual design locked",
+      "summary": "Seven black-based player-card finishes and separate scoring/winning streak flame palettes are now approved. A 175-variant visual comparison was completed for regular, scoring-only, winning-only and mixed effects. Cards remain prototypes; real attendance and player data are still unverified. The cards page is separate from game results.",
       "milestones": [
         {
           "name": "Verify attendance data",
@@ -3859,7 +3859,7 @@
           "status": "todo"
         }
       ],
-      "next_step": "Recover missing TicketSource events and full Acuity/Squarespace appointment and check-in statuses; reconcile identity aliases and no-shows before calculating verified lifetime sessions and awarding cards.",
+      "next_step": "Review detailed flame-card mockups, then finalise card eligibility and live streak-data rules; recover missing attendance/check-in evidence before implementing real cards on their separate page.",
       "watch": "Booking/payment records are not proof of attendance. Historical TicketSource events, unregistered/manual attendance, and authoritative check-in flags remain missing.",
       "updated": "08 NOV",
       "target_asked_on": "2026-11-06",
@@ -3931,10 +3931,10 @@
         {
           "id": "cards-003",
           "name": "Define temporary form and streak signals",
-          "status": "todo",
+          "status": "doing",
           "owner": null,
-          "note": "7 November concept proposes temporary fire, assist, win and personal form-dip signals, subject to source verification and approval of thresholds. Form must not permanently lower career tier.",
-          "last_touched": "2026-11-07",
+          "note": "Johnson locked the scoring and winning flame palettes: scoring amber→orange→crimson→deep red for 2–3/4–5/6–7/8+ consecutive scored-in games; winning cyan→electric blue→royal blue→indigo for the same win ranges. Both colours mix dynamically. Three-goal stars, 4–5 goal lightning, 6+ goal crown last 48 hours. Actual verified event linkage and edge-case rules remain open.",
+          "last_touched": "2026-11-08",
           "lane": "Rules",
           "depends_on": [
             "cards-001"
@@ -4119,6 +4119,45 @@
               "provider": "Google",
               "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
               "label": "Player cards board and handover"
+            }
+          ]
+        },
+        {
+          "id": "cards-013",
+          "name": "Lock base-card finishes and produce 175 flame combinations",
+          "status": "done",
+          "owner": "chatgpt",
+          "note": "Approved FIFA-style black base with bronze, silver, gold, royal blue, crimson red, emerald green and violet finishes. Created and locally verified 175 static mockups covering no flame, four scoring levels, four winning levels and all 16 mixed-level pairs on each base. No live UI, animation or player data implemented.",
+          "last_touched": "2026-11-08",
+          "lane": "Design",
+          "completed_on": "2026-11-08",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
+              "label": "8 November approved card design and mockup handover"
+            }
+          ]
+        },
+        {
+          "id": "cards-014",
+          "name": "Implement verified streak overlays and 48-hour performance effects",
+          "status": "todo",
+          "owner": null,
+          "note": "Convert the approved static flame concept into real dynamic card overlays using verified match results, independent scoring/winning streak counters, mixed colour effects and expiring 48-hour hat-trick/high-scoring effects. Resolve draw/forfeit and missing-session semantics before shipping.",
+          "last_touched": "2026-11-08",
+          "lane": "Build",
+          "depends_on": [
+            "cards-001",
+            "cards-003",
+            "cards-012"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
+              "label": "8 November approved card design and mockup handover"
             }
           ]
         }
