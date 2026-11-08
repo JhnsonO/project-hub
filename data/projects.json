@@ -3843,8 +3843,8 @@
       "name": "FFA Player Cards & Loyalty",
       "mono": "PC",
       "group": "FFA",
-      "status": "Planning · flame render rework",
-      "summary": "Existing card artwork has a new slow GIF motion proof, alongside the earlier photographic-video pilot. Visual acceptance, handset performance and live integration remain open.",
+      "status": "Design · motion template accepted",
+      "summary": "Selected the visible-flow animation as the motion reference and packaged a reusable renderer. Editable artwork layers, variant review, handset performance and live integration remain open.",
       "milestones": [
         {
           "name": "Verify attendance data",
@@ -3859,7 +3859,7 @@
           "status": "todo"
         }
       ],
-      "next_step": "Review the existing-card GIF for flame smoothness and card stability; if accepted, repeat from a higher-resolution source and optimize browser cost before production integration.",
+      "next_step": "Separate player/text and scoring/winning flame artwork layers; validate three aligned variants with the accepted motion before batch rendering.",
       "watch": "Booking/payment records are not proof of attendance. Historical TicketSource events, unregistered/manual attendance, and authoritative check-in flags remain missing.",
       "updated": "08 NOV",
       "target_asked_on": "2026-11-06",
@@ -4252,6 +4252,24 @@
               "provider": "Google",
               "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
               "label": "Existing-card GIF motion proof handover"
+            }
+          ]
+        },
+        {
+          "id": "cards-020",
+          "name": "Package the accepted visible-flow motion template",
+          "status": "done",
+          "owner": "chatgpt",
+          "note": "User selected the six-second motion reference. Reusable renderer, geometry, presets, original exports and instructions packaged. Full render: 360 frames at 60 fps; four raw sample frames exactly match the original. Aligned artwork required; editable portrait/text and independent flame colours are not implemented. No mass variant generation or live release.",
+          "last_touched": "2026-11-08",
+          "lane": "Design",
+          "completed_on": "2026-11-08",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
+              "label": "Accepted motion template handover"
             }
           ]
         }
