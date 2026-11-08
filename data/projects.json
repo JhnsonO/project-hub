@@ -638,7 +638,7 @@
           "status": "todo"
         }
       ],
-      "next_step": "Johnson to add the website origins to the R2 bucket CORS rule (needed for sharing the video file straight to Instagram or TikTok); the page stays out of the navigation for now.",
+      "next_step": "Decide when to let normal sessions record teams, bibs and goals (media-052); check Download and Share on the live results page on a real phone.",
       "blocker": "Check #55 depends on key configuration; #54 still needs the current v2 suite. Signed-in acceptance is unverified.",
       "updated": "08 NOV",
       "workspace": {
@@ -1840,9 +1840,9 @@
         {
           "id": "media-051",
           "name": "Allow the website to fetch clip files from the R2 bucket",
-          "status": "todo",
+          "status": "done",
           "owner": null,
-          "note": "The bucket CORS rule only allows the app's own address. Add https://www.officialffa.co.uk and https://officialffa.co.uk (GET, HEAD, PUT as now) in Cloudflare, R2, ffa-media, Settings, CORS Policy. The app's own storage key cannot change bucket settings. Until then, Instagram, TikTok and More share falls back to a normal download.",
+          "note": "Done 8 Nov: https://www.officialffa.co.uk and https://officialffa.co.uk added to the ffa-media bucket CORS rule in Cloudflare. A preflight from each site origin returned 204 with the matching allow-origin header; an unknown origin still gets 403. Pressing Download or Share on the live page, and a real-phone check, are not yet done.",
           "last_touched": "2026-11-08",
           "lane": "Results page",
           "depends_on": [
@@ -1853,6 +1853,26 @@
               "provider": "GitHub",
               "url": "https://github.com/JhnsonO/ffa-media/pull/105",
               "label": "Goal clips on the results page, PR 105"
+            }
+          ],
+          "completed_on": "2026-11-08"
+        },
+        {
+          "id": "media-052",
+          "name": "Let normal sessions record teams, bibs and goals",
+          "status": "todo",
+          "owner": null,
+          "note": "Today only league sessions can: the colours, teams and goal endpoints refuse any other session, so normal sessions show the no-teams card. Plan: flag on the existing league record so any session can have optional teams, bibs and goals, and make sure normal sessions never reach the Monday League feed or the Match Log sheet. Needs its own tests. Optional for staff, never compulsory.",
+          "last_touched": "2026-11-08",
+          "lane": "Results page",
+          "depends_on": [
+            "media-048"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/100",
+              "label": "Decision: teams optional for normal sessions, PR 100"
             }
           ]
         }
