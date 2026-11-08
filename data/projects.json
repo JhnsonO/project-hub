@@ -3844,7 +3844,7 @@
       "mono": "PC",
       "group": "FFA",
       "status": "Planning · booking history reconstructed",
-      "summary": "Reconstructed a partial historical booking evidence base from 272 TicketSource event CSVs and a prior Stripe identity audit. Lifetime individual bookings remain provisional; physical attendance and loyalty milestone eligibility are unverified.",
+      "summary": "Reconstructed a partial historical booking evidence base from 272 TicketSource event CSVs and a prior Stripe identity audit. Lifetime individual bookings remain provisional; physical attendance and loyalty milestone eligibility are unverified. Player cards will have their own page, separate from the game results page.",
       "milestones": [
         {
           "name": "Verify attendance data",
@@ -3861,7 +3861,7 @@
       ],
       "next_step": "Recover missing TicketSource events and full Acuity/Squarespace appointment and check-in statuses; reconcile identity aliases and no-shows before calculating verified lifetime sessions and awarding cards.",
       "watch": "Booking/payment records are not proof of attendance. Historical TicketSource events, unregistered/manual attendance, and authoritative check-in flags remain missing.",
-      "updated": "07 NOV",
+      "updated": "08 NOV",
       "target_asked_on": "2026-11-06",
       "questions": [
         {
@@ -4100,6 +4100,25 @@
               "provider": "Google",
               "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
               "label": "Historic booking reconstruction handover"
+            }
+          ]
+        },
+        {
+          "id": "cards-012",
+          "name": "Design the player cards page (own page, separate from results)",
+          "status": "todo",
+          "owner": null,
+          "note": "Johnson confirmed 8 November that player cards live on their own page, not on the game results page. Page address, navigation placement, layout and data feed are not decided; launch timing is unchanged.",
+          "last_touched": "2026-11-08",
+          "lane": "Design",
+          "depends_on": [
+            "cards-002"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
+              "label": "Player cards board and handover"
             }
           ]
         }
