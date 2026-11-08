@@ -3843,8 +3843,8 @@
       "name": "FFA Player Cards & Loyalty",
       "mono": "PC",
       "group": "FFA",
-      "status": "Planning · visual design locked",
-      "summary": "Seven black-based player-card finishes and separate scoring/winning streak flame palettes are now approved. A 175-variant visual comparison was completed for regular, scoring-only, winning-only and mixed effects. Cards remain prototypes; real attendance and player data are still unverified. The cards page is separate from game results.",
+      "status": "Planning · flame render rework",
+      "summary": "Approved seven black-based FIFA-style finishes and separate scoring/winning palettes remain unchanged. The 175 static flame combinations were generated but failed Johnson's visual review: unrealistic, repetitive border-like flames do not match the original approved engulfed-card reference. A high-resolution flame art correction is needed before production; attendance and eligibility are unverified.",
       "milestones": [
         {
           "name": "Verify attendance data",
@@ -3859,7 +3859,7 @@
           "status": "todo"
         }
       ],
-      "next_step": "Review detailed flame-card mockups, then finalise card eligibility and live streak-data rules; recover missing attendance/check-in evidence before implementing real cards on their separate page.",
+      "next_step": "Rebuild and review full-size scoring, winning and genuinely mixed flame pilots against the approved four-card reference, first on Black/Silver then Black/Bronze; only regenerate all combinations after visual approval. Continue attendance-source and eligibility validation separately.",
       "watch": "Booking/payment records are not proof of attendance. Historical TicketSource events, unregistered/manual attendance, and authoritative check-in flags remain missing.",
       "updated": "08 NOV",
       "target_asked_on": "2026-11-06",
@@ -4127,7 +4127,7 @@
           "name": "Lock base-card finishes and produce 175 flame combinations",
           "status": "done",
           "owner": "chatgpt",
-          "note": "Approved FIFA-style black base with bronze, silver, gold, royal blue, crimson red, emerald green and violet finishes. Created and locally verified 175 static mockups covering no flame, four scoring levels, four winning levels and all 16 mixed-level pairs on each base. No live UI, animation or player data implemented.",
+          "note": "Created and verified 175 static prototype variants across seven finishes. On 8 Nov Johnson rejected the flame appearance as unrealistic and not matching the approved four-card reference; this task represents prototype production, NOT visual acceptance. Underlying card finishes/palettes remain approved.",
           "last_touched": "2026-11-08",
           "lane": "Design",
           "completed_on": "2026-11-08",
@@ -4145,19 +4145,57 @@
           "name": "Implement verified streak overlays and 48-hour performance effects",
           "status": "todo",
           "owner": null,
-          "note": "Convert the approved static flame concept into real dynamic card overlays using verified match results, independent scoring/winning streak counters, mixed colour effects and expiring 48-hour hat-trick/high-scoring effects. Resolve draw/forfeit and missing-session semantics before shipping.",
+          "note": "Implementation must wait for visually approved volumetric flame layers and verified match data. Independent scoring/winning counters, mixed streaks and 48-hour single-match effects remain agreed; the current 175 prototype flame art is rejected.",
           "last_touched": "2026-11-08",
           "lane": "Build",
           "depends_on": [
             "cards-001",
             "cards-003",
-            "cards-012"
+            "cards-012",
+            "cards-015"
           ],
           "evidence": [
             {
               "provider": "Google",
               "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
               "label": "8 November approved card design and mockup handover"
+            }
+          ]
+        },
+        {
+          "id": "cards-015",
+          "name": "Rebuild cinematic flames and obtain visual approval",
+          "status": "todo",
+          "owner": null,
+          "note": "Retain the approved card geometry and hex palettes. Replace thin symmetrical flame borders with irregular engulfing flames: hot cores, foreground/background layers, reflected lighting, embers/smoke, intensity progression and real colour-intersection zones. Validate high-resolution scoring/winning/mixed pilots on Black/Silver and Black/Bronze before recreating 175 variants.",
+          "last_touched": "2026-11-08",
+          "lane": "Design",
+          "depends_on": [
+            "cards-016"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
+              "label": "8 November visual acceptance audit and handover"
+            }
+          ]
+        },
+        {
+          "id": "cards-016",
+          "name": "Audit generated flame matrix against approved reference",
+          "status": "done",
+          "owner": "chatgpt",
+          "note": "Compared generated 175-card flame grid with original approved four-card mockup. Visual verdict not accepted: flat border treatment, poor lighting/depth, little physical interaction or meaningful combined-flame mixing. Documented specific corrective acceptance gate; no replacement art yet.",
+          "last_touched": "2026-11-08",
+          "lane": "Review",
+          "completed_on": "2026-11-08",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
+              "label": "8 November visual acceptance audit and handover"
             }
           ]
         }
