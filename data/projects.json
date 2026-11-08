@@ -3844,7 +3844,7 @@
       "mono": "PC",
       "group": "FFA",
       "status": "Planning · flame render rework",
-      "summary": "Approved seven black-based FIFA-style finishes and separate scoring/winning palettes remain unchanged. The 175 static flame combinations were generated but failed Johnson's visual review: unrealistic, repetitive border-like flames do not match the original approved engulfed-card reference. A high-resolution flame art correction is needed before production; attendance and eligibility are unverified.",
+      "summary": "Seven black-based card finishes and independent scoring/winning palettes remain approved. The original 175 flame variants failed visual acceptance. A separate fictional-data website concept and interactive 2-second HTML flame demo have been delivered for review; the demo is motion-tested but its stylised flames are NOT accepted as realistic art. Verified player data and production implementation remain open.",
       "milestones": [
         {
           "name": "Verify attendance data",
@@ -3859,7 +3859,7 @@
           "status": "todo"
         }
       ],
-      "next_step": "Rebuild and review full-size scoring, winning and genuinely mixed flame pilots against the approved four-card reference, first on Black/Silver then Black/Bronze; only regenerate all combinations after visual approval. Continue attendance-source and eligibility validation separately.",
+      "next_step": "Get Johnson's feedback on the website render and flame motion separately. Rebuild high-resolution scoring, winning and truly mixed flames against the accepted four-card reference, then test on ordinary mobile devices before production; continue verified-attendance rules in parallel.",
       "watch": "Booking/payment records are not proof of attendance. Historical TicketSource events, unregistered/manual attendance, and authoritative check-in flags remain missing.",
       "updated": "08 NOV",
       "target_asked_on": "2026-11-06",
@@ -4196,6 +4196,24 @@
               "provider": "Google",
               "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
               "label": "8 November visual acceptance audit and handover"
+            }
+          ]
+        },
+        {
+          "id": "cards-017",
+          "name": "Render interactive two-second flame loop and player-card page concept",
+          "status": "done",
+          "owner": "chatgpt",
+          "note": "Delivered a fictional-data website hero render and a self-contained 2-second continuously looping HTML card prototype with scoring, winning, mixed and off controls. Local Chromium at 390px and 1220px showed no page errors/horizontal overflow and confirmed the combined control. HTML flame art is still stylised and unapproved; this is a motion/interaction proof only, not production footage, measured 60 FPS, or a live website implementation.",
+          "last_touched": "2026-11-08",
+          "lane": "Design",
+          "completed_on": "2026-11-08",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
+              "label": "8 November animated flame and website mockup handover"
             }
           ]
         }
