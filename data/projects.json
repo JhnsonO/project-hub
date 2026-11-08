@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "updated": "2026-11-07",
+  "updated": "2026-11-08",
   "updated_by": "chatgpt",
   "groups": [
     "FFA",
@@ -2183,7 +2183,7 @@
       ],
       "next_step": "Specify the debug view, minimum correction fields, storage and deterministic re-render path, then run a small acceptance check with Mercy.",
       "blocker": "Match-ball evaluation and the M1/hardware acceptance evidence are still unresolved.",
-      "updated": "06 NOV",
+      "updated": "08 NOV",
       "featured": true,
       "workspace": {
         "provider": "GitHub",
@@ -2812,10 +2812,59 @@
               "label": "Per-player highlights outline"
             }
           ]
+        },
+        {
+          "id": "oev-028",
+          "name": "Model the first lift-off dual-GoPro enclosure",
+          "status": "done",
+          "owner": null,
+          "note": "A first CAD fit-study preserves the existing tension-fit insert inside a new body and removable roof. STEP/STL and editable source are saved; new-solid and interference checks passed. This is not physical-fit, optical, weather or field acceptance.",
+          "last_touched": "2026-11-08",
+          "lane": "Hardware",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-11-08",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/oev/issues/20",
+              "label": "GoPro enclosure fit-study and handover"
+            }
+          ]
+        },
+        {
+          "id": "oev-029",
+          "name": "Validate and refine the GoPro enclosure for printing",
+          "status": "todo",
+          "owner": null,
+          "note": "Confirm installed-camera measurements, lens clearance and power routing; finish fastening and mount retention before fit coupons and recording-temperature checks. Separate from the custom camera-module gates.",
+          "last_touched": "2026-11-08",
+          "lane": "Hardware",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [
+            "oev-028"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/oev/issues/20",
+              "label": "GoPro enclosure fit-study and handover"
+            }
+          ]
         }
       ],
       "target_asked_on": "2026-10-23",
-      "watch": "Live correction is out of scope. The 6 November decision refines planning; it does not prove an implemented editor or accepted render."
+      "watch": "Live correction is out of scope. The 6 November decision refines planning; it does not prove an implemented editor or accepted render.",
+      "questions": [
+        {
+          "id": "gopro-power",
+          "text": "Will both GoPros use internal batteries or an external power bank?",
+          "asked_on": "2026-11-08"
+        }
+      ]
     },
     {
       "id": "ai",
