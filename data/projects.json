@@ -623,7 +623,7 @@
       "mono": "FM",
       "group": "FFA",
       "status": "v2 live · MNL feed + sheet writer live",
-      "summary": "v2 cutover (20 Oct) and native clips are recorded. The Monday Night League website feed is live with goal clips, a Goals tab and main/POV angles, and the clip player now has share, download and like (4 Nov), and from 4 Nov finished sessions are sent to the Match Log sheet from the app. API, real-device and deferred configuration checks stay open. On 7 Nov the game results page design (all sessions, list and calendar, mockup only) was agreed and a code check recorded; non-league sessions may optionally record teams and bibs. It will be a new page on the Squarespace site, fed by a public results feed. On 8 Nov the feed was built and merged and the page assembled on a disabled Squarespace page: native title blocks plus one embed for the filters, list and calendar. It is not published and the feed is still off.",
+      "summary": "v2 cutover (20 Oct) and native clips are recorded. The Monday Night League website feed is live with goal clips, a Goals tab and main/POV angles, and the clip player now has share, download and like (4 Nov), and from 4 Nov finished sessions are sent to the Match Log sheet from the app. API, real-device and deferred configuration checks stay open. On 7 Nov the game results page design (all sessions, list and calendar, mockup only) was agreed and a code check recorded; non-league sessions may optionally record teams and bibs. It will be a new page on the Squarespace site, fed by a public results feed. On 8 Nov the feed was built and merged, switched on, and the Game results page went live on the Squarespace site (not in the navigation yet): native title blocks plus one embed for the filters, list and calendar, checked at desktop, tablet and phone widths. Goals from the last 14 days in league games now open a clip player with share, download and like, as on the Monday League page.",
       "milestones": [
         {
           "name": "Beta entry live",
@@ -638,7 +638,7 @@
           "status": "todo"
         }
       ],
-      "next_step": "Johnson to check the first automatic description update on YouTube.",
+      "next_step": "Johnson to add the website origins to the R2 bucket CORS rule (needed for sharing the video file straight to Instagram or TikTok); the page stays out of the navigation for now.",
       "blocker": "Check #55 depends on key configuration; #54 still needs the current v2 suite. Signed-in acceptance is unverified.",
       "updated": "08 NOV",
       "workspace": {
@@ -1797,9 +1797,9 @@
         {
           "id": "media-049",
           "name": "Switch on the results feed, check the page and publish it",
-          "status": "todo",
+          "status": "done",
           "owner": null,
-          "note": "Johnson to switch the public feed on, check the Game results page logged out on desktop, tablet and phone against the mock, then approve publishing. Until then the page stays disabled.",
+          "note": "Done 8 Nov: feed switched on by Johnson, page checked logged out at desktop, tablet and phone against the mock, and published at /game-results. Not added to the site navigation, by choice.",
           "last_touched": "2026-11-08",
           "lane": "Results page",
           "depends_on": [
@@ -1810,6 +1810,49 @@
               "provider": "GitHub",
               "url": "https://github.com/JhnsonO/ffa-media/pull/103",
               "label": "Embed matched to the mock, PR 103"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/104",
+              "label": "Heading, tablet and phone fixes, PR 104"
+            }
+          ]
+        },
+        {
+          "id": "media-050",
+          "name": "Play, share and download goal clips on the results page",
+          "status": "done",
+          "owner": null,
+          "note": "Done 8 Nov: league goals from the last 14 days carry the public clip in the results feed; the embed opens a player like the Monday League one (cameras, share sheet, HD and vertical copies, link, like). Tested in a browser with sample data, then on the live page with real clips. File sharing straight to Instagram or TikTok and a real phone are untested.",
+          "last_touched": "2026-11-08",
+          "lane": "Results page",
+          "depends_on": [
+            "media-049"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/105",
+              "label": "Goal clips on the results page, PR 105"
+            }
+          ]
+        },
+        {
+          "id": "media-051",
+          "name": "Allow the website to fetch clip files from the R2 bucket",
+          "status": "todo",
+          "owner": null,
+          "note": "The bucket CORS rule only allows the app's own address. Add https://www.officialffa.co.uk and https://officialffa.co.uk (GET, HEAD, PUT as now) in Cloudflare, R2, ffa-media, Settings, CORS Policy. The app's own storage key cannot change bucket settings. Until then, Instagram, TikTok and More share falls back to a normal download.",
+          "last_touched": "2026-11-08",
+          "lane": "Results page",
+          "depends_on": [
+            "media-050"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/105",
+              "label": "Goal clips on the results page, PR 105"
             }
           ]
         }
