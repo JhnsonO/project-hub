@@ -3844,7 +3844,7 @@
       "mono": "PC",
       "group": "FFA",
       "status": "Planning · flame render rework",
-      "summary": "Seven black-based card finishes and independent scoring/winning palettes remain approved. The original 175 flame variants failed visual acceptance. A separate fictional-data website concept and interactive 2-second HTML flame demo have been delivered for review; the demo is motion-tested but its stylised flames are NOT accepted as realistic art. Verified player data and production implementation remain open.",
+      "summary": "Seven matte-black player-card finishes and independent scoring/winning rules remain agreed. After Johnson rejected the first browser flame preview, a new self-contained photographic flame-video prototype was produced: 120 frames at 60 fps in a 2-second loop, with a proper illustrative portrait and selectable warm, cool, mixed and off states. Desktop/mobile viewport playback was verified, but visual acceptance, real handset performance and live FFA integration remain open.",
       "milestones": [
         {
           "name": "Verify attendance data",
@@ -3859,7 +3859,7 @@
           "status": "todo"
         }
       ],
-      "next_step": "Get Johnson's feedback on the website render and flame motion separately. Rebuild high-resolution scoring, winning and truly mixed flames against the accepted four-card reference, then test on ordinary mobile devices before production; continue verified-attendance rules in parallel.",
+      "next_step": "Johnson to review the improved photographic flame animation and card fidelity. Only after visual sign-off should we verify mobile FPS and video formats, export production-quality warm/cool/mixed loops, and integrate with verified player data. Other eligibility and attendance gates remain separate.",
       "watch": "Booking/payment records are not proof of attendance. Historical TicketSource events, unregistered/manual attendance, and authoritative check-in flags remain missing.",
       "updated": "08 NOV",
       "target_asked_on": "2026-11-06",
@@ -4214,6 +4214,26 @@
               "provider": "Google",
               "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
               "label": "8 November animated flame and website mockup handover"
+            }
+          ]
+        },
+        {
+          "id": "cards-018",
+          "name": "Build photographic two-second 60 FPS flame-loop pilot",
+          "status": "done",
+          "owner": "chatgpt",
+          "note": "Replaced rejected polygon flame experiment with a 120-frame, 60 FPS H.264 two-second video loop (600×780), photographic flame compositing and a fictional cut-out player portrait. Standalone offline HTML (~2.3 MB) supports warm/cool/mixed/off and demo streak level 2–8. Browser checks at 390px and 1220px showed video playing, correct 2.0s duration, no JavaScript errors or horizontal overflow. This is a prototype for visual review; realism, handset FPS and production performance are NOT approved or verified.",
+          "last_touched": "2026-11-08",
+          "lane": "Design",
+          "completed_on": "2026-11-08",
+          "depends_on": [
+            "cards-017"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
+              "label": "8 November flame-motion redesign V2 handover"
             }
           ]
         }
