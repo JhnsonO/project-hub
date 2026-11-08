@@ -2919,7 +2919,7 @@
           "name": "Validate and refine the GoPro enclosure for printing",
           "status": "todo",
           "owner": null,
-          "note": "Confirm installed-camera measurements, lens clearance and power routing; finish fastening and mount retention before fit coupons and recording-temperature checks. Separate from the custom camera-module gates.",
+          "note": "Confirm installed-camera measurements, lens clearance and power routing; finish fastening and mount retention before fit coupons and recording-temperature checks. The mount must stay compact, spread load, preserve field-adjustable tilt and favour the existing bungee/hooks plus cheap replaceable hardware. Two side GoPro joints and a fixed wedge were rejected; the one-knob cradle is only a candidate for review. Separate from the custom camera-module gates.",
           "last_touched": "2026-11-08",
           "lane": "Hardware",
           "start": null,
