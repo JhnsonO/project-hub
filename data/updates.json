@@ -302,6 +302,16 @@
         "media"
       ],
       "snapshot_hash": "ee002838add59497e7d8773b7d331f9043b80a2a4ece7cd25024c3a50a7639e6"
+    },
+    {
+      "id": "claude-20261108-results-page-squarespace-01",
+      "fingerprint": "23ddfa2b49e88e48a8c77786a3162f11e78e534cd633b60921743548f00ece00",
+      "date": "2026-11-08",
+      "editor": "claude",
+      "projects": [
+        "media"
+      ],
+      "snapshot_hash": "f91afb8f8f14c80df6d7774442f2224dcab6492a87d5b5bff99fb85d0fc7d620"
     }
   ]
 }
