@@ -623,7 +623,7 @@
       "mono": "FM",
       "group": "FFA",
       "status": "v2 live · MNL feed + sheet writer live",
-      "summary": "v2 cutover (20 Oct) and native clips are recorded. The Monday Night League website feed is live with goal clips, a Goals tab and main/POV angles, and the clip player now has share, download and like (4 Nov), and from 4 Nov finished sessions are sent to the Match Log sheet from the app. API, real-device and deferred configuration checks stay open. On 7 Nov the game results page design (all sessions, list and calendar, mockup only) was agreed and a code check recorded; non-league sessions may optionally record teams and bibs. The page is not built.",
+      "summary": "v2 cutover (20 Oct) and native clips are recorded. The Monday Night League website feed is live with goal clips, a Goals tab and main/POV angles, and the clip player now has share, download and like (4 Nov), and from 4 Nov finished sessions are sent to the Match Log sheet from the app. API, real-device and deferred configuration checks stay open. On 7 Nov the game results page design (all sessions, list and calendar, mockup only) was agreed and a code check recorded; non-league sessions may optionally record teams and bibs. It will be a new page on the Squarespace site, fed by a public results feed. The page is not built.",
       "milestones": [
         {
           "name": "Beta entry live",
@@ -1772,10 +1772,10 @@
         },
         {
           "id": "media-048",
-          "name": "Build the game results page",
+          "name": "Build the results page as a Squarespace embed",
           "status": "todo",
           "owner": null,
-          "note": "Not started; needs Johnson's go. Code check found two gaps: league week number is not stored, and teams and bib colours exist only for league sessions. Teams and bibs are optional for non-league sessions; build the no-teams card.",
+          "note": "Not started; needs Johnson's go. Code check found two gaps: league week number is not stored, and teams and bib colours exist only for league sessions. Teams and bibs are optional for non-league sessions; build the no-teams card. Delivery: new Squarespace page, one pasted Code Block over a public month-based feed.",
           "last_touched": "2026-11-07",
           "lane": "Results page",
           "depends_on": [
