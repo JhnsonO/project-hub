@@ -1,3 +1,6 @@
+Warning: truncated output (original token count: 44818)
+Total output lines: 4279
+
 {
   "schema_version": 2,
   "updated": "2026-11-08",
@@ -1926,459 +1929,7 @@
             {
               "provider": "GitHub",
               "url": "https://github.com/JhnsonO/ffa-automations/blob/main/docs/ai-project-state.md",
-              "label": "Automation engineering log"
-            }
-          ]
-        },
-        {
-          "id": "auto-002",
-          "name": "Install weekly runner disk maintenance",
-          "status": "done",
-          "owner": null,
-          "note": "A weekly cleanup timer/service was installed during the incident recovery. This records that installation, not a fresh runtime verification.",
-          "last_touched": "2026-08-20",
-          "lane": "Runner reliability",
-          "start": null,
-          "end": null,
-          "completed_on": "2026-08-20",
-          "depends_on": [],
-          "evidence": [
-            {
-              "provider": "GitHub",
-              "url": "https://github.com/JhnsonO/ffa-automations/blob/main/docs/ai-project-state.md",
-              "label": "Automation engineering log"
-            }
-          ]
-        },
-        {
-          "id": "auto-003",
-          "name": "Deploy the uploader-to-worker cookie handoff",
-          "status": "done",
-          "owner": null,
-          "note": "Engineering log records a successful storage handoff and consumer deployment. A real downstream probe remained unverified; no credential value is included.",
-          "last_touched": "2026-10-22",
-          "lane": "Uploader",
-          "start": null,
-          "end": null,
-          "completed_on": null,
-          "depends_on": [],
-          "evidence": [
-            {
-              "provider": "GitHub",
-              "url": "https://github.com/JhnsonO/ffa-automations/blob/main/docs/ai-project-state.md",
-              "label": "Automation engineering log"
-            }
-          ]
-        },
-        {
-          "id": "auto-004",
-          "name": "Implement camera-neutral upload titles and descriptions",
-          "status": "done",
-          "owner": null,
-          "note": "Merged on main; nine metadata unit tests recorded passing. First complete post-change live-output acceptance remains separate.",
-          "last_touched": "2026-10-15",
-          "lane": "Uploader",
-          "start": "2026-10-15",
-          "end": "2026-10-15",
-          "completed_on": "2026-10-15",
-          "depends_on": [],
-          "evidence": [
-            {
-              "provider": "GitHub",
-              "url": "https://github.com/JhnsonO/ffa-automations/blob/main/docs/ai-project-state.md",
-              "label": "Automation engineering log"
-            },
-            {
-              "provider": "GitHub",
-              "url": "https://github.com/JhnsonO/ffa-automations/commit/a85d0033c7ec62a55d37c9dfaf6eed37fd335a4f",
-              "label": "Metadata implementation commit"
-            }
-          ],
-          "date_basis": "observed",
-          "date_note": "Implementation commit a85d003 was made at 23:01 UTC on 14 October, i.e. 00:01 on 15 October in Europe/London; the state log records implementation/tests on 15 October."
-        },
-        {
-          "id": "auto-005",
-          "name": "Repair the check-in workflow schedule gate",
-          "status": "done",
-          "owner": null,
-          "note": "PR #69 repaired the narrow runner-clock condition. A later decision moved the daily check-in to ChatGPT, so this historical fix is not the current daily trigger.",
-          "last_touched": "2026-10-22",
-          "lane": "Check-in integration",
-          "start": null,
-          "end": null,
-          "completed_on": "2026-10-22",
-          "depends_on": [],
-          "evidence": [
-            {
-              "provider": "Google",
-              "url": "https://docs.google.com/document/d/1UJB8kzBW1kOBgKizUuaw8we2bPYUqhF6vmeVv6oLPco/edit",
-              "label": "Automation board and evidence"
-            }
-          ]
-        },
-        {
-          "id": "auto-006",
-          "name": "Correct unrelated deployment preview handling",
-          "status": "done",
-          "owner": null,
-          "note": "The configured application root and ignored-build behaviour were corrected; the unrelated main-branch preview was properly skipped.",
-          "last_touched": "2026-10-22",
-          "lane": "Runner reliability",
-          "start": null,
-          "end": null,
-          "completed_on": "2026-10-22",
-          "depends_on": [],
-          "evidence": [
-            {
-              "provider": "Google",
-              "url": "https://docs.google.com/document/d/1UJB8kzBW1kOBgKizUuaw8we2bPYUqhF6vmeVv6oLPco/edit",
-              "label": "Automation board and evidence"
-            }
-          ]
-        },
-        {
-          "id": "auto-007",
-          "name": "Verify the manual encrypted artifact handoff",
-          "status": "done",
-          "owner": null,
-          "note": "Manual run #65 passed fetch, validation, encryption and upload. No health readings or secrets are included in this record.",
-          "last_touched": "2026-10-22",
-          "lane": "Check-in integration",
-          "start": null,
-          "end": null,
-          "completed_on": "2026-10-22",
-          "depends_on": [],
-          "evidence": [
-            {
-              "provider": "Google",
-              "url": "https://docs.google.com/document/d/1UJB8kzBW1kOBgKizUuaw8we2bPYUqhF6vmeVv6oLPco/edit",
-              "label": "Automation board and evidence"
-            }
-          ]
-        },
-        {
-          "id": "auto-008",
-          "name": "Verify the connected ChatGPT check-in and workout data path",
-          "status": "done",
-          "owner": null,
-          "note": "The read-only connector returned current source data and the workout section in the documented direct test. This is integration-test evidence only; no readings are published.",
-          "last_touched": "2026-10-22",
-          "lane": "Check-in integration",
-          "start": null,
-          "end": null,
-          "completed_on": "2026-10-22",
-          "depends_on": [],
-          "evidence": [
-            {
-              "provider": "Google",
-              "url": "https://docs.google.com/document/d/1UJB8kzBW1kOBgKizUuaw8we2bPYUqhF6vmeVv6oLPco/edit",
-              "label": "Automation board and evidence"
-            }
-          ]
-        },
-        {
-          "id": "auto-009",
-          "name": "Configure and directly test the daily ChatGPT check-in",
-          "status": "done",
-          "owner": null,
-          "note": "The automation completed a direct live-data test and was scheduled for 06:50 Europe/London. First unattended daily-run acceptance is still open.",
-          "last_touched": "2026-10-22",
-          "lane": "Check-in integration",
-          "start": null,
-          "end": null,
-          "completed_on": "2026-10-22",
-          "depends_on": [],
-          "evidence": [
-            {
-              "provider": "Google",
-              "url": "https://docs.google.com/document/d/1UJB8kzBW1kOBgKizUuaw8we2bPYUqhF6vmeVv6oLPco/edit",
-              "label": "Automation board and evidence"
-            }
-          ]
-        },
-        {
-          "id": "auto-010",
-          "name": "Remove the daily GitHub cron after the trigger migration",
-          "status": "done",
-          "owner": null,
-          "note": "Temporary scheduled tests and the daily cron were removed; the GitHub workflow remains manually runnable. It no longer supplies the daily trigger.",
-          "last_touched": "2026-10-22",
-          "lane": "Check-in integration",
-          "start": null,
-          "end": null,
-          "completed_on": "2026-10-22",
-          "depends_on": [],
-          "evidence": [
-            {
-              "provider": "Google",
-              "url": "https://docs.google.com/document/d/1UJB8kzBW1kOBgKizUuaw8we2bPYUqhF6vmeVv6oLPco/edit",
-              "label": "Automation board and evidence"
-            }
-          ]
-        },
-        {
-          "id": "auto-011",
-          "name": "Finish upload metadata acceptance: Monday link and provenance",
-          "status": "todo",
-          "owner": null,
-          "note": "Two 14 October uploads were checked on 15 October: standard/POV titles, revised intro, direct booking link, shop link, hashtags and media ID were present. The separate Monday League paragraph/link was missing; no later repair or exact producing-version verification was found. Those residual checks remain open; the successful output review is auto-015.",
-          "last_touched": "2026-10-22",
-          "lane": "Uploader acceptance",
-          "start": null,
-          "end": null,
-          "completed_on": null,
-          "depends_on": [],
-          "evidence": [
-            {
-              "provider": "GitHub",
-              "url": "https://github.com/JhnsonO/ffa-automations/blob/main/docs/ai-project-state.md",
-              "label": "Automation engineering log"
-            }
-          ]
-        },
-        {
-          "id": "auto-012",
-          "name": "Reproduce and repair the GoPro resume gap",
-          "status": "todo",
-          "owner": null,
-          "note": "Issue #53 is still open: a successful cookie refresh must resume the original upload or visibly fail.",
-          "last_touched": "2026-10-22",
-          "lane": "Uploader acceptance",
-          "start": null,
-          "end": null,
-          "completed_on": null,
-          "depends_on": [],
-          "evidence": [
-            {
-              "provider": "GitHub",
-              "url": "https://github.com/JhnsonO/ffa-automations/issues/53",
-              "label": "Source issue / delivery"
-            }
-          ]
-        },
-        {
-          "id": "auto-013",
-          "name": "Recheck relay scheduling and the downstream probe",
-          "status": "todo",
-          "owner": null,
-          "note": "Older schedule diagnoses and a successful handoff do not prove current downstream upload/probe success. Gather a current run before changing runner infrastructure.",
-          "last_touched": "2026-10-22",
-          "lane": "Uploader acceptance",
-          "start": null,
-          "end": null,
-          "completed_on": null,
-          "depends_on": [],
-          "evidence": [
-            {
-              "provider": "GitHub",
-              "url": "https://github.com/JhnsonO/ffa-automations/blob/main/docs/ai-project-state.md",
-              "label": "Automation engineering log"
-            }
-          ]
-        },
-        {
-          "id": "auto-014",
-          "name": "Verify the 06:50 daily run and result delivery",
-          "status": "todo",
-          "owner": null,
-          "note": "Two unattended evening tests on 22 October automatically pulled connector data and finished: 19:00 at 19:00:58 and 19:10 at 19:11:44 Europe/London. Recorded delivery status is unknown. Confirm the first 06:50 daily run and delivery; do not repeat unattended triggering as wholly untested. Evening test completion is auto-016.",
-          "last_touched": "2026-10-22",
-          "lane": "Check-in acceptance",
-          "start": null,
-          "end": null,
-          "completed_on": null,
-          "depends_on": [],
-          "evidence": [
-            {
-              "provider": "Google",
-              "url": "https://docs.google.com/document/d/1UJB8kzBW1kOBgKizUuaw8we2bPYUqhF6vmeVv6oLPco/edit",
-              "label": "Automation board and evidence"
-            }
-          ]
-        },
-        {
-          "id": "auto-015",
-          "name": "Verify titles and core description fields on two real uploads",
-          "status": "done",
-          "owner": null,
-          "note": "15 October conversation checked both 14 October outputs: revised intro, booking/shop links, hashtags, media ID, standard title and manual POV suffix. Standard video 47RhOWe7qEc; POV LlrFomv76-s. Monday League paragraph/link was absent; exact uploader provenance remains open in auto-011. This is a historical output review, not a fresh upload test.",
-          "last_touched": "2026-10-22",
-          "lane": "Operations",
-          "start": null,
-          "end": null,
-          "completed_on": "2026-10-15",
-          "depends_on": [],
-          "evidence": [
-            {
-              "provider": "GitHub",
-              "url": "https://github.com/JhnsonO/project-hub/blob/main/docs/open-task-audit-2026-10-22.md",
-              "label": "Conversation and source reconciliation"
-            }
-          ]
-        },
-        {
-          "id": "auto-016",
-          "name": "Complete two unattended evening ChatGPT check-in tests",
-          "status": "done",
-          "owner": null,
-          "note": "Automation run records for 22 October show both scheduled evening tests completed with successful connector pulls and workout-data availability. Runs 1b0f7508-b468-832d-b0e4-8051a2e0f0c4 and 3f508748-ed74-832c-acca-6df24787f24b completed at 18:00:58Z and 18:11:44Z. Delivery is unknown; daily 06:50 acceptance remains auto-014. No health readings are published.",
-          "last_touched": "2026-10-22",
-          "lane": "Operations",
-          "start": null,
-          "end": null,
-          "completed_on": "2026-10-22",
-          "depends_on": [],
-          "evidence": [
-            {
-              "provider": "GitHub",
-              "url": "https://github.com/JhnsonO/project-hub/blob/main/docs/open-task-audit-2026-10-22.md",
-              "label": "Conversation and source reconciliation"
-            }
-          ]
-        }
-      ],
-      "watch": "Evening scheduled tests passed; first daily-run delivery and full upload metadata remain open.",
-      "target_asked_on": "2026-10-23"
-    },
-    {
-      "id": "oev",
-      "name": "OEV Broadcast",
-      "mono": "OE",
-      "group": "OEV",
-      "status": "Corrections first",
-      "summary": "Camera brain C is selected; Mercy's pre-render, post-processing correction workflow is now the current priority.",
-      "milestones": [
-        {
-          "name": "Select camera brain",
-          "status": "done"
-        },
-        {
-          "name": "Scope Mercy corrections",
-          "status": "doing"
-        },
-        {
-          "name": "Validate a customer-ready broadcast",
-          "status": "blocked"
-        }
-      ],
-      "next_step": "Specify the debug view, minimum correction fields, storage and deterministic re-render path, then run a small acceptance check with Mercy.",
-      "blocker": "Match-ball evaluation and the M1/hardware acceptance evidence are still unresolved.",
-      "updated": "08 NOV",
-      "featured": true,
-      "workspace": {
-        "provider": "GitHub",
-        "url": "https://github.com/users/JhnsonO/projects/3/views/2"
-      },
-      "roadmap": {
-        "provider": "GitHub",
-        "url": "https://github.com/JhnsonO/oev/blob/main/docs/roadmap.md"
-      },
-      "tasks": [
-        {
-          "id": "oev-001",
-          "name": "Build the two-camera cylindrical stitch projection",
-          "status": "done",
-          "owner": null,
-          "note": "The reconciled roadmap records the cylindrical implementation and locked framing config. The older claim that M1 was cleared is superseded by the unresolved current acceptance gate; this records the implementation only.",
-          "last_touched": "2026-10-22",
-          "lane": "Stitching",
-          "start": "2026-08-09",
-          "end": "2026-08-10",
-          "completed_on": null,
-          "depends_on": [],
-          "evidence": [
-            {
-              "provider": "GitHub",
-              "url": "https://github.com/JhnsonO/oev/blob/main/docs/roadmap.md",
-              "label": "OEV reconciled roadmap"
-            },
-            {
-              "provider": "GitHub",
-              "url": "https://github.com/JhnsonO/video-stitcher/commit/df07a86f02416f09811cd41ca6db5aa8407fa13a",
-              "label": "Cylindrical renderer implementation"
-            }
-          ],
-          "date_basis": "observed",
-          "date_note": "Merged cylindrical renderer commit df07a86 on 9 August; the 10 August log records geometry/framing implementation and locked configuration. Customer acceptance is separate."
-        },
-        {
-          "id": "oev-002",
-          "name": "Fix zero-copy GPU rendering corruption",
-          "status": "done",
-          "owner": null,
-          "note": "The engineering log records the shared-buffer repair merged and rolled into standard workflows. The rejected shared-image approach is not counted as a shipped fix.",
-          "last_touched": "2026-10-22",
-          "lane": "Rendering",
-          "start": "2026-08-10",
-          "end": "2026-08-15",
-          "completed_on": null,
-          "depends_on": [],
-          "evidence": [
-            {
-              "provider": "GitHub",
-              "url": "https://github.com/JhnsonO/ffa-automations/blob/main/docs/ai-project-state.md",
-              "label": "Automation engineering log"
-            },
-            {
-              "provider": "GitHub",
-              "url": "https://github.com/JhnsonO/video-stitcher/commit/f27cbb6d0d65fcf9a11fb4d82d119ae214695318",
-              "label": "Shared-buffer rollout merge"
-            }
-          ],
-          "date_basis": "observed",
-          "date_note": "10 August GPU corruption investigations, 12 August correction identifying the real zero-copy defect, and 15 August shared-buffer rollout/visual verification at f27cbb6."
-        },
-        {
-          "id": "oev-003",
-          "name": "Complete detector-resolution and throughput investigation",
-          "status": "done",
-          "owner": null,
-          "note": "The progress log records the 640–2560px investigation concluded at 1920px with real throughput measurements. This was an engineering result, not whole-product acceptance.",
-          "last_touched": "2026-10-22",
-          "lane": "Detection",
-          "start": "2026-08-10",
-          "end": "2026-08-10",
-          "completed_on": null,
-          "depends_on": [],
-          "evidence": [
-            {
-              "provider": "GitHub",
-              "url": "https://github.com/JhnsonO/oev/blob/main/docs/roadmap.md",
-              "label": "OEV reconciled roadmap"
-            }
-          ],
-          "date_basis": "observed",
-          "date_note": "10 August detector-resolution A/B and GPU throughput runs, ending in the recorded 1920px decision."
-        },
-        {
-          "id": "oev-004",
-          "name": "Implement pitch-region filtering",
-          "status": "done",
-          "owner": null,
-          "note": "The roadmap progress log records ROI filtering to stop the camera wandering onto neighbouring pitches.",
-          "last_touched": "2026-10-22",
-          "lane": "Detection",
-          "start": "2026-08-10",
-          "end": "2026-08-10",
-          "completed_on": null,
-          "depends_on": [],
-          "evidence": [
-            {
-              "provider": "GitHub",
-              "url": "https://github.com/JhnsonO/oev/blob/main/docs/roadmap.md",
-              "label": "OEV reconciled roadmap"
-            }
-          ],
-          "date_basis": "observed",
-          "date_note": "10 August ROI stills and ROI-injection implementation/dispatch entries establish observed work on this day, not the later experimental ROI changes."
-        },
-        {
-          "id": "oev-005",
-          "name": "Implement backward ball-state bridging",
-          "status": "done",
-          "owner": null,
-          "note": "The log records bridging recovery and its coverage improvement. Remaining camera-containment and identity failures are not marked fixed by this entry.",
+              "label": "Automation engin…4818 tokens truncated…marked fixed by this entry.",
           "last_touched": "2026-10-22",
           "lane": "Tracking",
           "start": "2026-08-17",
@@ -3843,8 +3394,8 @@
       "name": "FFA Player Cards & Loyalty",
       "mono": "PC",
       "group": "FFA",
-      "status": "Planning · flame render rework",
-      "summary": "Existing card artwork has a new slow GIF motion proof, alongside the earlier photographic-video pilot. Visual acceptance, handset performance and live integration remain open.",
+      "status": "Design · motion template accepted",
+      "summary": "Selected the visible-flow animation as the motion reference and packaged a reusable renderer. Editable artwork layers, variant review, handset performance and live integration remain open.",
       "milestones": [
         {
           "name": "Verify attendance data",
@@ -3859,7 +3410,7 @@
           "status": "todo"
         }
       ],
-      "next_step": "Review the existing-card GIF for flame smoothness and card stability; if accepted, repeat from a higher-resolution source and optimize browser cost before production integration.",
+      "next_step": "Separate player/text and scoring/winning flame artwork layers; validate three aligned variants with the accepted motion before batch rendering.",
       "watch": "Booking/payment records are not proof of attendance. Historical TicketSource events, unregistered/manual attendance, and authoritative check-in flags remain missing.",
       "updated": "08 NOV",
       "target_asked_on": "2026-11-06",
@@ -4252,6 +3803,24 @@
               "provider": "Google",
               "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
               "label": "Existing-card GIF motion proof handover"
+            }
+          ]
+        },
+        {
+          "id": "cards-020",
+          "name": "Package the accepted visible-flow motion template",
+          "status": "done",
+          "owner": "chatgpt",
+          "note": "User selected the six-second motion reference. Reusable renderer, geometry, presets, original exports and instructions packaged. Full render: 360 frames at 60 fps; four raw sample frames exactly match the original. Aligned artwork required; editable portrait/text and independent flame colours are not implemented. No mass variant generation or live release.",
+          "last_touched": "2026-11-08",
+          "lane": "Design",
+          "completed_on": "2026-11-08",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
+              "label": "Accepted motion template handover"
             }
           ]
         }
