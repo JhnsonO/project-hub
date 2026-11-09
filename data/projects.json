@@ -3843,8 +3843,8 @@
       "name": "FFA Player Cards & Loyalty",
       "mono": "PC",
       "group": "FFA",
-      "status": "Design · editable template review",
-      "summary": "Delivered a layered configurable card renderer with swappable portraits, text, colours and graphics, plus two 60 fps examples. The rebuilt appearance still needs review against the accepted original.",
+      "status": "Design · functional page review",
+      "summary": "Delivered a functional mobile-first player-page prototype with a public streak spotlight, matching animated contender cards, search, sorting and player profiles. Sample data only; production integration remains open.",
       "milestones": [
         {
           "name": "Verify attendance data",
@@ -3859,7 +3859,7 @@
           "status": "todo"
         }
       ],
-      "next_step": "Review the layered version against the accepted original; refine visual fidelity and validate scoring-only, winning-only and mixed variants before batch rendering.",
+      "next_step": "Review the functional HTML and matching flame cards; confirm spotlight tie handling and connect verified data before production integration.",
       "watch": "Booking/payment records are not proof of attendance. Historical TicketSource events, unregistered/manual attendance, and authoritative check-in flags remain missing.",
       "updated": "09 NOV",
       "target_asked_on": "2026-11-06",
@@ -4106,10 +4106,10 @@
         {
           "id": "cards-012",
           "name": "Design the player cards page (own page, separate from results)",
-          "status": "todo",
-          "owner": null,
-          "note": "Johnson confirmed 8 November that player cards live on their own page, not on the game results page. Page address, navigation placement, layout and data feed are not decided; launch timing is unchanged.",
-          "last_touched": "2026-11-08",
+          "status": "doing",
+          "owner": "chatgpt",
+          "note": "Black page/header and public streak-led hierarchy prototyped: hero, contenders and searchable directory. No accounts or overlapping form/milestone filters. Functional offline HTML delivered; production page address, navigation integration, data feeds and acceptance remain open.",
+          "last_touched": "2026-11-09",
           "lane": "Design",
           "depends_on": [
             "cards-002"
@@ -4290,6 +4290,24 @@
               "provider": "Google",
               "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
               "label": "Layered card template handover"
+            }
+          ]
+        },
+        {
+          "id": "cards-022",
+          "name": "Build functional streak spotlight player-page prototype",
+          "status": "done",
+          "owner": "chatgpt",
+          "note": "Self-contained HTML with three matching six-second card videos, search, sorting, player profiles, archive and motion controls. Browser checked desktop and 390px layout plus search, no-results, profile tab, archive and sort interactions. Fictional data; not a live FFA release or handset performance acceptance.",
+          "last_touched": "2026-11-09",
+          "lane": "Design",
+          "completed_on": "2026-11-09",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
+              "label": "Functional streak-led player-page handover"
             }
           ]
         }
