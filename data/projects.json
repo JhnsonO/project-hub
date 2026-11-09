@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "updated": "2026-11-08",
+  "updated": "2026-11-09",
   "updated_by": "chatgpt",
   "groups": [
     "FFA",
@@ -3843,8 +3843,8 @@
       "name": "FFA Player Cards & Loyalty",
       "mono": "PC",
       "group": "FFA",
-      "status": "Design · motion template accepted",
-      "summary": "Selected the visible-flow animation as the motion reference and packaged a reusable renderer. Editable artwork layers, variant review, handset performance and live integration remain open.",
+      "status": "Design · editable template review",
+      "summary": "Delivered a layered configurable card renderer with swappable portraits, text, colours and graphics, plus two 60 fps examples. The rebuilt appearance still needs review against the accepted original.",
       "milestones": [
         {
           "name": "Verify attendance data",
@@ -3859,9 +3859,9 @@
           "status": "todo"
         }
       ],
-      "next_step": "Separate player/text and scoring/winning flame artwork layers; validate three aligned variants with the accepted motion before batch rendering.",
+      "next_step": "Review the layered version against the accepted original; refine visual fidelity and validate scoring-only, winning-only and mixed variants before batch rendering.",
       "watch": "Booking/payment records are not proof of attendance. Historical TicketSource events, unregistered/manual attendance, and authoritative check-in flags remain missing.",
-      "updated": "08 NOV",
+      "updated": "09 NOV",
       "target_asked_on": "2026-11-06",
       "questions": [
         {
@@ -4270,6 +4270,26 @@
               "provider": "Google",
               "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
               "label": "Accepted motion template handover"
+            }
+          ]
+        },
+        {
+          "id": "cards-021",
+          "name": "Build layered card template with swappable content",
+          "status": "done",
+          "owner": "chatgpt",
+          "note": "Delivered a configurable local renderer with separate blank card, transparent portrait/fire, editable text and badges, independent colour controls, background/custom graphics and batch rendering. Verified two 360-frame, 60 fps examples, alpha, analytic loop boundary and portrait replacement. Rebuilt layers require visual review; no pixel-identical reproduction, live release or full variant acceptance claimed.",
+          "last_touched": "2026-11-09",
+          "lane": "Design",
+          "completed_on": "2026-11-09",
+          "depends_on": [
+            "cards-020"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
+              "label": "Layered card template handover"
             }
           ]
         }
