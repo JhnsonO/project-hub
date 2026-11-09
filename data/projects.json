@@ -2247,7 +2247,7 @@
       "mono": "OE",
       "group": "OEV",
       "status": "Corrections first",
-      "summary": "Camera brain C remains the baseline. Advanced AI spot-check and exception-auditing is now planned alongside Mercy's pre-render correction workflow; no implementation is verified.",
+      "summary": "Camera brain C remains baseline; first-pass AI football and active-match-ball classification, proactive tracking audits and Mercy pre-render reviews are planned, not implemented.",
       "milestones": [
         {
           "name": "Select camera brain",
@@ -2262,7 +2262,7 @@
           "status": "blocked"
         }
       ],
-      "next_step": "Prototype an AI tracking auditor on the known spare-ball failure: review low-confidence events, suspicious high-confidence switches and random clean samples, then validate with Mercy before any integration.",
+      "next_step": "Test first-pass match-ball role classification on YOLO candidates (real ball/spare/other-pitch/false positive), then measure tracking changes and Mercy review on held-out footage.",
       "blocker": "Match-ball evaluation and the M1/hardware acceptance evidence are still unresolved.",
       "updated": "09 NOV",
       "featured": true,
@@ -2594,7 +2594,7 @@
           "name": "Specify and accept Mercy's pre-render correction workflow",
           "status": "doing",
           "owner": null,
-          "note": "9 Nov planning refinement recorded in issue #18: proactive temporal vision-AI spot checks, low-confidence and suspicious high-confidence wrong-ball reviews, constrained correction suggestions, Mercy pre-render approval and labelled retraining/evaluation loop. No AI auditor is implemented, benchmarked or authorised for paid production runs.",
+          "note": "9 Nov design: pre-tracking AI validates YOLO candidates and identifies active-match-ball versus spare/other-pitch balls using temporal/pitch/player context; uncertain proposals remain recoverable. Afterward AI spot-checks tracking and Mercy corrects pre-render, with future retraining/evaluation. Recorded in OEV issue #18; not implemented or benchmarked.",
           "last_touched": "2026-11-09",
           "lane": "Corrections",
           "start": null,
@@ -2938,7 +2938,7 @@
         }
       ],
       "target_asked_on": "2026-10-23",
-      "watch": "AI auditing is a documented proposal, not implemented or benchmarked. Mercy corrections, fresh unseen match evaluation and M1/hardware evidence remain open.",
+      "watch": "First-pass AI ball-role validation and subsequent tracking audits remain unimplemented proposals. Fresh unseen evaluation, Mercy workflow and M1/hardware evidence are still open.",
       "questions": [
         {
           "id": "gopro-power",
