@@ -3843,8 +3843,8 @@
       "name": "FFA Player Cards & Loyalty",
       "mono": "PC",
       "group": "FFA",
-      "status": "Design · functional page review",
-      "summary": "Delivered a functional mobile-first player-page prototype with a public streak spotlight, matching animated contender cards, search, sorting and player profiles. Sample data only; production integration remains open.",
+      "status": "Design · rules and page review",
+      "summary": "A functional mobile-first player page, layered card template and 60 FPS walk-in prototype are delivered for review. Player of the Month is led by total monthly wins to reward participation; tie and eligibility rules, verified data and production integration remain open.",
       "milestones": [
         {
           "name": "Verify attendance data",
@@ -3859,7 +3859,7 @@
           "status": "todo"
         }
       ],
-      "next_step": "Review the functional HTML and matching flame cards; confirm spotlight tie handling and connect verified data before production integration.",
+      "next_step": "Review the page, layered card and walk-in prototypes; decide Player of the Month tie and eligibility rules; resolve bronze/silver/gold progression against baby/junior/Regular maturity; then connect verified results and attendance data.",
       "watch": "Booking/payment records are not proof of attendance. Historical TicketSource events, unregistered/manual attendance, and authoritative check-in flags remain missing.",
       "updated": "09 NOV",
       "target_asked_on": "2026-11-06",
@@ -3883,6 +3883,11 @@
           "id": "cards-retirement",
           "text": "After how many absent weeks should a player's card retire?",
           "asked_on": "2026-11-07"
+        },
+        {
+          "id": "cards-potm-tie",
+          "text": "How should ties on monthly wins be broken?",
+          "asked_on": "2026-11-09"
         }
       ],
       "workspace": {
@@ -3916,8 +3921,8 @@
           "name": "Define baby-card maturity, Regular status and permanent progression",
           "status": "doing",
           "owner": null,
-          "note": "Johnson confirmed full maturity equals Regular. Characters physically age; attendance weeks versus sessions rule still unapproved. First baby card must be earned after several verified sessions, not the first attendance.",
-          "last_touched": "2026-11-07",
+          "note": "Johnson confirmed full maturity equals Regular. The latest canonical direction uses bronze, silver and gold as the base progression, but thresholds and its relationship to baby/junior/Regular maturity remain unresolved. First baby card must be earned after several verified sessions, not the first attendance.",
+          "last_touched": "2026-11-09",
           "lane": "Rules",
           "depends_on": [],
           "evidence": [
@@ -4127,8 +4132,8 @@
           "name": "Lock base-card finishes and produce 175 flame combinations",
           "status": "done",
           "owner": "chatgpt",
-          "note": "Created and verified 175 static prototype variants across seven finishes. On 8 Nov Johnson rejected the flame appearance as unrealistic and not matching the approved four-card reference; this task represents prototype production, NOT visual acceptance. Underlying card finishes/palettes remain approved.",
-          "last_touched": "2026-11-08",
+          "note": "Created and verified 175 static prototype variants across seven candidate finishes. On 8 Nov Johnson rejected the flame appearance as unrealistic. The latest canonical direction identifies bronze, silver and gold as the intended base progression, so the seven-finish matrix remains prototype history rather than the final tier rule.",
+          "last_touched": "2026-11-09",
           "lane": "Design",
           "completed_on": "2026-11-08",
           "depends_on": [],
@@ -4308,6 +4313,43 @@
               "provider": "Google",
               "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
               "label": "Functional streak-led player-page handover"
+            }
+          ]
+        },
+        {
+          "id": "cards-023",
+          "name": "Prototype a reusable player walk-in animation",
+          "status": "done",
+          "owner": "chatgpt",
+          "note": "Delivered a 3.6-second 60 FPS visual prototype: a generic player approaches, folds arms and settles into the agreed card. Johnson gave qualified positive feedback but raised scaling. This is completed prototype work, not approved production motion or a live website feature.",
+          "last_touched": "2026-11-09",
+          "lane": "Design",
+          "completed_on": "2026-11-09",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
+              "label": "9 November daily catch-up and player-card handover"
+            }
+          ]
+        },
+        {
+          "id": "cards-024",
+          "name": "Define and implement Player of the Month rules",
+          "status": "doing",
+          "owner": null,
+          "note": "Confirmed primary rule: highest total wins in the month, deliberately rewarding participation. Weighted scoring and win percentage are not the main measure. Tie-breaks, eligibility, forfeits/short appearances and verified source data remain open; no winner calculation is implemented.",
+          "last_touched": "2026-11-09",
+          "lane": "Rules",
+          "depends_on": [
+            "cards-001"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
+              "label": "9 November daily catch-up and player-card handover"
             }
           ]
         }
