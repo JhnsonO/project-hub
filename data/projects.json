@@ -2247,7 +2247,7 @@
       "mono": "OE",
       "group": "OEV",
       "status": "Corrections first",
-      "summary": "Camera brain C is selected; Mercy's pre-render, post-processing correction workflow is now the current priority.",
+      "summary": "Camera brain C remains the baseline. Advanced AI spot-check and exception-auditing is now planned alongside Mercy's pre-render correction workflow; no implementation is verified.",
       "milestones": [
         {
           "name": "Select camera brain",
@@ -2262,9 +2262,9 @@
           "status": "blocked"
         }
       ],
-      "next_step": "Specify the debug view, minimum correction fields, storage and deterministic re-render path, then run a small acceptance check with Mercy.",
+      "next_step": "Prototype an AI tracking auditor on the known spare-ball failure: review low-confidence events, suspicious high-confidence switches and random clean samples, then validate with Mercy before any integration.",
       "blocker": "Match-ball evaluation and the M1/hardware acceptance evidence are still unresolved.",
-      "updated": "08 NOV",
+      "updated": "09 NOV",
       "featured": true,
       "workspace": {
         "provider": "GitHub",
@@ -2594,8 +2594,8 @@
           "name": "Specify and accept Mercy's pre-render correction workflow",
           "status": "doing",
           "owner": null,
-          "note": "Issue #18 now records the confirmed post-processing flow: review a debug video before rendering, correct the match ball or target, recalculate the camera path, approve, and retain examples for algorithm analysis. Implementation and Mercy acceptance remain open.",
-          "last_touched": "2026-11-06",
+          "note": "9 Nov planning refinement recorded in issue #18: proactive temporal vision-AI spot checks, low-confidence and suspicious high-confidence wrong-ball reviews, constrained correction suggestions, Mercy pre-render approval and labelled retraining/evaluation loop. No AI auditor is implemented, benchmarked or authorised for paid production runs.",
+          "last_touched": "2026-11-09",
           "lane": "Corrections",
           "start": null,
           "end": null,
@@ -2938,7 +2938,7 @@
         }
       ],
       "target_asked_on": "2026-10-23",
-      "watch": "Live correction is out of scope. The 6 November decision refines planning; it does not prove an implemented editor or accepted render.",
+      "watch": "AI auditing is a documented proposal, not implemented or benchmarked. Mercy corrections, fresh unseen match evaluation and M1/hardware evidence remain open.",
       "questions": [
         {
           "id": "gopro-power",
