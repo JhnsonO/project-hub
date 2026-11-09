@@ -2247,7 +2247,7 @@
       "mono": "OE",
       "group": "OEV",
       "status": "Corrections first",
-      "summary": "Camera brain C is selected; Mercy's pre-render, post-processing correction workflow is now the current priority.",
+      "summary": "Camera brain C remains baseline; first-pass AI football and active-match-ball classification, proactive tracking audits and Mercy pre-render reviews are planned, not implemented.",
       "milestones": [
         {
           "name": "Select camera brain",
@@ -2262,9 +2262,9 @@
           "status": "blocked"
         }
       ],
-      "next_step": "Specify the debug view, minimum correction fields, storage and deterministic re-render path, then run a small acceptance check with Mercy.",
+      "next_step": "Test first-pass match-ball role classification on YOLO candidates (real ball/spare/other-pitch/false positive), then measure tracking changes and Mercy review on held-out footage.",
       "blocker": "Match-ball evaluation and the M1/hardware acceptance evidence are still unresolved.",
-      "updated": "08 NOV",
+      "updated": "09 NOV",
       "featured": true,
       "workspace": {
         "provider": "GitHub",
@@ -2594,8 +2594,8 @@
           "name": "Specify and accept Mercy's pre-render correction workflow",
           "status": "doing",
           "owner": null,
-          "note": "Issue #18 now records the confirmed post-processing flow: review a debug video before rendering, correct the match ball or target, recalculate the camera path, approve, and retain examples for algorithm analysis. Implementation and Mercy acceptance remain open.",
-          "last_touched": "2026-11-06",
+          "note": "9 Nov design: pre-tracking AI validates YOLO candidates and identifies active-match-ball versus spare/other-pitch balls using temporal/pitch/player context; uncertain proposals remain recoverable. Afterward AI spot-checks tracking and Mercy corrects pre-render, with future retraining/evaluation. Recorded in OEV issue #18; not implemented or benchmarked.",
+          "last_touched": "2026-11-09",
           "lane": "Corrections",
           "start": null,
           "end": null,
@@ -2938,7 +2938,7 @@
         }
       ],
       "target_asked_on": "2026-10-23",
-      "watch": "Live correction is out of scope. The 6 November decision refines planning; it does not prove an implemented editor or accepted render.",
+      "watch": "First-pass AI ball-role validation and subsequent tracking audits remain unimplemented proposals. Fresh unseen evaluation, Mercy workflow and M1/hardware evidence are still open.",
       "questions": [
         {
           "id": "gopro-power",
