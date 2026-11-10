@@ -3843,8 +3843,8 @@
       "name": "FFA Player Cards & Loyalty",
       "mono": "PC",
       "group": "FFA",
-      "status": "Design · eight-tier motion review",
-      "summary": "Phase 1 mockups are complete for review. Tiers are an eight-step ladder (wood, stone, bronze, silver, gold, diamond, obsidian, legend), all with textured plates. Diamond, obsidian and legend are set at 500, 750 and 1,000 sessions; lower thresholds are still proposed. The player profile now shows tier progress and recent sessions. Clip requests are scoped to phase 2. Eight new-plate moving-flame previews are now rendered for visual review; no live card release.",
+      "status": "Design · flame rebuild review",
+      "summary": "Eight textured card tiers and player-profile mockups are available for review. The layered flame treatment fell below the quality of the new plates; an animated-source fire pilot now tests orange on Bronze and blue on Obsidian. Upper session milestones remain confirmed; lower thresholds and live data integration remain open.",
       "milestones": [
         {
           "name": "Verify attendance data",
@@ -3859,7 +3859,7 @@
           "status": "todo"
         }
       ],
-      "next_step": "Review the eight-tier moving-flame previews and live-layer alignment; confirm the lower tier thresholds and 500 Club wording; decide Player of the Month tie-breaks; then connect verified results and attendance data.",
+      "next_step": "Review the animated-source fire pilot; refine frame attachment and directional streams before any batch or working-page replacement. Confirm lower thresholds, 500 Club wording and POTM tie-breaks, then connect verified attendance/results data.",
       "watch": "Booking/payment records are not proof of attendance. Historical TicketSource events, unregistered/manual attendance, and authoritative check-in flags remain missing.",
       "updated": "10 NOV",
       "target_asked_on": "2026-11-06",
@@ -4180,10 +4180,10 @@
         {
           "id": "cards-015",
           "name": "Rebuild cinematic flames and obtain visual approval",
-          "status": "todo",
-          "owner": null,
-          "note": "Retain the approved card geometry and hex palettes. Replace thin symmetrical flame borders with irregular engulfing flames: hot cores, foreground/background layers, reflected lighting, embers/smoke, intensity progression and real colour-intersection zones. Validate high-resolution scoring/winning/mixed pilots on Black/Silver and Black/Bronze before recreating 175 variants.",
-          "last_touched": "2026-11-08",
+          "status": "doing",
+          "owner": "chatgpt",
+          "note": "Retain the approved card geometry and hex palettes. Replace thin symmetrical flame borders with irregular engulfing flames: hot cores, foreground/background layers, reflected lighting, embers/smoke, intensity progression and real colour-intersection zones. Validate high-resolution scoring/winning/mixed pilots on Black/Silver and Black/Bronze before recreating 175 variants. The latest layered eight-tier flame appearance was rejected as below the new plate quality. A CC0 changing-frame simulation pilot is now rendered for review; composition, directional streams and production acceptance remain open.",
+          "last_touched": "2026-11-10",
           "lane": "Design",
           "depends_on": [
             "cards-016"
@@ -4443,7 +4443,7 @@
           "name": "Render latest eight-tier cards with moving flames for review",
           "status": "done",
           "owner": "chatgpt",
-          "note": "Rendered eight separate latest-plate previews and a side-by-side gallery, using the layered template adaptation of the accepted motion. Each clip is six seconds, 360 frames at 60 fps, with the same fictional player and no POTM effects. Plate colours preserved; output metadata and sample stills checked. Combined visual approval, working-page integration and actual handset performance remain open.",
+          "note": "Rendered eight separate latest-plate previews and a side-by-side gallery, using the layered template adaptation of the accepted motion. Each clip is six seconds, 360 frames at 60 fps, with the same fictional player and no POTM effects. Plate colours preserved; output metadata and sample stills checked. Combined visual approval, working-page integration and actual handset performance remain open. Subsequent feedback rejected the flame appearance as below the latest card quality; this task records delivery only.",
           "last_touched": "2026-11-10",
           "completed_on": "2026-11-10",
           "lane": "Design",
@@ -4455,6 +4455,26 @@
               "provider": "Google",
               "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
               "label": "10 November eight-tier moving-flame preview handover"
+            }
+          ]
+        },
+        {
+          "id": "cards-030",
+          "name": "Test animated fire source on Bronze and Obsidian cards",
+          "status": "done",
+          "owner": "chatgpt",
+          "note": "Rendered an orange/blue prototype using an openly licensed changing-frame fire simulation, replacing still-texture distortion. Six-second 60 fps output verified; protected portrait samples remain unchanged. Source detail, frame attachment, directional streams, perceived realism and phone performance still need review. No paid asset purchase, appearance approval or live site release.",
+          "last_touched": "2026-11-10",
+          "completed_on": "2026-11-10",
+          "lane": "Design",
+          "depends_on": [
+            "cards-029"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
+              "label": "10 November animated-fire source pilot handover"
             }
           ]
         }
