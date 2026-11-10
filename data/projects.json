@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "updated": "2026-11-09",
-  "updated_by": "chatgpt",
+  "updated": "2026-11-10",
+  "updated_by": "claude",
   "groups": [
     "FFA",
     "OEV",
@@ -3843,8 +3843,8 @@
       "name": "FFA Player Cards & Loyalty",
       "mono": "PC",
       "group": "FFA",
-      "status": "Design · rules and page review",
-      "summary": "A functional mobile-first player page, layered card template and 60 FPS walk-in prototype are delivered for review. Player of the Month is led by total monthly wins to reward participation; tie and eligibility rules, verified data and production integration remain open.",
+      "status": "Design · phase 1 page mocked up",
+      "summary": "Phase 1 mockups are complete for review: wins-first bronze/silver/gold card with streak flames, tap-to-flip player page, landing page and a 100-player directory on desktop and phone. Player-code clip requests, wrong-player reports and strikes are mocked up but scoped to phase 2. Tier progression, Player of the Month tie-break, verified data and production integration remain open.",
       "milestones": [
         {
           "name": "Verify attendance data",
@@ -3859,9 +3859,9 @@
           "status": "todo"
         }
       ],
-      "next_step": "Review the page, layered card and walk-in prototypes; decide Player of the Month tie and eligibility rules; resolve bronze/silver/gold progression against baby/junior/Regular maturity; then connect verified results and attendance data.",
+      "next_step": "Decide bronze/silver/gold progression and the Player of the Month tie-break; change the mockup race bars to wins; plan automatic flame generation for 100+ players; then connect verified results and attendance data before any live release.",
       "watch": "Booking/payment records are not proof of attendance. Historical TicketSource events, unregistered/manual attendance, and authoritative check-in flags remain missing.",
-      "updated": "09 NOV",
+      "updated": "10 NOV",
       "target_asked_on": "2026-11-06",
       "questions": [
         {
@@ -3888,6 +3888,11 @@
           "id": "cards-potm-tie",
           "text": "How should ties on monthly wins be broken?",
           "asked_on": "2026-11-09"
+        },
+        {
+          "id": "cards-tier-rule",
+          "text": "Earn tiers by sessions played and never lose them?",
+          "asked_on": "2026-11-10"
         }
       ],
       "workspace": {
@@ -3921,15 +3926,15 @@
           "name": "Define baby-card maturity, Regular status and permanent progression",
           "status": "doing",
           "owner": null,
-          "note": "Johnson confirmed full maturity equals Regular. The latest canonical direction uses bronze, silver and gold as the base progression, but thresholds and its relationship to baby/junior/Regular maturity remain unresolved. First baby card must be earned after several verified sessions, not the first attendance.",
-          "last_touched": "2026-11-09",
+          "note": "Johnson confirmed full maturity equals Regular. The latest canonical direction uses bronze, silver and gold as the base progression, but thresholds and its relationship to baby/junior/Regular maturity remain unresolved. First baby card must be earned after several verified sessions, not the first attendance. Recommendation awaiting decision: tier earned by verified sessions and never lost, instead of a ranking that demotes players.",
+          "last_touched": "2026-11-10",
           "lane": "Rules",
           "depends_on": [],
           "evidence": [
             {
               "provider": "Google",
               "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
-              "label": "Player cards roadmap"
+              "label": "10 November design update and handover"
             }
           ]
         },
@@ -4350,6 +4355,43 @@
               "provider": "Google",
               "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
               "label": "9 November daily catch-up and player-card handover"
+            }
+          ]
+        },
+        {
+          "id": "cards-025",
+          "name": "Mock up phase 1 player card pages for review",
+          "status": "done",
+          "owner": "claude",
+          "note": "Wins-first card with FFA mark, streak flames, tap-to-flip profile with fun stats, landing page and searchable 100-player directory on desktop and phone. Sample data only; flames exist for four sample players and need automatic generation for production. Not integrated with live data.",
+          "last_touched": "2026-11-10",
+          "lane": "Design",
+          "completed_on": "2026-11-10",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
+              "label": "10 November design update and handover"
+            }
+          ]
+        },
+        {
+          "id": "cards-026",
+          "name": "Phase 2: player-code clip requests, wrong-player reports and strikes",
+          "status": "todo",
+          "owner": null,
+          "note": "Mocked up, not in the January scope. Players request a goal clip with a personal code, unlimited; editors verify footage before anything counts; false claims earn strikes and wrong-player reports move clips without penalty. Strike ladder is a suggestion awaiting confirmation; session-lead escalation is deliberately left out for now.",
+          "last_touched": "2026-11-10",
+          "lane": "Build",
+          "depends_on": [
+            "cards-025"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
+              "label": "10 November design update and handover"
             }
           ]
         }
