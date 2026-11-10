@@ -3843,8 +3843,8 @@
       "name": "FFA Player Cards & Loyalty",
       "mono": "PC",
       "group": "FFA",
-      "status": "Design · phase 1 page mocked up",
-      "summary": "Phase 1 mockups are complete for review: wins-first bronze/silver/gold card with streak flames, tap-to-flip player page, landing page and a 100-player directory on desktop and phone. Player-code clip requests, wrong-player reports and strikes are mocked up but scoped to phase 2. Tier progression, Player of the Month tie-break, verified data and production integration remain open.",
+      "status": "Design · eight-tier ladder proposed",
+      "summary": "Phase 1 mockups are complete for review. Tiers are now an eight-step ladder (wood, stone, bronze, silver, gold, diamond, obsidian, legend) designed to be hard to climb, with textured card plates for seven tiers. Upper thresholds are set in sessions; lower ones, the sessions-or-hours unit, tie-breaks and verified data remain open. Clip requests are scoped to phase 2.",
       "milestones": [
         {
           "name": "Verify attendance data",
@@ -3859,7 +3859,7 @@
           "status": "todo"
         }
       ],
-      "next_step": "Decide bronze/silver/gold progression and the Player of the Month tie-break; change the mockup race bars to wins; plan automatic flame generation for 100+ players; then connect verified results and attendance data before any live release.",
+      "next_step": "Confirm the lower tier thresholds and whether they count sessions or hours; get an empty obsidian plate; re-render streak flames on the new plates; decide the Player of the Month tie-break; then connect verified results and attendance data.",
       "watch": "Booking/payment records are not proof of attendance. Historical TicketSource events, unregistered/manual attendance, and authoritative check-in flags remain missing.",
       "updated": "10 NOV",
       "target_asked_on": "2026-11-06",
@@ -3892,6 +3892,11 @@
         {
           "id": "cards-tier-rule",
           "text": "Earn tiers by sessions played and never lose them?",
+          "asked_on": "2026-11-10"
+        },
+        {
+          "id": "cards-tier-thresholds",
+          "text": "Confirm wood to gold thresholds, and sessions or hours?",
           "asked_on": "2026-11-10"
         }
       ],
@@ -3926,7 +3931,7 @@
           "name": "Define baby-card maturity, Regular status and permanent progression",
           "status": "doing",
           "owner": null,
-          "note": "Johnson confirmed full maturity equals Regular. The latest canonical direction uses bronze, silver and gold as the base progression, but thresholds and its relationship to baby/junior/Regular maturity remain unresolved. First baby card must be earned after several verified sessions, not the first attendance. Recommendation awaiting decision: tier earned by verified sessions and never lost, instead of a ranking that demotes players.",
+          "note": "Johnson confirmed full maturity equals Regular. The latest canonical direction uses bronze, silver and gold as the base progression, but thresholds and its relationship to baby/junior/Regular maturity remain unresolved. First baby card must be earned after several verified sessions, not the first attendance. Eight-tier ladder wood, stone, bronze, silver, gold, diamond, obsidian, legend: diamond 500, obsidian 750, legend 1,000 sessions confirmed; lower five thresholds are suggestions only. Suggestion awaiting decision: tiers earned by verified sessions and never lost.",
           "last_touched": "2026-11-10",
           "lane": "Rules",
           "depends_on": [],
@@ -3934,7 +3939,7 @@
             {
               "provider": "Google",
               "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
-              "label": "10 November design update and handover"
+              "label": "10 November tier ladder update"
             }
           ]
         },
@@ -4392,6 +4397,25 @@
               "provider": "Google",
               "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
               "label": "10 November design update and handover"
+            }
+          ]
+        },
+        {
+          "id": "cards-027",
+          "name": "Add textured card plates for the eight-tier ladder",
+          "status": "doing",
+          "owner": "claude",
+          "note": "Wood, stone, bronze, silver, gold, diamond and legend plates are wired into the mockup. Obsidian exists only in a mockup image and needs an empty plate. Streak flame cards still use the old plate and need re-rendering.",
+          "last_touched": "2026-11-10",
+          "lane": "Design",
+          "depends_on": [
+            "cards-025"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
+              "label": "10 November tier ladder update"
             }
           ]
         }
