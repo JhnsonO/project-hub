@@ -3843,8 +3843,8 @@
       "name": "FFA Player Cards & Loyalty",
       "mono": "PC",
       "group": "FFA",
-      "status": "Design · Diamond layer proof",
-      "summary": "Eight textured card tiers and player-profile mockups remain available. After rejecting the animated-source pilot, review returned to the original flame style. A Diamond-only proof now separates three empty flame modes and a combined animation; the full combination batch is paused. Upper session milestones remain confirmed; lower thresholds and live data integration remain open.",
+      "status": "Design · Diamond + POTM review",
+      "summary": "The Diamond-only empty flame proof is delivered and the wider batch is paused. Player of the Month now has a wins-first, one-win-per-session rule plus permanent profile history and a temporary reigning hero concept; ties, eligibility, visual acceptance and live data integration remain open.",
       "milestones": [
         {
           "name": "Verify attendance data",
@@ -3859,7 +3859,7 @@
           "status": "todo"
         }
       ],
-      "next_step": "Review the three empty Diamond flame modes and combined motion against the reference before any wider batch. Then refine populated-card lighting and confirm progression, POTM and verified-data rules.",
+      "next_step": "Review the Diamond proof; decide POTM ties and eligibility; then connect verified session results before calculating a winner or implementing the temporary hero and permanent career stars.",
       "watch": "Booking/payment records are not proof of attendance. Historical TicketSource events, unregistered/manual attendance, and authoritative check-in flags remain missing.",
       "updated": "10 NOV",
       "target_asked_on": "2026-11-06",
@@ -4349,8 +4349,8 @@
           "name": "Define and implement Player of the Month rules",
           "status": "doing",
           "owner": null,
-          "note": "Confirmed primary rule: highest total wins in the month, deliberately rewarding participation. Weighted scoring and win percentage are not the main measure. Tie-breaks, eligibility, forfeits/short appearances and verified source data remain open; no winner calculation is implemented.",
-          "last_touched": "2026-11-09",
+          "note": "Confirmed primary rule: most verified session wins in the calendar month, with a maximum of one qualifying win per session including Saturday winner-stays-on. Exact career POTM count/history stays on the profile; the reigning winner gets a temporary hero treatment without changing tier. Tie-breaks, eligibility, forfeits/short appearances and verified source data remain open; no winner calculation is implemented.",
+          "last_touched": "2026-11-10",
           "lane": "Rules",
           "depends_on": [
             "cards-001"
@@ -4495,6 +4495,26 @@
               "provider": "Google",
               "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
               "label": "10 November Diamond-only layer proof and scoped next action"
+            }
+          ]
+        },
+        {
+          "id": "cards-032",
+          "name": "Mock up POTM profile history and reigning hero treatment",
+          "status": "done",
+          "owner": "chatgpt",
+          "note": "Delivered mockup-only career POTM honours at 1/3/5/8/9/15 awards, exact total and history on profile, permanent stars that avoid card content, and a temporary reigning hero treatment until the next winner. At 9+ a prestige star may sit behind the card. No website implementation, winner calculation or data connection.",
+          "last_touched": "2026-11-10",
+          "lane": "Design",
+          "completed_on": "2026-11-10",
+          "depends_on": [
+            "cards-024"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
+              "label": "10 November POTM profile and hero handover"
             }
           ]
         }
