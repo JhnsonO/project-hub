@@ -472,6 +472,16 @@
         "cards"
       ],
       "snapshot_hash": "ea15556b7407881d90956a0e0ad9754a20afa839d2a584181664132f91a38bc5"
+    },
+    {
+      "id": "claude-20261110-tiers-01",
+      "fingerprint": "176f7d8b1def27f68a9d60085bb69ff885bbfaa943e5c4a8c859729d912538e9",
+      "date": "2026-11-10",
+      "editor": "claude",
+      "projects": [
+        "cards"
+      ],
+      "snapshot_hash": "b814bb014a3a825855d0a53ec4506c5dde119b100159e93153422a3159e56b44"
     }
   ]
 }
