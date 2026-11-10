@@ -462,6 +462,16 @@
         "cards"
       ],
       "snapshot_hash": "5873744edac077d512da3a72ae6c22089d0d5d74b93f629287e30cae9ea2e524"
+    },
+    {
+      "id": "claude-20261110-design-01",
+      "fingerprint": "e17af122455188c092758ea9fff196456132e8b809e5b8cbcc4b6d6997f92be9",
+      "date": "2026-11-10",
+      "editor": "claude",
+      "projects": [
+        "cards"
+      ],
+      "snapshot_hash": "ea15556b7407881d90956a0e0ad9754a20afa839d2a584181664132f91a38bc5"
     }
   ]
 }
