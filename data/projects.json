@@ -3843,8 +3843,8 @@
       "name": "FFA Player Cards & Loyalty",
       "mono": "PC",
       "group": "FFA",
-      "status": "Design · eight-tier ladder proposed",
-      "summary": "Phase 1 mockups are complete for review. Tiers are now an eight-step ladder (wood, stone, bronze, silver, gold, diamond, obsidian, legend) designed to be hard to climb, with textured card plates for seven tiers. Upper thresholds are set in sessions; lower ones, the sessions-or-hours unit, tie-breaks and verified data remain open. Clip requests are scoped to phase 2.",
+      "status": "Design · eight tiers, profile polish",
+      "summary": "Phase 1 mockups are complete for review. Tiers are an eight-step ladder (wood, stone, bronze, silver, gold, diamond, obsidian, legend), all with textured plates. Diamond, obsidian and legend are set at 500, 750 and 1,000 sessions; lower thresholds are still proposed. The player profile now shows tier progress and recent sessions. Clip requests are scoped to phase 2.",
       "milestones": [
         {
           "name": "Verify attendance data",
@@ -3859,7 +3859,7 @@
           "status": "todo"
         }
       ],
-      "next_step": "Confirm the lower tier thresholds and whether they count sessions or hours; get an empty obsidian plate; re-render streak flames on the new plates; decide the Player of the Month tie-break; then connect verified results and attendance data.",
+      "next_step": "Confirm the lower tier thresholds and the 500-hour wording; re-render streak flames on the new plates; decide the Player of the Month tie-break; then connect verified results and attendance data.",
       "watch": "Booking/payment records are not proof of attendance. Historical TicketSource events, unregistered/manual attendance, and authoritative check-in flags remain missing.",
       "updated": "10 NOV",
       "target_asked_on": "2026-11-06",
@@ -3896,7 +3896,7 @@
         },
         {
           "id": "cards-tier-thresholds",
-          "text": "Confirm wood to gold thresholds, and sessions or hours?",
+          "text": "Confirm wood to gold thresholds and the 500-hour wording?",
           "asked_on": "2026-11-10"
         }
       ],
@@ -4405,7 +4405,7 @@
           "name": "Add textured card plates for the eight-tier ladder",
           "status": "doing",
           "owner": "claude",
-          "note": "Wood, stone, bronze, silver, gold, diamond and legend plates are wired into the mockup. Obsidian exists only in a mockup image and needs an empty plate. Streak flame cards still use the old plate and need re-rendering.",
+          "note": "All eight plates, including obsidian, are wired into the card and tiers board. Streak flame cards still use the old plate and need re-rendering.",
           "last_touched": "2026-11-10",
           "lane": "Design",
           "depends_on": [
@@ -4416,6 +4416,25 @@
               "provider": "Google",
               "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
               "label": "10 November tier ladder update"
+            }
+          ]
+        },
+        {
+          "id": "cards-028",
+          "name": "Add tier progress and recent sessions to the profile",
+          "status": "done",
+          "owner": "claude",
+          "note": "Profile mockups (desktop and phone) show a progress line to the next tier, a career-totals label, three recent sessions and a Highlights heading. Sample data only; footage thumbnails wait for real clips.",
+          "last_touched": "2026-11-10",
+          "lane": "Design",
+          "depends_on": [
+            "cards-025"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
+              "label": "10 November profile update and handover"
             }
           ]
         }
