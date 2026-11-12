@@ -563,6 +563,16 @@
         "media"
       ],
       "snapshot_hash": "cb65ff8f5fea71cca19a8bb14fe45f1851d0bcabf30f5cdacc8681bf73b14f86"
+    },
+    {
+      "id": "claude-20261112-media-claims-live-01",
+      "fingerprint": "4467f51f1eae50cf5e308989986343e6ae92e120c6211184428bb5d954144b1c",
+      "date": "2026-11-12",
+      "editor": "claude",
+      "projects": [
+        "media"
+      ],
+      "snapshot_hash": "b76fc9e77f7ccbdda70a8b69a96d02d340fe778f5c04877aece6fb65ae75da55"
     }
   ]
 }
