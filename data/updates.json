@@ -593,6 +593,16 @@
         "media"
       ],
       "snapshot_hash": "4e59891a0b25e02eeea44fe2e9a1e947bec3656b3ac434bc653ca10f3c4bc238"
+    },
+    {
+      "id": "claude-20261112-media-player-ids-01",
+      "fingerprint": "e37fbdac397a20db1891f79532afa3b082815f411806fe3991178b853ad6b78e",
+      "date": "2026-11-12",
+      "editor": "claude",
+      "projects": [
+        "media"
+      ],
+      "snapshot_hash": "0868c62307d41ae42cb8af3ed5eb8869406781b06942b7e94bf87f02e9f878eb"
     }
   ]
 }
