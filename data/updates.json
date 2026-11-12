@@ -673,6 +673,16 @@
         "media"
       ],
       "snapshot_hash": "d94109a12f381b031d6f61f9c071a5af23dc47ced794a2e0d47e85efa9785a5a"
+    },
+    {
+      "id": "claude-20261112-media-embed-goal-window-01",
+      "fingerprint": "18ba97a769c2271a0862a238c83e9c054f001a5bcc7d5db925fc824fc2da5a0f",
+      "date": "2026-11-12",
+      "editor": "claude",
+      "projects": [
+        "media"
+      ],
+      "snapshot_hash": "a2e68c2508983c525171f7862e4dd7404270ef44833c3779672c0a00ca264508"
     }
   ]
 }
