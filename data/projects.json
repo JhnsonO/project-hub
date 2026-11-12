@@ -638,7 +638,7 @@
           "status": "todo"
         }
       ],
-      "next_step": "Build the team and goal picker that sends player ids, so two people with the same first name can be told apart.",
+      "next_step": "Import Acuity sign-ups matched to players (exact email first), and add a per-weekday player list.",
       "blocker": "Check #55 depends on key configuration; #54 still needs the current v2 suite. Signed-in acceptance is unverified.",
       "updated": "12 NOV",
       "workspace": {
@@ -2060,9 +2060,9 @@
         {
           "id": "media-061",
           "name": "Player matching and staff merge/split (step 3 of 3)",
-          "status": "doing",
+          "status": "done",
           "owner": null,
-          "note": "Backend (PR 121) and the staff Players screen (PR 122) merged 12 Nov: one-tap merge suggestions, flagged players, search and split. Browser-checked at phone width; SQLite tests only, production not checked. Still to build: a team and goal picker that sends player ids (two people with one first name), then the Acuity sign-up import.",
+          "note": "Merged 12 Nov (PRs 121, 122, 123; SQLite tests and phone-width browser checks, production not checked). Matching goes email, then exact name or alias, then a fuzzy suggestion that is never auto-linked. Staff Players screen has one-tap merge, flagged players and split. Goals use the session team list, and Edit teams asks once which person when a first name is shared.",
           "last_touched": "2026-11-12",
           "lane": "Players",
           "depends_on": [
@@ -2083,6 +2083,11 @@
               "provider": "GitHub",
               "url": "https://github.com/JhnsonO/ffa-media/pull/122",
               "label": "Players screen PR (merged)"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/123",
+              "label": "Shared first names PR (merged)"
             }
           ]
         }
