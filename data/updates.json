@@ -543,6 +543,16 @@
         "funding"
       ],
       "snapshot_hash": "172ac33cfad02f61308dd44158526f0207716acf29aa6a25bdf686ca46f71083"
+    },
+    {
+      "id": "claude-20261112-media-multiteam-claims-01",
+      "fingerprint": "18c5fb1748d2533657ff5ff57d22f080b271ebd14e402875061931dcbeb118ef",
+      "date": "2026-11-12",
+      "editor": "claude",
+      "projects": [
+        "media"
+      ],
+      "snapshot_hash": "24e73b8abf818fbc658b84452681a58e567f663cae8f456994fc29f3f8702dad"
     }
   ]
 }
