@@ -638,7 +638,7 @@
           "status": "todo"
         }
       ],
-      "next_step": "Build the staff Players screen (merge suggestions, one-tap confirm, merge, split), checked in a browser at phone width.",
+      "next_step": "Build the team and goal picker that sends player ids, so two people with the same first name can be told apart.",
       "blocker": "Check #55 depends on key configuration; #54 still needs the current v2 suite. Signed-in acceptance is unverified.",
       "updated": "12 NOV",
       "workspace": {
@@ -2062,7 +2062,7 @@
           "name": "Player matching and staff merge/split (step 3 of 3)",
           "status": "doing",
           "owner": null,
-          "note": "Backend merged 12 Nov (PR 121, SQLite tests only; production deploy not yet checked): exact email, then exact alias or name, then a fuzzy suggestion that is never auto-linked; staff merge and split API. Still to build: the staff Players screen (one-tap confirm), a team and goal picker that sends player ids, then the Acuity sign-up import.",
+          "note": "Backend (PR 121) and the staff Players screen (PR 122) merged 12 Nov: one-tap merge suggestions, flagged players, search and split. Browser-checked at phone width; SQLite tests only, production not checked. Still to build: a team and goal picker that sends player ids (two people with one first name), then the Acuity sign-up import.",
           "last_touched": "2026-11-12",
           "lane": "Players",
           "depends_on": [
@@ -2078,6 +2078,11 @@
               "provider": "GitHub",
               "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/current-state.md",
               "label": "FFA Media current handover"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/122",
+              "label": "Players screen PR (merged)"
             }
           ]
         }
