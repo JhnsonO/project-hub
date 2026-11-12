@@ -638,7 +638,7 @@
           "status": "todo"
         }
       ],
-      "next_step": "Try one real multi-team session and one goal claim on a phone, re-paste the website embed in Squarespace, then Saturday League conversion (media-057).",
+      "next_step": "Build the staff Players screen (merge suggestions, one-tap confirm, merge, split), checked in a browser at phone width.",
       "blocker": "Check #55 depends on key configuration; #54 still needs the current v2 suite. Signed-in acceptance is unverified.",
       "updated": "12 NOV",
       "workspace": {
@@ -2036,9 +2036,9 @@
         {
           "id": "media-060",
           "name": "Point teams, goals and claims at player ids (step 2 of 3)",
-          "status": "doing",
+          "status": "done",
           "owner": null,
-          "note": "Built on a branch, PR open and not merged. Teams, goals and goal claims now carry a player id beside the name text (name text keeps working). The public results feed shows display names only, never email or full name. App screens and the Monday Night League feed are unchanged. Checks (SQLite only): 839 tests passed. Not yet checked on production.",
+          "note": "Merged and deployed 12 Nov (PR 120). The migration ran on the production database during the deploy. Teams, goals and goal claims carry a player id beside the name text; the public results feed shows display names only, never email or full name.",
           "last_touched": "2026-11-12",
           "lane": "Players",
           "depends_on": [
@@ -2048,7 +2048,7 @@
             {
               "provider": "GitHub",
               "url": "https://github.com/JhnsonO/ffa-media/pull/120",
-              "label": "Player ids PR (open)"
+              "label": "Player ids PR (merged)"
             },
             {
               "provider": "GitHub",
@@ -2060,9 +2060,9 @@
         {
           "id": "media-061",
           "name": "Player matching and staff merge/split (step 3 of 3)",
-          "status": "todo",
+          "status": "doing",
           "owner": null,
-          "note": "Planned. Exact email, then exact alias or name, then a fuzzy suggestion staff confirm with one tap; a confirmed spelling becomes an alias. Never auto-merge on a fuzzy match.",
+          "note": "Backend merged 12 Nov (PR 121, SQLite tests only; production deploy not yet checked): exact email, then exact alias or name, then a fuzzy suggestion that is never auto-linked; staff merge and split API. Still to build: the staff Players screen (one-tap confirm), a team and goal picker that sends player ids, then the Acuity sign-up import.",
           "last_touched": "2026-11-12",
           "lane": "Players",
           "depends_on": [
@@ -2071,8 +2071,8 @@
           "evidence": [
             {
               "provider": "GitHub",
-              "url": "https://github.com/JhnsonO/ffa-media/pull/119",
-              "label": "Player records PR (open)"
+              "url": "https://github.com/JhnsonO/ffa-media/pull/121",
+              "label": "Player matching PR (merged)"
             },
             {
               "provider": "GitHub",
