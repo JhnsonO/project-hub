@@ -613,6 +613,16 @@
         "media"
       ],
       "snapshot_hash": "7954793fd520a27100b52e58c2b43685c0cc42f317b684b70e1e9419b80dce4e"
+    },
+    {
+      "id": "claude-20261112-media-players-screen-01",
+      "fingerprint": "740d3a3898792f3f83dc5244d2ed3cb9a87a59fb4d465b6959e45d7e8bf2343e",
+      "date": "2026-11-12",
+      "editor": "claude",
+      "projects": [
+        "media"
+      ],
+      "snapshot_hash": "6fb2dbae121014d98a70dc89e51b0b71bacb8adb9cae1cfe1a82e36ef8aed6b9"
     }
   ]
 }
