@@ -622,8 +622,8 @@
       "name": "FFA Media",
       "mono": "FM",
       "group": "FFA",
-      "status": "v2 live · normal sessions record goals · multi-team days live (app UI untested on phone)",
-      "summary": "v2 cutover (20 Oct) and native clips are recorded. The Monday Night League website feed is live with goal clips, a Goals tab and main/POV angles, and the clip player now has share, download and like (4 Nov), and from 4 Nov finished sessions are sent to the Match Log sheet from the app. API, real-device and deferred configuration checks stay open. On 7 Nov the game results page design (all sessions, list and calendar, mockup only) was agreed and a code check recorded; non-league sessions may optionally record teams and bibs. It will be a new page on the Squarespace site, fed by a public results feed. On 8 Nov the feed was built and merged, switched on, and the Game results page went live on the Squarespace site (not in the navigation yet): native title blocks plus one embed for the filters, list and calendar, checked at desktop, tablet and phone widths. Goals from the last 14 days in league games now open a clip player with share, download and like, as on the Monday League page. On 11 Nov normal sessions gained optional teams, bibs and goals (is_league flag) and league goals now reach the Match Log sheet automatically, with a Delete goal button. On 12 Nov multi-team days (2 to 5 teams, games logged afterwards from footage, one day table per session) were built and went live; goal claims with upvotes are designed and next.",
+      "status": "v2 live · multi-team days and goal claims live (app screens untested on phone)",
+      "summary": "v2 cutover (20 Oct) and native clips are recorded. The Monday Night League website feed is live with goal clips, a Goals tab and main/POV angles, and the clip player now has share, download and like (4 Nov), and from 4 Nov finished sessions are sent to the Match Log sheet from the app. API, real-device and deferred configuration checks stay open. On 7 Nov the game results page design (all sessions, list and calendar, mockup only) was agreed and a code check recorded; non-league sessions may optionally record teams and bibs. It will be a new page on the Squarespace site, fed by a public results feed. On 8 Nov the feed was built and merged, switched on, and the Game results page went live on the Squarespace site (not in the navigation yet): native title blocks plus one embed for the filters, list and calendar, checked at desktop, tablet and phone widths. Goals from the last 14 days in league games now open a clip player with share, download and like, as on the Monday League page. On 11 Nov normal sessions gained optional teams, bibs and goals (is_league flag) and league goals now reach the Match Log sheet automatically, with a Delete goal button. On 12 Nov multi-team days (2 to 5 teams, games logged afterwards from footage, one day table per session) were built and went live; goal claims with upvotes (players claim, others back, staff approve in the app) also went live the same day.",
       "milestones": [
         {
           "name": "Beta entry live",
@@ -638,7 +638,7 @@
           "status": "todo"
         }
       ],
-      "next_step": "Try one real multi-team session on a phone, re-paste the website embed in Squarespace, then build goal claims (media-056).",
+      "next_step": "Try one real multi-team session and one goal claim on a phone, re-paste the website embed in Squarespace, then Saturday League conversion (media-057).",
       "blocker": "Check #55 depends on key configuration; #54 still needs the current v2 suite. Signed-in acceptance is unverified.",
       "updated": "12 NOV",
       "workspace": {
@@ -1950,9 +1950,9 @@
         {
           "id": "media-056",
           "name": "Goal claims with upvotes",
-          "status": "todo",
+          "status": "done",
           "owner": null,
-          "note": "Designed 12 Nov. Players from that session claim a goal and assist on the results page (team, scorer, assist or Nobody, own goal) and others back the claim like upvotes, with the count shown. Staff approve or reject in the app Review screen. A false claim loses the goal credit. Unclaimed goals still count and are clipped for the player.",
+          "note": "Built and live 12 Nov (PR 110 merged). Players of a session claim a goal on the results page (who scored, assist or nobody, own goal); anyone can back a claim once per browser and the count shows publicly. Staff approve or reject in the app Review screen (Goal claims tab). Nothing changes a goal until staff approve; a rejected claim changes nothing. Checks: 780 tests, claim box checked in a headless browser. Not yet verified: the Review tab on a phone, and the website embed must be re-pasted in Squarespace before claims show.",
           "last_touched": "2026-11-12",
           "lane": "Results page",
           "depends_on": [
@@ -1961,10 +1961,16 @@
           "evidence": [
             {
               "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/110",
+              "label": "Goal claims PR"
+            },
+            {
+              "provider": "GitHub",
               "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/current-state.md",
               "label": "FFA Media current handover"
             }
-          ]
+          ],
+          "completed_on": "2026-11-12"
         },
         {
           "id": "media-057",
