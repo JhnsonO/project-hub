@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "updated": "2026-11-11",
-  "updated_by": "chatgpt",
+  "updated": "2026-11-12",
+  "updated_by": "claude",
   "groups": [
     "FFA",
     "OEV",
@@ -622,8 +622,8 @@
       "name": "FFA Media",
       "mono": "FM",
       "group": "FFA",
-      "status": "v2 live · MNL feed + sheet writer live",
-      "summary": "v2 cutover (20 Oct) and native clips are recorded. The Monday Night League website feed is live with goal clips, a Goals tab and main/POV angles, and the clip player now has share, download and like (4 Nov), and from 4 Nov finished sessions are sent to the Match Log sheet from the app. API, real-device and deferred configuration checks stay open. On 7 Nov the game results page design (all sessions, list and calendar, mockup only) was agreed and a code check recorded; non-league sessions may optionally record teams and bibs. It will be a new page on the Squarespace site, fed by a public results feed. On 8 Nov the feed was built and merged, switched on, and the Game results page went live on the Squarespace site (not in the navigation yet): native title blocks plus one embed for the filters, list and calendar, checked at desktop, tablet and phone widths. Goals from the last 14 days in league games now open a clip player with share, download and like, as on the Monday League page.",
+      "status": "v2 live · normal sessions record goals · multi-team days designed",
+      "summary": "v2 cutover (20 Oct) and native clips are recorded. The Monday Night League website feed is live with goal clips, a Goals tab and main/POV angles, and the clip player now has share, download and like (4 Nov), and from 4 Nov finished sessions are sent to the Match Log sheet from the app. API, real-device and deferred configuration checks stay open. On 7 Nov the game results page design (all sessions, list and calendar, mockup only) was agreed and a code check recorded; non-league sessions may optionally record teams and bibs. It will be a new page on the Squarespace site, fed by a public results feed. On 8 Nov the feed was built and merged, switched on, and the Game results page went live on the Squarespace site (not in the navigation yet): native title blocks plus one embed for the filters, list and calendar, checked at desktop, tablet and phone widths. Goals from the last 14 days in league games now open a clip player with share, download and like, as on the Monday League page. On 11 Nov normal sessions gained optional teams, bibs and goals (is_league flag) and league goals now reach the Match Log sheet automatically, with a Delete goal button. On 12 Nov multi-team days (2 to 5 teams, games logged afterwards from footage) and goal claims with upvotes were designed for phone, tablet and desktop; not yet built.",
       "milestones": [
         {
           "name": "Beta entry live",
@@ -638,9 +638,9 @@
           "status": "todo"
         }
       ],
-      "next_step": "Decide when to let normal sessions record teams, bibs and goals (media-052); check Download and Share on the live results page on a real phone.",
+      "next_step": "Build multi-team days (media-055), then goal claims (media-056). Check the 9 Nov sheet row and Delete goal on a phone.",
       "blocker": "Check #55 depends on key configuration; #54 still needs the current v2 suite. Signed-in acceptance is unverified.",
-      "updated": "08 NOV",
+      "updated": "12 NOV",
       "workspace": {
         "provider": "GitHub",
         "url": "https://github.com/users/JhnsonO/projects/5/views/"
@@ -1860,10 +1860,10 @@
         {
           "id": "media-052",
           "name": "Let normal sessions record teams, bibs and goals",
-          "status": "todo",
+          "status": "done",
           "owner": null,
-          "note": "Today only league sessions can: the colours, teams and goal endpoints refuse any other session, so normal sessions show the no-teams card. Plan: flag on the existing league record so any session can have optional teams, bibs and goals, and make sure normal sessions never reach the Monday League feed or the Match Log sheet. Needs its own tests. Optional for staff, never compulsory.",
-          "last_touched": "2026-11-08",
+          "note": "Done 11 Nov: any session can now have optional teams, bibs and goals through an is_league flag on the existing record. Normal sessions never reach the Monday League feed, the Match Log sheet or the league table. 755 tests passed before merge. The live results page showing normal-session goals is not yet checked.",
+          "last_touched": "2026-11-11",
           "lane": "Results page",
           "depends_on": [
             "media-048"
@@ -1873,6 +1873,128 @@
               "provider": "GitHub",
               "url": "https://github.com/JhnsonO/ffa-media/pull/100",
               "label": "Decision: teams optional for normal sessions, PR 100"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/107",
+              "label": "Normal sessions record teams, bibs and goals, PR 107"
+            }
+          ],
+          "completed_on": "2026-11-11"
+        },
+        {
+          "id": "media-053",
+          "name": "Send goals and assists to the Match Log sheet automatically",
+          "status": "done",
+          "owner": null,
+          "note": "Done 11 Nov: goal, assist, bin and restore changes on a league game queue a debounced sync (about 45 s). The app only overwrites sheet rows it wrote itself, so hand-edited rows are left alone. Two review findings fixed before merge. 9 Nov row and a real goal change on the live sheet are not yet confirmed.",
+          "last_touched": "2026-11-11",
+          "lane": "Results page",
+          "depends_on": [
+            "media-052"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/108",
+              "label": "Match Log sheet auto-sync and Delete goal, PR 108"
+            }
+          ],
+          "completed_on": "2026-11-11"
+        },
+        {
+          "id": "media-054",
+          "name": "Delete a goal from the app",
+          "status": "done",
+          "owner": null,
+          "note": "Done 11 Nov: a Delete goal button on the goal editor removes it from the score, the results page and the league table. A clip made for it stays in the clip list. Not yet tried on a phone.",
+          "last_touched": "2026-11-11",
+          "lane": "Results page",
+          "depends_on": [
+            "media-053"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/108",
+              "label": "Match Log sheet auto-sync and Delete goal, PR 108"
+            }
+          ],
+          "completed_on": "2026-11-11"
+        },
+        {
+          "id": "media-055",
+          "name": "Multi-team days: games, day table and swaps",
+          "status": "todo",
+          "owner": null,
+          "note": "Designed 12 Nov for phone, tablet and desktop (private mockup). Sessions can have 2 to 5 teams. Games are logged afterwards from footage: any two teams, any order, start and end marked by hand. One self-contained day table per session, ranked by points, then goal difference, then goals scored, with games played shown (win 3, draw 1, loss 0). Players can swap teams from the next game. Monday League stays as it is.",
+          "last_touched": "2026-11-12",
+          "lane": "Results page",
+          "depends_on": [
+            "media-052"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/current-state.md",
+              "label": "FFA Media current handover"
+            }
+          ]
+        },
+        {
+          "id": "media-056",
+          "name": "Goal claims with upvotes",
+          "status": "todo",
+          "owner": null,
+          "note": "Designed 12 Nov. Players from that session claim a goal and assist on the results page (team, scorer, assist or Nobody, own goal) and others back the claim like upvotes, with the count shown. Staff approve or reject in the app Review screen. A false claim loses the goal credit. Unclaimed goals still count and are clipped for the player.",
+          "last_touched": "2026-11-12",
+          "lane": "Results page",
+          "depends_on": [
+            "media-055"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/current-state.md",
+              "label": "FFA Media current handover"
+            }
+          ]
+        },
+        {
+          "id": "media-057",
+          "name": "Convert chosen Saturdays to Saturday League days",
+          "status": "todo",
+          "owner": null,
+          "note": "Planned. The multi-team day format must allow a Saturday to be switched to league mode later. Dates and rules for the Saturday League are not yet confirmed.",
+          "last_touched": "2026-11-12",
+          "lane": "Results page",
+          "depends_on": [
+            "media-055"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/current-state.md",
+              "label": "FFA Media current handover"
+            }
+          ]
+        },
+        {
+          "id": "media-058",
+          "name": "Separate goal-review flag so binning a clip never removes a goal",
+          "status": "todo",
+          "owner": null,
+          "note": "Planned next. Today a goal's clip being binned removes the goal; staff who bin clips need a separate social-review flag.",
+          "last_touched": "2026-11-12",
+          "lane": "Results page",
+          "depends_on": [
+            "media-052"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/current-state.md",
+              "label": "FFA Media current handover"
             }
           ]
         }
