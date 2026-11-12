@@ -2216,14 +2216,38 @@
         },
         {
           "id": "media-067",
-          "name": "Claim review screen with the clip, plus remaining claim fixes",
-          "status": "todo",
+          "name": "Claim review screen with clip, confirm and stale-goal check",
+          "status": "done",
           "owner": null,
-          "note": "Next for claims. Staff Review shows the goal clip and before/after next to Yes/No; warn if the goal was edited since the claim; website hides the claim button when a goal is closed; drop the name step from the tap-based claim sheet (PR 126); re-paste the embed in Squarespace.",
+          "note": "Merged and live 12 Nov (PR 128; live site serves the new screen). In Review, each claim shows now vs claim, a Watch the goal button (or a no-footage note) and Yes/No. Yes asks first, and is refused if the goal was edited after the card loaded. Checked in a real browser at phone and desktop width; not yet on Johnson's own phone, and no real claim made end to end.",
           "last_touched": "2026-11-12",
           "lane": "Results page",
           "depends_on": [
             "media-066"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/128",
+              "label": "Claim review screen PR (merged)"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/current-state.md",
+              "label": "FFA Media current handover"
+            }
+          ]
+        },
+        {
+          "id": "media-068",
+          "name": "Finish claims on the website: hide closed goals, drop name step, waiting badge",
+          "status": "todo",
+          "owner": null,
+          "note": "Next for claims. Website hides the claim button when a goal is closed; the tap-based claim sheet (PR 126) drops its name step; staff get a badge when claims are waiting; re-paste the embed in Squarespace and try one real claim end to end.",
+          "last_touched": "2026-11-12",
+          "lane": "Results page",
+          "depends_on": [
+            "media-067"
           ],
           "evidence": [
             {

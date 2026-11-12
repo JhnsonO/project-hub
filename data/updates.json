@@ -663,6 +663,16 @@
         "media"
       ],
       "snapshot_hash": "12578018e341b125f139cce696c6a9c2ed648c746f6be0232bb37bd3806b0618"
+    },
+    {
+      "id": "claude-20261112-media-claim-review-01",
+      "fingerprint": "877b7bc88ab889157a0792595e5155475235459301c11b3cdcd0f3b9e76dcc3f",
+      "date": "2026-11-12",
+      "editor": "claude",
+      "projects": [
+        "media"
+      ],
+      "snapshot_hash": "d94109a12f381b031d6f61f9c071a5af23dc47ced794a2e0d47e85efa9785a5a"
     }
   ]
 }
