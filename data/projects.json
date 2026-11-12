@@ -623,7 +623,7 @@
       "mono": "FM",
       "group": "FFA",
       "status": "v2 live · multi-team days and goal claims live (app screens untested on phone)",
-      "summary": "v2 cutover (20 Oct) and native clips are recorded. The Monday Night League website feed is live with goal clips, a Goals tab and main/POV angles, and the clip player now has share, download and like (4 Nov), and from 4 Nov finished sessions are sent to the Match Log sheet from the app. API, real-device and deferred configuration checks stay open. On 7 Nov the game results page design (all sessions, list and calendar, mockup only) was agreed and a code check recorded; non-league sessions may optionally record teams and bibs. It will be a new page on the Squarespace site, fed by a public results feed. On 8 Nov the feed was built and merged, switched on, and the Game results page went live on the Squarespace site (not in the navigation yet): native title blocks plus one embed for the filters, list and calendar, checked at desktop, tablet and phone widths. Goals from the last 14 days in league games now open a clip player with share, download and like, as on the Monday League page. On 11 Nov normal sessions gained optional teams, bibs and goals (is_league flag) and league goals now reach the Match Log sheet automatically, with a Delete goal button. On 12 Nov multi-team days (2 to 5 teams, games logged afterwards from footage, one day table per session) were built and went live; goal claims with upvotes (players claim, others back, staff approve in the app) also went live the same day. On 12 Nov the player foundation began: player records and spelling aliases (step 1 of 3) are built and in review, not yet merged.",
+      "summary": "v2 cutover (20 Oct) and native clips are recorded. The Monday Night League website feed is live with goal clips, a Goals tab and main/POV angles, and the clip player now has share, download and like (4 Nov), and from 4 Nov finished sessions are sent to the Match Log sheet from the app. API, real-device and deferred configuration checks stay open. On 7 Nov the game results page design (all sessions, list and calendar, mockup only) was agreed and a code check recorded; non-league sessions may optionally record teams and bibs. It will be a new page on the Squarespace site, fed by a public results feed. On 8 Nov the feed was built and merged, switched on, and the Game results page went live on the Squarespace site (not in the navigation yet): native title blocks plus one embed for the filters, list and calendar, checked at desktop, tablet and phone widths. Goals from the last 14 days in league games now open a clip player with share, download and like, as on the Monday League page. On 11 Nov normal sessions gained optional teams, bibs and goals (is_league flag) and league goals now reach the Match Log sheet automatically, with a Delete goal button. On 12 Nov multi-team days (2 to 5 teams, games logged afterwards from footage, one day table per session) were built and went live; goal claims with upvotes (players claim, others back, staff approve in the app) also went live the same day. On 12 Nov the player foundation began: player records and spelling aliases (step 1 of 3) are built and merged; production migration not yet checked.",
       "milestones": [
         {
           "name": "Beta entry live",
@@ -2015,7 +2015,7 @@
           "name": "Player records: Player and alias tables (step 1 of 3)",
           "status": "doing",
           "owner": null,
-          "note": "Built on a branch, PR open and not merged. Adds a permanent player id, private full name and email, a public display name (like Sam T) and spelling aliases. Existing team and goal names are backfilled into players; likely duplicates are flagged for staff. Nothing reads the new tables yet. Checks (SQLite only): 832 tests passed, migration up/down/up. Not yet checked on Postgres or live.",
+          "note": "Merged 12 Nov (PR 119). Adds a permanent player id, private full name and email, a public display name (like Sam T) and spelling aliases. Existing team and goal names are backfilled into players; likely duplicates are flagged for staff. Nothing reads the new tables yet. Checks (SQLite only): 832 tests passed, migration up/down/up, CI green, Codex review found nothing. Not yet verified: the migration on production Postgres and the live app.",
           "last_touched": "2026-11-12",
           "lane": "Players",
           "depends_on": [],
@@ -2023,7 +2023,7 @@
             {
               "provider": "GitHub",
               "url": "https://github.com/JhnsonO/ffa-media/pull/119",
-              "label": "Player records PR (open)"
+              "label": "Player records PR (merged)"
             },
             {
               "provider": "GitHub",
