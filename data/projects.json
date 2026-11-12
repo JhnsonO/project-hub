@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "updated": "2026-11-13",
-  "updated_by": "claude",
+  "updated": "2026-11-12",
+  "updated_by": "chatgpt",
   "groups": [
     "FFA",
     "OEV",
@@ -5098,6 +5098,181 @@
               "provider": "Google",
               "url": "https://docs.google.com/document/d/16YMLGCSUI8krCz-tzwV3v_cuhoxT5yzKAP2n1V75Yjk/edit",
               "label": "Funding board and handover"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "law-ip",
+      "name": "ULaw Intellectual Property Exam Prep",
+      "mono": "IP",
+      "group": "Personal",
+      "status": "Active · Workshop 2 audited",
+      "summary": "Workshop 2 registered trade marks material has been audited and corrected. The wider intellectual property study guide and exam-binder checklist remain in progress for the 7 December 2026 exam.",
+      "milestones": [
+        {
+          "name": "Audit Workshop 2 trade marks",
+          "status": "done"
+        },
+        {
+          "name": "Reconcile remaining IP materials",
+          "status": "doing"
+        },
+        {
+          "name": "Complete exam-binder checklist",
+          "status": "todo"
+        }
+      ],
+      "next_step": "Reconcile the corrected Workshop 2 text into the master guide, then audit the remaining workshops against the slides, LPC Buddy and textbook.",
+      "watch": "The wider guide is not complete. Any unresolved 2026-law point must be checked against an authoritative source before it is relied on.",
+      "updated": "12 NOV",
+      "target": "2026-12-07",
+      "workspace": {
+        "provider": "Google",
+        "url": "https://docs.google.com/document/d/1HgkVO0ZgDLYmGiAao-EqvPb6B9FRO1biC-dWxy1AI7M/edit"
+      },
+      "roadmap": {
+        "provider": "Google",
+        "url": "https://docs.google.com/document/d/1HgkVO0ZgDLYmGiAao-EqvPb6B9FRO1biC-dWxy1AI7M/edit"
+      },
+      "tasks": [
+        {
+          "id": "law-ip-001",
+          "name": "Define the IP study-guide audit scope",
+          "status": "done",
+          "owner": "chatgpt",
+          "note": "Scope confirmed as correcting Johnson's personal study guide against ULaw workshops and slides, LPC Buddy and textbook, plus an exam-binder checklist.",
+          "last_touched": "2026-11-11",
+          "completed_on": "2026-11-11",
+          "lane": "Plan",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1HgkVO0ZgDLYmGiAao-EqvPb6B9FRO1biC-dWxy1AI7M/edit",
+              "label": "IP exam board and handover"
+            }
+          ]
+        },
+        {
+          "id": "law-ip-002",
+          "name": "Audit Workshop 2 registered trade marks",
+          "status": "done",
+          "owner": "chatgpt",
+          "note": "Audited and explained registration, infringement, defences, revocation, invalidity and remedies using the Workshop 2 material.",
+          "last_touched": "2026-11-12",
+          "completed_on": "2026-11-12",
+          "lane": "Study guide",
+          "depends_on": [
+            "law-ip-001"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1HgkVO0ZgDLYmGiAao-EqvPb6B9FRO1biC-dWxy1AI7M/edit",
+              "label": "IP exam board and handover"
+            }
+          ]
+        },
+        {
+          "id": "law-ip-003",
+          "name": "Correct the own-name defence point",
+          "status": "done",
+          "owner": "chatgpt",
+          "note": "Corrected the study point that the own-name defence is restricted to natural persons rather than companies.",
+          "last_touched": "2026-11-12",
+          "completed_on": "2026-11-12",
+          "lane": "Study guide",
+          "depends_on": [
+            "law-ip-002"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1HgkVO0ZgDLYmGiAao-EqvPb6B9FRO1biC-dWxy1AI7M/edit",
+              "label": "IP exam board and handover"
+            }
+          ]
+        },
+        {
+          "id": "law-ip-004",
+          "name": "Reconcile Workshop 2 into the master guide",
+          "status": "doing",
+          "owner": null,
+          "note": "Preserve the corrected text, authorities and worked answers in the master study guide.",
+          "last_touched": "2026-11-12",
+          "lane": "Study guide",
+          "depends_on": [
+            "law-ip-002",
+            "law-ip-003"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1HgkVO0ZgDLYmGiAao-EqvPb6B9FRO1biC-dWxy1AI7M/edit",
+              "label": "IP exam board and handover"
+            }
+          ]
+        },
+        {
+          "id": "law-ip-005",
+          "name": "Audit the remaining IP workshops and sources",
+          "status": "todo",
+          "owner": null,
+          "note": "Work through the remaining workshops against the slides, LPC Buddy and textbook. Do not infer completion from the Workshop 2 audit.",
+          "last_touched": "2026-11-12",
+          "lane": "Study guide",
+          "depends_on": [
+            "law-ip-004"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1HgkVO0ZgDLYmGiAao-EqvPb6B9FRO1biC-dWxy1AI7M/edit",
+              "label": "IP exam board and handover"
+            }
+          ]
+        },
+        {
+          "id": "law-ip-006",
+          "name": "Build the exam-binder checklist",
+          "status": "todo",
+          "owner": null,
+          "note": "Turn the verified topics, authorities and remedy tests into a concise exam-binder checklist.",
+          "last_touched": "2026-11-12",
+          "lane": "Exam pack",
+          "depends_on": [
+            "law-ip-005"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1HgkVO0ZgDLYmGiAao-EqvPb6B9FRO1biC-dWxy1AI7M/edit",
+              "label": "IP exam board and handover"
+            }
+          ]
+        },
+        {
+          "id": "law-ip-007",
+          "name": "Sit the Intellectual Property exam",
+          "status": "todo",
+          "owner": null,
+          "note": "Explicit exam date recorded from Johnson's conversation. Completion is not claimed.",
+          "last_touched": "2026-11-12",
+          "lane": "Exam",
+          "start": "2026-12-07",
+          "end": "2026-12-07",
+          "date_basis": "planned",
+          "date_note": "Johnson stated the Intellectual Property exam is on 7 December 2026.",
+          "depends_on": [
+            "law-ip-006"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1HgkVO0ZgDLYmGiAao-EqvPb6B9FRO1biC-dWxy1AI7M/edit",
+              "label": "IP exam board and handover"
             }
           ]
         }
