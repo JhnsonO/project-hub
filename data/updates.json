@@ -623,6 +623,16 @@
         "media"
       ],
       "snapshot_hash": "6fb2dbae121014d98a70dc89e51b0b71bacb8adb9cae1cfe1a82e36ef8aed6b9"
+    },
+    {
+      "id": "claude-20261112-media-player-picker-01",
+      "fingerprint": "3fbd8a5f70f7e27a8d5b75c85976794845a4d0964055846e19d68d731aaba2a1",
+      "date": "2026-11-12",
+      "editor": "claude",
+      "projects": [
+        "media"
+      ],
+      "snapshot_hash": "d49e4cf511860511a4ee25a30a978c99032347d64b91b87c4013a277d252a917"
     }
   ]
 }
