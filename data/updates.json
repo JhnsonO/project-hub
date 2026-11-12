@@ -643,6 +643,16 @@
         "media"
       ],
       "snapshot_hash": "95e2850786fe3e04314d15b5b9582f47e43ddc2279398765041023503dad602f"
+    },
+    {
+      "id": "claude-20261112-media-goal-team-only-01",
+      "fingerprint": "64a4db9ad71b2c25e93005084572096ab7d0c1e39c5f599fc2e56b63aab82229",
+      "date": "2026-11-12",
+      "editor": "claude",
+      "projects": [
+        "media"
+      ],
+      "snapshot_hash": "008a658a5d4130ca4793dae3e13170e2f55d076645308afafedc3a30b3315069"
     }
   ]
 }

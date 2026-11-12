@@ -2170,6 +2170,25 @@
               "label": "FFA Media current handover"
             }
           ]
+        },
+        {
+          "id": "media-065",
+          "name": "Log a goal for a team without knowing the player",
+          "status": "done",
+          "owner": null,
+          "note": "Merged 12 Nov (PR 125). On a multi-team day, pick the team then tap Save without names; the goal saves with scorer unknown and can be named later. Phone-width browser check only.",
+          "last_touched": "2026-11-12",
+          "lane": "Players",
+          "depends_on": [
+            "media-061"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/125",
+              "label": "Team-only goal PR (merged)"
+            }
+          ]
         }
       ],
       "watch": "The compact 21 October current-state summary missed later entries in the historical log; use dated evidence and keep live acceptance separate. The 6 November clip-review controls are backed by a mockup and issue only; implementation and device acceptance remain open.",
