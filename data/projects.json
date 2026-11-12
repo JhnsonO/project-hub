@@ -2240,14 +2240,38 @@
         },
         {
           "id": "media-068",
-          "name": "Finish claims on the website: hide closed goals, drop name step, waiting badge",
-          "status": "todo",
+          "name": "Finish claims on the website: hide closed goals, no name step, goal pop-up",
+          "status": "done",
           "owner": null,
-          "note": "Next for claims. Website hides the claim button when a goal is closed; the tap-based claim sheet (PR 126) drops its name step; staff get a badge when claims are waiting; re-paste the embed in Squarespace and try one real claim end to end.",
+          "note": "Merged and live 12 Nov (PR 126; embed re-pasted in Squarespace, live page checked in a browser). The claim sheet is tap who scored, tap assist, send; no name or team step. The claim button hides when a goal is closed. Goals with no cut clip now open a pop-up that plays the match at the goal instead of leaving for YouTube. Still open: staff badge for waiting claims, one real claim end to end, and a check on Johnson's own phone.",
           "last_touched": "2026-11-12",
           "lane": "Results page",
           "depends_on": [
             "media-067"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/126",
+              "label": "Website embed PR (merged)"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/current-state.md",
+              "label": "FFA Media current handover"
+            }
+          ]
+        },
+        {
+          "id": "media-069",
+          "name": "Staff badge for waiting claims",
+          "status": "todo",
+          "owner": null,
+          "note": "Next for claims: show staff a count when claims are waiting in Review, then try one real claim end to end.",
+          "last_touched": "2026-11-12",
+          "lane": "Results page",
+          "depends_on": [
+            "media-068"
           ],
           "evidence": [
             {
