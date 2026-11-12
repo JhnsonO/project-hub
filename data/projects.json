@@ -2189,6 +2189,49 @@
               "label": "Team-only goal PR (merged)"
             }
           ]
+        },
+        {
+          "id": "media-066",
+          "name": "Harden goal claims: right team, 7-day window, goal lock, harder-to-game backs",
+          "status": "done",
+          "owner": null,
+          "note": "Merged and live 12 Nov (PR 127; live feed checked, migration ran on production). Claims no longer ask who you are. The scorer must be on the goal's team (own goal: the other team). Claims close after 7 days or when staff lock the goal, and approving one locks the goal. Rival claims show as superseded, not rejected. Backers are rate-limited per network, kept generous because a pitch's wifi puts many players on one address. Staff still decide everything. No real claim has been made end to end yet.",
+          "last_touched": "2026-11-12",
+          "lane": "Results page",
+          "depends_on": [
+            "media-056"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/127",
+              "label": "Claims hardening PR (merged)"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/current-state.md",
+              "label": "FFA Media current handover"
+            }
+          ]
+        },
+        {
+          "id": "media-067",
+          "name": "Claim review screen with the clip, plus remaining claim fixes",
+          "status": "todo",
+          "owner": null,
+          "note": "Next for claims. Staff Review shows the goal clip and before/after next to Yes/No; warn if the goal was edited since the claim; website hides the claim button when a goal is closed; drop the name step from the tap-based claim sheet (PR 126); re-paste the embed in Squarespace.",
+          "last_touched": "2026-11-12",
+          "lane": "Results page",
+          "depends_on": [
+            "media-066"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/current-state.md",
+              "label": "FFA Media current handover"
+            }
+          ]
         }
       ],
       "watch": "The compact 21 October current-state summary missed later entries in the historical log; use dated evidence and keep live acceptance separate. The 6 November clip-review controls are backed by a mockup and issue only; implementation and device acceptance remain open.",

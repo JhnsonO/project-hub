@@ -653,6 +653,16 @@
         "media"
       ],
       "snapshot_hash": "008a658a5d4130ca4793dae3e13170e2f55d076645308afafedc3a30b3315069"
+    },
+    {
+      "id": "claude-20261112-media-claims-hardening-01",
+      "fingerprint": "d58e7a1e90cf3e44fa258ee47a439ebdc04e2a29e006e36e8baf08f4bb911c74",
+      "date": "2026-11-12",
+      "editor": "claude",
+      "projects": [
+        "media"
+      ],
+      "snapshot_hash": "12578018e341b125f139cce696c6a9c2ed648c746f6be0232bb37bd3806b0618"
     }
   ]
 }
