@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "updated": "2026-11-12",
+  "updated": "2026-11-13",
   "updated_by": "claude",
   "groups": [
     "FFA",
@@ -638,9 +638,9 @@
           "status": "todo"
         }
       ],
-      "next_step": "Add a Who signed up button on a session (split the two Monday sessions by time), then a per-weekday player list with search.",
+      "next_step": "Add the staff Review badge for waiting claims and try one real claim end to end, then the Who signed up button on a session and a per-weekday player list.",
       "blocker": "Check #55 depends on key configuration; #54 still needs the current v2 suite. Signed-in acceptance is unverified.",
-      "updated": "12 NOV",
+      "updated": "13 NOV",
       "workspace": {
         "provider": "GitHub",
         "url": "https://github.com/users/JhnsonO/projects/5/views/"
@@ -2240,10 +2240,29 @@
         },
         {
           "id": "media-068",
-          "name": "Finish claims on the website: hide closed goals, drop name step, waiting badge",
+          "name": "Website claims: tap sheet, hide closed goals, no name step",
+          "status": "done",
+          "owner": null,
+          "note": "Merged and live 13 Nov (PR 126 and the embed re-pasted in Squarespace; live page checked for the new code, no real claim made yet). Tap who scored, tap the assist, send. No name step. The button is hidden once a goal is closed. Others can back a claim with That's right. Staff still decide.",
+          "last_touched": "2026-11-12",
+          "lane": "Results page",
+          "depends_on": [
+            "media-067"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/126",
+              "label": "Claim sheet PR (merged)"
+            }
+          ]
+        },
+        {
+          "id": "media-069",
+          "name": "Staff badge when claims are waiting",
           "status": "todo",
           "owner": null,
-          "note": "Next for claims. Website hides the claim button when a goal is closed; the tap-based claim sheet (PR 126) drops its name step; staff get a badge when claims are waiting; re-paste the embed in Squarespace and try one real claim end to end.",
+          "note": "Next for claims. A count badge on Review so staff see waiting claims. Then try one real claim end to end.",
           "last_touched": "2026-11-12",
           "lane": "Results page",
           "depends_on": [
@@ -2254,6 +2273,25 @@
               "provider": "GitHub",
               "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/current-state.md",
               "label": "FFA Media current handover"
+            }
+          ]
+        },
+        {
+          "id": "media-070",
+          "name": "Website day card: headline, key, tap-open games",
+          "status": "done",
+          "owner": null,
+          "note": "Merged and live 13 Nov (PR 129). A multi-team day shows who leads, a short key for P W D L GD Pts, and each game opens to show its goals. Round and pitch grouping and Up next need a data decision first.",
+          "last_touched": "2026-11-12",
+          "lane": "Results page",
+          "depends_on": [
+            "media-065"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/129",
+              "label": "Day card PR (merged)"
             }
           ]
         }

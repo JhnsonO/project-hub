@@ -673,6 +673,16 @@
         "media"
       ],
       "snapshot_hash": "d94109a12f381b031d6f61f9c071a5af23dc47ced794a2e0d47e85efa9785a5a"
+    },
+    {
+      "id": "claude-20261113-media-claim-sheet-day-card-01",
+      "fingerprint": "f397a5f9e2ede81bd9856c0979ec08bba80db947558ca05e05f3cab2b27a8dea",
+      "date": "2026-11-13",
+      "editor": "claude",
+      "projects": [
+        "media"
+      ],
+      "snapshot_hash": "351ccd4133a84cccd34b016d602fffaf61dd86ee8379c8e32f4b3bcaf6a91b3e"
     }
   ]
 }
