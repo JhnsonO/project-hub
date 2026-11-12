@@ -633,6 +633,16 @@
         "media"
       ],
       "snapshot_hash": "d49e4cf511860511a4ee25a30a978c99032347d64b91b87c4013a277d252a917"
+    },
+    {
+      "id": "claude-20261112-media-acuity-handover-01",
+      "fingerprint": "ed9d6cda8de205ca5ababa40ca00f27d5d8355347f66c15406bb4e27c1d3563a",
+      "date": "2026-11-12",
+      "editor": "claude",
+      "projects": [
+        "media"
+      ],
+      "snapshot_hash": "95e2850786fe3e04314d15b5b9582f47e43ddc2279398765041023503dad602f"
     }
   ]
 }
