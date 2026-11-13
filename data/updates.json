@@ -693,6 +693,16 @@
         "law-ip"
       ],
       "snapshot_hash": "4366c22ca8c1b075bf734a08cdd688bcd5c1756ad0e00360267d969b43ac373a"
+    },
+    {
+      "id": "claude-20261113-media-claim-sheet-01",
+      "fingerprint": "be165155ca93c4af73982f295e3752bfd075446b2d2b1b0b80049c3b24507682",
+      "date": "2026-11-13",
+      "editor": "claude",
+      "projects": [
+        "media"
+      ],
+      "snapshot_hash": "71dce583c40bd094e41cc72c348197b23b497d4479303d1eba3dad4d5c8f00a4"
     }
   ]
 }
