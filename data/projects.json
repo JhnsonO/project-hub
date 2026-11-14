@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "updated": "2026-11-13",
-  "updated_by": "claude",
+  "updated": "2026-11-14",
+  "updated_by": "chatgpt",
   "groups": [
     "FFA",
     "OEV",
@@ -13,8 +13,8 @@
       "name": "FFA Website",
       "mono": "FW",
       "group": "FFA",
-      "status": "Live · QA",
-      "summary": "MNL Week 3 returners are listed with their Week 1 sides; six player placements and wider site QA remain open.",
+      "status": "Live · partner QA",
+      "summary": "The Partners page now includes Uncle Teo PR and Priintt in a consistent two-row grid with verified desktop links, sizing and link arrows. Final mobile heading/spacing acceptance and a sharper Priintt logo remain open alongside the wider site QA backlog.",
       "milestones": [
         {
           "name": "Site + shop live",
@@ -29,9 +29,9 @@
           "status": "todo"
         }
       ],
-      "next_step": "Confirm placement for the remaining six Week 3 players; continue real-device touch/Safari, multi-angle and highlight-reel variant checks, plus SEO and checkout backlog.",
-      "watch": "The dashboard last showed 23/26 pages with metadata and 160 images missing alt text; two legal pages were updated afterward, but the score did not refresh.",
-      "updated": "02 NOV",
+      "next_step": "Verify the Partners page at phone width, including the saved 19px headings and no overflow; replace the Priintt logo only if a higher-resolution source is available, then continue the existing real-device, SEO and checkout backlog.",
+      "watch": "UTPR and Priintt are live and desktop-verified. The final mobile heading change was saved but not live-verified after the editing browser disconnected; the Priintt source remains visibly softer than the other logos.",
+      "updated": "14 NOV",
       "workspace": {
         "provider": "Google",
         "url": "https://docs.google.com/document/d/1Ai973jkiOD_3WvG1ra2sFiIzPO3F3R1AlGIvKzZWWXA/edit"
@@ -611,6 +611,45 @@
               "provider": "Google",
               "url": "https://docs.google.com/document/d/1Ai973jkiOD_3WvG1ra2sFiIzPO3F3R1AlGIvKzZWWXA/edit",
               "label": "Website master handover"
+            }
+          ]
+        },
+        {
+          "id": "web-029",
+          "name": "Add UTPR and Priintt to the Partners page",
+          "status": "done",
+          "owner": "chatgpt",
+          "note": "Added Uncle Teo PR and Priintt with their intended links, retained two rows of three with Your business here last, reduced oversized desktop cards, aligned typography and arrows, and verified the live desktop content/order/links. UTPR uses a charcoal logo panel; the enlarged Priintt source remains soft.",
+          "last_touched": "2026-11-14",
+          "completed_on": "2026-11-14",
+          "lane": "Content",
+          "depends_on": [
+            "web-009"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1Ai973jkiOD_3WvG1ra2sFiIzPO3F3R1AlGIvKzZWWXA/edit",
+              "label": "14 November Partners page handover"
+            }
+          ]
+        },
+        {
+          "id": "web-030",
+          "name": "Finish Partners page mobile and logo-quality acceptance",
+          "status": "doing",
+          "owner": null,
+          "note": "The mobile heading correction to 19px was reported saved but was not rechecked live after the browser disconnected. Verify phone-width headings, spacing, arrows and overflow; replace the Priintt source only if a sharper logo is available.",
+          "last_touched": "2026-11-14",
+          "lane": "Website QA",
+          "depends_on": [
+            "web-029"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1Ai973jkiOD_3WvG1ra2sFiIzPO3F3R1AlGIvKzZWWXA/edit",
+              "label": "14 November Partners page handover"
             }
           ]
         }
