@@ -713,6 +713,16 @@
         "web"
       ],
       "snapshot_hash": "36aa38e5a02e59389d77c9a85401877e501e799956a18d4c5907e6c3c45f3aa5"
+    },
+    {
+      "id": "claude-20261114-media-goal-popup-01",
+      "fingerprint": "dbd42c30dc500ebddb5fb0993faac6622756e658e9c8b2a8f395f71b5ea905e3",
+      "date": "2026-11-14",
+      "editor": "claude",
+      "projects": [
+        "media"
+      ],
+      "snapshot_hash": "3203fcff772402616692584b2102ee2a87b37ecb509299ffb2577dc1891f6fbd"
     }
   ]
 }
