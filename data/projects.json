@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "updated": "2026-11-15",
-  "updated_by": "claude",
+  "updated_by": "chatgpt",
   "groups": [
     "FFA",
     "OEV",
@@ -3512,8 +3512,8 @@
       "name": "AI Workflow & Shared Context",
       "mono": "AI",
       "group": "Personal",
-      "status": "Natural workflow refactor planned",
-      "summary": "Technical update and publication tests passed. Ordinary conversation behaviour still needs realistic cross-AI testing; shared-context simplification is the next phase.",
+      "status": "Access audit in progress",
+      "summary": "Claude’s new account now has the shared bootstrap instructions and connected Google Drive/GitHub integrations. Its GitHub app is installed for JhnsonO, and the repository status says Claude Code cloud sessions can work in project-hub. Claude reported reading main; Claude-specific write access, private Markdown and mobile behavior remain unverified.",
       "milestones": [
         {
           "name": "Shared rules + handover",
@@ -3528,8 +3528,8 @@
           "status": "done"
         }
       ],
-      "next_step": "Audit normal web/mobile context access before choosing private Markdown and simplifying updates.",
-      "updated": "24 OCT",
+      "next_step": "Verify Claude’s normal web/mobile read/write access to a private Markdown source and its feature-branch/PR path; keep Home and Rules authoritative until those checks pass.",
+      "updated": "15 NOV",
       "workspace": {
         "provider": "GitHub",
         "url": "https://github.com/users/JhnsonO/projects/4/views/2"
@@ -4057,10 +4057,10 @@
         {
           "id": "ai-025",
           "name": "Audit shared-context architecture and normal account access",
-          "status": "todo",
+          "status": "doing",
           "owner": "chatgpt",
-          "note": "Audit current records, permissions and private Markdown read/write support in both AIs' normal web/mobile conversations. Architecture choice remains conditional on observed capabilities.",
-          "last_touched": "2026-10-24",
+          "note": "New Claude account bootstrap saved; Drive/GitHub connectors show connected. One-time read access to JhnsonO/project-hub was authorized and Claude reported reading main at 057e218. GitHub settings say its app is installed and Claude Code cloud sessions can work here. Claude-specific write/PR access, private Markdown and mobile behavior remain unverified.",
+          "last_touched": "2026-11-15",
           "lane": "Natural conversation",
           "start": null,
           "end": null,
@@ -4119,7 +4119,8 @@
           ]
         }
       ],
-      "target_asked_on": "2026-10-23"
+      "target_asked_on": "2026-10-23",
+      "watch": "The repo status is not proof that this new Claude account can write or publish a PR. Private-source and mobile tests remain open."
     },
     {
       "id": "merch",
