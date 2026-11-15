@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "updated": "2026-11-14",
+  "updated": "2026-11-15",
   "updated_by": "claude",
   "groups": [
     "FFA",
@@ -661,8 +661,8 @@
       "name": "FFA Media",
       "mono": "FM",
       "group": "FFA",
-      "status": "v2 live · tap-a-goal pop-up and picker built, in review (PRs 135, 136) · Acuity sign-ups lookup live (button to come)",
-      "summary": "v2 cutover (20 Oct) and native clips are recorded. The Monday Night League website feed is live with goal clips, a Goals tab and main/POV angles, and the clip player now has share, download and like (4 Nov), and from 4 Nov finished sessions are sent to the Match Log sheet from the app. API, real-device and deferred configuration checks stay open. On 7 Nov the game results page design (all sessions, list and calendar, mockup only) was agreed and a code check recorded; non-league sessions may optionally record teams and bibs. It will be a new page on the Squarespace site, fed by a public results feed. On 8 Nov the feed was built and merged, switched on, and the Game results page went live on the Squarespace site (not in the navigation yet): native title blocks plus one embed for the filters, list and calendar, checked at desktop, tablet and phone widths. Goals from the last 14 days in league games now open a clip player with share, download and like, as on the Monday League page. On 11 Nov normal sessions gained optional teams, bibs and goals (is_league flag) and league goals now reach the Match Log sheet automatically, with a Delete goal button. On 12 Nov multi-team days (2 to 5 teams, games logged afterwards from footage, one day table per session) were built and went live; goal claims with upvotes (players claim, others back, staff approve in the app) also went live the same day. On 12 Nov the player foundation began: player records and spelling aliases (step 1 of 3) are built, merged and migrated on production; step 2 (player ids on teams, goals and claims) is built and in review. Also on 12 Nov the Watch screen load error and the team, bib and goal buttons on normal sessions were fixed and checked in a real browser (phone not yet confirmed). Acuity sign-ups: the Acuity API is not on the current plan, so the app reads Acuity's calendar sync link instead; for Monday 9 Nov it found 28 people. Nothing from it is saved yet. On 13 Nov the website claim sheet was reworked: it asks the team first when unknown, handles own goals, has a quiet \"Wrong scorer?\" link and keyboard/scroll fixes (PRs 130-132); goals without a cut clip now show the match's YouTube frame and goal time and play the full match from the goal (PR 133). All live on the Game results page; no real claim tested on production yet; not checked on a real phone. On 14 Nov the tap-a-goal redesign was built in two stacked PRs (135 and 136, not merged): one pop-up for every goal (clip or match footage) with share, download, like and a More goals list, then a two-step player picker with public confirm votes, Undo and own goals. Local tests and browser checks pass and Codex review findings were fixed; nothing is live and no real phone test yet.",
+      "status": "v2 live · tap-a-goal pop-up and picker live on the Game results page · Acuity sign-ups lookup live (button to come)",
+      "summary": "v2 cutover (20 Oct) and native clips are recorded. The Monday Night League website feed is live with goal clips, a Goals tab and main/POV angles, and the clip player now has share, download and like (4 Nov), and from 4 Nov finished sessions are sent to the Match Log sheet from the app. API, real-device and deferred configuration checks stay open. On 7 Nov the game results page design (all sessions, list and calendar, mockup only) was agreed and a code check recorded; non-league sessions may optionally record teams and bibs. It will be a new page on the Squarespace site, fed by a public results feed. On 8 Nov the feed was built and merged, switched on, and the Game results page went live on the Squarespace site (not in the navigation yet): native title blocks plus one embed for the filters, list and calendar, checked at desktop, tablet and phone widths. Goals from the last 14 days in league games now open a clip player with share, download and like, as on the Monday League page. On 11 Nov normal sessions gained optional teams, bibs and goals (is_league flag) and league goals now reach the Match Log sheet automatically, with a Delete goal button. On 12 Nov multi-team days (2 to 5 teams, games logged afterwards from footage, one day table per session) were built and went live; goal claims with upvotes (players claim, others back, staff approve in the app) also went live the same day. On 12 Nov the player foundation began: player records and spelling aliases (step 1 of 3) are built, merged and migrated on production; step 2 (player ids on teams, goals and claims) is built and in review. Also on 12 Nov the Watch screen load error and the team, bib and goal buttons on normal sessions were fixed and checked in a real browser (phone not yet confirmed). Acuity sign-ups: the Acuity API is not on the current plan, so the app reads Acuity's calendar sync link instead; for Monday 9 Nov it found 28 people. Nothing from it is saved yet. On 13 Nov the website claim sheet was reworked: it asks the team first when unknown, handles own goals, has a quiet \"Wrong scorer?\" link and keyboard/scroll fixes (PRs 130-132); goals without a cut clip now show the match's YouTube frame and goal time and play the full match from the goal (PR 133). All live on the Game results page; no real claim tested on production yet; not checked on a real phone. On 14 Nov the tap-a-goal redesign (PRs 135 and 136) was merged: one pop-up for every goal (clip or match footage) with share, download, like and a More goals list, then a two-step player picker with public confirm votes, Undo and own goals. It is live on the Game results page. On 15 Nov a live audit found display problems and PR 141 fixed them (merged, embed re-pasted, live page checked at phone and desktop width): goals not yet sorted into teams show a goal count instead of 0–0, an empty multi-team day hides its table, the pop-up names teams by bib colour like the list, and two headings that were unreadable on dark are now white. Other audit items are still open. No real phone test yet.",
       "milestones": [
         {
           "name": "Beta entry live",
@@ -677,9 +677,9 @@
           "status": "todo"
         }
       ],
-      "next_step": "Johnson says merge on PRs 135 then 136, re-paste the results embed in Squarespace, then try one real suggestion and approval end to end on a phone.",
+      "next_step": "Staff sort the older goals onto teams. Then work through the remaining audit items (see media-074) and try one real claim end to end on a phone.",
       "blocker": "Check #55 depends on key configuration; #54 still needs the current v2 suite. Signed-in acceptance is unverified.",
-      "updated": "14 NOV",
+      "updated": "15 NOV",
       "workspace": {
         "provider": "GitHub",
         "url": "https://github.com/users/JhnsonO/projects/5/views/"
@@ -2371,10 +2371,10 @@
         {
           "id": "media-072",
           "name": "Tap-a-goal pop-up and player picker",
-          "status": "doing",
+          "status": "done",
           "owner": null,
-          "note": "Built 14 Nov, not merged. PR 135: one pop-up for every goal with share, download, like and More goals. PR 136 (stacked): two-step picker, public confirm votes, Undo, own goal. Local checks only: tests, lint and phone/tablet/desktop browser clickthroughs; Codex review fixes applied. Needs merge, embed re-paste and a real phone test.",
-          "last_touched": "2026-11-14",
+          "note": "Merged 14 Nov (PRs 135, 136) and live on the Game results page (seen 15 Nov: pop-up, More goals, Right player and Suggest a change). One pop-up for every goal with share, download, like and More goals; two-step picker with public confirm votes, Undo, own goal. Checked in headless browsers; not yet on a real phone.",
+          "last_touched": "2026-11-15",
           "lane": "Results page",
           "depends_on": [
             "media-071"
@@ -2383,12 +2383,50 @@
             {
               "provider": "GitHub",
               "url": "https://github.com/JhnsonO/ffa-media/pull/135",
-              "label": "Goal pop-up PR (open)"
+              "label": "Goal pop-up PR (merged)"
             },
             {
               "provider": "GitHub",
               "url": "https://github.com/JhnsonO/ffa-media/pull/136",
-              "label": "Goal picker PR (open)"
+              "label": "Goal picker PR (merged)"
+            }
+          ]
+        },
+        {
+          "id": "media-073",
+          "name": "Results page live audit: display fixes",
+          "status": "done",
+          "owner": null,
+          "note": "Merged and live 15 Nov (PR 141, embed re-pasted in Squarespace and the live page checked at phone and desktop width). Goals not yet sorted into teams show a goal count rather than 0–0 and return to the score as they are sorted; an empty multi-team day hides its all-zero table; the pop-up names teams by colour like the list; two headings fixed on dark. 22 new browser checks.",
+          "last_touched": "2026-11-15",
+          "lane": "Results page",
+          "depends_on": [
+            "media-072"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/141",
+              "label": "Audit fixes PR 141 (merged)"
+            }
+          ]
+        },
+        {
+          "id": "media-074",
+          "name": "Results page audit: remaining items",
+          "status": "todo",
+          "owner": null,
+          "note": "Not fixed yet: one goal credits a player as their own assist (data); old 2025 test sessions in the year picker; some session times look like upload times; player search only matches the start of a name and most sessions have no player list; date block scrolls off long cards; Confirm vs Right player wording; suggestion sheet does not say which goal; check whether staff-only own goals should still appear in the sheet; not checked on a real phone or tablet.",
+          "last_touched": "2026-11-15",
+          "lane": "Results page",
+          "depends_on": [
+            "media-073"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/current-state.md",
+              "label": "FFA Media current handover"
             }
           ]
         }
