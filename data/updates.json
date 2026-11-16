@@ -793,6 +793,16 @@
         "cards"
       ],
       "snapshot_hash": "37702112ca408cdef197d45cc9f1df0c7fb725fae618f1238bc187893672ba04"
+    },
+    {
+      "id": "chatgpt-20261116-funding-governance-01",
+      "fingerprint": "5b7e6b0cd05f340e6fd21d740800d861210113f8b29fad3594a9da71da073afb",
+      "date": "2026-11-16",
+      "editor": "chatgpt",
+      "projects": [
+        "funding"
+      ],
+      "snapshot_hash": "ade9223c859776135ee8403ef620f15b322e5792ada4f3036e66664523eb05d1"
     }
   ]
 }
