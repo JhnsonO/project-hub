@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "updated": "2026-11-16",
-  "updated_by": "claude",
+  "updated_by": "chatgpt",
   "groups": [
     "FFA",
     "OEV",
@@ -4409,8 +4409,8 @@
       "name": "FFA Player Cards & Loyalty",
       "mono": "PC",
       "group": "FFA",
-      "status": "Design · tier flame review",
-      "summary": "Tier-aligned empty flame references and populated previews are delivered for review. Current prototypes use separate five-second scoring, winning and mixed magical streams with locked framing; animated WebP stuttered on phone, and format, full visual approval and live integration remain open.",
+      "status": "Player-account MVP scoped · card design ongoing",
+      "summary": "A basic FFA player-account MVP is scoped: secure registration, profile/FFA ID, and convenient booking through existing Acuity; Squarespace continues selling memberships and there is no Acuity Powerhouse upgrade. Personalised stats, goal claims and remaining membership sessions require verified identity and data, so remain later phases. Existing flame/card prototypes stay in design review.",
       "milestones": [
         {
           "name": "Verify attendance data",
@@ -4423,11 +4423,15 @@
         {
           "name": "Launch first player cards",
           "status": "todo"
+        },
+        {
+          "name": "Player-account MVP pilot",
+          "status": "todo"
         }
       ],
-      "next_step": "Choose one approved tier effect, rebuild one populated card with replaceable content, then prove a five-second loop and delivery format on a real phone before expanding the matrix.",
-      "watch": "Booking/payment records are not proof of attendance. Historical TicketSource events, unregistered/manual attendance, and authoritative check-in flags remain missing.",
-      "updated": "11 NOV",
+      "next_step": "Audit the current Squarespace customer-account login and Acuity client login on /book, including signed-in autofill, then select a secure player-profile identity architecture before building on a test page.",
+      "watch": "Squarespace and Acuity client accounts do not offer automatic single sign-on. Do not claim booking means attendance or expose personalised stats without authenticated access control. Membership session balances are deferred; mobile flame format acceptance remains open.",
+      "updated": "16 NOV",
       "target_asked_on": "2026-11-06",
       "questions": [
         {
@@ -5126,6 +5130,81 @@
               "provider": "Google",
               "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
               "label": "11 November flame template and tier preview handover"
+            }
+          ]
+        },
+        {
+          "id": "cards-035",
+          "name": "Agree minimal player-account MVP without Powerhouse",
+          "status": "done",
+          "owner": "chatgpt",
+          "note": "Confirmed Squarespace sells memberships; player login, personal profile/FFA ID and Acuity booking handoff take priority. Membership balances and billing management, verified goal claims and advanced cards are deferred. Documentation/architecture scope only; no live account or code changes.",
+          "last_touched": "2026-11-16",
+          "completed_on": "2026-11-16",
+          "lane": "Plan",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
+              "label": "16 November player account MVP scope decision and handover"
+            }
+          ]
+        },
+        {
+          "id": "cards-036",
+          "name": "Audit existing Squarespace and Acuity client logins",
+          "status": "todo",
+          "owner": null,
+          "note": "Verify Squarespace customer accounts enabled and Acuity client log in/registration on /book; test return-visitor booking autofill without Powerhouse. Separate client accounts may require separate sign-in; no SSO promise.",
+          "last_touched": "2026-11-16",
+          "lane": "Build",
+          "depends_on": [
+            "cards-035"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
+              "label": "16 November player account MVP scope decision and handover"
+            }
+          ]
+        },
+        {
+          "id": "cards-037",
+          "name": "Prototype secure FFA player identity and minimal profile",
+          "status": "todo",
+          "owner": null,
+          "note": "Select authentication suitable for private per-player records; prove user data isolation, optional avatar consent and stable player ID linked to historical records without auto-merging ambiguous contact names.",
+          "last_touched": "2026-11-16",
+          "lane": "Build",
+          "depends_on": [
+            "cards-036"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
+              "label": "16 November player account MVP scope decision and handover"
+            }
+          ]
+        },
+        {
+          "id": "cards-038",
+          "name": "Pilot My FFA profile and booking entry point",
+          "status": "todo",
+          "owner": null,
+          "note": "On a test page, show a securely personalised profile with a Book Football action. Do not represent Squarespace customer account as authentication for the custom database without verifying it. Production and membership balance integration are not approved.",
+          "last_touched": "2026-11-16",
+          "lane": "Build",
+          "depends_on": [
+            "cards-037"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
+              "label": "16 November player account MVP scope decision and handover"
             }
           ]
         }
