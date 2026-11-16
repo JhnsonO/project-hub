@@ -5265,15 +5265,19 @@
       "name": "FFA Sport England Funding",
       "mono": "FG",
       "group": "FFA",
-      "status": "Blocked · governance",
-      "summary": "FFA’s Sport England application was reported rejected because the organisation has two directors. The exact rejection wording and current reapplication requirements need authoritative verification before governance changes or resubmission.",
+      "status": "Blocked · third director filing",
+      "summary": "Johnson reports three unrelated directors, but Companies House still shows two active directors. Current Movement Fund governance rules are verified; the official appointment record and final governance consistency check remain open.",
       "milestones": [
         {
           "name": "Original application outcome recorded",
           "status": "done"
         },
         {
-          "name": "Fix governance eligibility",
+          "name": "Verify Movement Fund governance rules",
+          "status": "done"
+        },
+        {
+          "name": "Confirm three directors on official record",
           "status": "doing"
         },
         {
@@ -5281,15 +5285,15 @@
           "status": "todo"
         }
       ],
-      "next_step": "Read the rejection email and current Sport England eligibility guidance; confirm the precise governance fix before identifying or appointing a third director.",
-      "watch": "Detailed eligibility wording and permission to reapply were reported by an assistant but not independently read in this catch-up. Keep application figures, director details and evidence private.",
-      "updated": "11 NOV",
+      "next_step": "Confirm or file the third director appointment, wait for Companies House to show three active directors, then check voting rights and governing documents before resubmitting.",
+      "watch": "Sport England requires at least three unrelated, non-cohabiting directors, fair voting rights and no person with significant control. Companies House showed two active directors and zero active PSCs on 16 November.",
+      "updated": "16 NOV",
       "target_asked_on": "2026-11-11",
       "questions": [
         {
-          "id": "funding-third-director",
-          "text": "Who will be the third FFA director if required?",
-          "asked_on": "2026-11-11"
+          "id": "funding-director-filing",
+          "text": "Has the third director appointment appeared on Companies House?",
+          "asked_on": "2026-11-16"
         }
       ],
       "workspace": {
@@ -5321,10 +5325,10 @@
         {
           "id": "funding-002",
           "name": "Verify rejection wording and reapplication rules",
-          "status": "doing",
-          "owner": null,
-          "note": "Read the rejection email and current Sport England guidance to confirm whether immediate reapplication is allowed and the exact director independence, voting and control requirements. Do not rely solely on the earlier assistant summary.",
-          "last_touched": "2026-11-11",
+          "status": "done",
+          "owner": "chatgpt",
+          "note": "Verified current Movement Fund rules from Sport England: at least three unrelated, non-cohabiting directors, fair voting rights and no person with significant control. Articles of Association are the governing document for a company.",
+          "last_touched": "2026-11-16",
           "lane": "Evidence",
           "depends_on": [
             "funding-001"
@@ -5335,20 +5339,21 @@
               "url": "https://docs.google.com/document/d/16YMLGCSUI8krCz-tzwV3v_cuhoxT5yzKAP2n1V75Yjk/edit",
               "label": "Funding board and handover"
             }
-          ]
+          ],
+          "completed_on": "2026-11-16"
         },
         {
           "id": "funding-003",
           "name": "Correct FFA governance eligibility",
           "status": "blocked",
           "owner": null,
-          "note": "If the verified rules require it, identify and properly appoint a suitable third director and update Companies House, governing documents and decision records before resubmission.",
-          "last_touched": "2026-11-11",
+          "note": "Johnson reports three unrelated directors, but Companies House showed only two active directors on 16 November. Confirm or file the third appointment, then reconcile the register, internal appointment record, voting rights and governing document.",
+          "last_touched": "2026-11-16",
           "lane": "Governance",
           "depends_on": [
             "funding-002"
           ],
-          "blocked_reason": "Exact eligibility criteria and proposed third director are not confirmed.",
+          "blocked_reason": "The third director is not yet visible on Companies House.",
           "evidence": [
             {
               "provider": "Google",
