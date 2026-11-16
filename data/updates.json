@@ -743,6 +743,16 @@
         "ai"
       ],
       "snapshot_hash": "8c643881f03a576b706ccbc36859f4716311bdf07b223b6678c5b4de4d158796"
+    },
+    {
+      "id": "claude-20261116-media-signups-02",
+      "fingerprint": "6e02f7f8bdbba37a9a461838dd0f0346428b315c8328b9a3a48602db35889371",
+      "date": "2026-11-16",
+      "editor": "claude",
+      "projects": [
+        "media"
+      ],
+      "snapshot_hash": "f9c0e41e8a8cb0768f570f7006ed98571da92a02981043557f73ebfcc96564ea"
     }
   ]
 }
