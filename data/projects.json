@@ -4409,8 +4409,8 @@
       "name": "FFA Player Cards & Loyalty",
       "mono": "PC",
       "group": "FFA",
-      "status": "Player-account MVP scoped · profile pilot awaiting Acuity data",
-      "summary": "Basic player registration, an FFA ID and Acuity booking access are scoped. Players must claim their own profiles. The first pilot targets regulars from 16 Aug–16 Nov 2026 and reuses the FFA Media player/alias IDs; uncertain identities and goals stay out. Stripe charge history alone cannot verify players or attendance, and no Acuity appointment export is available yet.",
+      "status": "Profile pilot reconciled · safe seed path pending",
+      "summary": "The 16 Aug–16 Nov Acuity export is now reviewed against Stripe and the FFA Media Player/PlayerAlias records. Booking aliases and payer relationships leave many identities unresolved, so only exact, unique candidates move forward. Players must claim their own profiles.",
       "milestones": [
         {
           "name": "Verify attendance data",
@@ -4429,8 +4429,8 @@
           "status": "todo"
         }
       ],
-      "next_step": "Obtain Acuity appointments for 16 Aug–16 Nov 2026, then identify repeat-booking players and map only unique or staff-confirmed identities and existing goals into unclaimed profiles.",
-      "watch": "Acuity sign-up is booking evidence, not attendance. A payer may book for somebody else. No profile ownership until the player claims it; shared/fuzzy aliases and ambiguous goals remain in staff review. Do not use payment records alone to define the pilot.",
+      "next_step": "Add a private unclaimed-profile seed and self-claim path that stores source aliases without assigning payer ownership; import only exact, unique candidates and attach existing goals by unique Player ID or staff confirmation. Keep attendance eligibility separate.",
+      "watch": "Bookings do not prove attendance, and the account holder who pays or books does not own another player's profile. Ambiguous and fuzzy identities stay out. The cross-check was read-only against FFA Media beta; no player, goal or account records changed.",
       "updated": "16 NOV",
       "target_asked_on": "2026-11-06",
       "questions": [
@@ -4473,11 +4473,6 @@
           "id": "cards-animation-format",
           "text": "Which format should power card flames on phones?",
           "asked_on": "2026-11-11"
-        },
-        {
-          "id": "cards-acuity-window-source",
-          "text": "Can you provide Acuity bookings for 16 Aug–16 Nov 2026?",
-          "asked_on": "2026-11-16"
         }
       ],
       "workspace": {
@@ -5180,7 +5175,7 @@
           "name": "Prototype secure FFA player identity and minimal profile",
           "status": "todo",
           "owner": null,
-          "note": "Select authentication suitable for private per-player records; prove user data isolation, optional avatar consent and stable player ID linked to historical records without auto-merging ambiguous contact names.",
+          "note": "Select authentication for private per-player records; reuse the stable FFA Media Player ID and link history only through unique aliases or staff confirmation. Seeded records remain unclaimed until the player claims them; a booking or payer account never owns another player's profile by default. Keep source aliases and review status private.",
           "last_touched": "2026-11-16",
           "lane": "Build",
           "depends_on": [
@@ -5191,6 +5186,11 @@
               "provider": "Google",
               "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
               "label": "16 November player account MVP scope decision and handover"
+            },
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
+              "label": "16 Nov player self-claim and reconciliation decision"
             }
           ]
         },
@@ -5237,9 +5237,9 @@
         {
           "id": "cards-040",
           "name": "Reconcile three-month players and verified goals",
-          "status": "blocked",
+          "status": "doing",
           "owner": null,
-          "note": "The 16 Aug–16 Nov Stripe read contained recent charge records linked to Acuity-labelled customers, but charges identify customers/payers and do not establish player, booking attendance or unique session count. No Acuity appointment export was available to verify regulars. Wait for the Acuity window source, then link only unique or staff-confirmed player IDs and goals; create unclaimed profiles for players to claim themselves.",
+          "note": "Acuity appointments are now reviewed against paid/captured Stripe contact evidence and FFA Media beta PlayerAlias/goal records. Exact matches and existing goal counts are recorded privately. Booking data is not attendance; payer contact does not establish player ownership. No profile rows were added. The next safe step is a self-claim-aware seed path and production verification before any live writes.",
           "last_touched": "2026-11-16",
           "lane": "Identity",
           "depends_on": [
@@ -5250,6 +5250,11 @@
               "provider": "Google",
               "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
               "label": "16 November profile pilot source check and decision"
+            },
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
+              "label": "16 Nov Acuity, Stripe and FFA Media player reconciliation"
             }
           ]
         }
