@@ -4476,8 +4476,8 @@
       "name": "FFA Player Cards & Loyalty",
       "mono": "PC",
       "group": "FFA",
-      "status": "36 repeat-player profile seeds prepared · 50 held for review",
-      "summary": "A standalone Acuity + Stripe review prepared 36 unclaimed candidate profile seeds from recurring booking names with matching payer/customer-name evidence. Another 50 recurring-name entries remain in review. Profile selection does not depend on existing FFA Media records.",
+      "status": "39 unclaimed profile seeds · 47 held for review",
+      "summary": "Standalone Acuity + Stripe review now has 39 unclaimed profile seeds: 36 exact payer-name matches and three user-confirmed booking/payment-route exceptions. Another 47 recurring-name entries remain held pending stronger identity evidence.",
       "milestones": [
         {
           "name": "Verify attendance data",
@@ -4496,8 +4496,8 @@
           "status": "todo"
         }
       ],
-      "next_step": "Create or obtain a write/import path for unclaimed profile seeds in FFA Media, then let players claim their records. Keep held names separate; attach existing goals only after a player claims or staff confirms the profile.",
-      "watch": "Acuity bookings do not prove attendance, and Stripe payers may book for other players. The private seed sheet contains identity-level details; no customer names or payment details are in this public record. No player, goal or account rows have been written to Media.",
+      "next_step": "Reconcile Squarespace membership records against the private review queue, including players whose Acuity session bookings use coupons. Keep every seed unclaimed and assign goals only after the player claims a profile or staff confirms it.",
+      "watch": "Squarespace membership orders were not yet cross-matched because the Orders view was blocked in Chrome. The private sheet holds names and contact details; the public hub contains no player identifiers or payment details. No player, goal or account rows have been written to Media.",
       "updated": "17 NOV",
       "target_asked_on": "2026-11-06",
       "questions": [
@@ -5306,7 +5306,7 @@
           "name": "Reconcile three-month players and verified goals",
           "status": "doing",
           "owner": null,
-          "note": "Acuity + Stripe review produced 36 unclaimed candidate profile seeds from 80 repeat booking contact emails and 86 recurring booking-name groups; 50 name entries are held for review. This selection was built independently from Media player records. Bookings are not attendance, Stripe payers may book for someone else, and no goals or Media rows were changed.",
+          "note": "Acuity + Stripe review prepared 39 unclaimed candidate profile seeds and leaves 47 recurring-name entries on hold. Three direct/manual booking or payment-route exceptions were added from Johnson’s confirmation. Squarespace membership purchases using coupons still need reconciliation; bookings are not attendance and no goals or Media rows were changed.",
           "last_touched": "2026-11-17",
           "lane": "Identity",
           "depends_on": [
@@ -5330,7 +5330,7 @@
           "name": "Build standalone repeat-player profile seed list",
           "status": "done",
           "owner": "chatgpt",
-          "note": "Prepared a private import-ready sheet with 36 unclaimed candidate profile seeds and 50 held recurring-name entries. Acuity booking frequency and Stripe name/paid-charge evidence are captured without card details or amounts. Media import, attendance verification and goal assignment remain separate follow-up work.",
+          "note": "Prepared a private working sheet with 39 unclaimed profile seeds and 47 held recurring-name entries. Thirty-six seeds have exact Acuity/Stripe payer-name evidence; three use Johnson-confirmed direct/manual booking/payment routes. Squarespace membership records remain to be reconciled. No card details or payment amounts are retained, and Media import, attendance verification and goal assignment remain separate follow-up work.",
           "last_touched": "2026-11-17",
           "completed_on": "2026-11-17",
           "lane": "Identity",
@@ -5342,6 +5342,25 @@
               "provider": "Google",
               "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
               "label": "17 November standalone profile seed review and handover"
+            }
+          ]
+        },
+        {
+          "id": "cards-042",
+          "name": "Reconcile Squarespace membership and coupon bookings",
+          "status": "todo",
+          "owner": null,
+          "note": "Match Squarespace membership purchases/coupon use to the private Acuity review queue before promoting additional names. Orders view was not accessible during the 17 November check; keep unmatched players on hold.",
+          "last_touched": "2026-11-17",
+          "lane": "Identity",
+          "depends_on": [
+            "cards-041"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
+              "label": "17 November membership route update"
             }
           ]
         }
