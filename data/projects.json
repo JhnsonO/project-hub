@@ -4476,8 +4476,8 @@
       "name": "FFA Player Cards & Loyalty",
       "mono": "PC",
       "group": "FFA",
-      "status": "Player profiles first · sample UX tested",
-      "summary": "The private source list contains 45 unclaimed candidate profiles and 33 held names. A standalone, fictional-data profile and self-claim flow demo was built and locally tested at desktop and phone width. No real player accounts or goals were changed; Squarespace/Acuity booking and membership integration is deferred.",
+      "status": "Profiles first · Google login draft in review",
+      "summary": "FFA Media now has an unmerged draft Google player-login implementation: a responsive My FFA sign-in screen, verified-token backend, and separate consumer sessions. 45 unclaimed profile candidates and 33 held names remain untouched. A live account claim, player stats and Squarespace/Acuity login integration are not implemented.",
       "milestones": [
         {
           "name": "Verify attendance data",
@@ -4500,8 +4500,8 @@
           "status": "done"
         }
       ],
-      "next_step": "Keep 45 profile seeds unclaimed and 33 ambiguous names in review; build a private verified profile/identity preview from existing FFA Media Player IDs, then test secure self-claim and staff approval for a small pilot. Review Squarespace membership evidence later as a separate identity-support task; booking improvements are deferred.",
-      "watch": "Demo contains fictional statistics only and is not connected to production. Bookings and payer names do not prove player attendance or account ownership; unclear names and goal assignments require staff review. No native Squarespace-to-Acuity SSO.",
+      "next_step": "Complete CI and security review of draft My FFA login PR #164, configure a Google OAuth client on staging, prove real sign-in and staff-account isolation, then add email-only sign-in and reviewed player-profile claiming before inviting players.",
+      "watch": "Google login is feature-flagged off with no live OAuth client; no signup, migration or deployment occurred. Squarespace commerce logins remain separate. Email matching must never grant ownership of existing player goals or stats.",
       "updated": "17 NOV",
       "target_asked_on": "2026-11-06",
       "questions": [
@@ -5405,6 +5405,79 @@
               "provider": "Google",
               "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
               "label": "17 November profiles-first decision, offline demo and verification handover"
+            }
+          ]
+        },
+        {
+          "id": "cards-045",
+          "name": "Build Google-powered My FFA login foundation",
+          "status": "doing",
+          "owner": "chatgpt",
+          "note": "Draft, unmerged FFA Media PR #164 adds a mobile-responsive My FFA login page, server-verified Google authentication, separate consumer account/session tables and origin/cookie protections. Feature is off without credentials; no live user login, profile claim or goals access. CI and staging security acceptance remain open.",
+          "last_touched": "2026-11-17",
+          "lane": "Build",
+          "depends_on": [
+            "cards-035"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/164",
+              "label": "Draft PR #164 for My FFA consumer login"
+            },
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
+              "label": "17 November My FFA login decision and draft implementation handover"
+            }
+          ]
+        },
+        {
+          "id": "cards-046",
+          "name": "Stage and test verified Google player sign-in",
+          "status": "todo",
+          "owner": null,
+          "note": "Create a Google OAuth web client ID with authorised testing origin, run additive migration on test database, test sign-in, sign-out, expired sessions and staff/consumer isolation. Never infer profile ownership from matching emails.",
+          "last_touched": "2026-11-17",
+          "lane": "Build",
+          "depends_on": [
+            "cards-045"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/164",
+              "label": "Draft PR #164 for My FFA consumer login"
+            },
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
+              "label": "17 November My FFA login decision and draft implementation handover"
+            }
+          ]
+        },
+        {
+          "id": "cards-047",
+          "name": "Provide email sign-in and secure profile claiming",
+          "status": "todo",
+          "owner": null,
+          "note": "Add passwordless email option for players without Google and staff-reviewed claim/linking to existing Player IDs. Test account isolation and consent before showing goals or private session history.",
+          "last_touched": "2026-11-17",
+          "lane": "Build",
+          "depends_on": [
+            "cards-045",
+            "cards-044"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/164",
+              "label": "Draft PR #164 for My FFA consumer login"
+            },
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
+              "label": "17 November My FFA login decision and draft implementation handover"
             }
           ]
         }
