@@ -803,6 +803,16 @@
         "funding"
       ],
       "snapshot_hash": "ade9223c859776135ee8403ef620f15b322e5792ada4f3036e66664523eb05d1"
+    },
+    {
+      "id": "claude-20261117-kris-clip-review-01",
+      "fingerprint": "b5c7744cc342bb5690a7f60581d7de29d159a93f05db3eaceb8c9c751fdf5d23",
+      "date": "2026-11-17",
+      "editor": "claude",
+      "projects": [
+        "media"
+      ],
+      "snapshot_hash": "6170b7dcddbff017d23f14aaa429529d71e64adcfaa9c4db47fd8bc8c4f2c309"
     }
   ]
 }
