@@ -4476,8 +4476,8 @@
       "name": "FFA Player Cards & Loyalty",
       "mono": "PC",
       "group": "FFA",
-      "status": "39 unclaimed profile seeds · 47 held for review",
-      "summary": "Standalone Acuity + Stripe review now has 39 unclaimed profile seeds: 36 exact payer-name matches and three user-confirmed booking/payment-route exceptions. Another 47 recurring-name entries remain held pending stronger identity evidence.",
+      "status": "45 unclaimed profile seeds · 33 held for review",
+      "summary": "Standalone Acuity + Stripe review now has 45 unclaimed profile seeds: Stripe-supported profiles, user-confirmed booking/payment routes and recurring booking-name aliases grouped by Acuity email. Thirty-three name entries remain held where identity evidence is still ambiguous.",
       "milestones": [
         {
           "name": "Verify attendance data",
@@ -4496,8 +4496,8 @@
           "status": "todo"
         }
       ],
-      "next_step": "Reconcile Squarespace membership records against the private review queue, including players whose Acuity session bookings use coupons. Keep every seed unclaimed and assign goals only after the player claims a profile or staff confirms it.",
-      "watch": "Squarespace membership orders were not yet cross-matched because the Orders view was blocked in Chrome. The private sheet holds names and contact details; the public hub contains no player identifiers or payment details. No player, goal or account rows have been written to Media.",
+      "next_step": "Reconcile Squarespace membership records against the private review queue, including players whose Acuity session bookings use coupons. Keep known shared-booker emails separate; keep every seed unclaimed and assign goals only after the player claims a profile or staff confirms it.",
+      "watch": "One known shared booking account is used to book for other players, so those names remain separate in review. Squarespace membership orders were not yet cross-matched because the Orders view was blocked in Chrome. No player identifiers or payment details are in this public record; no player, goal or account rows have been written to Media.",
       "updated": "17 NOV",
       "target_asked_on": "2026-11-06",
       "questions": [
@@ -5306,7 +5306,7 @@
           "name": "Reconcile three-month players and verified goals",
           "status": "doing",
           "owner": null,
-          "note": "Acuity + Stripe review prepared 39 unclaimed candidate profile seeds and leaves 47 recurring-name entries on hold. Three direct/manual booking or payment-route exceptions were added from Johnson’s confirmation. Squarespace membership purchases using coupons still need reconciliation; bookings are not attendance and no goals or Media rows were changed.",
+          "note": "Acuity + Stripe review now has 45 unclaimed candidate profile seeds and 33 held recurring-name entries. The email-alias pass consolidated seven pairs of recurring names under one Acuity contact and merged one duplicate pair from the original Stripe-supported seeds. The known shared-booker account stays separate. Squarespace membership/coupon purchases still need reconciliation; bookings are not attendance and no goals or Media rows were changed.",
           "last_touched": "2026-11-17",
           "lane": "Identity",
           "depends_on": [
@@ -5330,7 +5330,7 @@
           "name": "Build standalone repeat-player profile seed list",
           "status": "done",
           "owner": "chatgpt",
-          "note": "Prepared a private working sheet with 39 unclaimed profile seeds and 47 held recurring-name entries. Thirty-six seeds have exact Acuity/Stripe payer-name evidence; three use Johnson-confirmed direct/manual booking/payment routes. Squarespace membership records remain to be reconciled. No card details or payment amounts are retained, and Media import, attendance verification and goal assignment remain separate follow-up work.",
+          "note": "Prepared a private working sheet with 45 unclaimed profile seeds and 33 held recurring-name entries. Seed evidence combines exact Stripe name matches, user-confirmed booking/payment routes and seven recurring-name email groups. The known shared-booker email remains unmerged. Squarespace membership records remain to be reconciled. No card details or amounts are retained; attendance, claims, Media import and goal assignment remain separate.",
           "last_touched": "2026-11-17",
           "completed_on": "2026-11-17",
           "lane": "Identity",
