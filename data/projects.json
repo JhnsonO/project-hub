@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "updated": "2026-11-17",
-  "updated_by": "claude",
+  "updated_by": "chatgpt",
   "groups": [
     "FFA",
     "OEV",
@@ -4517,8 +4517,8 @@
       "name": "FFA Player Cards & Loyalty",
       "mono": "PC",
       "group": "FFA",
-      "status": "Profiles first · Google login draft in review",
-      "summary": "FFA Media now has an unmerged draft Google player-login implementation: a responsive My FFA sign-in screen, verified-token backend, and separate consumer sessions. 45 unclaimed profile candidates and 33 held names remain untouched. A live account claim, player stats and Squarespace/Acuity login integration are not implemented.",
+      "status": "Profiles first · public stats · controlled actions in design",
+      "summary": "Player profiles and public stats stay viewable without login. Accounts are required only for controlled attribution requests: Claim a Goal and Suggest a Scorer, both pending staff approval. The Google login foundation remains a green-CI draft that is unmerged, disabled and paused while the lowest-maintenance account flow is chosen.",
       "milestones": [
         {
           "name": "Verify attendance data",
@@ -4541,8 +4541,8 @@
           "status": "done"
         }
       ],
-      "next_step": "Complete CI and security review of draft My FFA login PR #164, configure a Google OAuth client on staging, prove real sign-in and staff-account isolation, then add email-only sign-in and reviewed player-profile claiming before inviting players.",
-      "watch": "Google login is feature-flagged off with no live OAuth client; no signup, migration or deployment occurred. Squarespace commerce logins remain separate. Email matching must never grant ownership of existing player goals or stats.",
+      "next_step": "Write the controlled-action interaction spec, compare low-maintenance account options across Squarespace, Acuity and FFA Media, then return for approval before any further login code, migration, merge or deployment.",
+      "watch": "Draft PR #164 is green but paused, unmerged and not deployed. No platform has been chosen for unified bookings, memberships and stats; no email, booking or payment match may grant profile ownership.",
       "updated": "17 NOV",
       "target_asked_on": "2026-11-06",
       "questions": [
@@ -5452,9 +5452,9 @@
         {
           "id": "cards-045",
           "name": "Build Google-powered My FFA login foundation",
-          "status": "doing",
+          "status": "todo",
           "owner": "chatgpt",
-          "note": "Draft, unmerged FFA Media PR #164 adds a mobile-responsive My FFA login page, server-verified Google authentication, separate consumer account/session tables and origin/cookie protections. Feature is off without credentials; no live user login, profile claim or goals access. CI and staging security acceptance remain open.",
+          "note": "Draft, unmerged FFA Media PR #164 contains a responsive My FFA login foundation with final-head green CI. It remains disabled and not deployed. Further implementation, merge and activation are paused until Johnson approves the account flow; no live user login or profile claim exists.",
           "last_touched": "2026-11-17",
           "lane": "Build",
           "depends_on": [
@@ -5519,6 +5519,44 @@
               "provider": "Google",
               "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
               "label": "17 November My FFA login decision and draft implementation handover"
+            }
+          ]
+        },
+        {
+          "id": "cards-048",
+          "name": "Specify Claim a Goal and Suggest a Scorer review flow",
+          "status": "todo",
+          "owner": null,
+          "note": "Keep player profiles and public stats viewable without login. Require login for either attribution request, save each as pending, and let staff approve or reject it before any public statistic changes. Preserve an audit trail and never infer ownership from contact or payment matches.",
+          "last_touched": "2026-11-17",
+          "lane": "Product",
+          "depends_on": [
+            "cards-044"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
+              "label": "17 November player access and controlled stat updates"
+            }
+          ]
+        },
+        {
+          "id": "cards-049",
+          "name": "Choose the lowest-maintenance player account setup",
+          "status": "todo",
+          "owner": null,
+          "note": "Compare the existing Squarespace, Acuity and FFA Media setup for bookings, memberships and player stats. No platform or migration is approved; bring back a recommendation before code or production changes.",
+          "last_touched": "2026-11-17",
+          "lane": "Product",
+          "depends_on": [
+            "cards-048"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
+              "label": "17 November player access and controlled stat updates"
             }
           ]
         }

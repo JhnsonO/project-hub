@@ -923,6 +923,16 @@
         "media"
       ],
       "snapshot_hash": "3ba896f381484e292154ebb229dacc3410ecb6f5afcb0b25cf0becac986bfbdf"
+    },
+    {
+      "id": "chatgpt-20261117-player-access-scope-01",
+      "fingerprint": "f5482acb1588be1211b710fce4517019017fa3c3c1f924c365a8ce4e27817f9d",
+      "date": "2026-11-17",
+      "editor": "chatgpt",
+      "projects": [
+        "cards"
+      ],
+      "snapshot_hash": "c40a33b325112faca2117de38bed85573ea9427996b14b32f45afc8b820155de"
     }
   ]
 }
