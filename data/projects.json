@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "updated": "2026-11-17",
-  "updated_by": "claude",
+  "updated_by": "chatgpt",
   "groups": [
     "FFA",
     "OEV",
@@ -4476,8 +4476,8 @@
       "name": "FFA Player Cards & Loyalty",
       "mono": "PC",
       "group": "FFA",
-      "status": "Profile pilot reconciled · safe seed path pending",
-      "summary": "The 16 Aug–16 Nov Acuity export is now reviewed against Stripe and the FFA Media Player/PlayerAlias records. Booking aliases and payer relationships leave many identities unresolved, so only exact, unique candidates move forward. Players must claim their own profiles.",
+      "status": "Acuity–Stripe candidates identified · self-claim path pending",
+      "summary": "The 16 Aug–16 Nov Acuity export and Stripe paid/captured card details identify 16 recurring contact groups where one booking name predominates and matches the Stripe customer/card name. These are candidate seeds, not 16 verified unique players. Three have no exact or strong fuzzy match in FFA Media beta; thirteen need an existing Player ID check.",
       "milestones": [
         {
           "name": "Verify attendance data",
@@ -4496,9 +4496,9 @@
           "status": "todo"
         }
       ],
-      "next_step": "Add a private unclaimed-profile seed and self-claim path that stores source aliases without assigning payer ownership; import only exact, unique candidates and attach existing goals by unique Player ID or staff confirmation. Keep attendance eligibility separate.",
-      "watch": "Bookings do not prove attendance, and the account holder who pays or books does not own another player's profile. Ambiguous and fuzzy identities stay out. The cross-check was read-only against FFA Media beta; no player, goal or account records changed.",
-      "updated": "16 NOV",
+      "next_step": "Build a self-claim-aware seed path and check existing Player IDs. Start with the three likely unlinked candidates; hold the other 13 for alias/duplicate review. Attach goals only after a unique Player ID or player claim is confirmed, and keep attendance separate.",
+      "watch": "Stripe confirms payer/cardholder details but cannot prove who attended or whether one contact books for others. The FFA Media beta Admin view does not expose a player-directory create/claim path. No player or goal rows changed.",
+      "updated": "17 NOV",
       "target_asked_on": "2026-11-06",
       "questions": [
         {
@@ -5242,8 +5242,8 @@
           "name": "Prototype secure FFA player identity and minimal profile",
           "status": "todo",
           "owner": null,
-          "note": "Select authentication for private per-player records; reuse the stable FFA Media Player ID and link history only through unique aliases or staff confirmation. Seeded records remain unclaimed until the player claims them; a booking or payer account never owns another player's profile by default. Keep source aliases and review status private.",
-          "last_touched": "2026-11-16",
+          "note": "A private roster now has 16 recurring contact groups that pass Acuity/Stripe name and repeat-charge filters; three are unlinked candidates. Reuse stable FFA Media Player IDs, keep seeds unclaimed, and never assign payer ownership. Thirteen candidates need an existing ID/alias check. The create/claim path is not available yet.",
+          "last_touched": "2026-11-17",
           "lane": "Build",
           "depends_on": [
             "cards-036"
@@ -5306,8 +5306,8 @@
           "name": "Reconcile three-month players and verified goals",
           "status": "doing",
           "owner": null,
-          "note": "Acuity appointments are now reviewed against paid/captured Stripe contact evidence and FFA Media beta PlayerAlias/goal records. Exact matches and existing goal counts are recorded privately. Booking data is not attendance; payer contact does not establish player ownership. No profile rows were added. The next safe step is a self-claim-aware seed path and production verification before any live writes.",
-          "last_touched": "2026-11-16",
+          "note": "Acuity + Stripe identified 16 recurring contact groups with a dominant booking name matching a payer/cardholder name and repeat paid/captured charges. These are not confirmed unique players or attendance. Three have no exact/strong alias match in beta; thirteen need existing Player ID review. No player or goal rows changed.",
+          "last_touched": "2026-11-17",
           "lane": "Identity",
           "depends_on": [
             "cards-039"
