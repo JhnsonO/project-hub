@@ -1371,6 +1371,2917 @@
             {
               "provider": "GitHub",
               "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/ai-project-state.md",
+              "label": "Dated implementation and test log"
+            }
+          ]
+        },
+        {
+          "id": "media-029",
+          "name": "Publish Monday Night League goal clips to the website feed",
+          "status": "done",
+          "owner": null,
+          "note": "Public feed and auto-rendered goal clips are live on the MNL page, table first with clips behind a Goals tab. Week 1 backfill was still rendering at last check (10 of 16 clips; week 2 14 of 15).",
+          "last_touched": "2026-11-02",
+          "lane": "Website",
+          "start": "2026-11-02",
+          "end": "2026-11-02",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/63",
+              "label": "Website feed"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/64",
+              "label": "Immediate goal-clip rendering"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/current-state.md",
+              "label": "Current state, 2 Nov"
+            }
+          ],
+          "completed_on": "2026-11-02",
+          "date_basis": "observed",
+          "date_note": "Merged PRs #63 and #64 on 2 November 2026; live page checked the same day."
+        },
+        {
+          "id": "media-030",
+          "name": "Add off-camera goals and Match Log sheet rows",
+          "status": "done",
+          "owner": null,
+          "note": "App has an Off camera goal button; the website shows Not on camera. A sheet-rows endpoint exists. Unit-tested only; the writer into the Google sheet is not built.",
+          "last_touched": "2026-11-02",
+          "lane": "Website",
+          "start": "2026-11-02",
+          "end": "2026-11-02",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/65",
+              "label": "Sheet rows endpoint"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/66",
+              "label": "Off-camera goals"
+            }
+          ],
+          "completed_on": "2026-11-02",
+          "date_basis": "observed",
+          "date_note": "Merged PRs #65 and #66 on 2 November 2026."
+        },
+        {
+          "id": "media-031",
+          "name": "Offer main cam and POV cam angles on the website",
+          "status": "done",
+          "owner": null,
+          "note": "Clips with more than one ready camera show a Main cam / POV cam switcher. Two clips show both angles so far; POV cuts for the other goal clips were queued and are still rendering.",
+          "last_touched": "2026-11-02",
+          "lane": "Website",
+          "start": "2026-11-02",
+          "end": "2026-11-02",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/67",
+              "label": "Alternate angles"
+            }
+          ],
+          "completed_on": "2026-11-02",
+          "date_basis": "observed",
+          "date_note": "Merged PR #67 on 2 November 2026; switcher checked on the live page with a real two-angle clip."
+        },
+        {
+          "id": "media-032",
+          "name": "Add a Goals tab to the Monday Night League page",
+          "status": "done",
+          "owner": null,
+          "note": "Goals chip in the sub-nav and Watch the goals hero button open the clips on desktop; a real sixth tab on mobile. Phone width was simulated, not tested on a device.",
+          "last_touched": "2026-11-02",
+          "lane": "Website",
+          "start": "2026-11-02",
+          "end": "2026-11-02",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/current-state.md",
+              "label": "Current state, 2 Nov"
+            }
+          ],
+          "completed_on": "2026-11-02",
+          "date_basis": "observed",
+          "date_note": "Added to the Squarespace page on 2 November 2026 and checked live."
+        },
+        {
+          "id": "media-033",
+          "name": "Write new Monday Night League weeks into the Match Log sheet",
+          "status": "done",
+          "owner": null,
+          "note": "Live 4 Nov. Finishing a session in the app sends it to the Match Log sheet; the website table updates. Existing scored rows (19 and 26 Oct) and the notes column are never changed, and repeat sends add nothing. Week 3 (4-5) was sent and shows on the website. Limit: the sheet script only accepts two equal teams of 18 in total, so uneven sessions are refused.",
+          "last_touched": "2026-11-04",
+          "lane": "Website",
+          "start": null,
+          "end": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/84",
+              "label": "Sheet writer #84"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/86",
+              "label": "Current state, 4 Nov"
+            }
+          ],
+          "completed_on": "2026-11-04"
+        },
+        {
+          "id": "media-034",
+          "name": "Confirm week 1 clips and POV cuts finish rendering",
+          "status": "todo",
+          "owner": null,
+          "note": "Week 3 shows 9 of 9 clips. Week 2 is 14 of 15: the Zac goal was missed because the main camera started late; the fix (#85) is live and its clip is re-queued, not yet confirmed. Week 1 still to confirm.",
+          "last_touched": "2026-11-04",
+          "lane": "Website",
+          "start": null,
+          "end": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/current-state.md",
+              "label": "Current state, 2 Nov"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/85",
+              "label": "Goal clip fix #85"
+            }
+          ]
+        },
+        {
+          "id": "media-035",
+          "name": "Fix GoPro +1 hour timestamp error",
+          "status": "done",
+          "owner": null,
+          "note": "GoPro local time was read as UTC, so BST footage showed an hour ahead in YouTube and the app. Fixed for new footage; older records left as they are. Next: check the next real GoPro upload.",
+          "last_touched": "2026-11-02",
+          "lane": "Existing app",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-11-02",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/76",
+              "label": "App fix #76"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-automations/pull/71",
+              "label": "Uploader fix #71"
+            }
+          ]
+        },
+        {
+          "id": "media-036",
+          "name": "Play saved game copies when YouTube is down",
+          "status": "doing",
+          "owner": null,
+          "note": "Built and tested locally; PR open with CI green but not merged. Not yet tried in a real browser or on a phone. Needs Johnson's go to merge.",
+          "last_touched": "2026-11-01",
+          "lane": "Existing app",
+          "start": null,
+          "end": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/62",
+              "label": "Playback PR #62"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/current-state.md",
+              "label": "Current state, 1 Nov"
+            }
+          ]
+        },
+        {
+          "id": "media-037",
+          "name": "Add bib colours, own goals and Swap player to Watch",
+          "status": "done",
+          "owner": null,
+          "note": "Per-session bib colours, own goals (credited to the team, not tallied against the scorer), a Swap player dialog for mid-game changes and no clock times in goal titles. Live 3 Nov. Swaps are kept on the device only. Not yet tried on a real session, phone or iPad.",
+          "last_touched": "2026-11-03",
+          "lane": "Existing app",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-11-03",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/81",
+              "label": "Watch redesign #81"
+            }
+          ]
+        },
+        {
+          "id": "media-038",
+          "name": "Try bib colours, own goals and Swap player on a real Monday session",
+          "status": "todo",
+          "owner": null,
+          "note": "Check on a real phone and iPad, including the new Watch layout, then confirm the website Monday Night League scores still read correctly.",
+          "last_touched": "2026-11-03",
+          "lane": "Existing app",
+          "start": null,
+          "end": null,
+          "depends_on": [
+            "media-037",
+            "media-039"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/current-state.md",
+              "label": "Current state, 3 Nov"
+            }
+          ]
+        },
+        {
+          "id": "media-039",
+          "name": "Match the Watch page to the design on phone, iPad and desktop",
+          "status": "done",
+          "owner": null,
+          "note": "Live 3 Nov. Score, Who scored and Clips are separate cards with the scrubber under the video; phone is leaner (one-line sync chip, one Start/End clip button, Clips collapsed). Drag-to-sort was dropped; tap A or B. Checked in a 390px test render, not on a real phone.",
+          "last_touched": "2026-11-03",
+          "lane": "Existing app",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-11-03",
+          "depends_on": [
+            "media-037"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/current-state.md",
+              "label": "Current state, 3 Nov"
+            }
+          ]
+        },
+        {
+          "id": "media-040",
+          "name": "Check the Goals tab and clips on a real phone",
+          "status": "todo",
+          "owner": null,
+          "note": "Johnson to open the website Monday Night League page on a phone and play a goal clip from the Goals tab, switching between Main cam and POV cam.",
+          "last_touched": "2026-11-04",
+          "lane": "Existing app",
+          "start": null,
+          "end": null,
+          "depends_on": [
+            "media-034"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/current-state.md",
+              "label": "Current state, 4 Nov"
+            }
+          ]
+        },
+        {
+          "id": "media-041",
+          "name": "Add share, download, likes and a goal strip to the Monday Night League clip player",
+          "status": "done",
+          "owner": null,
+          "note": "Live 4 Nov. Share sheet (WhatsApp, Instagram, TikTok, X, Messages, Facebook, Email), Download sheet, FFA logo on the video, scorer and assist chips, goal strip, likes. HD 1080p and 9:16 copies with the logo were made and played back on one real clip; originals stay clean. Not tried on a real phone, and native file share to Instagram/TikTok is untested.",
+          "last_touched": "2026-11-04",
+          "lane": "Existing app",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-11-04",
+          "depends_on": [
+            "media-034"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/90",
+              "label": "Share copies and likes, PR 90"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/current-state.md",
+              "label": "Current state, 4 Nov"
+            }
+          ]
+        },
+        {
+          "id": "media-042",
+          "name": "Try Share and Download on a real phone",
+          "status": "todo",
+          "owner": null,
+          "note": "Johnson to open a goal clip on a phone: tap Share (check the Instagram/TikTok file share), Download (HD) and Like.",
+          "last_touched": "2026-11-04",
+          "lane": "Existing app",
+          "start": null,
+          "end": null,
+          "depends_on": [
+            "media-041"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/current-state.md",
+              "label": "Current state, 4 Nov"
+            }
+          ]
+        },
+        {
+          "id": "media-043",
+          "name": "Write goal timestamps into YouTube descriptions",
+          "status": "done",
+          "owner": null,
+          "note": "Live 6 Nov: merged and deployed. Goals changes now update each camera's YouTube description by themselves about 90 seconds later. Connected to the FFA channel; a dry run on a real session (2 Nov, 2 cameras, 9 goals) produced the right lists. Automatic writes are on.",
+          "last_touched": "2026-11-06",
+          "lane": "Existing app",
+          "start": null,
+          "end": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/94",
+              "label": "YouTube goal timestamps, PR 94"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/issues/95",
+              "label": "Tracking issue 95"
+            }
+          ]
+        },
+        {
+          "id": "media-044",
+          "name": "Connect FFA Media to YouTube and test one real session",
+          "status": "done",
+          "owner": null,
+          "note": "Done 6 Nov: Google sign-in set up, keys added to web and worker, Connect YouTube completed as the FFA channel, dry run checked on one real session.",
+          "last_touched": "2026-11-06",
+          "lane": "Existing app",
+          "start": null,
+          "end": null,
+          "depends_on": [
+            "media-043"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/94",
+              "label": "YouTube goal timestamps, PR 94"
+            }
+          ]
+        },
+        {
+          "id": "media-045",
+          "name": "Check the first automatic update on YouTube",
+          "status": "todo",
+          "owner": null,
+          "note": "Johnson: after the next goal or clip change, open that session's two videos on YouTube and check the Goals list in each description. Pause any time with Disconnect in Admin > System.",
+          "last_touched": "2026-11-06",
+          "lane": "Existing app",
+          "start": null,
+          "end": null,
+          "depends_on": [
+            "media-044"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/94",
+              "label": "YouTube goal timestamps, PR 94"
+            }
+          ]
+        },
+        {
+          "id": "media-046",
+          "name": "Add approve, bin and five-star controls to clip review",
+          "status": "done",
+          "owner": null,
+          "note": "Built and live 17 Nov as part of media-075 (PRs 156 to 160): approve (Keep), bin and tappable star ratings on clip cards, Watch rows and the Review queue. Issue #98 stays open until Kris confirms on a real device. Earlier note: 6 Nov mockup decision, stars only, numeric rating input dropped.",
+          "last_touched": "2026-11-17",
+          "lane": "Review",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/issues/98",
+              "label": "Clip review controls issue"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/156",
+              "label": "Clip review PR (merged)"
+            }
+          ]
+        },
+        {
+          "id": "media-047",
+          "name": "Agree the game results page design",
+          "status": "done",
+          "owner": null,
+          "note": "Done 7 Nov: mockup agreed for all sessions (list, calendar, player filter, edge cases). Mockup only; nothing built or deployed.",
+          "last_touched": "2026-11-07",
+          "lane": "Results page",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/99",
+              "label": "Results page design and code check, PR 99"
+            }
+          ]
+        },
+        {
+          "id": "media-048",
+          "name": "Build the results page as a Squarespace embed",
+          "status": "done",
+          "owner": null,
+          "note": "Done 8 Nov: public month feed built and merged; page assembled on a new Squarespace page, Game results, with a native title section and one Code Block for the filters, list and calendar. The page is disabled and not published and the feed is still switched off. The embed was checked against the design boards on desktop and phone (design has no tablet board); the real Squarespace rendering is not yet verified.",
+          "last_touched": "2026-11-08",
+          "lane": "Results page",
+          "depends_on": [
+            "media-047"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/102",
+              "label": "Results feed and embed, PR 102"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/103",
+              "label": "Embed matched to the mock, PR 103"
+            }
+          ]
+        },
+        {
+          "id": "media-049",
+          "name": "Switch on the results feed, check the page and publish it",
+          "status": "done",
+          "owner": null,
+          "note": "Done 8 Nov: feed switched on by Johnson, page checked logged out at desktop, tablet and phone against the mock, and published at /game-results. Not added to the site navigation, by choice.",
+          "last_touched": "2026-11-08",
+          "lane": "Results page",
+          "depends_on": [
+            "media-048"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/103",
+              "label": "Embed matched to the mock, PR 103"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/104",
+              "label": "Heading, tablet and phone fixes, PR 104"
+            }
+          ]
+        },
+        {
+          "id": "media-050",
+          "name": "Play, share and download goal clips on the results page",
+          "status": "done",
+          "owner": null,
+          "note": "Done 8 Nov: league goals from the last 14 days carry the public clip in the results feed; the embed opens a player like the Monday League one (cameras, share sheet, HD and vertical copies, link, like). Tested in a browser with sample data, then on the live page with real clips. File sharing straight to Instagram or TikTok and a real phone are untested.",
+          "last_touched": "2026-11-08",
+          "lane": "Results page",
+          "depends_on": [
+            "media-049"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/105",
+              "label": "Goal clips on the results page, PR 105"
+            }
+          ]
+        },
+        {
+          "id": "media-051",
+          "name": "Allow the website to fetch clip files from the R2 bucket",
+          "status": "done",
+          "owner": null,
+          "note": "Done 8 Nov: https://www.officialffa.co.uk and https://officialffa.co.uk added to the ffa-media bucket CORS rule in Cloudflare. A preflight from each site origin returned 204 with the matching allow-origin header; an unknown origin still gets 403. Pressing Download or Share on the live page, and a real-phone check, are not yet done.",
+          "last_touched": "2026-11-08",
+          "lane": "Results page",
+          "depends_on": [
+            "media-050"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/105",
+              "label": "Goal clips on the results page, PR 105"
+            }
+          ],
+          "completed_on": "2026-11-08"
+        },
+        {
+          "id": "media-052",
+          "name": "Let normal sessions record teams, bibs and goals",
+          "status": "done",
+          "owner": null,
+          "note": "Done 11 Nov: any session can now have optional teams, bibs and goals through an is_league flag on the existing record. Normal sessions never reach the Monday League feed, the Match Log sheet or the league table. 755 tests passed before merge. The live results page showing normal-session goals is not yet checked.",
+          "last_touched": "2026-11-11",
+          "lane": "Results page",
+          "depends_on": [
+            "media-048"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/100",
+              "label": "Decision: teams optional for normal sessions, PR 100"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/107",
+              "label": "Normal sessions record teams, bibs and goals, PR 107"
+            }
+          ],
+          "completed_on": "2026-11-11"
+        },
+        {
+          "id": "media-053",
+          "name": "Send goals and assists to the Match Log sheet automatically",
+          "status": "done",
+          "owner": null,
+          "note": "Done 11 Nov: goal, assist, bin and restore changes on a league game queue a debounced sync (about 45 s). The app only overwrites sheet rows it wrote itself, so hand-edited rows are left alone. Two review findings fixed before merge. 9 Nov row and a real goal change on the live sheet are not yet confirmed.",
+          "last_touched": "2026-11-11",
+          "lane": "Results page",
+          "depends_on": [
+            "media-052"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/108",
+              "label": "Match Log sheet auto-sync and Delete goal, PR 108"
+            }
+          ],
+          "completed_on": "2026-11-11"
+        },
+        {
+          "id": "media-054",
+          "name": "Delete a goal from the app",
+          "status": "done",
+          "owner": null,
+          "note": "Done 11 Nov: a Delete goal button on the goal editor removes it from the score, the results page and the league table. A clip made for it stays in the clip list. Not yet tried on a phone.",
+          "last_touched": "2026-11-11",
+          "lane": "Results page",
+          "depends_on": [
+            "media-053"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/108",
+              "label": "Match Log sheet auto-sync and Delete goal, PR 108"
+            }
+          ],
+          "completed_on": "2026-11-11"
+        },
+        {
+          "id": "media-055",
+          "name": "Multi-team days: games, day table and swaps",
+          "status": "done",
+          "owner": null,
+          "note": "Built and live 12 Nov (PR 109 merged, migration ran on production). Sessions can have 2 to 5 teams; games are logged afterwards from footage with start and end marked by hand; any two teams in any order. One day table per session ranked by points, then goal difference, then goals scored, with games played (win 3, draw 1, loss 0). Monday League is unchanged. Checks: 772 tests, website table rendered in a headless browser. Not yet verified: the new Watch screen on a phone, and the website embed must be re-pasted in Squarespace before day tables show. Player swap from the next game is available in the app.",
+          "last_touched": "2026-11-12",
+          "lane": "Results page",
+          "depends_on": [
+            "media-052"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/109",
+              "label": "Multi-team days PR"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/current-state.md",
+              "label": "FFA Media current handover"
+            }
+          ],
+          "completed_on": "2026-11-12"
+        },
+        {
+          "id": "media-056",
+          "name": "Goal claims with upvotes",
+          "status": "done",
+          "owner": null,
+          "note": "Built and live 12 Nov (PR 110 merged). Players of a session claim a goal on the results page (who scored, assist or nobody, own goal); anyone can back a claim once per browser and the count shows publicly. Staff approve or reject in the app Review screen (Goal claims tab). Nothing changes a goal until staff approve; a rejected claim changes nothing. Checks: 780 tests, claim box checked in a headless browser. Not yet verified: the Review tab on a phone, and the website embed must be re-pasted in Squarespace before claims show.",
+          "last_touched": "2026-11-12",
+          "lane": "Results page",
+          "depends_on": [
+            "media-055"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/110",
+              "label": "Goal claims PR"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/current-state.md",
+              "label": "FFA Media current handover"
+            }
+          ],
+          "completed_on": "2026-11-12"
+        },
+        {
+          "id": "media-057",
+          "name": "Convert chosen Saturdays to Saturday League days",
+          "status": "todo",
+          "owner": null,
+          "note": "Planned. The multi-team day format must allow a Saturday to be switched to league mode later. Dates and rules for the Saturday League are not yet confirmed.",
+          "last_touched": "2026-11-12",
+          "lane": "Results page",
+          "depends_on": [
+            "media-055"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/current-state.md",
+              "label": "FFA Media current handover"
+            }
+          ]
+        },
+        {
+          "id": "media-058",
+          "name": "Separate goal-review flag so binning a clip never removes a goal",
+          "status": "todo",
+          "owner": null,
+          "note": "Planned next. Today a goal's clip being binned removes the goal; staff who bin clips need a separate social-review flag.",
+          "last_touched": "2026-11-12",
+          "lane": "Results page",
+          "depends_on": [
+            "media-052"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/current-state.md",
+              "label": "FFA Media current handover"
+            }
+          ]
+        },
+        {
+          "id": "media-059",
+          "name": "Player records: Player and alias tables (step 1 of 3)",
+          "status": "done",
+          "owner": null,
+          "note": "Merged and deployed 12 Nov (PR 119). The migration ran on the production database during the deploy. Adds a permanent player id, private full name and email, a public display name (like Sam T) and spelling aliases; existing team and goal names were backfilled into players, with likely duplicates flagged for staff. Checks: 832 tests, CI green, Codex review found nothing. The staff screen for the flagged players comes in step 3.",
+          "last_touched": "2026-11-12",
+          "lane": "Players",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/119",
+              "label": "Player records PR (merged)"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/current-state.md",
+              "label": "FFA Media current handover"
+            }
+          ],
+          "completed_on": "2026-11-12"
+        },
+        {
+          "id": "media-060",
+          "name": "Point teams, goals and claims at player ids (step 2 of 3)",
+          "status": "done",
+          "owner": null,
+          "note": "Merged and deployed 12 Nov (PR 120). The migration ran on the production database during the deploy. Teams, goals and goal claims carry a player id beside the name text; the public results feed shows display names only, never email or full name.",
+          "last_touched": "2026-11-12",
+          "lane": "Players",
+          "depends_on": [
+            "media-059"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/120",
+              "label": "Player ids PR (merged)"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/current-state.md",
+              "label": "FFA Media current handover"
+            }
+          ]
+        },
+        {
+          "id": "media-061",
+          "name": "Player matching and staff merge/split (step 3 of 3)",
+          "status": "done",
+          "owner": null,
+          "note": "Merged 12 Nov (PRs 121, 122, 123; SQLite tests and phone-width browser checks, production not checked). Matching goes email, then exact name or alias, then a fuzzy suggestion that is never auto-linked. Staff Players screen has one-tap merge, flagged players and split. Goals use the session team list, and Edit teams asks once which person when a first name is shared.",
+          "last_touched": "2026-11-12",
+          "lane": "Players",
+          "depends_on": [
+            "media-060"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/121",
+              "label": "Player matching PR (merged)"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/current-state.md",
+              "label": "FFA Media current handover"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/122",
+              "label": "Players screen PR (merged)"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/123",
+              "label": "Shared first names PR (merged)"
+            }
+          ]
+        },
+        {
+          "id": "media-062",
+          "name": "Fix Watch screen load error and team, bib and goal buttons",
+          "status": "done",
+          "owner": null,
+          "note": "Fixed and live 12 Nov (PRs 111, 112). The Watch screen showed a load error from a typo, and Who is playing, bibs and goals did nothing on normal sessions. A test now syntax-checks every app screen file. Checked in a real browser at phone width; not yet confirmed on Johnson's own phone.",
+          "last_touched": "2026-11-12",
+          "lane": "Results page",
+          "depends_on": [
+            "media-055"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/111",
+              "label": "Watch load error fix (merged)"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/112",
+              "label": "Teams, bibs and goals fix (merged)"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/current-state.md",
+              "label": "FFA Media current handover"
+            }
+          ],
+          "completed_on": "2026-11-12"
+        },
+        {
+          "id": "media-063",
+          "name": "Read Acuity sign-ups for a session date",
+          "status": "done",
+          "owner": null,
+          "note": "Live 12 Nov (PRs 114 to 117). Acuity's API needs a higher plan, so the app reads the Acuity calendar sync link (kept private on the server). A staff-only lookup returns who is booked on a session date as short names like Sam T; checked live for Mon 9 Nov (35 bookings, 28 people). Nothing is saved yet and there is no button in the app yet.",
+          "last_touched": "2026-11-12",
+          "lane": "Players",
+          "depends_on": [
+            "media-059"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/115",
+              "label": "Calendar link reader (merged)"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/117",
+              "label": "Calendar link first (merged)"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/current-state.md",
+              "label": "FFA Media current handover"
+            }
+          ],
+          "completed_on": "2026-11-12"
+        },
+        {
+          "id": "media-064",
+          "name": "Who signed up button and per-weekday player list",
+          "status": "doing",
+          "owner": null,
+          "note": "Merged to ffa-media main on 16 Nov (PR #145, CI green on SQLite; deployment not checked): splits a day with two Acuity sessions by booking time, links bookings to players by email or exact name (similar names wait for a staff choice), adds a Who signed up button and a weekday-first player list with search to Who is playing today. Not yet checked live, tried in a browser, on a real phone or against the real calendar link. Two people with one first name cannot both be placed in one session yet.",
+          "last_touched": "2026-11-16",
+          "lane": "Players",
+          "depends_on": [
+            "media-063",
+            "media-061"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/current-state.md",
+              "label": "FFA Media current handover"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/145",
+              "label": "ffa-media PR #145 (merged)"
+            }
+          ]
+        },
+        {
+          "id": "media-065",
+          "name": "Log a goal for a team without knowing the player",
+          "status": "done",
+          "owner": null,
+          "note": "Merged 12 Nov (PR 125). On a multi-team day, pick the team then tap Save without names; the goal saves with scorer unknown and can be named later. Phone-width browser check only.",
+          "last_touched": "2026-11-12",
+          "lane": "Players",
+          "depends_on": [
+            "media-061"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/125",
+              "label": "Team-only goal PR (merged)"
+            }
+          ]
+        },
+        {
+          "id": "media-066",
+          "name": "Harden goal claims: right team, 7-day window, goal lock, harder-to-game backs",
+          "status": "done",
+          "owner": null,
+          "note": "Merged and live 12 Nov (PR 127; live feed checked, migration ran on production). Claims no longer ask who you are. The scorer must be on the goal's team (own goal: the other team). Claims close after 7 days or when staff lock the goal, and approving one locks the goal. Rival claims show as superseded, not rejected. Backers are rate-limited per network, kept generous because a pitch's wifi puts many players on one address. Staff still decide everything. No real claim has been made end to end yet.",
+          "last_touched": "2026-11-12",
+          "lane": "Results page",
+          "depends_on": [
+            "media-056"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/127",
+              "label": "Claims hardening PR (merged)"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/current-state.md",
+              "label": "FFA Media current handover"
+            }
+          ]
+        },
+        {
+          "id": "media-067",
+          "name": "Claim review screen with clip, confirm and stale-goal check",
+          "status": "done",
+          "owner": null,
+          "note": "Merged and live 12 Nov (PR 128; live site serves the new screen). In Review, each claim shows now vs claim, a Watch the goal button (or a no-footage note) and Yes/No. Yes asks first, and is refused if the goal was edited after the card loaded. Checked in a real browser at phone and desktop width; not yet on Johnson's own phone, and no real claim made end to end.",
+          "last_touched": "2026-11-12",
+          "lane": "Results page",
+          "depends_on": [
+            "media-066"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/128",
+              "label": "Claim review screen PR (merged)"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/current-state.md",
+              "label": "FFA Media current handover"
+            }
+          ]
+        },
+        {
+          "id": "media-068",
+          "name": "Website claims: tap sheet, hide closed goals, no name step",
+          "status": "done",
+          "owner": null,
+          "note": "Merged and live 13 Nov (PR 126 and the embed re-pasted in Squarespace; live page checked for the new code, no real claim made yet). Tap who scored, tap the assist, send. No name step. The button is hidden once a goal is closed. Others can back a claim with That's right. Staff still decide.",
+          "last_touched": "2026-11-12",
+          "lane": "Results page",
+          "depends_on": [
+            "media-067"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/126",
+              "label": "Claim sheet PR (merged)"
+            }
+          ]
+        },
+        {
+          "id": "media-069",
+          "name": "Staff badge when claims are waiting",
+          "status": "todo",
+          "owner": null,
+          "note": "Next for claims. A count badge on Review so staff see waiting claims. Then try one real claim end to end.",
+          "last_touched": "2026-11-12",
+          "lane": "Results page",
+          "depends_on": [
+            "media-067"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/current-state.md",
+              "label": "FFA Media current handover"
+            }
+          ]
+        },
+        {
+          "id": "media-070",
+          "name": "Website day card: headline, key, tap-open games",
+          "status": "done",
+          "owner": null,
+          "note": "Merged and live 13 Nov (PR 129). A multi-team day shows who leads, a short key for P W D L GD Pts, and each game opens to show its goals. Round and pitch grouping and Up next need a data decision first.",
+          "last_touched": "2026-11-12",
+          "lane": "Results page",
+          "depends_on": [
+            "media-065"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/129",
+              "label": "Day card PR (merged)"
+            }
+          ]
+        },
+        {
+          "id": "media-071",
+          "name": "Website claim sheet: team first, own goals, goal thumbnails",
+          "status": "done",
+          "owner": null,
+          "note": "Merged and live 13 Nov (PRs 130-133, embed re-pasted in Squarespace, live page checked for the new code and thumbnails). Team is asked first when the goal has none; own goal route; a small Wrong scorer? link; thumbnails with goal time on goals that have no clip. Not yet tried with a real claim on production or on a real phone.",
+          "last_touched": "2026-11-13",
+          "lane": "Results page",
+          "depends_on": [
+            "media-068"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/130",
+              "label": "Claim sheet PR 130 (merged)"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/131",
+              "label": "Claim sheet PR 131 (merged)"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/132",
+              "label": "Claim sheet PR 132 (merged)"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/133",
+              "label": "Claim sheet PR 133 (merged)"
+            }
+          ]
+        },
+        {
+          "id": "media-072",
+          "name": "Tap-a-goal pop-up and player picker",
+          "status": "done",
+          "owner": null,
+          "note": "Merged 14 Nov (PRs 135, 136) and live on the Game results page (seen 15 Nov: pop-up, More goals, Right player and Suggest a change). One pop-up for every goal with share, download, like and More goals; two-step picker with public confirm votes, Undo, own goal. Checked in headless browsers; not yet on a real phone.",
+          "last_touched": "2026-11-15",
+          "lane": "Results page",
+          "depends_on": [
+            "media-071"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/135",
+              "label": "Goal pop-up PR (merged)"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/136",
+              "label": "Goal picker PR (merged)"
+            }
+          ]
+        },
+        {
+          "id": "media-073",
+          "name": "Results page live audit: display fixes",
+          "status": "done",
+          "owner": null,
+          "note": "Merged and live 15 Nov (PR 141, embed re-pasted in Squarespace and the live page checked at phone and desktop width). Goals not yet sorted into teams show a goal count rather than 0–0 and return to the score as they are sorted; an empty multi-team day hides its all-zero table; the pop-up names teams by colour like the list; two headings fixed on dark. 22 new browser checks.",
+          "last_touched": "2026-11-15",
+          "lane": "Results page",
+          "depends_on": [
+            "media-072"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/141",
+              "label": "Audit fixes PR 141 (merged)"
+            }
+          ]
+        },
+        {
+          "id": "media-074",
+          "name": "Results page audit: remaining items",
+          "status": "todo",
+          "owner": null,
+          "note": "Not fixed yet: one goal credits a player as their own assist (data); old 2025 test sessions in the year picker; some session times look like upload times; player search only matches the start of a name and most sessions have no player list; date block scrolls off long cards; Confirm vs Right player wording; suggestion sheet does not say which goal; check whether staff-only own goals should still appear in the sheet; not checked on a real phone or tablet.",
+          "last_touched": "2026-11-15",
+          "lane": "Results page",
+          "depends_on": [
+            "media-073"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/current-state.md",
+              "label": "FFA Media current handover"
+            }
+          ]
+        },
+        {
+          "id": "media-075",
+          "name": "Clip review updates for Kris",
+          "status": "done",
+          "owner": null,
+          "note": "Merged and live 17 Nov (PRs 156 to 160; headless browser checks at phone, iPad and desktop, not yet on a real phone). Keep and Bin buttons, tappable star ratings on clip cards and Watch rows, rename, Mark posted, tabs To review / Ready to upload / Posted / Binned / All, scrolling clip list with kept clips behind Show kept, larger Both-cameras Watch view, quick Keep in the Review queue. Pages reload themselves when out of date.",
+          "last_touched": "2026-11-17",
+          "lane": "Clip review",
+          "depends_on": [
+            "media-046"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/156",
+              "label": "Clip review PR (merged)"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/160",
+              "label": "Watch row stars PR (merged)"
+            }
+          ]
+        },
+        {
+          "id": "media-076",
+          "name": "Review: Both cameras mode",
+          "status": "done",
+          "owner": null,
+          "note": "Merged and live 17 Nov (PR 161). Two synced players in Review with a Hide queue toggle; the second camera follows the first. Checked in headless browsers; not tried with real YouTube footage or on a real phone.",
+          "last_touched": "2026-11-17",
+          "lane": "Clip review",
+          "depends_on": [
+            "media-075"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/161",
+              "label": "Review Both cameras PR (open)"
+            }
+          ]
+        },
+        {
+          "id": "media-077",
+          "name": "March to August videos and Ready to post step",
+          "status": "todo",
+          "owner": null,
+          "note": "Needs Johnson: whether to move the older-footage cut-off back to March (currently 1 Sept) and whether Kris-rejected clips return, and whether Kris needs a separate Ready to post step beyond Posted. Then a real-phone check with Kris.",
+          "last_touched": "2026-11-17",
+          "lane": "Clip review",
+          "depends_on": [
+            "media-075"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/current-state.md",
+              "label": "FFA Media current handover"
+            }
+          ]
+        }
+      ],
+      "watch": "The compact 21 October current-state summary missed later entries in the historical log; use dated evidence and keep live acceptance separate. The clip-review controls went live on 17 November (media-075) but have only been checked in headless browsers; device acceptance by Kris remains open.",
+      "target_asked_on": "2026-10-23",
+      "questions": [
+        {
+          "id": "clip-retention",
+          "text": "Keep goal clips past 21 days for the 2027 player cards?",
+          "asked_on": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "id": "auto",
+      "name": "FFA Automations",
+      "mono": "FA",
+      "group": "FFA",
+      "status": "Validation",
+      "summary": "Uploader and runner fixes are recorded; direct ChatGPT check-in tests passed. Unattended and live uploader acceptance remain open.",
+      "milestones": [
+        {
+          "name": "Runner fix + handoff",
+          "status": "done"
+        },
+        {
+          "name": "Daily ChatGPT check-in acceptance",
+          "status": "doing"
+        },
+        {
+          "name": "GoPro resume evidence",
+          "status": "todo"
+        }
+      ],
+      "next_step": "Finish the Monday League metadata gap and verify the first 06:50 check-in delivery.",
+      "blocker": "Live uploader/resume evidence and the first unattended ChatGPT run are still unverified; GitHub is manual-only for the check-in handoff.",
+      "updated": "22 OCT",
+      "workspace": {
+        "provider": "Google",
+        "url": "https://docs.google.com/document/d/1UJB8kzBW1kOBgKizUuaw8we2bPYUqhF6vmeVv6oLPco/edit"
+      },
+      "tasks": [
+        {
+          "id": "auto-001",
+          "name": "Harden runner storage after the disk-full incident",
+          "status": "done",
+          "owner": null,
+          "note": "Recorded resolved incident: persistent browser profile relocated to the data volume; root space recovered and the runner queue resumed.",
+          "last_touched": "2026-08-20",
+          "lane": "Runner reliability",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-08-20",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-automations/blob/main/docs/ai-project-state.md",
+              "label": "Automation engineering log"
+            }
+          ]
+        },
+        {
+          "id": "auto-002",
+          "name": "Install weekly runner disk maintenance",
+          "status": "done",
+          "owner": null,
+          "note": "A weekly cleanup timer/service was installed during the incident recovery. This records that installation, not a fresh runtime verification.",
+          "last_touched": "2026-08-20",
+          "lane": "Runner reliability",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-08-20",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-automations/blob/main/docs/ai-project-state.md",
+              "label": "Automation engineering log"
+            }
+          ]
+        },
+        {
+          "id": "auto-003",
+          "name": "Deploy the uploader-to-worker cookie handoff",
+          "status": "done",
+          "owner": null,
+          "note": "Engineering log records a successful storage handoff and consumer deployment. A real downstream probe remained unverified; no credential value is included.",
+          "last_touched": "2026-10-22",
+          "lane": "Uploader",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-automations/blob/main/docs/ai-project-state.md",
+              "label": "Automation engineering log"
+            }
+          ]
+        },
+        {
+          "id": "auto-004",
+          "name": "Implement camera-neutral upload titles and descriptions",
+          "status": "done",
+          "owner": null,
+          "note": "Merged on main; nine metadata unit tests recorded passing. First complete post-change live-output acceptance remains separate.",
+          "last_touched": "2026-10-15",
+          "lane": "Uploader",
+          "start": "2026-10-15",
+          "end": "2026-10-15",
+          "completed_on": "2026-10-15",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-automations/blob/main/docs/ai-project-state.md",
+              "label": "Automation engineering log"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-automations/commit/a85d0033c7ec62a55d37c9dfaf6eed37fd335a4f",
+              "label": "Metadata implementation commit"
+            }
+          ],
+          "date_basis": "observed",
+          "date_note": "Implementation commit a85d003 was made at 23:01 UTC on 14 October, i.e. 00:01 on 15 October in Europe/London; the state log records implementation/tests on 15 October."
+        },
+        {
+          "id": "auto-005",
+          "name": "Repair the check-in workflow schedule gate",
+          "status": "done",
+          "owner": null,
+          "note": "PR #69 repaired the narrow runner-clock condition. A later decision moved the daily check-in to ChatGPT, so this historical fix is not the current daily trigger.",
+          "last_touched": "2026-10-22",
+          "lane": "Check-in integration",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-22",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1UJB8kzBW1kOBgKizUuaw8we2bPYUqhF6vmeVv6oLPco/edit",
+              "label": "Automation board and evidence"
+            }
+          ]
+        },
+        {
+          "id": "auto-006",
+          "name": "Correct unrelated deployment preview handling",
+          "status": "done",
+          "owner": null,
+          "note": "The configured application root and ignored-build behaviour were corrected; the unrelated main-branch preview was properly skipped.",
+          "last_touched": "2026-10-22",
+          "lane": "Runner reliability",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-22",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1UJB8kzBW1kOBgKizUuaw8we2bPYUqhF6vmeVv6oLPco/edit",
+              "label": "Automation board and evidence"
+            }
+          ]
+        },
+        {
+          "id": "auto-007",
+          "name": "Verify the manual encrypted artifact handoff",
+          "status": "done",
+          "owner": null,
+          "note": "Manual run #65 passed fetch, validation, encryption and upload. No health readings or secrets are included in this record.",
+          "last_touched": "2026-10-22",
+          "lane": "Check-in integration",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-22",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1UJB8kzBW1kOBgKizUuaw8we2bPYUqhF6vmeVv6oLPco/edit",
+              "label": "Automation board and evidence"
+            }
+          ]
+        },
+        {
+          "id": "auto-008",
+          "name": "Verify the connected ChatGPT check-in and workout data path",
+          "status": "done",
+          "owner": null,
+          "note": "The read-only connector returned current source data and the workout section in the documented direct test. This is integration-test evidence only; no readings are published.",
+          "last_touched": "2026-10-22",
+          "lane": "Check-in integration",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-22",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1UJB8kzBW1kOBgKizUuaw8we2bPYUqhF6vmeVv6oLPco/edit",
+              "label": "Automation board and evidence"
+            }
+          ]
+        },
+        {
+          "id": "auto-009",
+          "name": "Configure and directly test the daily ChatGPT check-in",
+          "status": "done",
+          "owner": null,
+          "note": "The automation completed a direct live-data test and was scheduled for 06:50 Europe/London. First unattended daily-run acceptance is still open.",
+          "last_touched": "2026-10-22",
+          "lane": "Check-in integration",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-22",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1UJB8kzBW1kOBgKizUuaw8we2bPYUqhF6vmeVv6oLPco/edit",
+              "label": "Automation board and evidence"
+            }
+          ]
+        },
+        {
+          "id": "auto-010",
+          "name": "Remove the daily GitHub cron after the trigger migration",
+          "status": "done",
+          "owner": null,
+          "note": "Temporary scheduled tests and the daily cron were removed; the GitHub workflow remains manually runnable. It no longer supplies the daily trigger.",
+          "last_touched": "2026-10-22",
+          "lane": "Check-in integration",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-22",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1UJB8kzBW1kOBgKizUuaw8we2bPYUqhF6vmeVv6oLPco/edit",
+              "label": "Automation board and evidence"
+            }
+          ]
+        },
+        {
+          "id": "auto-011",
+          "name": "Finish upload metadata acceptance: Monday link and provenance",
+          "status": "todo",
+          "owner": null,
+          "note": "Two 14 October uploads were checked on 15 October: standard/POV titles, revised intro, direct booking link, shop link, hashtags and media ID were present. The separate Monday League paragraph/link was missing; no later repair or exact producing-version verification was found. Those residual checks remain open; the successful output review is auto-015.",
+          "last_touched": "2026-10-22",
+          "lane": "Uploader acceptance",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-automations/blob/main/docs/ai-project-state.md",
+              "label": "Automation engineering log"
+            }
+          ]
+        },
+        {
+          "id": "auto-012",
+          "name": "Reproduce and repair the GoPro resume gap",
+          "status": "todo",
+          "owner": null,
+          "note": "Issue #53 is still open: a successful cookie refresh must resume the original upload or visibly fail.",
+          "last_touched": "2026-10-22",
+          "lane": "Uploader acceptance",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-automations/issues/53",
+              "label": "Source issue / delivery"
+            }
+          ]
+        },
+        {
+          "id": "auto-013",
+          "name": "Recheck relay scheduling and the downstream probe",
+          "status": "todo",
+          "owner": null,
+          "note": "Older schedule diagnoses and a successful handoff do not prove current downstream upload/probe success. Gather a current run before changing runner infrastructure.",
+          "last_touched": "2026-10-22",
+          "lane": "Uploader acceptance",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-automations/blob/main/docs/ai-project-state.md",
+              "label": "Automation engineering log"
+            }
+          ]
+        },
+        {
+          "id": "auto-014",
+          "name": "Verify the 06:50 daily run and result delivery",
+          "status": "todo",
+          "owner": null,
+          "note": "Two unattended evening tests on 22 October automatically pulled connector data and finished: 19:00 at 19:00:58 and 19:10 at 19:11:44 Europe/London. Recorded delivery status is unknown. Confirm the first 06:50 daily run and delivery; do not repeat unattended triggering as wholly untested. Evening test completion is auto-016.",
+          "last_touched": "2026-10-22",
+          "lane": "Check-in acceptance",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1UJB8kzBW1kOBgKizUuaw8we2bPYUqhF6vmeVv6oLPco/edit",
+              "label": "Automation board and evidence"
+            }
+          ]
+        },
+        {
+          "id": "auto-015",
+          "name": "Verify titles and core description fields on two real uploads",
+          "status": "done",
+          "owner": null,
+          "note": "15 October conversation checked both 14 October outputs: revised intro, booking/shop links, hashtags, media ID, standard title and manual POV suffix. Standard video 47RhOWe7qEc; POV LlrFomv76-s. Monday League paragraph/link was absent; exact uploader provenance remains open in auto-011. This is a historical output review, not a fresh upload test.",
+          "last_touched": "2026-10-22",
+          "lane": "Operations",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-15",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/project-hub/blob/main/docs/open-task-audit-2026-10-22.md",
+              "label": "Conversation and source reconciliation"
+            }
+          ]
+        },
+        {
+          "id": "auto-016",
+          "name": "Complete two unattended evening ChatGPT check-in tests",
+          "status": "done",
+          "owner": null,
+          "note": "Automation run records for 22 October show both scheduled evening tests completed with successful connector pulls and workout-data availability. Runs 1b0f7508-b468-832d-b0e4-8051a2e0f0c4 and 3f508748-ed74-832c-acca-6df24787f24b completed at 18:00:58Z and 18:11:44Z. Delivery is unknown; daily 06:50 acceptance remains auto-014. No health readings are published.",
+          "last_touched": "2026-10-22",
+          "lane": "Operations",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-22",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/project-hub/blob/main/docs/open-task-audit-2026-10-22.md",
+              "label": "Conversation and source reconciliation"
+            }
+          ]
+        }
+      ],
+      "watch": "Evening scheduled tests passed; first daily-run delivery and full upload metadata remain open.",
+      "target_asked_on": "2026-10-23"
+    },
+    {
+      "id": "oev",
+      "name": "OEV Broadcast",
+      "mono": "OE",
+      "group": "OEV",
+      "status": "Corrections first",
+      "summary": "Camera brain C remains baseline; first-pass AI football and active-match-ball classification, proactive tracking audits and Mercy pre-render reviews are planned, not implemented.",
+      "milestones": [
+        {
+          "name": "Select camera brain",
+          "status": "done"
+        },
+        {
+          "name": "Scope Mercy corrections",
+          "status": "doing"
+        },
+        {
+          "name": "Validate a customer-ready broadcast",
+          "status": "blocked"
+        }
+      ],
+      "next_step": "Test first-pass match-ball role classification on YOLO candidates (real ball/spare/other-pitch/false positive), then measure tracking changes and Mercy review on held-out footage.",
+      "blocker": "Match-ball evaluation and the M1/hardware acceptance evidence are still unresolved.",
+      "updated": "09 NOV",
+      "featured": true,
+      "workspace": {
+        "provider": "GitHub",
+        "url": "https://github.com/users/JhnsonO/projects/3/views/2"
+      },
+      "roadmap": {
+        "provider": "GitHub",
+        "url": "https://github.com/JhnsonO/oev/blob/main/docs/roadmap.md"
+      },
+      "tasks": [
+        {
+          "id": "oev-001",
+          "name": "Build the two-camera cylindrical stitch projection",
+          "status": "done",
+          "owner": null,
+          "note": "The reconciled roadmap records the cylindrical implementation and locked framing config. The older claim that M1 was cleared is superseded by the unresolved current acceptance gate; this records the implementation only.",
+          "last_touched": "2026-10-22",
+          "lane": "Stitching",
+          "start": "2026-08-09",
+          "end": "2026-08-10",
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/oev/blob/main/docs/roadmap.md",
+              "label": "OEV reconciled roadmap"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/video-stitcher/commit/df07a86f02416f09811cd41ca6db5aa8407fa13a",
+              "label": "Cylindrical renderer implementation"
+            }
+          ],
+          "date_basis": "observed",
+          "date_note": "Merged cylindrical renderer commit df07a86 on 9 August; the 10 August log records geometry/framing implementation and locked configuration. Customer acceptance is separate."
+        },
+        {
+          "id": "oev-002",
+          "name": "Fix zero-copy GPU rendering corruption",
+          "status": "done",
+          "owner": null,
+          "note": "The engineering log records the shared-buffer repair merged and rolled into standard workflows. The rejected shared-image approach is not counted as a shipped fix.",
+          "last_touched": "2026-10-22",
+          "lane": "Rendering",
+          "start": "2026-08-10",
+          "end": "2026-08-15",
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-automations/blob/main/docs/ai-project-state.md",
+              "label": "Automation engineering log"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/video-stitcher/commit/f27cbb6d0d65fcf9a11fb4d82d119ae214695318",
+              "label": "Shared-buffer rollout merge"
+            }
+          ],
+          "date_basis": "observed",
+          "date_note": "10 August GPU corruption investigations, 12 August correction identifying the real zero-copy defect, and 15 August shared-buffer rollout/visual verification at f27cbb6."
+        },
+        {
+          "id": "oev-003",
+          "name": "Complete detector-resolution and throughput investigation",
+          "status": "done",
+          "owner": null,
+          "note": "The progress log records the 640–2560px investigation concluded at 1920px with real throughput measurements. This was an engineering result, not whole-product acceptance.",
+          "last_touched": "2026-10-22",
+          "lane": "Detection",
+          "start": "2026-08-10",
+          "end": "2026-08-10",
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/oev/blob/main/docs/roadmap.md",
+              "label": "OEV reconciled roadmap"
+            }
+          ],
+          "date_basis": "observed",
+          "date_note": "10 August detector-resolution A/B and GPU throughput runs, ending in the recorded 1920px decision."
+        },
+        {
+          "id": "oev-004",
+          "name": "Implement pitch-region filtering",
+          "status": "done",
+          "owner": null,
+          "note": "The roadmap progress log records ROI filtering to stop the camera wandering onto neighbouring pitches.",
+          "last_touched": "2026-10-22",
+          "lane": "Detection",
+          "start": "2026-08-10",
+          "end": "2026-08-10",
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/oev/blob/main/docs/roadmap.md",
+              "label": "OEV reconciled roadmap"
+            }
+          ],
+          "date_basis": "observed",
+          "date_note": "10 August ROI stills and ROI-injection implementation/dispatch entries establish observed work on this day, not the later experimental ROI changes."
+        },
+        {
+          "id": "oev-005",
+          "name": "Implement backward ball-state bridging",
+          "status": "done",
+          "owner": null,
+          "note": "The log records bridging recovery and its coverage improvement. Remaining camera-containment and identity failures are not marked fixed by this entry.",
+          "last_touched": "2026-10-22",
+          "lane": "Tracking",
+          "start": "2026-08-17",
+          "end": "2026-08-17",
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-automations/blob/main/docs/ai-project-state.md",
+              "label": "Automation engineering log"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/video-stitcher/commit/c8b0d74b537d192c7de8d2856de64620a82830cf",
+              "label": "Backward bridge merge"
+            }
+          ],
+          "date_basis": "observed",
+          "date_note": "Backward bridge merged at 23:23 UTC on 16 August = 00:23 on 17 August in Europe/London; 17 August state entry records sample evidence."
+        },
+        {
+          "id": "oev-006",
+          "name": "Harden experimental GPU allocation and compatibility checks",
+          "status": "done",
+          "owner": null,
+          "note": "The experiment allocator was hardened after incompatible hosts and detector smoke failures. Capacity/host reliability is still variable.",
+          "last_touched": "2026-10-22",
+          "lane": "Evaluation",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-automations/blob/main/docs/ai-project-state.md",
+              "label": "Automation engineering log"
+            }
+          ]
+        },
+        {
+          "id": "oev-007",
+          "name": "Render and compare the standard multi-sample controls",
+          "status": "done",
+          "owner": null,
+          "note": "Multiple sample renders and a stride-1 control completed. The stride-3 experiment exposed severe regression on another sample and was not accepted as the default.",
+          "last_touched": "2026-10-22",
+          "lane": "Evaluation",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-automations/blob/main/docs/ai-project-state.md",
+              "label": "Automation engineering log"
+            }
+          ]
+        },
+        {
+          "id": "oev-008",
+          "name": "Complete the human comparison of camera-brain variants",
+          "status": "done",
+          "owner": null,
+          "note": "Thirty visible-ball disagreement moments were scored across sessions. C was selected as the working v1 baseline and B1 was runner-up; this small evaluation does not establish product reliability.",
+          "last_touched": "2026-10-21",
+          "lane": "Evaluation",
+          "start": "2026-10-18",
+          "end": "2026-10-20",
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/oev/blob/main/docs/roadmap.md",
+              "label": "OEV reconciled roadmap"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/project-hub/blob/main/docs/roadmap-date-evidence.md",
+              "label": "Dated conversation reconciliation"
+            }
+          ],
+          "date_basis": "observed",
+          "date_note": "Dated conversation records show ablation/evaluation running on 18 October and Johnson reporting the completed human comparison in the 20 October handover. These are observed activity bounds."
+        },
+        {
+          "id": "oev-009",
+          "name": "Classify the selected baseline’s failure cases",
+          "status": "done",
+          "owner": null,
+          "note": "The current review separates nine wrong-ball choices from five ball-not-seen misses and notes unused uncertain/restart states. It records analysis completed, not all failures resolved.",
+          "last_touched": "2026-10-21",
+          "lane": "Evaluation",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/oev/blob/main/docs/roadmap.md",
+              "label": "OEV reconciled roadmap"
+            }
+          ]
+        },
+        {
+          "id": "oev-010",
+          "name": "Evaluate stray-ball rules across sessions",
+          "status": "done",
+          "owner": null,
+          "note": "The experiment helped on the first session and failed to generalise. Evaluation completed; the rules are parked rather than treated as an accepted improvement.",
+          "last_touched": "2026-10-21",
+          "lane": "Evaluation",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/oev/blob/main/docs/roadmap.md",
+              "label": "OEV reconciled roadmap"
+            }
+          ]
+        },
+        {
+          "id": "oev-011",
+          "name": "Review the bounded WASB pilot and test-set limits",
+          "status": "done",
+          "owner": null,
+          "note": "The pilot evidence and contaminated/unannotated evaluation-set limits were reviewed. Visual confirmation was insufficient; no detector replacement or training success is claimed.",
+          "last_touched": "2026-10-21",
+          "lane": "Evaluation",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/oev/blob/main/docs/roadmap.md",
+              "label": "OEV reconciled roadmap"
+            }
+          ]
+        },
+        {
+          "id": "oev-012",
+          "name": "Reconcile the current roadmap and correction priority",
+          "status": "done",
+          "owner": null,
+          "note": "Current follow-cam evidence, historical gate conflicts and issue #18 were reconciled. Mercy’s corrections workflow is the next priority, not a completed implementation.",
+          "last_touched": "2026-10-21",
+          "lane": "Planning",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-21",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/oev/blob/main/docs/roadmap.md",
+              "label": "OEV reconciled roadmap"
+            }
+          ]
+        },
+        {
+          "id": "oev-013",
+          "name": "Reconcile the customer-demo / M1 acceptance evidence",
+          "status": "blocked",
+          "owner": null,
+          "note": "The current review says the actual acceptance ticket is still open with no newer accepted clip/checklist. Historical implementation progress must not close this gate.",
+          "last_touched": "2026-10-22",
+          "lane": "Product gates",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-automations/issues/28",
+              "label": "Source issue / delivery"
+            }
+          ],
+          "blocked_reason": "No newer accepted clip"
+        },
+        {
+          "id": "oev-014",
+          "name": "Confirm current hardware, module FOV and housing status",
+          "status": "blocked",
+          "owner": null,
+          "note": "Current BOM/housing/Track A acceptance is not confirmed. Historical dates and physical completion cannot be inferred from open tickets.",
+          "last_touched": "2026-10-22",
+          "lane": "Hardware",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/oev/blob/main/docs/roadmap.md",
+              "label": "OEV reconciled roadmap"
+            }
+          ],
+          "blocked_reason": "Hardware, FOV, housing unconfirmed"
+        },
+        {
+          "id": "oev-015",
+          "name": "Specify and accept Mercy's pre-render correction workflow",
+          "status": "doing",
+          "owner": null,
+          "note": "9 Nov design: pre-tracking AI validates YOLO candidates and identifies active-match-ball versus spare/other-pitch balls using temporal/pitch/player context; uncertain proposals remain recoverable. Afterward AI spot-checks tracking and Mercy corrects pre-render, with future retraining/evaluation. Recorded in OEV issue #18; not implemented or benchmarked.",
+          "last_touched": "2026-11-09",
+          "lane": "Corrections",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/oev/issues/18",
+              "label": "OEV corrections workflow"
+            }
+          ]
+        },
+        {
+          "id": "oev-016",
+          "name": "Create a fresh annotated development and unseen evaluation set",
+          "status": "blocked",
+          "owner": null,
+          "note": "Aylestone has no annotations and is no longer unseen. Define the correction loop and secure fresh footage before treating a set as an acceptance benchmark.",
+          "last_touched": "2026-10-22",
+          "lane": "Evaluation",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [
+            "oev-015"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/oev/blob/main/docs/roadmap.md",
+              "label": "OEV reconciled roadmap"
+            }
+          ],
+          "blocked_reason": "Needs fresh annotated footage"
+        },
+        {
+          "id": "oev-017",
+          "name": "Revisit detector work using the labelled failure mix",
+          "status": "todo",
+          "owner": null,
+          "note": "OEV-005 has no verified model, labels or training run. Choose a bounded pilot after corrected evaluation evidence exists; no GPU spend is authorised here.",
+          "last_touched": "2026-10-22",
+          "lane": "Detection",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [
+            "oev-016"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/oev/blob/main/docs/roadmap.md",
+              "label": "OEV reconciled roadmap"
+            }
+          ]
+        },
+        {
+          "id": "oev-018",
+          "name": "Diagnose unused uncertainty and restart states",
+          "status": "todo",
+          "owner": null,
+          "note": "Use reviewed examples after defining the correction/evaluation loop. Do not assume another hand-tuned stray-ball rule will generalise.",
+          "last_touched": "2026-10-22",
+          "lane": "Tracking",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [
+            "oev-015"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/oev/blob/main/docs/roadmap.md",
+              "label": "OEV reconciled roadmap"
+            }
+          ]
+        },
+        {
+          "id": "oev-019",
+          "name": "Resolve the licensing path before commercial deployment",
+          "status": "blocked",
+          "owner": null,
+          "note": "The current roadmap retains a commercial licensing decision as open. This is an existing project gate, not a new legal conclusion.",
+          "last_touched": "2026-10-22",
+          "lane": "Commercial gates",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/oev/blob/main/docs/roadmap.md",
+              "label": "OEV reconciled roadmap"
+            }
+          ],
+          "blocked_reason": "Licensing decision open"
+        },
+        {
+          "id": "oev-020",
+          "name": "Validate full-match clock-sync drift on new modules",
+          "status": "blocked",
+          "owner": null,
+          "note": "The current roadmap records the drift gate as dependent on available new camera modules. Historical month-by-month dates are not current commitments.",
+          "last_touched": "2026-10-22",
+          "lane": "Hardware",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [
+            "oev-014"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/oev/blob/main/docs/roadmap.md",
+              "label": "OEV reconciled roadmap"
+            }
+          ],
+          "blocked_reason": "Needs new camera modules"
+        },
+        {
+          "id": "oev-021",
+          "name": "Prove the unattended upload-to-broadcast chain",
+          "status": "blocked",
+          "owner": null,
+          "note": "A green test workflow is not evidence that a whole customer-ready recording was delivered without intervention. Current acceptance and hardware evidence remain prerequisites.",
+          "last_touched": "2026-10-22",
+          "lane": "Product gates",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [
+            "oev-013",
+            "oev-014"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/oev/blob/main/docs/roadmap.md",
+              "label": "OEV reconciled roadmap"
+            }
+          ],
+          "blocked_reason": "Needs acceptance and hardware proof"
+        },
+        {
+          "id": "oev-022",
+          "name": "Build the player-tracking engine",
+          "status": "todo",
+          "owner": null,
+          "note": "An initial feature outline already exists in the linked OEV backlog; recorded together in oev-027. This remaining task is implementation and validation, not writing the same outline again. Later product backlog; not a commitment for the current corrections phase.",
+          "last_touched": "2026-10-22",
+          "lane": "Later backlog",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/oev/issues/7",
+              "label": "Source issue / delivery"
+            }
+          ]
+        },
+        {
+          "id": "oev-023",
+          "name": "Implement integrated automatic goal and highlight clips",
+          "status": "todo",
+          "owner": null,
+          "note": "An initial feature outline already exists in the linked OEV backlog; recorded together in oev-027. This remaining task is implementation and validation, not writing the same outline again. Later product backlog; not a commitment for the current corrections phase. An April conversation reports goal-review code in the separate ffa-clips branch; it does not establish a merged, accepted OEV broadcast integration.",
+          "last_touched": "2026-10-22",
+          "lane": "Later backlog",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/oev/issues/9",
+              "label": "Source issue / delivery"
+            }
+          ]
+        },
+        {
+          "id": "oev-024",
+          "name": "Implement player heat maps and statistics",
+          "status": "todo",
+          "owner": null,
+          "note": "An initial feature outline already exists in the linked OEV backlog; recorded together in oev-027. This remaining task is implementation and validation, not writing the same outline again. Later product backlog; not a commitment for the current corrections phase.",
+          "last_touched": "2026-10-22",
+          "lane": "Later backlog",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/oev/issues/11",
+              "label": "Source issue / delivery"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/oev/issues/12",
+              "label": "Stats backlog"
+            }
+          ]
+        },
+        {
+          "id": "oev-025",
+          "name": "Implement per-player highlights",
+          "status": "todo",
+          "owner": null,
+          "note": "An initial feature outline already exists in the linked OEV backlog; recorded together in oev-027. This remaining task is implementation and validation, not writing the same outline again. Later product backlog; not a commitment for the current corrections phase.",
+          "last_touched": "2026-10-22",
+          "lane": "Later backlog",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/oev/issues/13",
+              "label": "Source issue / delivery"
+            }
+          ]
+        },
+        {
+          "id": "oev-026",
+          "name": "Resolve dual-lens geometry and venue-hub responsibilities",
+          "status": "todo",
+          "owner": null,
+          "note": "The custom-unit concept and benefits are already outlined in issue #14; the venue-hub concept is agreed in #6. Detailed scoping remains: confirmed mount/optics, capture versus hub responsibilities, and hardware decisions with Moses. This does not mean the concept is unwritten or hardware built.",
+          "last_touched": "2026-10-22",
+          "lane": "Later backlog",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/oev/issues/14",
+              "label": "Source issue / delivery"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/oev/issues/6",
+              "label": "Venue hub backlog"
+            }
+          ]
+        },
+        {
+          "id": "oev-027",
+          "name": "Outline the later player and highlight feature roadmap",
+          "status": "done",
+          "owner": null,
+          "note": "Existing issues #7, #9, #11–#13 already describe player tracking, automatic clips, heat maps/statistics and per-player reels, including the tracking/identity dependencies. This records the existing initial outline only. Detailed design, implementation and validation remain oev-022–025; no completion date is inferred from issue creation.",
+          "last_touched": "2026-10-22",
+          "lane": "Product backlog",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/oev/issues/7",
+              "label": "Player-tracking outline"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/oev/issues/9",
+              "label": "Automatic clip outline"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/oev/issues/11",
+              "label": "Heat-map outline"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/oev/issues/12",
+              "label": "Statistics outline"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/oev/issues/13",
+              "label": "Per-player highlights outline"
+            }
+          ]
+        },
+        {
+          "id": "oev-028",
+          "name": "Model the first lift-off dual-GoPro enclosure",
+          "status": "done",
+          "owner": null,
+          "note": "A first CAD fit-study preserves the existing tension-fit insert inside a new body and removable roof. STEP/STL and editable source are saved; new-solid and interference checks passed. This is not physical-fit, optical, weather or field acceptance.",
+          "last_touched": "2026-11-08",
+          "lane": "Hardware",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-11-08",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/oev/issues/20",
+              "label": "GoPro enclosure fit-study and handover"
+            }
+          ]
+        },
+        {
+          "id": "oev-029",
+          "name": "Validate and refine the GoPro enclosure for printing",
+          "status": "todo",
+          "owner": null,
+          "note": "Confirm installed-camera measurements, lens clearance and power routing; finish fastening and mount retention before fit coupons and recording-temperature checks. The mount must stay compact, spread load, preserve field-adjustable tilt and favour the existing bungee/hooks plus cheap replaceable hardware. Two side GoPro joints and a fixed wedge were rejected; the one-knob cradle is only a candidate for review. Separate from the custom camera-module gates.",
+          "last_touched": "2026-11-08",
+          "lane": "Hardware",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [
+            "oev-028"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/oev/issues/20",
+              "label": "GoPro enclosure fit-study and handover"
+            }
+          ]
+        }
+      ],
+      "target_asked_on": "2026-10-23",
+      "watch": "First-pass AI ball-role validation and subsequent tracking audits remain unimplemented proposals. Fresh unseen evaluation, Mercy workflow and M1/hardware evidence are still open.",
+      "questions": [
+        {
+          "id": "gopro-power",
+          "text": "Will both GoPros use internal batteries or an external power bank?",
+          "asked_on": "2026-11-08"
+        }
+      ]
+    },
+    {
+      "id": "ai",
+      "name": "AI Workflow & Shared Context",
+      "mono": "AI",
+      "group": "Personal",
+      "status": "Access audit in progress",
+      "summary": "Claude’s new account now has the shared bootstrap instructions and connected Google Drive/GitHub integrations. Its GitHub app is installed for JhnsonO, and the repository status says Claude Code cloud sessions can work in project-hub. Claude reported reading main; Claude-specific write access, private Markdown and mobile behavior remain unverified.",
+      "milestones": [
+        {
+          "name": "Shared rules + handover",
+          "status": "done"
+        },
+        {
+          "name": "Verify Claude Drive file access",
+          "status": "done"
+        },
+        {
+          "name": "Test shared hub publication",
+          "status": "done"
+        }
+      ],
+      "next_step": "Verify Claude’s normal web/mobile read/write access to a private Markdown source and its feature-branch/PR path; keep Home and Rules authoritative until those checks pass.",
+      "updated": "15 NOV",
+      "workspace": {
+        "provider": "GitHub",
+        "url": "https://github.com/users/JhnsonO/projects/4/views/2"
+      },
+      "tasks": [
+        {
+          "id": "ai-001",
+          "name": "Establish shared Drive reference docs in personal Gmail",
+          "status": "done",
+          "owner": null,
+          "note": "The personal Gmail owns the canonical Home and Rules documents. The FFA Gmail remains an editor so existing AI connectors can read and update them. Built-in model memory still does not synchronize.",
+          "last_touched": "2026-10-22",
+          "lane": "Shared context",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1yO92jAmM0f1sN02165yW_zm1wbE9O8AiN1lNShnVDrI/edit",
+              "label": "Personal-owned project hub Home"
+            }
+          ]
+        },
+        {
+          "id": "ai-002",
+          "name": "Publish the shared rules and handover process",
+          "status": "done",
+          "owner": null,
+          "note": "The rules define canonical sources, verification, privacy boundaries and end-of-session updates.",
+          "last_touched": "2026-10-22",
+          "lane": "Shared context",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1hR0JQ8eOJ34bScs8tp2H3B8yCvpH2FLiNX_bgXa1YNY/edit",
+              "label": "Personal-owned shared rules and handover"
+            }
+          ]
+        },
+        {
+          "id": "ai-003",
+          "name": "Verify ChatGPT can read and update shared handovers",
+          "status": "done",
+          "owner": "chatgpt",
+          "note": "ChatGPT read and edited the personal-owned Home and Rules docs through its existing Drive connector; changes were read back. The FFA account remains an editor.",
+          "last_touched": "2026-10-22",
+          "lane": "Access",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-22",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1yO92jAmM0f1sN02165yW_zm1wbE9O8AiN1lNShnVDrI/edit",
+              "label": "Personal-owned project hub Home"
+            }
+          ]
+        },
+        {
+          "id": "ai-004",
+          "name": "Create and verify canonical project delivery-board links",
+          "status": "done",
+          "owner": null,
+          "note": "The Media board and portfolio Kanban links were recorded as created/opened and checked in the 21 October setup conversation.",
+          "last_touched": "2026-10-21",
+          "lane": "Project organisation",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-21",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1yO92jAmM0f1sN02165yW_zm1wbE9O8AiN1lNShnVDrI/edit",
+              "label": "Personal-owned project hub Home"
+            }
+          ]
+        },
+        {
+          "id": "ai-005",
+          "name": "Create concise repository state entry points",
+          "status": "done",
+          "owner": null,
+          "note": "Media and Automations current-state summaries were reconciled with their historical logs so existing work can be resumed.",
+          "last_touched": "2026-10-22",
+          "lane": "Shared context",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1yO92jAmM0f1sN02165yW_zm1wbE9O8AiN1lNShnVDrI/edit",
+              "label": "Personal-owned project hub Home"
+            }
+          ]
+        },
+        {
+          "id": "ai-006",
+          "name": "Replace fixed coding/model routing with current-tool ownership",
+          "status": "done",
+          "owner": null,
+          "note": "Current shared rules and repository summaries say the active AI owns the task when capable, rather than routing coding to one account by default.",
+          "last_touched": "2026-10-22",
+          "lane": "Shared context",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1hR0JQ8eOJ34bScs8tp2H3B8yCvpH2FLiNX_bgXa1YNY/edit",
+              "label": "Personal-owned shared rules and handover"
+            }
+          ]
+        },
+        {
+          "id": "ai-007",
+          "name": "Publish the project hub on GitHub Pages",
+          "status": "done",
+          "owner": "chatgpt",
+          "note": "PR #1 merged and Pages deployment passed; the hub is publicly accessible.",
+          "last_touched": "2026-10-22",
+          "lane": "Hub delivery",
+          "start": "2026-10-22",
+          "end": "2026-10-22",
+          "completed_on": "2026-10-22",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/project-hub/pull/1",
+              "label": "Source issue / delivery"
+            }
+          ],
+          "date_basis": "observed",
+          "date_note": "PR #1 creation and merge both occurred on 22 October; its commit and deployment history establish a same-day implementation period."
+        },
+        {
+          "id": "ai-008",
+          "name": "Publish approved project progress on the hub",
+          "status": "done",
+          "owner": "chatgpt",
+          "note": "PR #4 exposed approved project status, next actions and general blockers on the page.",
+          "last_touched": "2026-10-22",
+          "lane": "Hub delivery",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-22",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/project-hub/pull/4",
+              "label": "Source issue / delivery"
+            }
+          ]
+        },
+        {
+          "id": "ai-009",
+          "name": "Implement the three reference layouts and project views",
+          "status": "done",
+          "owner": "chatgpt",
+          "note": "PR #10 delivered independent Light/HUD/Charcoal modes, project navigation, side-by-side panels and task-model validation; deployment and visual checks passed.",
+          "last_touched": "2026-10-22",
+          "lane": "Hub delivery",
+          "start": "2026-10-22",
+          "end": "2026-10-22",
+          "completed_on": "2026-10-22",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/project-hub/pull/10",
+              "label": "Source issue / delivery"
+            }
+          ],
+          "date_basis": "observed",
+          "date_note": "PR #10 code, validation, merge and deployment were recorded on 22 October."
+        },
+        {
+          "id": "ai-010",
+          "name": "Reconcile completed work across all five project records",
+          "status": "done",
+          "owner": "chatgpt",
+          "note": "This history audit reads canonical handovers, implementation logs, issues and recent completion reports. Unverified delivery dates remain unset; historical implementation is distinguished from live acceptance.",
+          "last_touched": "2026-10-22",
+          "lane": "Hub delivery",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-22",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1yO92jAmM0f1sN02165yW_zm1wbE9O8AiN1lNShnVDrI/edit",
+              "label": "Personal-owned project hub Home"
+            }
+          ]
+        },
+        {
+          "id": "ai-011",
+          "name": "Verify Claude shared Drive read/write round-trip",
+          "status": "done",
+          "owner": "chatgpt",
+          "note": "Verified 23 October against personal-owned copies: Claude read both Home and Rules, appended a temporary marker to Rules, read it back, removed only that marker, and confirmed it was gone. ChatGPT read and edited the same personal-owned docs through its FFA-authenticated connector. The original FFA copies remain intact.",
+          "last_touched": "2026-10-23",
+          "lane": "Access",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-23",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1yO92jAmM0f1sN02165yW_zm1wbE9O8AiN1lNShnVDrI/edit",
+              "label": "Personal-owned Home and cross-account read test"
+            },
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1hR0JQ8eOJ34bScs8tp2H3B8yCvpH2FLiNX_bgXa1YNY/edit",
+              "label": "Claude existing-document write/readback test"
+            }
+          ]
+        },
+        {
+          "id": "ai-012",
+          "name": "Verify a complete Claude-to-hub publication cycle",
+          "status": "done",
+          "owner": null,
+          "note": "Verified 23 October: Claude Code published the hub through PR #21, checks, merge and live Pages JSON readback. PR #23 then merged the static-snapshot update procedure; its local schema/model/syntax checks passed.",
+          "last_touched": "2026-10-23",
+          "lane": "Shared updates",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-23",
+          "depends_on": [
+            "ai-015"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/project-hub/pull/21",
+              "label": "Verified publish cycle"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/project-hub/pull/23",
+              "label": "Snapshot update procedure"
+            }
+          ]
+        },
+        {
+          "id": "ai-013",
+          "name": "Make browser task actions persist securely",
+          "status": "todo",
+          "owner": null,
+          "note": "Done/Block were removed from the public page because they could not save; Add now saves on this device only. Shared persistent writes still need an authenticated service or supported account tools; no repository credential is embedded in the public page. Optional follow-up; not required for the verified conversation workflow.",
+          "last_touched": "2026-10-22",
+          "lane": "Later / optional",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1I_jypC-RByq36z_5wGR6bo_qKbg3X_vq4KX2tv9RsnM/edit",
+              "label": "Project hub audit and delivery log"
+            }
+          ]
+        },
+        {
+          "id": "ai-014",
+          "name": "Audit and refine the hub against the supplied mockups",
+          "status": "done",
+          "owner": "chatgpt",
+          "note": "Compared all ten reference screens and the source layout rules. Corrected theme geometry, Light details, responsive flow, ledger alignment, typography and task-detail navigation. Responsive checks and deployment evidence are recorded in the visual audit.",
+          "last_touched": "2026-10-22",
+          "lane": "Project Hub",
+          "start": "2026-10-22",
+          "end": "2026-10-22",
+          "completed_on": "2026-10-22",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/project-hub/blob/main/docs/visual-audit-2026-10-22.md",
+              "label": "Detailed visual audit and verification"
+            }
+          ],
+          "date_basis": "observed",
+          "date_note": "PR #12 and the visual audit record this work and verification on 22 October."
+        },
+        {
+          "id": "ai-015",
+          "name": "Verify Claude’s GitHub feature-branch and publish access",
+          "status": "done",
+          "owner": null,
+          "last_touched": "2026-10-23",
+          "completed_on": "2026-10-23",
+          "start": null,
+          "end": null,
+          "lane": "Access",
+          "depends_on": [],
+          "note": "Verified 23 October from Claude Code: feature branch pushed, PR #21 opened and merged after checks passed; live snapshot was read back.",
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/project-hub/pull/21",
+              "label": "Verified publish cycle"
+            }
+          ]
+        },
+        {
+          "id": "ai-016",
+          "name": "Save per-task hub-refresh instructions in both active accounts",
+          "status": "done",
+          "owner": "chatgpt",
+          "last_touched": "2026-10-23",
+          "completed_on": "2026-10-23",
+          "start": null,
+          "end": null,
+          "lane": "Account setup",
+          "depends_on": [],
+          "note": "ChatGPT custom instructions and Claude preferences were updated and reopened to confirm the personal-owned Home/Rules links and per-task refresh rule. Claude's redundant default Codex routing was removed. Both state there is no background sync.",
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1yO92jAmM0f1sN02165yW_zm1wbE9O8AiN1lNShnVDrI/edit",
+              "label": "Shared account setup status"
+            },
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1hR0JQ8eOJ34bScs8tp2H3B8yCvpH2FLiNX_bgXa1YNY/edit",
+              "label": "Personal-owned bootstrap instructions"
+            }
+          ]
+        },
+        {
+          "id": "ai-017",
+          "name": "Move shared AI memory docs to personal Gmail",
+          "status": "done",
+          "owner": "chatgpt",
+          "note": "Created personal-owned copies of Home and Rules, shared with the existing FFA-authenticated Drive connector for compatibility, updated account instructions and links, and preserved the FFA originals.",
+          "completed_on": "2026-10-23",
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1yO92jAmM0f1sN02165yW_zm1wbE9O8AiN1lNShnVDrI/edit",
+              "label": "Personal-owned Home"
+            },
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1hR0JQ8eOJ34bScs8tp2H3B8yCvpH2FLiNX_bgXa1YNY/edit",
+              "label": "Personal-owned Rules"
+            }
+          ],
+          "last_touched": "2026-10-23",
+          "lane": "Shared context",
+          "depends_on": []
+        },
+        {
+          "id": "ai-018",
+          "name": "Make shared project updates more reliable",
+          "status": "done",
+          "owner": "chatgpt",
+          "note": "Needs you gaps now sort by when they were first raised or surfaced. Missing target prompts carry a first-surfaced date, question dates are required, and impossible ISO dates are rejected. Shared rules now define conversation triggers for new projects, dates, completion, blockers and scope changes without a fixed questionnaire. PR #28 and its regression checks passed.",
+          "last_touched": "2026-10-23",
+          "lane": "Shared updates",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-23",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/project-hub/pull/28",
+              "label": "Gap ordering, date validation and test changes"
+            }
+          ]
+        },
+        {
+          "id": "ai-019",
+          "name": "Add guarded shared update preparation and publication receipts",
+          "status": "done",
+          "note": "Helper checks stale project hashes, replayed updates, lost task history and live snapshot matching. It prepares the public projection after canonical readback; authenticated source writes and PR publication remain steps owned by the active AI.",
+          "completed_on": "2026-10-23",
+          "depends_on": [
+            "ai-018"
+          ],
+          "owner": "chatgpt",
+          "last_touched": "2026-10-23",
+          "lane": "Shared updates",
+          "start": null,
+          "end": null,
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/project-hub/blob/main/docs/ai-update-protocol.md",
+              "label": "Shared update protocol and acceptance status"
+            }
+          ]
+        },
+        {
+          "id": "ai-020",
+          "name": "Configure the ChatGPT evening project catch-up",
+          "status": "done",
+          "note": "Daily evening catch-up is enabled. Interactive history search returned useful material but cannot prove exhaustive 24-hour coverage. A scheduled run still needs acceptance checking.",
+          "completed_on": "2026-10-23",
+          "depends_on": [],
+          "owner": "chatgpt",
+          "last_touched": "2026-10-23",
+          "lane": "Shared updates",
+          "start": null,
+          "end": null,
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/project-hub/blob/main/docs/ai-update-protocol.md",
+              "label": "Shared update protocol and acceptance status"
+            }
+          ]
+        },
+        {
+          "id": "ai-021",
+          "name": "Verify a scheduled change-to-publication cycle",
+          "status": "todo",
+          "note": "ChatGPT completed a cloud catch-up: shared records and selective history search were accessible, no new verified changes were found, the existing live receipt was checked, and private checkpoints saved. A new canonical change published by the scheduled routine remains untested. Optional follow-up; not required for the verified conversation workflow.",
+          "depends_on": [
+            "ai-020"
+          ],
+          "owner": "chatgpt",
+          "last_touched": "2026-10-23",
+          "lane": "Later / optional",
+          "start": null,
+          "end": null,
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/project-hub/blob/main/docs/ai-update-protocol.md",
+              "label": "Shared update protocol and acceptance status"
+            }
+          ]
+        },
+        {
+          "id": "ai-022",
+          "name": "Optional: enable Claude scheduled conversation catch-up",
+          "status": "todo",
+          "note": "Signed-in connected browser verified. Preferences saved and reopened; daily 21:30 task created and test executed. Scheduled session read Home/Rules but had no conversation-search tool or repository access, and saved an honest failure checkpoint. Configuration is complete; conversation-scan acceptance is blocked. Interactive Claude chat search works and search/memory settings are enabled. Scheduled task paused after the failed test to avoid repeated unsuccessful scans. Johnson confirmed automation is only a fallback; parked rather than gating per-task delivery.",
+          "depends_on": [],
+          "owner": "chatgpt",
+          "last_touched": "2026-10-23",
+          "lane": "Later / optional",
+          "start": null,
+          "end": null,
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/project-hub/blob/main/docs/ai-update-protocol.md",
+              "label": "Shared update protocol and acceptance status"
+            }
+          ]
+        },
+        {
+          "id": "ai-023",
+          "name": "Save Claude guarded-update preferences and daily routine",
+          "status": "done",
+          "owner": "chatgpt",
+          "last_touched": "2026-10-23",
+          "completed_on": "2026-10-23",
+          "lane": "Account setup",
+          "depends_on": [],
+          "note": "Connected browser account settings reopened to confirm the added update protocol persisted. Claude daily task detail confirmed Active and Daily at 9:30 PM; Run now produced a checkpoint. Successful chat scanning remains a separate open acceptance task. The routine was paused after the capability test; the saved configuration is retained for repair.",
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1hR0JQ8eOJ34bScs8tp2H3B8yCvpH2FLiNX_bgXa1YNY/edit",
+              "label": "Account configuration and observed test result"
+            }
+          ]
+        },
+        {
+          "id": "ai-024",
+          "name": "Verify conversation-driven project creation and updates in both AIs",
+          "status": "done",
+          "owner": "chatgpt",
+          "last_touched": "2026-10-23",
+          "completed_on": "2026-10-23",
+          "lane": "Shared updates",
+          "depends_on": [],
+          "note": "ChatGPT (active conversation) and Claude (fresh conversation) each created a disposable project and published a task completion update. Source records, dependencies, green PR checks and live JSON receipts were verified. Claude resolved a concurrent merge conflict. Initial handover write failed because Drive and Docs identities differed; only dummy Docs received the existing personal-account writer access, then Claude edited/read back its existing source and published successfully. QA entries are removed by a scoped rollback, with evidence retained in the PR history. Cleanup also caught and fixed an optional-only roadmap finish/group overlap; the regression test passes.",
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/project-hub/pull/32",
+              "label": "Conversation QA PR #32"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/project-hub/pull/34",
+              "label": "Conversation QA PR #34"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/project-hub/pull/35",
+              "label": "Conversation QA PR #35"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/project-hub/pull/36",
+              "label": "Conversation QA PR #36"
+            }
+          ]
+        },
+        {
+          "id": "ai-025",
+          "name": "Audit shared-context architecture and normal account access",
+          "status": "doing",
+          "owner": "chatgpt",
+          "note": "New Claude account bootstrap saved; Drive/GitHub connectors show connected. One-time read access to JhnsonO/project-hub was authorized and Claude reported reading main at 057e218. GitHub settings say its app is installed and Claude Code cloud sessions can work here. Claude-specific write/PR access, private Markdown and mobile behavior remain unverified.",
+          "last_touched": "2026-11-15",
+          "lane": "Natural conversation",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1hR0JQ8eOJ34bScs8tp2H3B8yCvpH2FLiNX_bgXa1YNY/edit",
+              "label": "Confirmed refactor scope and acceptance criteria"
+            }
+          ]
+        },
+        {
+          "id": "ai-026",
+          "name": "Simplify shared context after access tests pass",
+          "status": "todo",
+          "owner": "chatgpt",
+          "note": "Prefer private GitHub Markdown when verified; retain one authoritative source per information type and derive dashboard summaries where viable. Preserve existing Docs until replacement verification; no new background service.",
+          "last_touched": "2026-10-24",
+          "lane": "Natural conversation",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [
+            "ai-025"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1hR0JQ8eOJ34bScs8tp2H3B8yCvpH2FLiNX_bgXa1YNY/edit",
+              "label": "Confirmed refactor scope and acceptance criteria"
+            }
+          ]
+        },
+        {
+          "id": "ai-027",
+          "name": "Verify natural conversation and cross-AI continuation",
+          "status": "todo",
+          "owner": "chatgpt",
+          "note": "Test ordinary conversation without explicit save commands: proposals versus confirmed decisions, retrieval, meaningful updates, genuine cross-AI handover/follow-up, conflict preservation, duplicate avoidance, public updates and honest tool failures. Earlier dummy tests demonstrate mechanics only.",
+          "last_touched": "2026-10-24",
+          "lane": "Natural conversation",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [
+            "ai-026"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1hR0JQ8eOJ34bScs8tp2H3B8yCvpH2FLiNX_bgXa1YNY/edit",
+              "label": "Confirmed refactor scope and acceptance criteria"
+            }
+          ]
+        }
+      ],
+      "target_asked_on": "2026-10-23",
+      "watch": "The repo status is not proof that this new Claude account can write or publish a PR. Private-source and mobile tests remain open."
+    },
+    {
+      "id": "merch",
+      "name": "FFA Merch & Rewards",
+      "mono": "FM",
+      "group": "FFA",
+      "status": "Draft · approval pending",
+      "summary": "Live order and supplier-draft spreadsheets are established. Final quantities, production approval and reward artwork remain open.",
+      "milestones": [
+        {
+          "name": "Order records established",
+          "status": "done"
+        },
+        {
+          "name": "Final scope and artwork",
+          "status": "todo"
+        },
+        {
+          "name": "Production approval",
+          "status": "todo"
+        }
+      ],
+      "next_step": "Verify source records and confirm draft details before production approval.",
+      "watch": "A supplier quote draft is not a placed order.",
+      "updated": "29 OCT",
+      "workspace": {
+        "provider": "Google",
+        "url": "https://docs.google.com/document/d/1yO92jAmM0f1sN02165yW_zm1wbE9O8AiN1lNShnVDrI/edit"
+      },
+      "tasks": [
+        {
+          "id": "merch-register",
+          "name": "Establish live order and supplier-draft spreadsheets",
+          "status": "done",
+          "owner": "chatgpt",
+          "note": "Native records created on 28 October; existence and draft-only status independently verified on 29 October. Order details remain in the protected source.",
+          "last_touched": "2026-10-29",
+          "lane": "Restock",
+          "start": null,
+          "end": null,
+          "completed_on": "2026-10-28",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1yO92jAmM0f1sN02165yW_zm1wbE9O8AiN1lNShnVDrI/edit",
+              "label": "Merch project index and verification"
+            }
+          ]
+        },
+        {
+          "id": "merch-r01",
+          "name": "Verify historical source against the current register",
+          "status": "todo",
+          "owner": "chatgpt",
+          "note": "The current tracker link is recovered; historical order/source reconciliation is still open.",
+          "last_touched": "2026-10-29",
+          "lane": "Restock",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1yO92jAmM0f1sN02165yW_zm1wbE9O8AiN1lNShnVDrI/edit",
+              "label": "Merch project index and verification"
+            }
+          ]
+        },
+        {
+          "id": "merch-r02",
+          "name": "Confirm final draft items and production details",
+          "status": "todo",
+          "owner": "chatgpt",
+          "note": "Confirm quantities, sizes, stock and branding in the private source. Draft proposals are not purchase approval.",
+          "last_touched": "2026-10-29",
+          "lane": "Restock",
+          "start": null,
+          "end": null,
+          "completed_on": null,
+          "depends_on": [
+            "merch-register",
+            "merch-r01"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1yO92jAmM0f1sN02165yW_zm1wbE9O8AiN1lNShnVDrI/edit",
               "label": "Merch project index and verification"
             }
           ]
