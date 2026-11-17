@@ -2525,6 +2525,23 @@
               "label": "Rejected-session clips PR (merged)"
             }
           ]
+        },
+        {
+          "id": "media-079",
+          "name": "Goal clip names show the session day/date",
+          "status": "done",
+          "owner": null,
+          "note": "Merged and live 17 Nov (PR 167). Kris asked for it. Goal clips read like Goal · Dee · Mon 16/11 in the app and in downloaded file names. Added when shown, so existing clips have it too. Not yet checked in the live app.",
+          "last_touched": "2026-11-17",
+          "lane": "Clip review",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/167",
+              "label": "Goal clip day/date PR (merged)"
+            }
+          ]
         }
       ],
       "watch": "The compact 21 October current-state summary missed later entries in the historical log; use dated evidence and keep live acceptance separate. The clip-review controls went live on 17 November (media-075) but have only been checked in headless browsers; device acceptance by Kris remains open.",

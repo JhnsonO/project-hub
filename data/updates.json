@@ -913,6 +913,16 @@
         "media"
       ],
       "snapshot_hash": "aa063b4ea2908f3c83c8ca4617faecd690ad142c82709fbeb9181f798f3e500a"
+    },
+    {
+      "id": "claude-20261117-goal-clip-dates-2",
+      "fingerprint": "bcfebda12a77952c419096db42e5767d669996df793daa9a70ea119d68b8d89a",
+      "date": "2026-11-17",
+      "editor": "claude",
+      "projects": [
+        "media"
+      ],
+      "snapshot_hash": "3ba896f381484e292154ebb229dacc3410ecb6f5afcb0b25cf0becac986bfbdf"
     }
   ]
 }
