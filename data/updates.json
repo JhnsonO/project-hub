@@ -873,6 +873,16 @@
         "cards"
       ],
       "snapshot_hash": "5ac820af583f06b9915faddee70730dccb15eff02403228cb9dedfa0ca1f4503"
+    },
+    {
+      "id": "chatgpt-20261117-ffa-profiles-first-demo-01",
+      "fingerprint": "18fbbfa594ec6f0ddb2d1e0a2a12272da34d2a03d252ea4a20a6226cd3194e1f",
+      "date": "2026-11-17",
+      "editor": "chatgpt",
+      "projects": [
+        "cards"
+      ],
+      "snapshot_hash": "6ba8da58b3a643c886021a4c41c5f6dd1cf3e2b987c46b1264c565eb6d8e763c"
     }
   ]
 }
