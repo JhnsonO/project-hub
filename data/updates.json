@@ -823,6 +823,16 @@
         "media"
       ],
       "snapshot_hash": "aadd8dfced513cc3d6d78403f12e87e70941a8c383b527a7c5c9f0da9750ce17"
+    },
+    {
+      "id": "claude-20261117-kris-clip-review-03",
+      "fingerprint": "bcd17d419ec75e6839d068bcfc7da335b6c0e5a15fa2a75b6aabcb5988d53aaf",
+      "date": "2026-11-17",
+      "editor": "claude",
+      "projects": [
+        "media"
+      ],
+      "snapshot_hash": "fc986cc6db228be1099a319310f795a2479b3f932ed3180b29a87150d98ebaf4"
     }
   ]
 }
