@@ -4476,8 +4476,8 @@
       "name": "FFA Player Cards & Loyalty",
       "mono": "PC",
       "group": "FFA",
-      "status": "Acuity–Stripe candidates identified · self-claim path pending",
-      "summary": "The 16 Aug–16 Nov Acuity export and Stripe paid/captured card details identify 16 recurring contact groups where one booking name predominates and matches the Stripe customer/card name. These are candidate seeds, not 16 verified unique players. Three have no exact or strong fuzzy match in FFA Media beta; thirteen need an existing Player ID check.",
+      "status": "36 repeat-player profile seeds prepared · 50 held for review",
+      "summary": "A standalone Acuity + Stripe review prepared 36 unclaimed candidate profile seeds from recurring booking names with matching payer/customer-name evidence. Another 50 recurring-name entries remain in review. Profile selection does not depend on existing FFA Media records.",
       "milestones": [
         {
           "name": "Verify attendance data",
@@ -4496,8 +4496,8 @@
           "status": "todo"
         }
       ],
-      "next_step": "Build a self-claim-aware seed path and check existing Player IDs. Start with the three likely unlinked candidates; hold the other 13 for alias/duplicate review. Attach goals only after a unique Player ID or player claim is confirmed, and keep attendance separate.",
-      "watch": "Stripe confirms payer/cardholder details but cannot prove who attended or whether one contact books for others. The FFA Media beta Admin view does not expose a player-directory create/claim path. No player or goal rows changed.",
+      "next_step": "Create or obtain a write/import path for unclaimed profile seeds in FFA Media, then let players claim their records. Keep held names separate; attach existing goals only after a player claims or staff confirms the profile.",
+      "watch": "Acuity bookings do not prove attendance, and Stripe payers may book for other players. The private seed sheet contains identity-level details; no customer names or payment details are in this public record. No player, goal or account rows have been written to Media.",
       "updated": "17 NOV",
       "target_asked_on": "2026-11-06",
       "questions": [
@@ -5242,7 +5242,7 @@
           "name": "Prototype secure FFA player identity and minimal profile",
           "status": "todo",
           "owner": null,
-          "note": "A private roster now has 16 recurring contact groups that pass Acuity/Stripe name and repeat-charge filters; three are unlinked candidates. Reuse stable FFA Media Player IDs, keep seeds unclaimed, and never assign payer ownership. Thirteen candidates need an existing ID/alias check. The create/claim path is not available yet.",
+          "note": "The independent repeat-player seed list is prepared; the player-account design still requires a writable import/create-claim path. Seeds stay unclaimed and contact aliases remain private. A booking or payer account does not own another player's profile by default.",
           "last_touched": "2026-11-17",
           "lane": "Build",
           "depends_on": [
@@ -5306,7 +5306,7 @@
           "name": "Reconcile three-month players and verified goals",
           "status": "doing",
           "owner": null,
-          "note": "Acuity + Stripe identified 16 recurring contact groups with a dominant booking name matching a payer/cardholder name and repeat paid/captured charges. These are not confirmed unique players or attendance. Three have no exact/strong alias match in beta; thirteen need existing Player ID review. No player or goal rows changed.",
+          "note": "Acuity + Stripe review produced 36 unclaimed candidate profile seeds from 80 repeat booking contact emails and 86 recurring booking-name groups; 50 name entries are held for review. This selection was built independently from Media player records. Bookings are not attendance, Stripe payers may book for someone else, and no goals or Media rows were changed.",
           "last_touched": "2026-11-17",
           "lane": "Identity",
           "depends_on": [
@@ -5322,6 +5322,26 @@
               "provider": "Google",
               "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
               "label": "16 Nov Acuity, Stripe and FFA Media player reconciliation"
+            }
+          ]
+        },
+        {
+          "id": "cards-041",
+          "name": "Build standalone repeat-player profile seed list",
+          "status": "done",
+          "owner": "chatgpt",
+          "note": "Prepared a private import-ready sheet with 36 unclaimed candidate profile seeds and 50 held recurring-name entries. Acuity booking frequency and Stripe name/paid-charge evidence are captured without card details or amounts. Media import, attendance verification and goal assignment remain separate follow-up work.",
+          "last_touched": "2026-11-17",
+          "completed_on": "2026-11-17",
+          "lane": "Identity",
+          "depends_on": [
+            "cards-039"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
+              "label": "17 November standalone profile seed review and handover"
             }
           ]
         }
