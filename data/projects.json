@@ -1778,10 +1778,10 @@
         {
           "id": "media-046",
           "name": "Add approve, bin and five-star controls to clip review",
-          "status": "todo",
+          "status": "done",
           "owner": null,
-          "note": "Issue #98 records the 6 November mockup decision. Stars only; the numeric rating input was dropped. Mockup creation is not implementation or deployment.",
-          "last_touched": "2026-11-06",
+          "note": "Built and live 17 Nov as part of media-075 (PRs 156 to 160): approve (Keep), bin and tappable star ratings on clip cards, Watch rows and the Review queue. Issue #98 stays open until Kris confirms on a real device. Earlier note: 6 Nov mockup decision, stars only, numeric rating input dropped.",
+          "last_touched": "2026-11-17",
           "lane": "Review",
           "depends_on": [],
           "evidence": [
@@ -1789,6 +1789,11 @@
               "provider": "GitHub",
               "url": "https://github.com/JhnsonO/ffa-media/issues/98",
               "label": "Clip review controls issue"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/156",
+              "label": "Clip review PR (merged)"
             }
           ]
         },
@@ -2443,7 +2448,9 @@
           "note": "Merged and live 17 Nov (PRs 156 to 160; headless browser checks at phone, iPad and desktop, not yet on a real phone). Keep and Bin buttons, tappable star ratings on clip cards and Watch rows, rename, Mark posted, tabs To review / Ready to upload / Posted / Binned / All, scrolling clip list with kept clips behind Show kept, larger Both-cameras Watch view, quick Keep in the Review queue. Pages reload themselves when out of date.",
           "last_touched": "2026-11-17",
           "lane": "Clip review",
-          "depends_on": [],
+          "depends_on": [
+            "media-046"
+          ],
           "evidence": [
             {
               "provider": "GitHub",
