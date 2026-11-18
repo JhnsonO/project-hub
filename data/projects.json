@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "updated": "2026-11-18",
-  "updated_by": "claude",
+  "updated_by": "chatgpt",
   "groups": [
     "FFA",
     "OEV",
@@ -4575,9 +4575,9 @@
           "status": "done"
         }
       ],
-      "next_step": "Write the controlled-action interaction spec, compare low-maintenance account options across Squarespace, Acuity and FFA Media, then return for approval before any further login code, migration, merge or deployment.",
-      "watch": "Draft PR #164 is green but paused, unmerged and not deployed. No platform has been chosen for unified bookings, memberships and stats; no email, booking or payment match may grant profile ownership.",
-      "updated": "17 NOV",
+      "next_step": "Test logged-in and logged-out Squarespace Results-page behaviour with a test customer and confirm with Squarespace developer support whether a signed customer identity can be verified server-side by FFA Media. Preserve the public results and existing picker; do not ship client-only authentication.",
+      "watch": "Squarespace supports customer logins and member-gated pages, but no documented customer-session verification endpoint for the FFA backend was found. Browser-only account data is spoofable; goal/assist suggestions must stay disabled at the backend until verified attribution is proven. Draft My FFA login PR #164 remains paused and unmerged.",
+      "updated": "18 NOV",
       "target_asked_on": "2026-11-06",
       "questions": [
         {
@@ -5591,6 +5591,45 @@
               "provider": "Google",
               "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
               "label": "17 November player access and controlled stat updates"
+            }
+          ]
+        },
+        {
+          "id": "cards-050",
+          "name": "Research Squarespace-only Results suggestion login and attribution",
+          "status": "done",
+          "owner": "chatgpt",
+          "note": "Confirmed that Squarespace logins, member-gated pages and client-side member context can support logged-out UI blocking, but no supported endpoint was found to attest the currently logged-in customer to FFA Media. Browser-side identifiers cannot securely attribute submissions; this was research only, not a live test or production change.",
+          "last_touched": "2026-11-18",
+          "completed_on": "2026-11-18",
+          "lane": "Identity",
+          "depends_on": [
+            "cards-048"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
+              "label": "18 November Squarespace Results suggestion authentication research"
+            }
+          ]
+        },
+        {
+          "id": "cards-051",
+          "name": "Verify Squarespace customer identity for scorer and assister submissions",
+          "status": "todo",
+          "owner": null,
+          "note": "Using a test customer, check public Results page vs logged-in state, any applicable Member Site permission and available signed identity verification. Require the FFA Media suggestion endpoint to reject logged-out or forged requests and record verified submitter, match/goal, selected scorer/assister and pending-review status. If no supported zero-extra-login bridge exists, document the limitation before choosing an alternative.",
+          "last_touched": "2026-11-18",
+          "lane": "Identity",
+          "depends_on": [
+            "cards-050"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
+              "label": "18 November Squarespace Results suggestion authentication research"
             }
           ]
         }
