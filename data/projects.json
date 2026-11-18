@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "updated": "2026-11-17",
-  "updated_by": "chatgpt",
+  "updated": "2026-11-18",
+  "updated_by": "claude",
   "groups": [
     "FFA",
     "OEV",
@@ -2540,6 +2540,23 @@
               "provider": "GitHub",
               "url": "https://github.com/JhnsonO/ffa-media/pull/167",
               "label": "Goal clip day/date PR (merged)"
+            }
+          ]
+        },
+        {
+          "id": "media-080",
+          "name": "My day calendar and Watch Check sync",
+          "status": "done",
+          "owner": null,
+          "note": "Merged and live 18 Nov (PR 171). Tapping the date on My day opens a month calendar. Watch has a Check sync button that shows both cameras side by side so a person can confirm they line up; Out of sync opens the Sync cameras screen. Tested in headless browsers; not tried with real YouTube footage or on a real phone.",
+          "last_touched": "2026-11-18",
+          "lane": "Clip review",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/171",
+              "label": "Calendar and Check sync PR (merged)"
             }
           ]
         }
