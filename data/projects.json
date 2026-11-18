@@ -4551,8 +4551,8 @@
       "name": "FFA Player Cards & Loyalty",
       "mono": "PC",
       "group": "FFA",
-      "status": "Profiles first · email/SMS contributor verification selected",
-      "summary": "Player profiles, public Results and football stats remain browseable without login. Johnson chose one-time verification by email OR mobile phone before visitors can suggest goal scorers or assisters. The FFA Media backend must record a stable verified contributor ID and staff approval before stats change. No Squarespace login is required for these suggestions; existing My FFA Google login draft remains paused and undeployed.",
+      "status": "75 public-card drafts · no player accounts",
+      "summary": "Public player cards and the Results page remain browseable without login. Individual player accounts and profile claiming are out of scope. The private Acuity + Stripe review now has 75 draft card identities; repeated booking names/emails can seed a draft, with Stripe as supporting evidence because membership/coupon bookings may not create individual charges. Cards remain unpublished until Media identities, attendance and goal stats are verified. Email/phone verification for goal suggestions is a separate Results workflow decision.",
       "milestones": [
         {
           "name": "Verify attendance data",
@@ -4567,16 +4567,16 @@
           "status": "todo"
         },
         {
-          "name": "Player-account MVP pilot",
-          "status": "todo"
-        },
-        {
           "name": "Player profile interaction demo",
           "status": "done"
+        },
+        {
+          "name": "Build read-only public player card directory",
+          "status": "todo"
         }
       ],
-      "next_step": "Design and cost-check a minimal email-or-SMS OTP step inside the existing Results picker, persistent contributor session and secure suggestion audit trail; test backend rejection of unverified, replayed and abusive requests before any release.",
-      "watch": "Email/phone codes verify control of a contact method, not legal identity or player-profile ownership. SMS carries messaging costs. Provider, session lifetime, privacy retention and real-device tests are not finalised. No production integration implemented. Earlier Squarespace customer-auth test is now parked.",
+      "next_step": "Match the 75 private draft identities to FFA Media player records and verified goals. Keep Acuity booking counts as identity evidence only, never as attendance. Publish read-only cards only after names and stats are checked.",
+      "watch": "All 75 drafts remain private and unpublished; attendance, goals, assists, POTM, photos and Media links are pending. Stripe is optional identity support for membership/coupon players. Keep shared-booker names separate and hold same-name records under different contacts. No player accounts or claim flow. Results suggestion verification remains a separate, unimplemented workflow.",
       "updated": "18 NOV",
       "target_asked_on": "2026-11-06",
       "questions": [
@@ -5281,11 +5281,11 @@
         },
         {
           "id": "cards-035",
-          "name": "Agree minimal player-account MVP without Powerhouse",
+          "name": "Close former player-account MVP proposal",
           "status": "done",
           "owner": "chatgpt",
-          "note": "Confirmed Squarespace sells memberships; player login, personal profile/FFA ID and Acuity booking handoff take priority. Membership balances and billing management, verified goal claims and advanced cards are deferred. Documentation/architecture scope only; no live account or code changes.",
-          "last_touched": "2026-11-16",
+          "note": "Historical proposal superseded on 18 Nov 2026. Johnson confirmed no individual player accounts or claim flow; cards are public and viewable without login.",
+          "last_touched": "2026-11-18",
           "completed_on": "2026-11-16",
           "lane": "Plan",
           "depends_on": [],
@@ -5300,10 +5300,10 @@
         {
           "id": "cards-036",
           "name": "Audit existing Squarespace and Acuity client logins",
-          "status": "todo",
+          "status": "done",
           "owner": null,
-          "note": "Verify Squarespace customer accounts enabled and Acuity client log in/registration on /book; test return-visitor booking autofill without Powerhouse. Separate client accounts may require separate sign-in; no SSO promise.",
-          "last_touched": "2026-11-16",
+          "note": "Closed on 18 Nov 2026 after the scope changed: no individual player account, personalised login, or Squarespace account authentication is needed for public cards.",
+          "last_touched": "2026-11-18",
           "lane": "Build",
           "depends_on": [
             "cards-035"
@@ -5314,15 +5314,16 @@
               "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
               "label": "16 November player account MVP scope decision and handover"
             }
-          ]
+          ],
+          "completed_on": "2026-11-18"
         },
         {
           "id": "cards-037",
           "name": "Prototype secure FFA player identity and minimal profile",
-          "status": "todo",
+          "status": "done",
           "owner": null,
-          "note": "The independent repeat-player seed list is prepared; the player-account design still requires a writable import/create-claim path. Seeds stay unclaimed and contact aliases remain private. A booking or payer account does not own another player's profile by default.",
-          "last_touched": "2026-11-17",
+          "note": "Closed on 18 Nov 2026 after the scope changed: no individual player account, personalised login, or Squarespace account authentication is needed for public cards.",
+          "last_touched": "2026-11-18",
           "lane": "Build",
           "depends_on": [
             "cards-036"
@@ -5338,15 +5339,16 @@
               "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
               "label": "16 Nov player self-claim and reconciliation decision"
             }
-          ]
+          ],
+          "completed_on": "2026-11-18"
         },
         {
           "id": "cards-038",
           "name": "Pilot My FFA profile and booking entry point",
-          "status": "todo",
+          "status": "done",
           "owner": null,
-          "note": "On a test page, show a securely personalised profile with a Book Football action. Do not represent Squarespace customer account as authentication for the custom database without verifying it. Production and membership balance integration are not approved.",
-          "last_touched": "2026-11-16",
+          "note": "Closed on 18 Nov 2026 after the scope changed: no individual player account, personalised login, or Squarespace account authentication is needed for public cards.",
+          "last_touched": "2026-11-18",
           "lane": "Build",
           "depends_on": [
             "cards-037"
@@ -5357,15 +5359,16 @@
               "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
               "label": "16 November player account MVP scope decision and handover"
             }
-          ]
+          ],
+          "completed_on": "2026-11-18"
         },
         {
           "id": "cards-039",
           "name": "Define cross-system player identity and goal mapping",
           "status": "done",
           "owner": "chatgpt",
-          "note": "Confirmed: each player must claim their own profile; an account holder/payer does not own another player's profile by default. Reuses the FFA Media Player/PlayerAlias model and keeps ambiguous aliases/goals out of the first batch. Design decision documented; actual profile rows and account linking are not implemented.",
-          "last_touched": "2026-11-16",
+          "note": "Identity mapping remains necessary for public cards, but players will not claim or own profiles through accounts. Staff reconcile Acuity names/emails and Stripe support; keep shared-booker names separate and ambiguous aliases unlinked.",
+          "last_touched": "2026-11-18",
           "lane": "Identity",
           "depends_on": [
             "cards-036",
@@ -5385,8 +5388,8 @@
           "name": "Reconcile three-month players and verified goals",
           "status": "doing",
           "owner": null,
-          "note": "Acuity + Stripe review now has 45 unclaimed candidate profile seeds and 33 held recurring-name entries. The email-alias pass consolidated seven pairs of recurring names under one Acuity contact and merged one duplicate pair from the original Stripe-supported seeds. The known shared-booker account stays separate. Squarespace membership/coupon purchases still need reconciliation; bookings are not attendance and no goals or Media rows were changed.",
-          "last_touched": "2026-11-17",
+          "note": "Private roster now contains 75 draft card identities: 45 prior Stripe-supported seeds, 29 repeated Acuity candidates reclassified from the review queue, plus Taofeek identified by Johnson. One Mitchel spelling is an alias; duplicate Alex and Joseph Iyamu names across separate contacts remain held. Draft stats and Media links are pending; bookings are not attendance.",
+          "last_touched": "2026-11-18",
           "lane": "Identity",
           "depends_on": [
             "cards-039"
@@ -5406,11 +5409,11 @@
         },
         {
           "id": "cards-041",
-          "name": "Build standalone repeat-player profile seed list",
+          "name": "Build private roster for public-card drafts",
           "status": "done",
           "owner": "chatgpt",
-          "note": "Prepared a private working sheet with 45 unclaimed profile seeds and 33 held recurring-name entries. Seed evidence combines exact Stripe name matches, user-confirmed booking/payment routes and seven recurring-name email groups. The known shared-booker email remains unmerged. Squarespace membership records remain to be reconciled. No card details or amounts are retained; attendance, claims, Media import and goal assignment remain separate.",
-          "last_touched": "2026-11-17",
+          "note": "Private sheet has 75 public-card drafts and no player contact or payment details on the card tab. Includes recurring Acuity name/email candidates, Stripe-supported matches and the user-identified direct-payment player Taofeek. Johnson and Teo already matched existing seeds; no duplicates added. All cards are draft-only with verified stats and Media links pending.",
+          "last_touched": "2026-11-18",
           "completed_on": "2026-11-17",
           "lane": "Identity",
           "depends_on": [
@@ -5426,11 +5429,11 @@
         },
         {
           "id": "cards-042",
-          "name": "Reconcile Squarespace membership and coupon bookings",
-          "status": "todo",
+          "name": "Decide whether membership/coupon reconciliation blocks draft profiles",
+          "status": "done",
           "owner": null,
-          "note": "Match Squarespace membership purchases/coupon use to the private Acuity review queue before promoting additional names. Orders view was not accessible during the 17 November check; keep unmatched players on hold.",
-          "last_touched": "2026-11-17",
+          "note": "Closed as a blocker on 18 Nov: repeated Acuity name/email evidence is enough for a private draft profile; Stripe is supporting evidence only because membership/coupon purchases may not create individual charges. Squarespace purchase records were not reconciled and are not required for this draft roster.",
+          "last_touched": "2026-11-18",
           "lane": "Identity",
           "depends_on": [
             "cards-041"
@@ -5441,7 +5444,8 @@
               "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
               "label": "17 November membership route update"
             }
-          ]
+          ],
+          "completed_on": "2026-11-18"
         },
         {
           "id": "cards-043",
@@ -5465,11 +5469,11 @@
         },
         {
           "id": "cards-044",
-          "name": "Connect private player profile preview to canonical Player IDs",
+          "name": "Link public-card draft identities to FFA Media players and verified stats",
           "status": "todo",
           "owner": null,
-          "note": "Read existing player ID and carefully matched private seeds without publishing contacts or payer evidence. Show actual verified stats when available and explicit unverified states otherwise; establish an authenticated self-claim/approval process before accounts go live. Booking workflow remains out of scope.",
-          "last_touched": "2026-11-17",
+          "note": "Match 75 private draft identities to existing Media players and approved goals. No profile links, physical attendance, goal totals, assists or POTM counts are verified for this roster yet. Keep ambiguous identities and unverified stats off public cards; no player account or claim flow is required.",
+          "last_touched": "2026-11-18",
           "lane": "Build",
           "depends_on": [
             "cards-039",
@@ -5486,10 +5490,10 @@
         {
           "id": "cards-045",
           "name": "Build Google-powered My FFA login foundation",
-          "status": "todo",
+          "status": "done",
           "owner": "chatgpt",
-          "note": "Draft, unmerged FFA Media PR #164 contains a responsive My FFA login foundation with final-head green CI. It remains disabled and not deployed. Further implementation, merge and activation are paused until Johnson approves the account flow; no live user login or profile claim exists.",
-          "last_touched": "2026-11-17",
+          "note": "Closed by scope decision on 18 Nov 2026. Account-only PR #164 was closed unmerged; no account code was merged or deployed. Public cards remain unauthenticated.",
+          "last_touched": "2026-11-18",
           "lane": "Build",
           "depends_on": [
             "cards-035"
@@ -5505,15 +5509,16 @@
               "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
               "label": "17 November My FFA login decision and draft implementation handover"
             }
-          ]
+          ],
+          "completed_on": "2026-11-18"
         },
         {
           "id": "cards-046",
           "name": "Stage and test verified Google player sign-in",
-          "status": "todo",
+          "status": "done",
           "owner": null,
-          "note": "Create a Google OAuth web client ID with authorised testing origin, run additive migration on test database, test sign-in, sign-out, expired sessions and staff/consumer isolation. Never infer profile ownership from matching emails.",
-          "last_touched": "2026-11-17",
+          "note": "Closed on 18 Nov 2026 after the scope changed: no individual player account, personalised login, or Squarespace account authentication is needed for public cards.",
+          "last_touched": "2026-11-18",
           "lane": "Build",
           "depends_on": [
             "cards-045"
@@ -5529,15 +5534,16 @@
               "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
               "label": "17 November My FFA login decision and draft implementation handover"
             }
-          ]
+          ],
+          "completed_on": "2026-11-18"
         },
         {
           "id": "cards-047",
           "name": "Provide email sign-in and secure profile claiming",
-          "status": "todo",
+          "status": "done",
           "owner": null,
-          "note": "Add passwordless email option for players without Google and staff-reviewed claim/linking to existing Player IDs. Test account isolation and consent before showing goals or private session history.",
-          "last_touched": "2026-11-17",
+          "note": "Closed on 18 Nov 2026 after the scope changed: no individual player account, personalised login, or Squarespace account authentication is needed for public cards.",
+          "last_touched": "2026-11-18",
           "lane": "Build",
           "depends_on": [
             "cards-045",
@@ -5554,15 +5560,16 @@
               "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
               "label": "17 November My FFA login decision and draft implementation handover"
             }
-          ]
+          ],
+          "completed_on": "2026-11-18"
         },
         {
           "id": "cards-048",
-          "name": "Specify Claim a Goal and Suggest a Scorer review flow",
-          "status": "todo",
+          "name": "Close account-based goal suggestion flow",
+          "status": "done",
           "owner": null,
-          "note": "Keep player profiles and public stats viewable without login. Require login for either attribution request, save each as pending, and let staff approve or reject it before any public statistic changes. Preserve an audit trail and never infer ownership from contact or payment matches.",
-          "last_touched": "2026-11-17",
+          "note": "Superseded on 18 Nov: public card browsing needs no account. Goal suggestions remain a separate Results workflow using the previously selected email-or-phone OTP approach and staff approval; no implementation is live.",
+          "last_touched": "2026-11-18",
           "lane": "Product",
           "depends_on": [
             "cards-044"
@@ -5573,15 +5580,16 @@
               "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
               "label": "17 November player access and controlled stat updates"
             }
-          ]
+          ],
+          "completed_on": "2026-11-18"
         },
         {
           "id": "cards-049",
           "name": "Choose the lowest-maintenance player account setup",
-          "status": "todo",
+          "status": "done",
           "owner": null,
-          "note": "Compare the existing Squarespace, Acuity and FFA Media setup for bookings, memberships and player stats. No platform or migration is approved; bring back a recommendation before code or production changes.",
-          "last_touched": "2026-11-17",
+          "note": "Closed on 18 Nov 2026 after the scope changed: no individual player account, personalised login, or Squarespace account authentication is needed for public cards.",
+          "last_touched": "2026-11-18",
           "lane": "Product",
           "depends_on": [
             "cards-048"
@@ -5592,7 +5600,8 @@
               "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
               "label": "17 November player access and controlled stat updates"
             }
-          ]
+          ],
+          "completed_on": "2026-11-18"
         },
         {
           "id": "cards-050",
@@ -5617,9 +5626,9 @@
         {
           "id": "cards-051",
           "name": "Verify Squarespace customer identity for scorer and assister submissions",
-          "status": "todo",
+          "status": "done",
           "owner": null,
-          "note": "Parked after Johnson chose email-or-phone OTP for result suggestions instead of mandatory Squarespace login; revisit only if the product requirements change. No real customer-session verification was performed.",
+          "note": "Closed on 18 Nov 2026 after the scope changed: no individual player account, personalised login, or Squarespace account authentication is needed for public cards.",
           "last_touched": "2026-11-18",
           "lane": "Identity",
           "depends_on": [
@@ -5631,7 +5640,8 @@
               "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
               "label": "18 November Squarespace Results suggestion authentication research"
             }
-          ]
+          ],
+          "completed_on": "2026-11-18"
         },
         {
           "id": "cards-052",
@@ -5670,6 +5680,26 @@
               "provider": "Google",
               "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
               "label": "18 Nov contributor email/SMS verification decision and handover"
+            }
+          ]
+        },
+        {
+          "id": "cards-054",
+          "name": "Build the read-only public player-card directory",
+          "status": "todo",
+          "owner": null,
+          "note": "Public cards are browseable without player accounts. Expose only approved display names and verified card stats; do not include Acuity or Stripe contact data. No page or public API has been built.",
+          "last_touched": "2026-11-18",
+          "lane": "Build",
+          "depends_on": [
+            "cards-044",
+            "cards-012"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
+              "label": "Player cards board and handover"
             }
           ]
         }
