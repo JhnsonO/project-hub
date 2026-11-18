@@ -943,6 +943,16 @@
         "media"
       ],
       "snapshot_hash": "36fffb53a22916f1ad44039d22156c521c4f9c1bedcbddfc402fac9c1ed0b906"
+    },
+    {
+      "id": "claude-20261118-clip-star-filter",
+      "fingerprint": "b1abb691b2b021f62324e08e679f51750ed8420d3cb416b32c780f89fa2e1159",
+      "date": "2026-11-18",
+      "editor": "claude",
+      "projects": [
+        "media"
+      ],
+      "snapshot_hash": "20a2802c070d970e916fbd23c6bb90f5f6d2d3fbd609a0da3dd94c389cb23d7e"
     }
   ]
 }

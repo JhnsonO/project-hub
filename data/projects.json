@@ -2559,6 +2559,23 @@
               "label": "Calendar and Check sync PR (merged)"
             }
           ]
+        },
+        {
+          "id": "media-081",
+          "name": "Clips: star rating filter and 100 per batch",
+          "status": "done",
+          "owner": null,
+          "note": "Merged and live 18 Nov (PR 173). The Clips library has star chips (5, 4+, 3+, 2+, 1+, Unrated) and Show more loads 100 clips at a time instead of 40. Tested in headless browsers; not tried on a real phone.",
+          "last_touched": "2026-11-18",
+          "lane": "Clip review",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/173",
+              "label": "Star filter PR (merged)"
+            }
+          ]
         }
       ],
       "watch": "The compact 21 October current-state summary missed later entries in the historical log; use dated evidence and keep live acceptance separate. The clip-review controls went live on 17 November (media-075) but have only been checked in headless browsers; device acceptance by Kris remains open.",
