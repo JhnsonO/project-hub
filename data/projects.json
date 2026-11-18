@@ -4551,8 +4551,8 @@
       "name": "FFA Player Cards & Loyalty",
       "mono": "PC",
       "group": "FFA",
-      "status": "Profiles first · public stats · controlled actions in design",
-      "summary": "Player profiles and public stats stay viewable without login. Accounts are required only for controlled attribution requests: Claim a Goal and Suggest a Scorer, both pending staff approval. The Google login foundation remains a green-CI draft that is unmerged, disabled and paused while the lowest-maintenance account flow is chosen.",
+      "status": "Profiles first · email/SMS contributor verification selected",
+      "summary": "Player profiles, public Results and football stats remain browseable without login. Johnson chose one-time verification by email OR mobile phone before visitors can suggest goal scorers or assisters. The FFA Media backend must record a stable verified contributor ID and staff approval before stats change. No Squarespace login is required for these suggestions; existing My FFA Google login draft remains paused and undeployed.",
       "milestones": [
         {
           "name": "Verify attendance data",
@@ -4575,8 +4575,8 @@
           "status": "done"
         }
       ],
-      "next_step": "Test logged-in and logged-out Squarespace Results-page behaviour with a test customer and confirm with Squarespace developer support whether a signed customer identity can be verified server-side by FFA Media. Preserve the public results and existing picker; do not ship client-only authentication.",
-      "watch": "Squarespace supports customer logins and member-gated pages, but no documented customer-session verification endpoint for the FFA backend was found. Browser-only account data is spoofable; goal/assist suggestions must stay disabled at the backend until verified attribution is proven. Draft My FFA login PR #164 remains paused and unmerged.",
+      "next_step": "Design and cost-check a minimal email-or-SMS OTP step inside the existing Results picker, persistent contributor session and secure suggestion audit trail; test backend rejection of unverified, replayed and abusive requests before any release.",
+      "watch": "Email/phone codes verify control of a contact method, not legal identity or player-profile ownership. SMS carries messaging costs. Provider, session lifetime, privacy retention and real-device tests are not finalised. No production integration implemented. Earlier Squarespace customer-auth test is now parked.",
       "updated": "18 NOV",
       "target_asked_on": "2026-11-06",
       "questions": [
@@ -5619,7 +5619,7 @@
           "name": "Verify Squarespace customer identity for scorer and assister submissions",
           "status": "todo",
           "owner": null,
-          "note": "Using a test customer, check public Results page vs logged-in state, any applicable Member Site permission and available signed identity verification. Require the FFA Media suggestion endpoint to reject logged-out or forged requests and record verified submitter, match/goal, selected scorer/assister and pending-review status. If no supported zero-extra-login bridge exists, document the limitation before choosing an alternative.",
+          "note": "Parked after Johnson chose email-or-phone OTP for result suggestions instead of mandatory Squarespace login; revisit only if the product requirements change. No real customer-session verification was performed.",
           "last_touched": "2026-11-18",
           "lane": "Identity",
           "depends_on": [
@@ -5630,6 +5630,46 @@
               "provider": "Google",
               "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
               "label": "18 November Squarespace Results suggestion authentication research"
+            }
+          ]
+        },
+        {
+          "id": "cards-052",
+          "name": "Choose email or phone OTP for goal/assist contributors",
+          "status": "done",
+          "owner": "chatgpt",
+          "note": "Johnson selected optional email-or-SMS one-time code verification for contributors on the existing public Results page. This replaces the proposed compulsory Squarespace account gate for scorer/assist submissions. Verified channel control enables a stable contributor audit trail but does not prove real-world identity or player profile ownership. Scope recorded in the private handover; no production code or provider configured.",
+          "last_touched": "2026-11-18",
+          "completed_on": "2026-11-18",
+          "lane": "Identity",
+          "depends_on": [
+            "cards-050"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
+              "label": "18 Nov contributor email/SMS verification decision and handover"
+            }
+          ]
+        },
+        {
+          "id": "cards-053",
+          "name": "Specify and pilot contributor OTP and abuse controls in Results",
+          "status": "todo",
+          "owner": null,
+          "note": "Produce a small design using the existing goal/assist selector: request either phone or email code only on first submission, verify server-side, securely remember device, and log contributor ID and contact reference for staff review. Include code expiry, resend limits, spam protection, switch/contact linking rules, privacy retention and rejecting unauthenticated direct API submissions. Managed provider, SMS costs and 90-day remembered-session idea remain to be decided; do not deploy before testing.",
+          "last_touched": "2026-11-18",
+          "lane": "Build",
+          "depends_on": [
+            "cards-052",
+            "cards-048"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
+              "label": "18 Nov contributor email/SMS verification decision and handover"
             }
           ]
         }
