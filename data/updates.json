@@ -983,6 +983,16 @@
         "cards"
       ],
       "snapshot_hash": "c12e92bac6de2b755165018077c1cfd9e3beebd1baff1645e5a0f3070be26879"
+    },
+    {
+      "id": "claude-20261119-media-signups-03",
+      "fingerprint": "122b1961a675c73e09c72e86010ff999ee7ac7f1049aea150ef34b01eed24835",
+      "date": "2026-11-19",
+      "editor": "claude",
+      "projects": [
+        "media"
+      ],
+      "snapshot_hash": "c793a744413d06716999a12f40d842fe66c3b0829d1dd3aca49aaaa11aa738a6"
     }
   ]
 }
