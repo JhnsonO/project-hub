@@ -993,6 +993,16 @@
         "media"
       ],
       "snapshot_hash": "c793a744413d06716999a12f40d842fe66c3b0829d1dd3aca49aaaa11aa738a6"
+    },
+    {
+      "id": "claude-20261119-cards-players-page-01",
+      "fingerprint": "3ee65aa22f0c21f13933fc1b48c82e88cb99ec87d4418dc32c14aa16c7801d01",
+      "date": "2026-11-19",
+      "editor": "claude",
+      "projects": [
+        "cards"
+      ],
+      "snapshot_hash": "9323927caeec5dd47418f3aeec826e683f3d169c9508c9d234a1c408acb28f81"
     }
   ]
 }
