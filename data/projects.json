@@ -4572,7 +4572,7 @@
       "mono": "PC",
       "group": "FFA",
       "status": "75 drafts · page built, not on site yet",
-      "summary": "Public player cards and the Results page remain browseable without login. Individual player accounts and profile claiming are out of scope. The private Acuity + Stripe review now has 75 draft card identities; repeated booking names/emails can seed a draft, with Stripe as supporting evidence because membership/coupon bookings may not create individual charges. Cards remain unpublished until Media identities, attendance and goal stats are verified. Email/phone verification for goal suggestions is a separate Results workflow decision. Fresh competitive start on 4 Jan 2027; Oct–Dec bookings only set starting tiers. Built on the FFA website with ffa-media as backend. The public feed, eight tier plates and the Players page embed are built and merged; no cards are published yet.",
+      "summary": "Public player cards remain account-free and read-only: the feed, embed and 75 draft records are built but no card is published yet. An official January 2027 launch with a fresh competitive start is confirmed; Monday 4 January remains the proposed date. October–December bookings may inform manually reviewed starting tiers only.",
       "milestones": [
         {
           "name": "Verify attendance data",
@@ -4634,6 +4634,11 @@
           "id": "cards-animation-format",
           "text": "Which format should power card flames on phones?",
           "asked_on": "2026-11-11"
+        },
+        {
+          "id": "cards-launch-date",
+          "text": "Should public player cards launch on Monday 4 January?",
+          "asked_on": "2026-11-19"
         }
       ],
       "workspace": {
@@ -5787,7 +5792,7 @@
           "name": "Add wins, form, monthly race, streaks and Player of the Month to the feed",
           "status": "todo",
           "owner": null,
-          "note": "Backend does not produce these yet; they depend on official-season results from 4 Jan 2027. The page shows these sections only when the feed carries them.",
+          "note": "Backend does not produce these yet; they depend on approved official-season results; Monday 4 January is the proposed start date. The page shows these sections only when the feed carries them.",
           "last_touched": "2026-11-19",
           "lane": "Build",
           "depends_on": [
