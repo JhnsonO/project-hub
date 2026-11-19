@@ -5857,6 +5857,17 @@
               "label": "19 November January Tier XP proposal and scenario results"
             }
           ]
+        },
+        {
+          "id": "cards-062",
+          "name": "Reconcile historical bookings for draft player profiles",
+          "status": "done",
+          "owner": "chatgpt",
+          "note": "Combined Acuity and recovered TicketSource booking records and prioritised recently active players. Staff identity and milestone review remains before publication.",
+          "last_touched": "2026-11-19",
+          "completed_on": "2026-11-19",
+          "lane": "Product",
+          "depends_on": []
         }
       ]
     },
