@@ -5867,8 +5867,7 @@
           "last_touched": "2026-11-19",
           "completed_on": "2026-11-19",
           "lane": "Product",
-          "depends_on": [],
-          "evidence": []
+          "depends_on": []
         }
       ]
     },
