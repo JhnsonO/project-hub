@@ -4597,7 +4597,7 @@
       ],
       "next_step": "Run the private draft-name import (dry run, then real), publish the first cards, and paste the Players embed into a Squarespace page. Then build the wins, race and streak feed fields for the landing sections. Trial the proposed attendance-first Tier XP rules on verified rosters before enabling player-facing XP.",
       "watch": "All 75 drafts remain private and unpublished; attendance, goals, assists, POTM, photos and Media links are pending. Stripe is optional identity support for membership/coupon players. Keep shared-booker names separate and hold same-name records under different contacts. No player accounts or claim flow. Results suggestion verification remains a separate, unimplemented workflow. Landing sections (Player of the Month, race, On fire) show only once the feed carries their data; flame and photo artwork are not yet in the page.",
-      "updated": "19 NOV",
+      "updated": "2026-11-19",
       "target_asked_on": "2026-11-06",
       "questions": [
         {
@@ -5857,6 +5857,18 @@
               "label": "19 November January Tier XP proposal and scenario results"
             }
           ]
+        },
+        {
+          "id": "cards-062",
+          "name": "Reconcile historical bookings for draft player profiles",
+          "status": "done",
+          "owner": "chatgpt",
+          "note": "Combined Acuity and recovered TicketSource booking records and prioritised recently active players. Staff identity and milestone review remains before publication.",
+          "last_touched": "2026-11-19",
+          "completed_on": "2026-11-19",
+          "lane": "Product",
+          "depends_on": [],
+          "evidence": []
         }
       ]
     },
