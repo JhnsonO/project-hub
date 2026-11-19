@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "updated": "2026-11-18",
-  "updated_by": "chatgpt",
+  "updated": "2026-11-19",
+  "updated_by": "claude",
   "groups": [
     "FFA",
     "OEV",
@@ -4551,8 +4551,8 @@
       "name": "FFA Player Cards & Loyalty",
       "mono": "PC",
       "group": "FFA",
-      "status": "75 public-card drafts · no player accounts",
-      "summary": "Public player cards and the Results page remain browseable without login. Individual player accounts and profile claiming are out of scope. The private Acuity + Stripe review now has 75 draft card identities; repeated booking names/emails can seed a draft, with Stripe as supporting evidence because membership/coupon bookings may not create individual charges. Cards remain unpublished until Media identities, attendance and goal stats are verified. Email/phone verification for goal suggestions is a separate Results workflow decision.",
+      "status": "75 drafts · page built, not on site yet",
+      "summary": "Public player cards and the Results page remain browseable without login. Individual player accounts and profile claiming are out of scope. The private Acuity + Stripe review now has 75 draft card identities; repeated booking names/emails can seed a draft, with Stripe as supporting evidence because membership/coupon bookings may not create individual charges. Cards remain unpublished until Media identities, attendance and goal stats are verified. Email/phone verification for goal suggestions is a separate Results workflow decision. Fresh competitive start on 4 Jan 2027; Oct–Dec bookings only set starting tiers. Built on the FFA website with ffa-media as backend. The public feed, eight tier plates and the Players page embed are built and merged; no cards are published yet.",
       "milestones": [
         {
           "name": "Verify attendance data",
@@ -4572,19 +4572,14 @@
         },
         {
           "name": "Build read-only public player card directory",
-          "status": "todo"
+          "status": "doing"
         }
       ],
-      "next_step": "Match the 75 private draft identities to FFA Media player records and verified goals. Keep Acuity booking counts as identity evidence only, never as attendance. Publish read-only cards only after names and stats are checked.",
-      "watch": "All 75 drafts remain private and unpublished; attendance, goals, assists, POTM, photos and Media links are pending. Stripe is optional identity support for membership/coupon players. Keep shared-booker names separate and hold same-name records under different contacts. No player accounts or claim flow. Results suggestion verification remains a separate, unimplemented workflow.",
-      "updated": "18 NOV",
+      "next_step": "Run the private draft-name import (dry run, then real), publish the first cards, and paste the Players embed into a Squarespace page. Then build the wins, race and streak feed fields for the landing sections.",
+      "watch": "All 75 drafts remain private and unpublished; attendance, goals, assists, POTM, photos and Media links are pending. Stripe is optional identity support for membership/coupon players. Keep shared-booker names separate and hold same-name records under different contacts. No player accounts or claim flow. Results suggestion verification remains a separate, unimplemented workflow. Landing sections (Player of the Month, race, On fire) show only once the feed carries their data; flame and photo artwork are not yet in the page.",
+      "updated": "19 NOV",
       "target_asked_on": "2026-11-06",
       "questions": [
-        {
-          "id": "cards-launch-date",
-          "text": "What January date should the first player cards launch?",
-          "asked_on": "2026-11-06"
-        },
         {
           "id": "cards-regular-rule",
           "text": "Should Regular require attendance in 8 of the last 12 weeks?",
@@ -4612,7 +4607,7 @@
         },
         {
           "id": "cards-tier-thresholds",
-          "text": "Confirm wood to gold thresholds and the 500-hour wording?",
+          "text": "What thresholds for wood, stone, bronze, silver and gold?",
           "asked_on": "2026-11-10"
         },
         {
@@ -5686,10 +5681,10 @@
         {
           "id": "cards-054",
           "name": "Build the read-only public player-card directory",
-          "status": "todo",
+          "status": "doing",
           "owner": null,
-          "note": "Public cards are browseable without player accounts. Expose only approved display names and verified card stats; do not include Acuity or Stripe contact data. No page or public API has been built.",
-          "last_touched": "2026-11-18",
+          "note": "Public feed, eight tier plates and the Players page embed are built and merged; the feed is live with the tiers and no cards yet. Only approved display names and verified stats are exposed; no contact data. Not yet on the website and no cards published.",
+          "last_touched": "2026-11-19",
           "lane": "Build",
           "depends_on": [
             "cards-044",
@@ -5699,7 +5694,90 @@
             {
               "provider": "Google",
               "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
+              "label": "19 Nov 2026 Players page built and merged"
+            },
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
               "label": "Player cards board and handover"
+            }
+          ]
+        },
+        {
+          "id": "cards-055",
+          "name": "Build public card feed, tier plates and Players page embed",
+          "status": "done",
+          "owner": "claude",
+          "note": "Merged to the ffa-media main branch and deployed. Feed returns the eight tiers (wood to legend) with zero cards. Embed matches the target layout and was previewed locally with sample data only.",
+          "last_touched": "2026-11-19",
+          "lane": "Build",
+          "depends_on": [
+            "cards-039"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
+              "label": "19 Nov 2026 Players page built and merged"
+            }
+          ],
+          "completed_on": "2026-11-19"
+        },
+        {
+          "id": "cards-056",
+          "name": "Paste the Players embed into a Squarespace page",
+          "status": "todo",
+          "owner": null,
+          "note": "Add the embed to a Code Block on a hidden page with a black background. Until cards are published it shows a short holding message.",
+          "last_touched": "2026-11-19",
+          "lane": "Build",
+          "depends_on": [
+            "cards-055"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
+              "label": "19 Nov 2026 Players page built and merged"
+            }
+          ]
+        },
+        {
+          "id": "cards-057",
+          "name": "Import draft names and publish the first cards",
+          "status": "todo",
+          "owner": null,
+          "note": "Dry-run then import the 75 private draft names through the staff endpoint, check held names, then publish. Needs staff sign-in.",
+          "last_touched": "2026-11-19",
+          "lane": "Build",
+          "depends_on": [
+            "cards-055",
+            "cards-044"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
+              "label": "19 Nov 2026 Players page built and merged"
+            }
+          ]
+        },
+        {
+          "id": "cards-058",
+          "name": "Add wins, form, monthly race, streaks and Player of the Month to the feed",
+          "status": "todo",
+          "owner": null,
+          "note": "Backend does not produce these yet; they depend on official-season results from 4 Jan 2027. The page shows these sections only when the feed carries them.",
+          "last_touched": "2026-11-19",
+          "lane": "Build",
+          "depends_on": [
+            "cards-055"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
+              "label": "19 Nov 2026 Players page built and merged"
             }
           ]
         }
