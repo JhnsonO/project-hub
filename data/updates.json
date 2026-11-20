@@ -1063,6 +1063,16 @@
         "cards"
       ],
       "snapshot_hash": "6e82a4abd092bfb74574887c9c218769f8050fa88e97d798b309b4221df33df1"
+    },
+    {
+      "id": "chatgpt-20261120-tier-points-simulation-01",
+      "fingerprint": "05287cc45916e0743ed5d5d4cf13cba0ee28f5dbc717bf7311e57a422b4860c1",
+      "date": "2026-11-20",
+      "editor": "chatgpt",
+      "projects": [
+        "cards"
+      ],
+      "snapshot_hash": "7457c0e36e9a9af74d6d0e6dc1fd5156b87d0c12d8d8f118aef790d764db8bba"
     }
   ]
 }
