@@ -1053,6 +1053,16 @@
         "cards"
       ],
       "snapshot_hash": "f4bd736a250f19ca99146320661de0272af7ca7cdba27f347982dd5c8e7690a6"
+    },
+    {
+      "id": "chatgpt-20261120-tier-points-terminology-01",
+      "fingerprint": "c3bdadb53274e6bdabd8d23d7ee4c19e698046ed0e47bd939a0ead4f65290123",
+      "date": "2026-11-20",
+      "editor": "chatgpt",
+      "projects": [
+        "cards"
+      ],
+      "snapshot_hash": "6e82a4abd092bfb74574887c9c218769f8050fa88e97d798b309b4221df33df1"
     }
   ]
 }
