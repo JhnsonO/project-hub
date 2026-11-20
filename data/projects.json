@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "updated": "2026-11-19",
+  "updated": "2026-11-20",
   "updated_by": "chatgpt",
   "groups": [
     "FFA",
@@ -4597,7 +4597,7 @@
       ],
       "next_step": "Run the private draft-name import (dry run, then real), publish the first cards, and paste the Players embed into a Squarespace page. Then build the wins, race and streak feed fields for the landing sections. Trial the proposed attendance-first Tier XP rules on verified rosters before enabling player-facing XP.",
       "watch": "All 75 drafts remain private and unpublished; attendance, goals, assists, POTM, photos and Media links are pending. Stripe is optional identity support for membership/coupon players. Keep shared-booker names separate and hold same-name records under different contacts. No player accounts or claim flow. Results suggestion verification remains a separate, unimplemented workflow. Landing sections (Player of the Month, race, On fire) show only once the feed carries their data; flame and photo artwork are not yet in the page.",
-      "updated": "19 NOV",
+      "updated": "20 NOV",
       "target_asked_on": "2026-11-06",
       "questions": [
         {
@@ -5873,6 +5873,19 @@
           "completed_on": "2026-11-19",
           "lane": "Product",
           "depends_on": []
+        },
+        {
+          "id": "cards-063",
+          "name": "Reconcile historical bookings using contact details",
+          "status": "done",
+          "owner": "chatgpt",
+          "note": "Matched TicketSource report entries to Acuity draft profiles and checked for duplicate bookings. Staff review remains before publishing player milestones.",
+          "last_touched": "2026-11-20",
+          "completed_on": "2026-11-20",
+          "lane": "Product",
+          "depends_on": [
+            "cards-062"
+          ]
         }
       ]
     },
