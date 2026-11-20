@@ -1043,6 +1043,16 @@
         "cards"
       ],
       "snapshot_hash": "6d656234b9fb15c80c5319b7f6bf34c002ffb750a96d0149659e5226a6bf68b7"
+    },
+    {
+      "id": "chatgpt-20261120-ffa-booking-email-reconciliation-01",
+      "fingerprint": "26a871f07dbc0726de2853abc2878df8c9c27daf66331ee4416da1748a167c96",
+      "date": "2026-11-20",
+      "editor": "chatgpt",
+      "projects": [
+        "cards"
+      ],
+      "snapshot_hash": "f4bd736a250f19ca99146320661de0272af7ca7cdba27f347982dd5c8e7690a6"
     }
   ]
 }
