@@ -5829,7 +5829,7 @@
           "name": "Approve Tier Points thresholds after verified-attendance dry-run",
           "status": "todo",
           "owner": null,
-          "note": "January attendance-first XP proposal completed and synthetic scenarios checked. Review the proposal and dry-run against verified attendance before enabling Tier Points.",
+          "note": "Core Tier Points design simulated. Validate inputs on real session records and review tier thresholds before enabling live scoring.",
           "last_touched": "2026-11-19",
           "lane": "Product",
           "depends_on": [
@@ -5902,6 +5902,26 @@
               "provider": "Google",
               "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
               "label": "20 November Tier Points terminology decision"
+            }
+          ]
+        },
+        {
+          "id": "cards-066",
+          "name": "Simulate the agreed Tier Points rules",
+          "status": "done",
+          "owner": "chatgpt",
+          "note": "Tested consecutive attendance and win bonuses across six synthetic play patterns. Live scoring awaits a real-record dry run.",
+          "last_touched": "2026-11-20",
+          "completed_on": "2026-11-20",
+          "lane": "Product",
+          "depends_on": [
+            "cards-061"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
+              "label": "20 November Tier Points simulation and handover"
             }
           ]
         }
