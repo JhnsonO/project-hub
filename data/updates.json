@@ -1164,6 +1164,16 @@
         "family-history"
       ],
       "snapshot_hash": "4ef592d2bf39a965b2aa2ad49ef7d0b6dfa01b7f4abf264612b4ff0f9fb476fe"
+    },
+    {
+      "id": "ffa-badge-material-reference",
+      "fingerprint": "7f0d4675939fcd1270f4eaf40f5541a06d03d71e86f80c6f68dad78cdc8f9a52",
+      "date": "2026-11-21",
+      "editor": "chatgpt",
+      "projects": [
+        "cards"
+      ],
+      "snapshot_hash": "f3bf60218861cd290298ec91b1fa1e35ebeed3ef6fe971815e02d401a8169ceb"
     }
   ]
 }
