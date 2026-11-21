@@ -1156,14 +1156,14 @@
     },
     {
       "id": "chatgpt-20261121-daily-catchup-family-01",
-      "fingerprint": "e8c86efa1a4de064db4d9c3d3c7b7921a95860976bd1efde665e2945f63a91b0",
+      "fingerprint": "02e9a3a74f908b25b0bfc78a86981b9d8080de10cfb0e298cb4b8d36c178ef34",
       "date": "2026-11-21",
       "editor": "chatgpt",
       "projects": [
         "cards",
         "family-history"
       ],
-      "snapshot_hash": "11e5a78dcd906619ab60a2031386e6ed4bb6d72ba0960695806f42ea8ede1c64"
+      "snapshot_hash": "4ef592d2bf39a965b2aa2ad49ef7d0b6dfa01b7f4abf264612b4ff0f9fb476fe"
     }
   ]
 }
