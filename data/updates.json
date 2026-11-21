@@ -1073,6 +1073,16 @@
         "cards"
       ],
       "snapshot_hash": "cfda82a495d42cfeedc9bf6d08719c4c8e43480366a75ad3397ed704c3227371"
+    },
+    {
+      "id": "chatgpt-20261121-tier-points-dry-run-01",
+      "fingerprint": "e4643bc6b4321d5a3097a2d087f67448781dede2ab5ae591a17ae87981bbe8a0",
+      "date": "2026-11-21",
+      "editor": "chatgpt",
+      "projects": [
+        "cards"
+      ],
+      "snapshot_hash": "a901d5ffb7375dc2906cd901d4ca51101de108ec1cab7c00b7ab21047f18c1c2"
     }
   ]
 }
