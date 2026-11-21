@@ -1133,6 +1133,16 @@
         "cards"
       ],
       "snapshot_hash": "edefd57147ce498bf3bf9c82df6297d0bf5fdc3dbbc4ff484235c0aca3baa402"
+    },
+    {
+      "id": "claude-20261121-cards-profile-route",
+      "fingerprint": "b66e0e2f9671b70d857f997056f7375a3fdd7101806293c4d13682466c6b8384",
+      "date": "2026-11-21",
+      "editor": "claude",
+      "projects": [
+        "cards"
+      ],
+      "snapshot_hash": "41259a690f017793b644f1b26db1af2d5044191fad4fc9776d19b3eee7ef262f"
     }
   ]
 }
