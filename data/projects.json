@@ -6046,7 +6046,8 @@
           "name": "Prototype material-specific 3D badge finishes",
           "status": "done",
           "owner": null,
-          "note": "Eight tier finish mockups and implementation handoff prepared. Rendered poses reviewed. Next: integrate into profile inspector and test in desktop and mobile browsers."
+          "note": "Eight tier finish mockups and implementation handoff prepared. Rendered poses reviewed. Next: integrate into profile inspector and test in desktop and mobile browsers.",
+          "depends_on": []
         }
       ]
     },
