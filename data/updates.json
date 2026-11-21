@@ -1123,6 +1123,16 @@
         "cards"
       ],
       "snapshot_hash": "ef3a61d0106997765f0bb1eecb98f76f5f85bb0f9d3e1a7bb4edbb322f8197de"
+    },
+    {
+      "id": "claude-20261121-players-audit-fixes",
+      "fingerprint": "5da27c8227a493afb6ddf5ac85d9a112b189d589ef809338d6e8a79e75f30ac2",
+      "date": "2026-11-21",
+      "editor": "claude",
+      "projects": [
+        "cards"
+      ],
+      "snapshot_hash": "edefd57147ce498bf3bf9c82df6297d0bf5fdc3dbbc4ff484235c0aca3baa402"
     }
   ]
 }

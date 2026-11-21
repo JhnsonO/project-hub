@@ -4595,16 +4595,11 @@
           "status": "doing"
         }
       ],
-      "next_step": "Check /players on a real phone, merge ffa-media PR 185, then import and publish backend cards to replace the nine starter cards.",
+      "next_step": "Add a short explainer for visitors, check /players on a real phone, merge ffa-media PR 185, then import and publish backend cards to replace the nine starter cards.",
       "watch": "All 75 drafts remain private and unpublished; attendance, goals, assists, POTM, photos and Media links are pending. Stripe is optional identity support for membership/coupon players. Keep shared-booker names separate and hold same-name records under different contacts. No player accounts or claim flow. Results suggestion verification remains a separate, unimplemented workflow. The unlinked /players page shows nine starter cards and zero stats until verified data exists; Player of the Month, race, On fire and highlights appear only once the feed carries their data.",
       "updated": "21 NOV",
       "target_asked_on": "2026-11-06",
       "questions": [
-        {
-          "id": "cards-first-card",
-          "text": "How many verified sessions before a player unlocks their first baby card?",
-          "asked_on": "2026-11-07"
-        },
         {
           "id": "cards-retirement",
           "text": "After how many absent weeks should a player's card retire?",
@@ -4614,16 +4609,6 @@
           "id": "cards-potm-tie",
           "text": "How should ties on monthly wins be broken?",
           "asked_on": "2026-11-09"
-        },
-        {
-          "id": "cards-tier-rule",
-          "text": "Earn tiers by sessions played and never lose them?",
-          "asked_on": "2026-11-10"
-        },
-        {
-          "id": "cards-tier-thresholds",
-          "text": "What thresholds for wood, stone, bronze, silver and gold?",
-          "asked_on": "2026-11-10"
         },
         {
           "id": "cards-animation-format",
@@ -4667,7 +4652,7 @@
           "name": "Define baby-card maturity, Regular status and permanent progression",
           "status": "doing",
           "owner": null,
-          "note": "Johnson confirmed full maturity equals Regular. The latest canonical direction uses bronze, silver and gold as the base progression, but thresholds and its relationship to baby/junior/Regular maturity remain unresolved. First baby card must be earned after several verified sessions, not the first attendance. Eight-tier ladder wood, stone, bronze, silver, gold, diamond, obsidian, legend: diamond 500, obsidian 750, legend 1,000 sessions confirmed; lower five thresholds are suggestions only. Suggestion awaiting decision: tiers earned by verified sessions and never lost. 21 Nov: Johnson confirmed Regular requires attendance in 8 of the last 12 weeks; how weeks are counted is not yet specified.",
+          "note": "Johnson confirmed full maturity equals Regular. The latest canonical direction uses bronze, silver and gold as the base progression, but thresholds and its relationship to baby/junior/Regular maturity remain unresolved. First baby card must be earned after several verified sessions, not the first attendance. Eight-tier ladder wood, stone, bronze, silver, gold, diamond, obsidian, legend: diamond 500, obsidian 750, legend 1,000 sessions confirmed; lower five thresholds are suggestions only. Suggestion awaiting decision: tiers earned by verified sessions and never lost. 21 Nov: Johnson confirmed Regular requires attendance in 8 of the last 12 weeks; how weeks are counted is not yet specified. Reconciled 21 Nov: first card suggested at 5 attended sessions and made by staff (19 Nov); tiers come from Tier Points with no inactivity demotion; pilot cutoffs 0/4/12/28/52/88/132/200 approved.",
           "last_touched": "2026-11-21",
           "lane": "Rules",
           "depends_on": [],
@@ -5996,7 +5981,7 @@
           "name": "Rebuild the live Players page to match the approved design",
           "status": "done",
           "owner": "claude",
-          "note": "Johnson asked for the live page to follow the Player Card design. Directory now matches the Working page board (search, tier chips, sort, five cards a row, full-width band); player page uses the Stadium Night layout with zeros until stats start on 4 January. Saved live with Johnson's approval; checked on desktop with real card art, phone width in a test browser only. PR open.",
+          "note": "Johnson asked for the live page to follow the Player Card design. Directory now matches the Working page board (search, tier chips, sort, five cards a row, full-width band); player page uses the Stadium Night layout with zeros until stats start on 4 January. Saved live with Johnson's approval; checked on desktop with real card art, phone width in a test browser only. PR open. Audit follow-up saved live the same day: footer overlap fixed, player page stacks on tablet, phone layout matches the phone board, compact form row, clearer counts and accessibility fixes. Checked live on desktop and in tablet and phone-width frames.",
           "last_touched": "2026-11-21",
           "completed_on": "2026-11-21",
           "lane": "Build",
