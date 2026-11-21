@@ -1143,6 +1143,16 @@
         "cards"
       ],
       "snapshot_hash": "41259a690f017793b644f1b26db1af2d5044191fad4fc9776d19b3eee7ef262f"
+    },
+    {
+      "id": "claude-20261121-cards-import-clear-rows",
+      "fingerprint": "fd38da08d436e82ea75f252f0c47aa159a7c9d2d2ea1aa80291db5ecd1961405",
+      "date": "2026-11-21",
+      "editor": "claude",
+      "projects": [
+        "cards"
+      ],
+      "snapshot_hash": "5d77d7cae84f77c87c2b19aa30a371451216c2d6fb266d246644a2942a3456ad"
     }
   ]
 }
