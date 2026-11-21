@@ -4595,7 +4595,7 @@
           "status": "doing"
         }
       ],
-      "next_step": "Run the private draft-name import (dry run, then real), publish the first cards, and paste the Players embed into a Squarespace page. Then build the wins, race and streak feed fields for the landing sections. Trial the proposed attendance-first Tier Points rules on verified rosters before enabling player-facing Tier Points.",
+      "next_step": "Build the public Players page and test booking-to-player matching, duplicate handling and scoring. Verify match results for win points.",
       "watch": "All 75 drafts remain private and unpublished; attendance, goals, assists, POTM, photos and Media links are pending. Stripe is optional identity support for membership/coupon players. Keep shared-booker names separate and hold same-name records under different contacts. No player accounts or claim flow. Results suggestion verification remains a separate, unimplemented workflow. Landing sections (Player of the Month, race, On fire) show only once the feed carries their data; flame and photo artwork are not yet in the page.",
       "updated": "20 NOV",
       "target_asked_on": "2026-11-06",
@@ -5829,7 +5829,7 @@
           "name": "Approve Tier Points thresholds after verified-attendance dry-run",
           "status": "todo",
           "owner": null,
-          "note": "Core Tier Points design simulated. Validate inputs on real session records and review tier thresholds before enabling live scoring.",
+          "note": "Replay complete. Acuity bookings are the source of truth for attendance credit. Test automated booking matching and scoring before enabling live points; use verified results for win credit.",
           "last_touched": "2026-11-19",
           "lane": "Product",
           "depends_on": [
@@ -5942,6 +5942,26 @@
               "provider": "Google",
               "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
               "label": "21 November Tier Points dry run"
+            }
+          ]
+        },
+        {
+          "id": "cards-068",
+          "name": "Confirm bookings as the attendance source of truth",
+          "status": "done",
+          "owner": "chatgpt",
+          "note": "Use Acuity bookings for attendance and streak scoring, with operational corrections going forward. Historical check-ins are no longer required.",
+          "last_touched": "2026-11-21",
+          "completed_on": "2026-11-21",
+          "lane": "Product",
+          "depends_on": [
+            "cards-067"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
+              "label": "21 November booking source of truth decision"
             }
           ]
         }

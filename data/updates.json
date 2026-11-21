@@ -1083,6 +1083,16 @@
         "cards"
       ],
       "snapshot_hash": "a901d5ffb7375dc2906cd901d4ca51101de108ec1cab7c00b7ab21047f18c1c2"
+    },
+    {
+      "id": "chatgpt-20261121-booking-source-01",
+      "fingerprint": "44f6581ede207c2137ecf16c1af464b166da793cb4bd3059bd8f3cb76ad6a253",
+      "date": "2026-11-21",
+      "editor": "chatgpt",
+      "projects": [
+        "cards"
+      ],
+      "snapshot_hash": "fc727bb36ebad258650204f71b4b649d4187072bf272874c4639f02003790a60"
     }
   ]
 }
