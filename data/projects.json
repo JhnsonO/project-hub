@@ -4595,7 +4595,7 @@
           "status": "doing"
         }
       ],
-      "next_step": "Build the public Players page and test booking-to-player matching, duplicate handling and scoring. Verify match results for win points.",
+      "next_step": "Complete the profile data integration and test the interactive embed on a private Squarespace page before release.",
       "watch": "All 75 drafts remain private and unpublished; attendance, goals, assists, POTM, photos and Media links are pending. Stripe is optional identity support for membership/coupon players. Keep shared-booker names separate and hold same-name records under different contacts. No player accounts or claim flow. Results suggestion verification remains a separate, unimplemented workflow. Landing sections (Player of the Month, race, On fire) show only once the feed carries their data; flame and photo artwork are not yet in the page.",
       "updated": "20 NOV",
       "target_asked_on": "2026-11-06",
@@ -5962,6 +5962,26 @@
               "provider": "Google",
               "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
               "label": "21 November booking source of truth decision"
+            }
+          ]
+        },
+        {
+          "id": "cards-069",
+          "name": "Build the Players profile interface and private preview",
+          "status": "done",
+          "owner": "chatgpt",
+          "note": "Built the profile interface from the approved design and tested core controls with fixture data. A draft implementation PR is open. Live data linkage and website acceptance remain open.",
+          "last_touched": "2026-11-21",
+          "completed_on": "2026-11-21",
+          "lane": "Build",
+          "depends_on": [
+            "cards-068"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
+              "label": "Players profile preview and build handover"
             }
           ]
         }
