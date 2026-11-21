@@ -1113,6 +1113,16 @@
         "cards"
       ],
       "snapshot_hash": "723062f4418e1e65e321bf966ca6b23542aafe3ff5dad5a435b66807cd4cc8c7"
+    },
+    {
+      "id": "claude-20261121-regular-rule",
+      "fingerprint": "3fd663ebc269308d46cc99f3c031e7aa9cbc4b69590a71b941fc049976d9f774",
+      "date": "2026-11-21",
+      "editor": "claude",
+      "projects": [
+        "cards"
+      ],
+      "snapshot_hash": "ef3a61d0106997765f0bb1eecb98f76f5f85bb0f9d3e1a7bb4edbb322f8197de"
     }
   ]
 }
