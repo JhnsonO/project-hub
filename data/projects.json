@@ -4571,8 +4571,8 @@
       "name": "FFA Player Cards & Loyalty",
       "mono": "PC",
       "group": "FFA",
-      "status": "Players page live (unlinked) · profile route live · stats from 4 Jan",
-      "summary": "Public player cards remain account-free and read-only: the feed, embed and 75 draft records are built but no card is published yet. An official January 2027 launch with a fresh competitive start is confirmed; Monday 4 January remains the proposed date. October–December bookings may inform manually reviewed starting tiers only.",
+      "status": "Players page live (unlinked) · profile route live · 56 draft cards loaded · stats from 4 Jan",
+      "summary": "Public player cards remain account-free and read-only: the feed, embed and 56 imported draft cards are built but no card is published yet. An official January 2027 launch with a fresh competitive start is confirmed; Monday 4 January remains the proposed date. October–December bookings may inform manually reviewed starting tiers only.",
       "milestones": [
         {
           "name": "Verify attendance data",
@@ -4595,8 +4595,8 @@
           "status": "doing"
         }
       ],
-      "next_step": "Agree how players consent to public names, then dry-run the card import and publish cards; add a visitor explainer, check /players on a real phone and merge ffa-media PR 185.",
-      "watch": "All 75 drafts remain private and unpublished; attendance, goals, assists, POTM, photos and Media links are pending. Stripe is optional identity support for membership/coupon players. Keep shared-booker names separate and hold same-name records under different contacts. No player accounts or claim flow. Results suggestion verification remains a separate, unimplemented workflow. The unlinked /players page shows nine starter cards and zero stats until verified data exists; Player of the Month, race, On fire and highlights appear only once the feed carries their data.",
+      "next_step": "Resolve the remaining held and duplicate card rows, then apply starting tiers from the manual sheet. After that agree how players consent to public names, publish cards, add a visitor explainer, check /players on a real phone and merge ffa-media PR 185.",
+      "watch": "56 of the 75 draft records are now imported as private, unpublished cards at the lowest tier; the rest await identity decisions and tiers are not yet applied; attendance, goals, assists, POTM, photos and Media links are pending. Stripe is optional identity support for membership/coupon players. Keep shared-booker names separate and hold same-name records under different contacts. No player accounts or claim flow. Results suggestion verification remains a separate, unimplemented workflow. The unlinked /players page shows nine starter cards and zero stats until verified data exists; Player of the Month, race, On fire and highlights appear only once the feed carries their data.",
       "updated": "21 NOV",
       "target_asked_on": "2026-11-06",
       "questions": [
@@ -6018,6 +6018,26 @@
               "provider": "Google",
               "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
               "label": "21 November profile route handover"
+            }
+          ]
+        },
+        {
+          "id": "cards-072",
+          "name": "Import the clear draft player cards",
+          "status": "done",
+          "owner": "claude",
+          "note": "Linked the confirmed rows to existing players and imported the other clear rows as private draft cards: 56 in total, none published, all at the lowest tier. Rows needing identity decisions were held back; tiers are not applied yet. The one-off import job was switched off afterwards.",
+          "last_touched": "2026-11-21",
+          "completed_on": "2026-11-21",
+          "lane": "Build",
+          "depends_on": [
+            "cards-071"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
+              "label": "21 November card import run handover"
             }
           ]
         }
