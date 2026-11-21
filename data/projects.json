@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "updated": "2026-11-20",
+  "updated": "2026-11-21",
   "updated_by": "chatgpt",
   "groups": [
     "FFA",
@@ -5922,6 +5922,26 @@
               "provider": "Google",
               "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
               "label": "20 November Tier Points simulation and handover"
+            }
+          ]
+        },
+        {
+          "id": "cards-067",
+          "name": "Replay Tier Points against historical booking records",
+          "status": "done",
+          "owner": "chatgpt",
+          "note": "Completed a 52-week booking replay and identity sensitivity check. Verified attendance and results acceptance remains open.",
+          "last_touched": "2026-11-21",
+          "completed_on": "2026-11-21",
+          "lane": "Product",
+          "depends_on": [
+            "cards-066"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
+              "label": "21 November Tier Points dry run"
             }
           ]
         }
