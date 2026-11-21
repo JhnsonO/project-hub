@@ -4601,11 +4601,6 @@
       "target_asked_on": "2026-11-06",
       "questions": [
         {
-          "id": "cards-regular-rule",
-          "text": "Should Regular require attendance in 8 of the last 12 weeks?",
-          "asked_on": "2026-11-07"
-        },
-        {
           "id": "cards-first-card",
           "text": "How many verified sessions before a player unlocks their first baby card?",
           "asked_on": "2026-11-07"
@@ -4672,8 +4667,8 @@
           "name": "Define baby-card maturity, Regular status and permanent progression",
           "status": "doing",
           "owner": null,
-          "note": "Johnson confirmed full maturity equals Regular. The latest canonical direction uses bronze, silver and gold as the base progression, but thresholds and its relationship to baby/junior/Regular maturity remain unresolved. First baby card must be earned after several verified sessions, not the first attendance. Eight-tier ladder wood, stone, bronze, silver, gold, diamond, obsidian, legend: diamond 500, obsidian 750, legend 1,000 sessions confirmed; lower five thresholds are suggestions only. Suggestion awaiting decision: tiers earned by verified sessions and never lost.",
-          "last_touched": "2026-11-10",
+          "note": "Johnson confirmed full maturity equals Regular. The latest canonical direction uses bronze, silver and gold as the base progression, but thresholds and its relationship to baby/junior/Regular maturity remain unresolved. First baby card must be earned after several verified sessions, not the first attendance. Eight-tier ladder wood, stone, bronze, silver, gold, diamond, obsidian, legend: diamond 500, obsidian 750, legend 1,000 sessions confirmed; lower five thresholds are suggestions only. Suggestion awaiting decision: tiers earned by verified sessions and never lost. 21 Nov: Johnson confirmed Regular requires attendance in 8 of the last 12 weeks; how weeks are counted is not yet specified.",
+          "last_touched": "2026-11-21",
           "lane": "Rules",
           "depends_on": [],
           "evidence": [
