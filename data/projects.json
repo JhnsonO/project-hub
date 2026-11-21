@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "updated": "2026-11-21",
-  "updated_by": "chatgpt",
+  "updated_by": "claude",
   "groups": [
     "FFA",
     "OEV",
@@ -4571,7 +4571,7 @@
       "name": "FFA Player Cards & Loyalty",
       "mono": "PC",
       "group": "FFA",
-      "status": "75 drafts · page built, not on site yet",
+      "status": "Players page live (unlinked) · 9 starter cards · stats from 4 Jan",
       "summary": "Public player cards remain account-free and read-only: the feed, embed and 75 draft records are built but no card is published yet. An official January 2027 launch with a fresh competitive start is confirmed; Monday 4 January remains the proposed date. October–December bookings may inform manually reviewed starting tiers only.",
       "milestones": [
         {
@@ -4595,9 +4595,9 @@
           "status": "doing"
         }
       ],
-      "next_step": "Complete the profile data integration and test the interactive embed on a private Squarespace page before release.",
-      "watch": "All 75 drafts remain private and unpublished; attendance, goals, assists, POTM, photos and Media links are pending. Stripe is optional identity support for membership/coupon players. Keep shared-booker names separate and hold same-name records under different contacts. No player accounts or claim flow. Results suggestion verification remains a separate, unimplemented workflow. Landing sections (Player of the Month, race, On fire) show only once the feed carries their data; flame and photo artwork are not yet in the page.",
-      "updated": "20 NOV",
+      "next_step": "Check /players on a real phone, merge ffa-media PR 185, then import and publish backend cards to replace the nine starter cards.",
+      "watch": "All 75 drafts remain private and unpublished; attendance, goals, assists, POTM, photos and Media links are pending. Stripe is optional identity support for membership/coupon players. Keep shared-booker names separate and hold same-name records under different contacts. No player accounts or claim flow. Results suggestion verification remains a separate, unimplemented workflow. The unlinked /players page shows nine starter cards and zero stats until verified data exists; Player of the Month, race, On fire and highlights appear only once the feed carries their data.",
+      "updated": "21 NOV",
       "target_asked_on": "2026-11-06",
       "questions": [
         {
@@ -5708,8 +5708,8 @@
           "name": "Build the read-only public player-card directory",
           "status": "doing",
           "owner": null,
-          "note": "Public feed, eight tier plates and the Players page embed are built and merged; the feed is live with the tiers and no cards yet. Only approved display names and verified stats are exposed; no contact data. Not yet on the website and no cards published.",
-          "last_touched": "2026-11-19",
+          "note": "Public feed, eight tier plates and the Players page embed are built. The embed is live on the unlinked /players Squarespace page, showing nine starter cards (approved display names and starting tiers) while the backend feed has no published cards. No contact data. Backend publication pending.",
+          "last_touched": "2026-11-21",
           "lane": "Build",
           "depends_on": [
             "cards-044",
@@ -5725,6 +5725,11 @@
               "provider": "Google",
               "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
               "label": "Player cards board and handover"
+            },
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
+              "label": "21 Nov 2026 Players page live from the design"
             }
           ]
         },
@@ -5751,10 +5756,10 @@
         {
           "id": "cards-056",
           "name": "Paste the Players embed into a Squarespace page",
-          "status": "todo",
+          "status": "done",
           "owner": null,
-          "note": "Add the embed to a Code Block on a hidden page with a black background. Until cards are published it shows a short holding message.",
-          "last_touched": "2026-11-19",
+          "note": "Embed saved in the Code Block on the unlinked Players page (21 Nov). Shows the nine starter cards until backend cards are published. Checked live on desktop; real-phone check open.",
+          "last_touched": "2026-11-21",
           "lane": "Build",
           "depends_on": [
             "cards-055"
@@ -5764,8 +5769,14 @@
               "provider": "Google",
               "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
               "label": "19 Nov 2026 Players page built and merged"
+            },
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
+              "label": "21 Nov 2026 Players page live from the design"
             }
-          ]
+          ],
+          "completed_on": "2026-11-21"
         },
         {
           "id": "cards-057",
@@ -5982,6 +5993,31 @@
               "provider": "Google",
               "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
               "label": "Players profile preview and build handover"
+            }
+          ]
+        },
+        {
+          "id": "cards-070",
+          "name": "Rebuild the live Players page to match the approved design",
+          "status": "done",
+          "owner": "claude",
+          "note": "Johnson asked for the live page to follow the Player Card design. Directory now matches the Working page board (search, tier chips, sort, five cards a row, full-width band); player page uses the Stadium Night layout with zeros until stats start on 4 January. Saved live with Johnson's approval; checked on desktop with real card art, phone width in a test browser only. PR open.",
+          "last_touched": "2026-11-21",
+          "completed_on": "2026-11-21",
+          "lane": "Build",
+          "depends_on": [
+            "cards-069"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
+              "label": "21 Nov 2026 Players page live from the design"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/185",
+              "label": "Players page design PR (open)"
             }
           ]
         }

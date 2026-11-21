@@ -1103,6 +1103,16 @@
         "cards"
       ],
       "snapshot_hash": "c1c8a815b4f4467a626f8eb347c4feaa6f29ea421fc611f3a4b54e335cb50dc0"
+    },
+    {
+      "id": "claude-20261121-players-design-live",
+      "fingerprint": "b90e3cd3df3ce06a93ef0ea36c90d18282f88e76b8f8b9726c3ffd25a11e81f1",
+      "date": "2026-11-21",
+      "editor": "claude",
+      "projects": [
+        "cards"
+      ],
+      "snapshot_hash": "723062f4418e1e65e321bf966ca6b23542aafe3ff5dad5a435b66807cd4cc8c7"
     }
   ]
 }
