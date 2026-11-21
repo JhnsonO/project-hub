@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "updated": "2026-11-21",
-  "updated_by": "claude",
+  "updated_by": "chatgpt",
   "groups": [
     "FFA",
     "OEV",
@@ -4572,7 +4572,7 @@
       "mono": "PC",
       "group": "FFA",
       "status": "Players page live (unlinked) · profile route live · 56 draft cards loaded · stats from 4 Jan",
-      "summary": "Public player cards remain account-free and read-only: the feed, embed and 56 imported draft cards are built but no card is published yet. An official January 2027 launch with a fresh competitive start is confirmed; Monday 4 January remains the proposed date. October–December bookings may inform manually reviewed starting tiers only.",
+      "summary": "The read-only player-card experience is live at the unlinked /players URL with nine approved starter display names and tiers. The backend feed still has no published cards, so the Squarespace embed supplies the current roster and profiles show zero stats until verified season data begins. The public profile route is deployed; player accounts and claiming remain out of scope.",
       "milestones": [
         {
           "name": "Verify attendance data",
@@ -4595,8 +4595,8 @@
           "status": "doing"
         }
       ],
-      "next_step": "Resolve the remaining held and duplicate card rows, then apply starting tiers from the manual sheet. After that agree how players consent to public names, publish cards, add a visitor explainer, check /players on a real phone and merge ffa-media PR 185.",
-      "watch": "56 of the 75 draft records are now imported as private, unpublished cards at the lowest tier; the rest await identity decisions and tiers are not yet applied; attendance, goals, assists, POTM, photos and Media links are pending. Stripe is optional identity support for membership/coupon players. Keep shared-booker names separate and hold same-name records under different contacts. No player accounts or claim flow. Results suggestion verification remains a separate, unimplemented workflow. The unlinked /players page shows nine starter cards and zero stats until verified data exists; Player of the Month, race, On fire and highlights appear only once the feed carries their data.",
+      "next_step": "Confirm consent for the nine public display names, publish the supported backend card records, test /players on a real phone and merge ffa-media PR 185; then connect verified season data from 4 January.",
+      "watch": "The live unlinked /players page currently shows nine starter cards from the Squarespace embed, while all backend draft records remain private and unpublished. Attendance, goals, assists, POTM, photos and Media links stay pending until verified data exists. Keep shared-booker names separate and same-name records under different contacts. No player accounts or claim flow.",
       "updated": "21 NOV",
       "target_asked_on": "2026-11-06",
       "questions": [
@@ -6337,6 +6337,183 @@
               "provider": "Google",
               "url": "https://docs.google.com/document/d/1HgkVO0ZgDLYmGiAao-EqvPb6B9FRO1biC-dWxy1AI7M/edit",
               "label": "IP exam board and handover"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "family-history",
+      "name": "Okusanya Family History",
+      "mono": "OF",
+      "group": "Personal",
+      "status": "Research started · company link unverified",
+      "summary": "A sourced maternal-family history is being assembled around the Okusanya family and its historic bookselling connections. The first family relationships and bookshop ownership are recorded privately; a similarly named company remains an unverified research lead.",
+      "milestones": [
+        {
+          "name": "Record confirmed family links",
+          "status": "done"
+        },
+        {
+          "name": "Verify company identity and ownership",
+          "status": "doing"
+        },
+        {
+          "name": "Build sourced timeline and family tree",
+          "status": "todo"
+        }
+      ],
+      "next_step": "Verify the Kolukus/Kolokus spelling and official company registration, ownership and director history before linking the company to the family; then build the sourced bookselling timeline.",
+      "watch": "Keep private contacts, property addresses, personal documents and sensitive family evidence out of the public hub. The similarly named company is a lead only, not a verified family business.",
+      "updated": "21 NOV",
+      "target_asked_on": "2026-11-21",
+      "questions": [
+        {
+          "id": "family-company-spelling",
+          "text": "Which family spelling is correct: Kolukus or Kolokus?",
+          "asked_on": "2026-11-21"
+        }
+      ],
+      "workspace": {
+        "provider": "Google",
+        "url": "https://docs.google.com/document/d/1DUjVgQMOFeeyNeNtPrb9dSXll9PMbaYMICMiWU1xH4U/edit"
+      },
+      "roadmap": {
+        "provider": "Google",
+        "url": "https://docs.google.com/document/d/1DUjVgQMOFeeyNeNtPrb9dSXll9PMbaYMICMiWU1xH4U/edit"
+      },
+      "tasks": [
+        {
+          "id": "family-history-001",
+          "name": "Capture confirmed family and bookshop links",
+          "status": "done",
+          "owner": "chatgpt",
+          "note": "Recorded Johnson’s confirmed maternal relationships and bookshop ownership in the private canonical tracker.",
+          "last_touched": "2026-11-21",
+          "completed_on": "2026-11-21",
+          "lane": "Evidence",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1DUjVgQMOFeeyNeNtPrb9dSXll9PMbaYMICMiWU1xH4U/edit",
+              "label": "Family history board and handover"
+            }
+          ]
+        },
+        {
+          "id": "family-history-002",
+          "name": "Record the Kolukus or Kolokus company lead",
+          "status": "done",
+          "owner": "chatgpt",
+          "note": "Recorded the similarly named company as an unverified lead without claiming family ownership or directorship.",
+          "last_touched": "2026-11-21",
+          "completed_on": "2026-11-21",
+          "lane": "Evidence",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1DUjVgQMOFeeyNeNtPrb9dSXll9PMbaYMICMiWU1xH4U/edit",
+              "label": "Family history board and handover"
+            }
+          ]
+        },
+        {
+          "id": "family-history-003",
+          "name": "Verify company spelling, registration and ownership",
+          "status": "doing",
+          "owner": null,
+          "note": "Check authoritative Nigerian records for the correct name, registration, ownership and director history before connecting it to the family.",
+          "last_touched": "2026-11-21",
+          "lane": "Research",
+          "depends_on": [
+            "family-history-002"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1DUjVgQMOFeeyNeNtPrb9dSXll9PMbaYMICMiWU1xH4U/edit",
+              "label": "Family history board and handover"
+            }
+          ]
+        },
+        {
+          "id": "family-history-004",
+          "name": "Gather family documents and testimony privately",
+          "status": "todo",
+          "owner": null,
+          "note": "Catalogue family-held documents, photographs and testimony without exposing personal evidence publicly.",
+          "last_touched": "2026-11-21",
+          "lane": "Archive",
+          "depends_on": [
+            "family-history-001"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1DUjVgQMOFeeyNeNtPrb9dSXll9PMbaYMICMiWU1xH4U/edit",
+              "label": "Family history board and handover"
+            }
+          ]
+        },
+        {
+          "id": "family-history-005",
+          "name": "Build the sourced bookselling timeline",
+          "status": "todo",
+          "owner": null,
+          "note": "Verify dates and relationships between the known bookshops and any related entities.",
+          "last_touched": "2026-11-21",
+          "lane": "Timeline",
+          "depends_on": [
+            "family-history-001",
+            "family-history-003"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1DUjVgQMOFeeyNeNtPrb9dSXll9PMbaYMICMiWU1xH4U/edit",
+              "label": "Family history board and handover"
+            }
+          ]
+        },
+        {
+          "id": "family-history-006",
+          "name": "Map verified family relationships and name variants",
+          "status": "todo",
+          "owner": null,
+          "note": "Create a sourced relationship map and resolve name variants from family and documentary evidence.",
+          "last_touched": "2026-11-21",
+          "lane": "Family tree",
+          "depends_on": [
+            "family-history-004"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1DUjVgQMOFeeyNeNtPrb9dSXll9PMbaYMICMiWU1xH4U/edit",
+              "label": "Family history board and handover"
+            }
+          ]
+        },
+        {
+          "id": "family-history-007",
+          "name": "Assemble the sourced family narrative",
+          "status": "todo",
+          "owner": null,
+          "note": "Produce the narrative and family tree after the core company, timeline and relationship evidence is verified.",
+          "last_touched": "2026-11-21",
+          "lane": "Synthesis",
+          "depends_on": [
+            "family-history-003",
+            "family-history-005",
+            "family-history-006"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1DUjVgQMOFeeyNeNtPrb9dSXll9PMbaYMICMiWU1xH4U/edit",
+              "label": "Family history board and handover"
             }
           ]
         }
