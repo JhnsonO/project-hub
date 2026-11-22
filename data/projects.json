@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "updated": "2026-11-21",
+  "updated": "2026-11-22",
   "updated_by": "chatgpt",
   "groups": [
     "FFA",
@@ -4595,9 +4595,9 @@
           "status": "doing"
         }
       ],
-      "next_step": "Confirm consent for the nine public display names, publish the supported backend card records, test /players on a real phone and merge ffa-media PR 185; then connect verified season data from 4 January.",
-      "watch": "The live unlinked /players page currently shows nine starter cards from the Squarespace embed, while all backend draft records remain private and unpublished. Attendance, goals, assists, POTM, photos and Media links stay pending until verified data exists. Keep shared-booker names separate and same-name records under different contacts. No player accounts or claim flow.",
-      "updated": "21 NOV",
+      "next_step": "Confirm consent for the nine public display names, publish the supported backend card records, test /players on a real phone and merge ffa-media PR 185; then connect verified season data from 4 January. In parallel, integrate the accepted 3D badge material reference and verify its interaction and rendering on desktop and mobile.",
+      "watch": "The live unlinked /players page currently shows nine starter cards from the Squarespace embed, while all backend draft records remain private and unpublished. Attendance, goals, assists, POTM, photos and Media links stay pending until verified data exists. Keep shared-booker names separate and same-name records under different contacts. No player accounts or claim flow. The material-specific 3D badge direction is accepted as a prototype, but inspector integration and desktop/mobile browser verification remain open.",
+      "updated": "22 NOV",
       "target_asked_on": "2026-11-06",
       "questions": [
         {
@@ -6048,6 +6048,45 @@
           "owner": null,
           "note": "Eight tier finish mockups and implementation handoff prepared. Rendered poses reviewed. Next: integrate into profile inspector and test in desktop and mobile browsers.",
           "depends_on": []
+        },
+        {
+          "id": "cards-073",
+          "name": "Refine 3D badge material consistency",
+          "status": "done",
+          "owner": "chatgpt",
+          "note": "Johnson accepted the material-specific prototype direction: Wood and Stone wrap consistently; Bronze, Silver and Gold use smooth broad metallic reflections rather than line streaks; Diamond and Legend sides match their faces. Diamond side reflectivity may increase only without rendering artefacts. Prototype acceptance does not establish production integration or browser performance.",
+          "last_touched": "2026-11-22",
+          "completed_on": "2026-11-22",
+          "lane": "Design",
+          "depends_on": [
+            "cards-material-reference"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
+              "label": "22 November 3D badge material refinement"
+            }
+          ]
+        },
+        {
+          "id": "cards-074",
+          "name": "Integrate and verify the 3D badge inspector",
+          "status": "todo",
+          "owner": null,
+          "note": "Integrate the selected material reference into the player profile inspector, then verify drag-to-tilt, touch, keyboard, rendering stability and performance across desktop and mobile before production use.",
+          "last_touched": "2026-11-22",
+          "lane": "Build",
+          "depends_on": [
+            "cards-073"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
+              "label": "22 November 3D badge material refinement"
+            }
+          ]
         }
       ]
     },
@@ -6522,6 +6561,184 @@
               "provider": "Google",
               "url": "https://docs.google.com/document/d/1DUjVgQMOFeeyNeNtPrb9dSXll9PMbaYMICMiWU1xH4U/edit",
               "label": "Family history board and handover"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "football-development",
+      "name": "Johnson Football Development",
+      "mono": "FD",
+      "group": "Personal",
+      "status": "Programme definition in progress",
+      "summary": "Johnson is defining a structured return to competitive 11-a-side football, with a long-term Step 1 ambition and an immediate focus on becoming more clinical. The plan will use repeatable living-room work and structured Monday and Friday pitch sessions around his work schedule.",
+      "milestones": [
+        {
+          "name": "Define goal and training constraints",
+          "status": "done"
+        },
+        {
+          "name": "Build the specific pre-return programme",
+          "status": "doing"
+        },
+        {
+          "name": "Complete the block and readiness review",
+          "status": "todo"
+        }
+      ],
+      "next_step": "Finish the repeatable daily ball-mastery and mobility baseline plus the Monday and Friday finishing sessions, then record simple starting tests before beginning the focused block.",
+      "watch": "The exact block duration, gym load, return date and club pathway are not confirmed. The assistant-proposed six-week schedule is not an agreed deadline or programme rule.",
+      "updated": "22 NOV",
+      "target_asked_on": "2026-11-22",
+      "questions": [
+        {
+          "id": "football-development-return-date",
+          "text": "When should the first 11-a-side return or trial happen?",
+          "asked_on": "2026-11-22"
+        }
+      ],
+      "workspace": {
+        "provider": "Google",
+        "url": "https://docs.google.com/document/d/1Oe0f-pQVOWrLjUIYYyDifOXyLAkfuAyyI2nflGKhHnw/edit"
+      },
+      "roadmap": {
+        "provider": "Google",
+        "url": "https://docs.google.com/document/d/1Oe0f-pQVOWrLjUIYYyDifOXyLAkfuAyyI2nflGKhHnw/edit"
+      },
+      "tasks": [
+        {
+          "id": "football-development-001",
+          "name": "Capture the football goal and practical constraints",
+          "status": "done",
+          "owner": "chatgpt",
+          "note": "Recorded the Step 1 ambition, clinical-finishing priority, focused pre-return block and available home and pitch environments without adopting assistant-proposed timings.",
+          "last_touched": "2026-11-22",
+          "completed_on": "2026-11-22",
+          "lane": "Plan",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1Oe0f-pQVOWrLjUIYYyDifOXyLAkfuAyyI2nflGKhHnw/edit",
+              "label": "Football development board and handover"
+            }
+          ]
+        },
+        {
+          "id": "football-development-002",
+          "name": "Design the specific pre-return training block",
+          "status": "doing",
+          "owner": null,
+          "note": "Turn the confirmed environments and work constraints into a specific programme. Duration and loads remain open until Johnson confirms them.",
+          "last_touched": "2026-11-22",
+          "lane": "Programme",
+          "depends_on": [
+            "football-development-001"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1Oe0f-pQVOWrLjUIYYyDifOXyLAkfuAyyI2nflGKhHnw/edit",
+              "label": "Football development board and handover"
+            }
+          ]
+        },
+        {
+          "id": "football-development-003",
+          "name": "Define the daily ball-mastery and mobility baseline",
+          "status": "todo",
+          "owner": null,
+          "note": "Create a short repeatable home routine that can become the daily standard without crowding the programme.",
+          "last_touched": "2026-11-22",
+          "lane": "Daily routine",
+          "depends_on": [
+            "football-development-002"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1Oe0f-pQVOWrLjUIYYyDifOXyLAkfuAyyI2nflGKhHnw/edit",
+              "label": "Football development board and handover"
+            }
+          ]
+        },
+        {
+          "id": "football-development-004",
+          "name": "Build structured Monday and Friday finishing sessions",
+          "status": "todo",
+          "owner": null,
+          "note": "Use the practical pitch access before kickabouts for highly structured work focused on finishing and match-relevant technique.",
+          "last_touched": "2026-11-22",
+          "lane": "Pitch",
+          "depends_on": [
+            "football-development-002"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1Oe0f-pQVOWrLjUIYYyDifOXyLAkfuAyyI2nflGKhHnw/edit",
+              "label": "Football development board and handover"
+            }
+          ]
+        },
+        {
+          "id": "football-development-005",
+          "name": "Set measurable starting technical tests",
+          "status": "todo",
+          "owner": null,
+          "note": "Choose simple repeatable measures for finishing, first touch and movement before the training block begins.",
+          "last_touched": "2026-11-22",
+          "lane": "Baseline",
+          "depends_on": [
+            "football-development-002"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1Oe0f-pQVOWrLjUIYYyDifOXyLAkfuAyyI2nflGKhHnw/edit",
+              "label": "Football development board and handover"
+            }
+          ]
+        },
+        {
+          "id": "football-development-006",
+          "name": "Set the weekly gym and recovery load",
+          "status": "todo",
+          "owner": null,
+          "note": "Fit gym and recovery around the football work after the core technical sessions are fixed.",
+          "last_touched": "2026-11-22",
+          "lane": "Physical",
+          "depends_on": [
+            "football-development-003",
+            "football-development-004"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1Oe0f-pQVOWrLjUIYYyDifOXyLAkfuAyyI2nflGKhHnw/edit",
+              "label": "Football development board and handover"
+            }
+          ]
+        },
+        {
+          "id": "football-development-007",
+          "name": "Retest readiness before returning to 11-a-side",
+          "status": "todo",
+          "owner": null,
+          "note": "Compare the agreed retest with baseline and choose the next competitive step using current performance evidence.",
+          "last_touched": "2026-11-22",
+          "lane": "Review",
+          "depends_on": [
+            "football-development-004",
+            "football-development-005",
+            "football-development-006"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1Oe0f-pQVOWrLjUIYYyDifOXyLAkfuAyyI2nflGKhHnw/edit",
+              "label": "Football development board and handover"
             }
           ]
         }
