@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "updated": "2026-11-22",
+  "updated": "2026-11-23",
   "updated_by": "chatgpt",
   "groups": [
     "FFA",
@@ -13,8 +13,8 @@
       "name": "FFA Website",
       "mono": "FW",
       "group": "FFA",
-      "status": "Live · partner QA",
-      "summary": "The Partners page now includes Uncle Teo PR and Priintt in a consistent two-row grid with verified desktop links, sizing and link arrows. Final mobile heading/spacing acceptance and a sharper Priintt logo remain open alongside the wider site QA backlog.",
+      "status": "Live · MNL standings sync blocked",
+      "summary": "The MNL result panels include the 9 and 16 November fixtures, but a fresh public check on 23 November still showed zero games and zero points in the leaderboard and season statistics. The standings projection needs repair; the existing site, shop and partner QA backlog remains open.",
       "milestones": [
         {
           "name": "Site + shop live",
@@ -29,9 +29,9 @@
           "status": "todo"
         }
       ],
-      "next_step": "Verify the Partners page at phone width, including the saved 19px headings and no overflow; replace the Priintt logo only if a higher-resolution source is available, then continue the existing real-device, SEO and checkout backlog.",
-      "watch": "UTPR and Priintt are live and desktop-verified. The final mobile heading change was saved but not live-verified after the editing browser disconnected; the Priintt source remains visibly softer than the other logos.",
-      "updated": "14 NOV",
+      "next_step": "Trace the MNL table and season-statistics data source for the 9 and 16 November results, repair the projection and verify a clean public reload; then continue the existing mobile, SEO and checkout backlog.",
+      "watch": "Do not treat the conversation's completion claim as verified: the live result panels were present while the leaderboard and season totals remained at zero. Most 16 November scorer and assist fields are unresolved and must not be inferred.",
+      "updated": "23 NOV",
       "workspace": {
         "provider": "Google",
         "url": "https://docs.google.com/document/d/1Ai973jkiOD_3WvG1ra2sFiIzPO3F3R1AlGIvKzZWWXA/edit"
@@ -650,6 +650,24 @@
               "provider": "Google",
               "url": "https://docs.google.com/document/d/1Ai973jkiOD_3WvG1ra2sFiIzPO3F3R1AlGIvKzZWWXA/edit",
               "label": "14 November Partners page handover"
+            }
+          ]
+        },
+        {
+          "id": "web-031",
+          "name": "Reconcile MNL results with the public table and stats",
+          "status": "blocked",
+          "owner": null,
+          "note": "Fresh public readback on 23 November showed the 9 and 16 November result panels, but the leaderboard and season statistics still displayed zero games and zero points. Preserve the results, repair the standings projection and verify a clean reload; do not infer unresolved scorers or assists.",
+          "last_touched": "2026-11-23",
+          "lane": "Monday league",
+          "depends_on": [],
+          "blocked_reason": "Results are live but the standings projection remains at zero",
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1Ai973jkiOD_3WvG1ra2sFiIzPO3F3R1AlGIvKzZWWXA/edit",
+              "label": "23 November MNL standings reconciliation"
             }
           ]
         }
@@ -4572,7 +4590,7 @@
       "mono": "PC",
       "group": "FFA",
       "status": "Players page live (unlinked) · profile route live · 56 draft cards loaded · stats from 4 Jan",
-      "summary": "The read-only player-card experience is live at the unlinked /players URL with nine approved starter display names and tiers. The backend feed still has no published cards, so the Squarespace embed supplies the current roster and profiles show zero stats until verified season data begins. The public profile route is deployed; player accounts and claiming remain out of scope.",
+      "summary": "The read-only player-card experience is live at the unlinked /players URL with nine approved starter display names and tiers. The backend feed still has no published cards, so the Squarespace embed supplies the current roster and profiles show zero stats until verified season data begins. The public profile route is deployed; player accounts and claiming remain out of scope. Johnson also confirmed that verified scorer, assister and missing-goal contributions should earn rewards; the values and abuse controls are not yet designed.",
       "milestones": [
         {
           "name": "Verify attendance data",
@@ -4595,9 +4613,9 @@
           "status": "doing"
         }
       ],
-      "next_step": "Confirm consent for the nine public display names, publish the supported backend card records, test /players on a real phone and merge ffa-media PR 185; then connect verified season data from 4 January. In parallel, integrate the accepted 3D badge material reference and verify its interaction and rendering on desktop and mobile.",
-      "watch": "The live unlinked /players page currently shows nine starter cards from the Squarespace embed, while all backend draft records remain private and unpublished. Attendance, goals, assists, POTM, photos and Media links stay pending until verified data exists. Keep shared-booker names separate and same-name records under different contacts. No player accounts or claim flow. The material-specific 3D badge direction is accepted as a prototype, but inspector integration and desktop/mobile browser verification remain open.",
-      "updated": "22 NOV",
+      "next_step": "Confirm consent for the nine public display names, publish the supported backend card records, test /players on a real phone and merge ffa-media PR 185; then connect verified season data from 4 January. In parallel, integrate the accepted 3D badge material reference and verify its interaction and rendering on desktop and mobile. Define a small verified-contribution reward proposal using the existing staff-approval flow before assigning Tier Points or building missing-goal reporting.",
+      "watch": "The live unlinked /players page currently shows nine starter cards from the Squarespace embed, while all backend draft records remain private and unpublished. Attendance, goals, assists, POTM, photos and Media links stay pending until verified data exists. Keep shared-booker names separate and same-name records under different contacts. No player accounts or claim flow. The material-specific 3D badge direction is accepted as a prototype, but inspector integration and desktop/mobile browser verification remain open. Contributor rewards are a confirmed direction only: no values, anti-abuse rules or missing-goal infrastructure are agreed.",
+      "updated": "23 NOV",
       "target_asked_on": "2026-11-06",
       "questions": [
         {
@@ -6087,6 +6105,23 @@
               "label": "22 November 3D badge material refinement"
             }
           ]
+        },
+        {
+          "id": "cards-075",
+          "name": "Design verified contribution rewards",
+          "status": "todo",
+          "owner": null,
+          "note": "Reward verified identification of scorers, assisters and missing goals instead of relying only on penalties for wrong calls. Define eligible actions, staff approval and abuse controls before assigning Tier Points; missing-goal reporting infrastructure is deferred.",
+          "last_touched": "2026-11-23",
+          "lane": "Product",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
+              "label": "23 November contributor reward direction"
+            }
+          ]
         }
       ]
     },
@@ -6572,7 +6607,7 @@
       "mono": "FD",
       "group": "Personal",
       "status": "Programme definition in progress",
-      "summary": "Johnson is defining a structured return to competitive 11-a-side football, with a long-term Step 1 ambition and an immediate focus on becoming more clinical. The plan will use repeatable living-room work and structured Monday and Friday pitch sessions around his work schedule.",
+      "summary": "Johnson is defining a structured return to competitive 11-a-side football, with a long-term Step 1 ambition and an immediate focus on becoming more clinical. The plan uses indoor ball work, structured Monday and Friday pitch sessions, and an ADHD-friendly morning routine with a short and fuller version.",
       "milestones": [
         {
           "name": "Define goal and training constraints",
@@ -6587,9 +6622,9 @@
           "status": "todo"
         }
       ],
-      "next_step": "Finish the repeatable daily ball-mastery and mobility baseline plus the Monday and Friday finishing sessions, then record simple starting tests before beginning the focused block.",
+      "next_step": "Finish the two-version morning ball-mastery and mobility baseline plus the Monday and Friday finishing sessions, then record simple starting tests before beginning the focused block.",
       "watch": "The exact block duration, gym load, return date and club pathway are not confirmed. The assistant-proposed six-week schedule is not an agreed deadline or programme rule.",
-      "updated": "22 NOV",
+      "updated": "23 NOV",
       "target_asked_on": "2026-11-22",
       "questions": [
         {
@@ -6647,10 +6682,10 @@
         {
           "id": "football-development-003",
           "name": "Define the daily ball-mastery and mobility baseline",
-          "status": "todo",
+          "status": "doing",
           "owner": null,
-          "note": "Create a short repeatable home routine that can become the daily standard without crowding the programme.",
-          "last_touched": "2026-11-22",
+          "note": "Define two ADHD-friendly morning versions: a short daily baseline and a fuller option. Keep ball mastery and mobility specific, repeatable and uncrowded.",
+          "last_touched": "2026-11-23",
           "lane": "Daily routine",
           "depends_on": [
             "football-development-002"
