@@ -6138,6 +6138,14 @@
           "owner": null,
           "depends_on": [],
           "note": "Bronze, Silver and Gold reflections and drag handling prototyped. Desktop and touch performance still to be verified."
+        },
+        {
+          "id": "cards-texture-reactive-lighting",
+          "name": "Prototype texture-reactive badge lighting",
+          "status": "done",
+          "owner": null,
+          "depends_on": [],
+          "note": "Six tiers now respond to light along their artwork texture on both faces. Render checks passed. Browser and design acceptance pending."
         }
       ]
     },

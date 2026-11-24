@@ -1217,6 +1217,16 @@
         "cards"
       ],
       "snapshot_hash": "f1e460638dca89c96b8eeb143e75f0ed30fe6d3283806567d56ab3ca1b5704da"
+    },
+    {
+      "id": "ffa-20261124-texture-reactive-lighting",
+      "fingerprint": "a85737abae990f5074a54502b43f67973f42df46c5828a85fce7b4734ef9b99c",
+      "date": "2026-11-24",
+      "editor": "chatgpt",
+      "projects": [
+        "cards"
+      ],
+      "snapshot_hash": "d528c81215b6a29ec9238da5223bc19d052c6c1acd427a664bce4f2f97a94e3d"
     }
   ]
 }
