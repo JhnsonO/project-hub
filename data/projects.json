@@ -4613,7 +4613,7 @@
           "status": "doing"
         }
       ],
-      "next_step": "Confirm consent for the nine public display names, publish the supported backend card records, test /players on a real phone and merge ffa-media PR 185; then connect verified season data from 4 January. In parallel, integrate the accepted 3D badge material reference and verify its interaction and rendering on desktop and mobile. Define a small verified-contribution reward proposal using the existing staff-approval flow before assigning Tier Points or building missing-goal reporting. Use the Players redesign mockup as the reference for the directory and profile visual refresh.",
+      "next_step": "Confirm consent for the nine public display names, publish the supported backend card records, test /players on a real phone and merge ffa-media PR 185; then connect verified season data from 4 January. In parallel, integrate the accepted 3D badge material reference and verify its interaction and rendering on desktop and mobile. Define a small verified-contribution reward proposal using the existing staff-approval flow before assigning Tier Points or building missing-goal reporting. Review the visual refinement of the existing dark Players gallery and profile before implementation.",
       "watch": "The live unlinked /players page currently shows nine starter cards from the Squarespace embed, while all backend draft records remain private and unpublished. Attendance, goals, assists, POTM, photos and Media links stay pending until verified data exists. Keep shared-booker names separate and same-name records under different contacts. No player accounts or claim flow. The material-specific 3D badge direction is accepted as a prototype, but inspector integration and desktop/mobile browser verification remain open. Contributor rewards are a confirmed direction only: no values, anti-abuse rules or missing-goal infrastructure are agreed.",
       "updated": "24 NOV",
       "target_asked_on": "2026-11-06",
@@ -6162,7 +6162,16 @@
           "completed_on": "2026-11-24",
           "owner": null,
           "depends_on": [],
-          "note": "Clickable desktop and phone concept for a name-first directory and quieter profile badge stage. Browser interaction checks passed. Production implementation and device review remain open."
+          "note": "Clickable desktop and phone concept for a name-first directory and quieter profile badge stage. Browser interaction checks passed. Production implementation and device review remain open. Superseded as an implementation reference by the refinement of the existing gallery."
+        },
+        {
+          "id": "cards-players-visual-refinement",
+          "name": "Review catalogue design and refine the existing Players layout",
+          "status": "done",
+          "completed_on": "2026-11-24",
+          "owner": null,
+          "depends_on": [],
+          "note": "Before-and-after concept uses the existing shield grid and 360° profile badge. Production implementation remains open."
         }
       ]
     },
