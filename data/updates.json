@@ -1237,6 +1237,16 @@
         "cards"
       ],
       "snapshot_hash": "c31adad54e0e62378b96144b9e0a5d2cca85adeac20f33369afd9f7e6f3acb26"
+    },
+    {
+      "id": "chatgpt-20261124-ffa-players-redesign-mockup-01",
+      "fingerprint": "6beb2718db1756ed9279a8f90443beaf4bb82bd35e1945672956d14ac9bd471e",
+      "date": "2026-11-24",
+      "editor": "chatgpt",
+      "projects": [
+        "cards"
+      ],
+      "snapshot_hash": "95f780540029bb8c1b5f2fd3351bc07e51b51128c357bed08cec793ec210cd7c"
     }
   ]
 }
