@@ -6130,6 +6130,14 @@
           "owner": null,
           "depends_on": [],
           "note": "360° prototype ready for design review. Raised rims, recessed faces and raised nameplates checked across all eight tiers. Desktop and touch acceptance pending."
+        },
+        {
+          "id": "cards-metal-light-free-spin",
+          "name": "Prototype metal lighting and freer badge rotation",
+          "status": "done",
+          "owner": null,
+          "depends_on": [],
+          "note": "Bronze, Silver and Gold reflections and drag handling prototyped. Desktop and touch performance still to be verified."
         }
       ]
     },
