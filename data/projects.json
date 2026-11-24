@@ -6146,6 +6146,14 @@
           "owner": null,
           "depends_on": [],
           "note": "Six tiers now respond to light along their artwork texture on both faces. Render checks passed. Browser and design acceptance pending."
+        },
+        {
+          "id": "cards-360-inspector-handoff",
+          "name": "Package the 360° badge inspector implementation handoff",
+          "status": "done",
+          "owner": null,
+          "depends_on": [],
+          "note": "Offline prototype, all eight front and back references and implementation brief are ready. Production integration and real-device acceptance are pending."
         }
       ]
     },

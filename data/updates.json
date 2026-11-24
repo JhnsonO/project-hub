@@ -1227,6 +1227,16 @@
         "cards"
       ],
       "snapshot_hash": "d528c81215b6a29ec9238da5223bc19d052c6c1acd427a664bce4f2f97a94e3d"
+    },
+    {
+      "id": "ffa-20261124-360-badge-handoff",
+      "fingerprint": "fbfa89794448ee6b5ba4c324b953efa5ea45afb382c94a6ae7f29537d7c0216d",
+      "date": "2026-11-24",
+      "editor": "chatgpt",
+      "projects": [
+        "cards"
+      ],
+      "snapshot_hash": "c31adad54e0e62378b96144b9e0a5d2cca85adeac20f33369afd9f7e6f3acb26"
     }
   ]
 }
