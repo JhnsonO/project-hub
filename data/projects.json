@@ -6819,6 +6819,228 @@
           ]
         }
       ]
+    },
+    {
+      "id": "medical-registration",
+      "name": "UK Medical Registration",
+      "mono": "MR",
+      "group": "Personal",
+      "status": "Qualification evidence in progress",
+      "summary": "Johnson is preparing a GMC full-registration application using a Romanian medical qualification. Current GMC guidance rules out provisional registration for Romanian graduates; the final diploma title and eligibility without internship or residency need confirmation before verification or application.",
+      "milestones": [
+        {
+          "name": "Verify the GMC route",
+          "status": "done"
+        },
+        {
+          "name": "Obtain and confirm qualification evidence",
+          "status": "doing"
+        },
+        {
+          "name": "Complete verification and application",
+          "status": "todo"
+        },
+        {
+          "name": "Plan first UK clinical post",
+          "status": "todo"
+        }
+      ],
+      "next_step": "Obtain the final Romanian diploma, confirm its exact title and ask GMC to confirm the full-registration route given no internship or residency before paying for EPIC verification or applying.",
+      "watch": "GMC says Romanian graduates cannot apply for provisional registration. If the final degree title is not the listed Romanian qualification, an equivalence document may be required. No application or verification has been completed.",
+      "updated": "24 NOV",
+      "target_asked_on": "2026-11-24",
+      "questions": [
+        {
+          "id": "medical-registration-diploma-title",
+          "text": "Does the final diploma say “Diplomă de licenţă de doctor medic”?",
+          "asked_on": "2026-11-24"
+        }
+      ],
+      "workspace": {
+        "provider": "Google",
+        "url": "https://docs.google.com/document/d/1yHIiXysU677KaW1gvMEV-8Z6TXbhLvIIab-29mNSLxE/edit"
+      },
+      "roadmap": {
+        "provider": "Google",
+        "url": "https://docs.google.com/document/d/1yHIiXysU677KaW1gvMEV-8Z6TXbhLvIIab-29mNSLxE/edit"
+      },
+      "tasks": [
+        {
+          "id": "medical-registration-001",
+          "name": "Verify the likely GMC registration route",
+          "status": "done",
+          "owner": "chatgpt",
+          "note": "Checked current GMC Romania and relevant-European-qualification guidance. Romanian graduates cannot use provisional registration; the likely route is full registration, subject to the final qualification evidence.",
+          "last_touched": "2026-11-24",
+          "completed_on": "2026-11-24",
+          "lane": "Route",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1yHIiXysU677KaW1gvMEV-8Z6TXbhLvIIab-29mNSLxE/edit",
+              "label": "UK Medical Registration board and handover"
+            }
+          ]
+        },
+        {
+          "id": "medical-registration-002",
+          "name": "Obtain and verify the final Romanian medical diploma",
+          "status": "doing",
+          "owner": null,
+          "note": "Obtain the final diploma and confirm its exact title and award date. The current temporary certificate has not been confirmed as sufficient for the application.",
+          "last_touched": "2026-11-24",
+          "lane": "Evidence",
+          "depends_on": [
+            "medical-registration-001"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1yHIiXysU677KaW1gvMEV-8Z6TXbhLvIIab-29mNSLxE/edit",
+              "label": "UK Medical Registration board and handover"
+            }
+          ]
+        },
+        {
+          "id": "medical-registration-003",
+          "name": "Confirm eligibility without internship or residency",
+          "status": "doing",
+          "owner": null,
+          "note": "Ask GMC to confirm in writing whether the final Romanian qualification will count as a Relevant European Qualification and support full registration despite no internship or residency.",
+          "last_touched": "2026-11-24",
+          "lane": "Eligibility",
+          "depends_on": [
+            "medical-registration-001",
+            "medical-registration-002"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1yHIiXysU677KaW1gvMEV-8Z6TXbhLvIIab-29mNSLxE/edit",
+              "label": "UK Medical Registration board and handover"
+            }
+          ]
+        },
+        {
+          "id": "medical-registration-004",
+          "name": "Confirm any Romanian equivalence certificate requirement",
+          "status": "todo",
+          "owner": null,
+          "note": "If the final degree title differs from the GMC-listed Romanian qualification, obtain the required recognition/equivalence document from the Romanian authority.",
+          "last_touched": "2026-11-24",
+          "lane": "Evidence",
+          "depends_on": [
+            "medical-registration-002"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1yHIiXysU677KaW1gvMEV-8Z6TXbhLvIIab-29mNSLxE/edit",
+              "label": "UK Medical Registration board and handover"
+            }
+          ]
+        },
+        {
+          "id": "medical-registration-005",
+          "name": "Complete EPIC primary-source verification",
+          "status": "todo",
+          "owner": null,
+          "note": "Create the verification request only after the qualification route and exact documents are confirmed.",
+          "last_touched": "2026-11-24",
+          "lane": "Verification",
+          "depends_on": [
+            "medical-registration-002",
+            "medical-registration-003",
+            "medical-registration-004"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1yHIiXysU677KaW1gvMEV-8Z6TXbhLvIIab-29mNSLxE/edit",
+              "label": "UK Medical Registration board and handover"
+            }
+          ]
+        },
+        {
+          "id": "medical-registration-006",
+          "name": "Prepare acceptable English-language evidence",
+          "status": "todo",
+          "owner": null,
+          "note": "Select and obtain evidence accepted by GMC at the time of application.",
+          "last_touched": "2026-11-24",
+          "lane": "Evidence",
+          "depends_on": [
+            "medical-registration-003"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1yHIiXysU677KaW1gvMEV-8Z6TXbhLvIIab-29mNSLxE/edit",
+              "label": "UK Medical Registration board and handover"
+            }
+          ]
+        },
+        {
+          "id": "medical-registration-007",
+          "name": "Assemble supporting application evidence",
+          "status": "todo",
+          "owner": null,
+          "note": "Prepare identity, translations, five-year activity history and any required certificate of good standing without publishing personal evidence.",
+          "last_touched": "2026-11-24",
+          "lane": "Application",
+          "depends_on": [
+            "medical-registration-003"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1yHIiXysU677KaW1gvMEV-8Z6TXbhLvIIab-29mNSLxE/edit",
+              "label": "UK Medical Registration board and handover"
+            }
+          ]
+        },
+        {
+          "id": "medical-registration-008",
+          "name": "Submit the GMC full-registration application",
+          "status": "todo",
+          "owner": null,
+          "note": "Apply through GMC Online and complete identity and fitness-to-practise checks after eligibility and evidence are confirmed.",
+          "last_touched": "2026-11-24",
+          "lane": "Application",
+          "depends_on": [
+            "medical-registration-005",
+            "medical-registration-006",
+            "medical-registration-007"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1yHIiXysU677KaW1gvMEV-8Z6TXbhLvIIab-29mNSLxE/edit",
+              "label": "UK Medical Registration board and handover"
+            }
+          ]
+        },
+        {
+          "id": "medical-registration-009",
+          "name": "Plan the first supervised UK clinical post",
+          "status": "todo",
+          "owner": null,
+          "note": "Choose an appropriate first UK clinical route after the registration decision and current competence requirements are clear.",
+          "last_touched": "2026-11-24",
+          "lane": "Clinical entry",
+          "depends_on": [
+            "medical-registration-008"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1yHIiXysU677KaW1gvMEV-8Z6TXbhLvIIab-29mNSLxE/edit",
+              "label": "UK Medical Registration board and handover"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
