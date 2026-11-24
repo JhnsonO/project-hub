@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "updated": "2026-11-23",
+  "updated": "2026-11-24",
   "updated_by": "chatgpt",
   "groups": [
     "FFA",
@@ -4615,7 +4615,7 @@
       ],
       "next_step": "Confirm consent for the nine public display names, publish the supported backend card records, test /players on a real phone and merge ffa-media PR 185; then connect verified season data from 4 January. In parallel, integrate the accepted 3D badge material reference and verify its interaction and rendering on desktop and mobile. Define a small verified-contribution reward proposal using the existing staff-approval flow before assigning Tier Points or building missing-goal reporting.",
       "watch": "The live unlinked /players page currently shows nine starter cards from the Squarespace embed, while all backend draft records remain private and unpublished. Attendance, goals, assists, POTM, photos and Media links stay pending until verified data exists. Keep shared-booker names separate and same-name records under different contacts. No player accounts or claim flow. The material-specific 3D badge direction is accepted as a prototype, but inspector integration and desktop/mobile browser verification remain open. Contributor rewards are a confirmed direction only: no values, anti-abuse rules or missing-goal infrastructure are agreed.",
-      "updated": "23 NOV",
+      "updated": "24 NOV",
       "target_asked_on": "2026-11-06",
       "questions": [
         {
@@ -6122,6 +6122,14 @@
               "label": "23 November contributor reward direction"
             }
           ]
+        },
+        {
+          "id": "cards-sculpted-fronts",
+          "name": "Prototype sculpted fronts for all eight badge tiers",
+          "status": "done",
+          "owner": null,
+          "depends_on": [],
+          "note": "360° prototype ready for design review. Raised rims, recessed faces and raised nameplates checked across all eight tiers. Desktop and touch acceptance pending."
         }
       ]
     },
