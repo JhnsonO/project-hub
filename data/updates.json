@@ -1287,6 +1287,16 @@
         "cards"
       ],
       "snapshot_hash": "bed3fd748e80a34794055ae8c7f3f59cb0caefc807bd808168be7d4ad940dc4c"
+    },
+    {
+      "id": "claude-20261125-players-embed-merge-01",
+      "fingerprint": "04e84abfbafc88371521549a0aee758c361dd006f87e8c70d37f833e597da040",
+      "date": "2026-11-25",
+      "editor": "claude",
+      "projects": [
+        "cards"
+      ],
+      "snapshot_hash": "85aa25ae9678af9bf8ccffeed33ed6018949e2e4eac9a91f14fb62d62c683450"
     }
   ]
 }
