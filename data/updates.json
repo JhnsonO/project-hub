@@ -1317,6 +1317,16 @@
         "media"
       ],
       "snapshot_hash": "5ad879c431bb673c13424a10cfeeaa58668c24f28f209a1d45690f25a36323a7"
+    },
+    {
+      "id": "claude-20261125-claims-flow-live-test-01",
+      "fingerprint": "883c0c176e98b06180664ef10982724e97b68dfd4bca8cd0ed3678332a7d0086",
+      "date": "2026-11-25",
+      "editor": "claude",
+      "projects": [
+        "media"
+      ],
+      "snapshot_hash": "1837645d597ea09d2e592e2f9f331531ff2369b885ec5cfb5d1f6664fba9385c"
     }
   ]
 }

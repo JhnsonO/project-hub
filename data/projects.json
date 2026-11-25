@@ -2349,7 +2349,7 @@
           "name": "Staff badge when claims are waiting",
           "status": "todo",
           "owner": null,
-          "note": "Next for claims. A count badge on Review so staff see waiting claims (the Goal claims tab already shows a count inside Review). Then try one real claim end to end on the live site: the flow passed a local end-to-end test on 25 Nov.",
+          "note": "Next for claims. A count badge on Review so staff see waiting claims (the Goal claims tab already shows a count inside Review). A live end-to-end suggestion test passed on 25 Nov; a real phone check remains.",
           "last_touched": "2026-11-25",
           "lane": "Results page",
           "depends_on": [
@@ -2617,14 +2617,14 @@
         },
         {
           "id": "media-claims-local-e2e",
-          "name": "Test the Results suggestion flow end to end",
+          "name": "Test the Results suggestion flow end to end (local and live)",
           "status": "done",
           "completed_on": "2026-11-25",
           "owner": null,
           "depends_on": [
             "media-068"
           ],
-          "note": "Tested locally on 25 Nov (throwaway database, not production). A visitor with no login suggests a scorer and assist; it shows as pending with a backer count and the goal is unchanged; a matching suggestion joins it; public calls to the staff decision are refused; staff approval updates the goal, closes rival suggestions and locks the goal. Spam limits per browser and per network, a 7-day window and a per-goal cap were confirmed in code; 28 claim tests passed. Not tested on the live site, Postgres or a real phone.",
+          "note": "Tested locally on 25 Nov (throwaway database, not production). A visitor with no login suggests a scorer and assist; it shows as pending with a backer count and the goal is unchanged; a matching suggestion joins it; public calls to the staff decision are refused; staff approval updates the goal, closes rival suggestions and locks the goal. Spam limits per browser and per network, a 7-day window and a per-goal cap were confirmed in code; 28 claim tests passed. Not tested on the live site, Postgres or a real phone. Live check on 25 Nov: one test suggestion made on the public Results page without login appeared as pending in the public feed and in staff Review > Goal claims, the goal stayed unchanged, and it was then withdrawn with Undo. Staff approve was not used live; desktop only, not a real phone.",
           "last_touched": "2026-11-25",
           "lane": "Results page",
           "evidence": [
