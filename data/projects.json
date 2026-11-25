@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "updated": "2026-11-25",
-  "updated_by": "claude",
+  "updated_by": "chatgpt",
   "groups": [
     "FFA",
     "OEV",
@@ -4613,7 +4613,7 @@
           "status": "doing"
         }
       ],
-      "next_step": "Re-paste the /players Code Block from ffa-media main (PRs 193 and 194) and check it on desktop and a real phone. Confirm consent for the nine public display names, publish the supported backend card records, test /players on a real phone and merge ffa-media PR 185; then connect verified season data from 4 January. In parallel, integrate the accepted 3D badge material reference and verify its interaction and rendering on desktop and mobile. Define a small verified-contribution reward proposal using the existing staff-approval flow before assigning Tier Points or building missing-goal reporting. Review the visual refinement of the existing dark Players gallery and profile before implementation. Review the revised rim flame mockup and test the preferred effect on a real phone before integrating it with the profile badge.",
+      "next_step": "Re-paste the /players Code Block from ffa-media main (PRs 193 and 194) and check it on desktop and a real phone. Confirm consent for the nine public display names, publish the supported backend card records, test /players on a real phone and merge ffa-media PR 185; then connect verified season data from 4 January. In parallel, integrate the accepted 3D badge material reference and verify its interaction and rendering on desktop and mobile. Define a small verified-contribution reward proposal using the existing staff-approval flow before assigning Tier Points or building missing-goal reporting. Review the visual refinement of the existing dark Players gallery and profile before implementation. Review the streak flame design study. Refine the transition at side-on angles and the material lighting, then test the selected treatment on a real phone before integration.",
       "watch": "The live unlinked /players page currently shows nine starter cards from the Squarespace embed, while all backend draft records remain private and unpublished. Attendance, goals, assists, POTM, photos and Media links stay pending until verified data exists. Keep shared-booker names separate and same-name records under different contacts. No player accounts or claim flow. The material-specific 3D badge direction is accepted as a prototype, but inspector integration and desktop/mobile browser verification remain open. Contributor rewards are a confirmed direction only: no values, anti-abuse rules or missing-goal infrastructure are agreed.",
       "updated": "25 NOV",
       "target_asked_on": "2026-11-06",
@@ -6221,6 +6221,17 @@
               "label": "FFA Media current state (25 Nov)"
             }
           ]
+        },
+        {
+          "id": "cards-flame-design-study",
+          "name": "Compare and audit two streak-flame treatments",
+          "status": "done",
+          "completed_on": "2026-11-25",
+          "owner": null,
+          "depends_on": [
+            "cards-rim-flame-revision"
+          ],
+          "note": "Interactive study compared a diagonal flow and anchored upward plumes against the same badge at matched angles. Chromium and mobile emulation checked. Side-on continuity, material lighting, design review and real-device testing remain open."
         }
       ]
     },

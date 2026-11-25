@@ -1297,6 +1297,16 @@
         "cards"
       ],
       "snapshot_hash": "85aa25ae9678af9bf8ccffeed33ed6018949e2e4eac9a91f14fb62d62c683450"
+    },
+    {
+      "id": "chatgpt-20261125-ffa-flame-design-study-01",
+      "fingerprint": "b1cb5864c6fb794b3ef6f1a0886e25b6fcded0fc6897d1f0f4a58a25bbcb0af5",
+      "date": "2026-11-25",
+      "editor": "chatgpt",
+      "projects": [
+        "cards"
+      ],
+      "snapshot_hash": "752c043688df47659a1477e0094dedd58e5d3d71dd2653149fb998cc73c789ae"
     }
   ]
 }
