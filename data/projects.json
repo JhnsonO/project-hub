@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "updated": "2026-11-25",
-  "updated_by": "chatgpt",
+  "updated_by": "claude",
   "groups": [
     "FFA",
     "OEV",
@@ -4613,7 +4613,7 @@
           "status": "doing"
         }
       ],
-      "next_step": "Confirm consent for the nine public display names, publish the supported backend card records, test /players on a real phone and merge ffa-media PR 185; then connect verified season data from 4 January. In parallel, integrate the accepted 3D badge material reference and verify its interaction and rendering on desktop and mobile. Define a small verified-contribution reward proposal using the existing staff-approval flow before assigning Tier Points or building missing-goal reporting. Review the visual refinement of the existing dark Players gallery and profile before implementation. Review the revised rim flame mockup and test the preferred effect on a real phone before integrating it with the profile badge.",
+      "next_step": "Re-paste the /players Code Block from ffa-media main (PRs 193 and 194) and check it on desktop and a real phone. Confirm consent for the nine public display names, publish the supported backend card records, test /players on a real phone and merge ffa-media PR 185; then connect verified season data from 4 January. In parallel, integrate the accepted 3D badge material reference and verify its interaction and rendering on desktop and mobile. Define a small verified-contribution reward proposal using the existing staff-approval flow before assigning Tier Points or building missing-goal reporting. Review the visual refinement of the existing dark Players gallery and profile before implementation. Review the revised rim flame mockup and test the preferred effect on a real phone before integrating it with the profile badge.",
       "watch": "The live unlinked /players page currently shows nine starter cards from the Squarespace embed, while all backend draft records remain private and unpublished. Attendance, goals, assists, POTM, photos and Media links stay pending until verified data exists. Keep shared-booker names separate and same-name records under different contacts. No player accounts or claim flow. The material-specific 3D badge direction is accepted as a prototype, but inspector integration and desktop/mobile browser verification remain open. Contributor rewards are a confirmed direction only: no values, anti-abuse rules or missing-goal infrastructure are agreed.",
       "updated": "25 NOV",
       "target_asked_on": "2026-11-06",
@@ -6090,10 +6090,10 @@
         {
           "id": "cards-074",
           "name": "Integrate and verify the 3D badge inspector",
-          "status": "todo",
+          "status": "doing",
           "owner": null,
-          "note": "Integrate the selected material reference into the player profile inspector, then verify drag-to-tilt, touch, keyboard, rendering stability and performance across desktop and mobile before production use.",
-          "last_touched": "2026-11-22",
+          "note": "360 profile badge with etched details, grid hover sweep and the Players page design update are merged to ffa-media main (PR 193, 25 Nov). A follow-up (PR 194) makes the profile Matches W/D/L count only the month shown. Checked in headless browsers with sample data; the live /players Code Block has not been re-pasted yet and no real-phone check has been done.",
+          "last_touched": "2026-11-25",
           "lane": "Build",
           "depends_on": [
             "cards-073"
@@ -6103,6 +6103,16 @@
               "provider": "Google",
               "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
               "label": "22 November 3D badge material refinement"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/193",
+              "label": "360 badge and page design PR (merged)"
+            },
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/194",
+              "label": "Matches month W/D/L fix PR (merged)"
             }
           ]
         },
@@ -6192,6 +6202,25 @@
             "cards-360-flame-mockup"
           ],
           "note": "Second interactive mockup maps flames to the six rim edges through full rotation. Chromium checks passed. Design review and real-device testing remain open."
+        },
+        {
+          "id": "cards-076",
+          "name": "Re-paste the Players page embed and check desktop and phone",
+          "status": "todo",
+          "owner": null,
+          "note": "Replace the whole /players Code Block with site/players-embed.html from ffa-media main (covers PRs 193 and 194), then check the badge, toolbar and Matches tab on desktop and a real phone. Most wins this month needs season.month_wins in the feed; until then it falls back to overall wins or tier.",
+          "last_touched": "2026-11-25",
+          "lane": "Build",
+          "depends_on": [
+            "cards-074"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/docs/current-state.md",
+              "label": "FFA Media current state (25 Nov)"
+            }
+          ]
         }
       ]
     },
