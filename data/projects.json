@@ -680,7 +680,7 @@
       "mono": "FM",
       "group": "FFA",
       "status": "v2 live · tap-a-goal pop-up and picker live on the Game results page · Acuity sign-ups list and name menu merged and deployed (not yet tried on a real session)",
-      "summary": "v2 cutover (20 Oct) and native clips are recorded. The Monday Night League website feed is live with goal clips, a Goals tab and main/POV angles, and the clip player now has share, download and like (4 Nov), and from 4 Nov finished sessions are sent to the Match Log sheet from the app. API, real-device and deferred configuration checks stay open. On 7 Nov the game results page design (all sessions, list and calendar, mockup only) was agreed and a code check recorded; non-league sessions may optionally record teams and bibs. It will be a new page on the Squarespace site, fed by a public results feed. On 8 Nov the feed was built and merged, switched on, and the Game results page went live on the Squarespace site (not in the navigation yet): native title blocks plus one embed for the filters, list and calendar, checked at desktop, tablet and phone widths. Goals from the last 14 days in league games now open a clip player with share, download and like, as on the Monday League page. On 11 Nov normal sessions gained optional teams, bibs and goals (is_league flag) and league goals now reach the Match Log sheet automatically, with a Delete goal button. On 12 Nov multi-team days (2 to 5 teams, games logged afterwards from footage, one day table per session) were built and went live; goal claims with upvotes (players claim, others back, staff approve in the app) also went live the same day. On 12 Nov the player foundation began: player records and spelling aliases (step 1 of 3) are built, merged and migrated on production; step 2 (player ids on teams, goals and claims) is built and in review. Also on 12 Nov the Watch screen load error and the team, bib and goal buttons on normal sessions were fixed and checked in a real browser (phone not yet confirmed). Acuity sign-ups: the Acuity API is not on the current plan, so the app reads Acuity's calendar sync link instead; for Monday 9 Nov it found 28 people. Nothing from it is saved yet. On 13 Nov the website claim sheet was reworked: it asks the team first when unknown, handles own goals, has a quiet \"Wrong scorer?\" link and keyboard/scroll fixes (PRs 130-132); goals without a cut clip now show the match's YouTube frame and goal time and play the full match from the goal (PR 133). All live on the Game results page; no real claim tested on production yet; not checked on a real phone. On 14 Nov the tap-a-goal redesign (PRs 135 and 136) was merged: one pop-up for every goal (clip or match footage) with share, download, like and a More goals list, then a two-step player picker with public confirm votes, Undo and own goals. It is live on the Game results page. On 15 Nov a live audit found display problems and PR 141 fixed them (merged, embed re-pasted, live page checked at phone and desktop width): goals not yet sorted into teams show a goal count instead of 0–0, an empty multi-team day hides its table, the pop-up names teams by bib colour like the list, and two headings that were unreadable on dark are now white. Other audit items are still open. No real phone test yet. On 17 Nov Kris's clip-review requests went live (PRs 156 to 160): Keep and Bin, star ratings, rename, Ready to upload and Posted tabs, bigger Both-cameras Watch view. Review Both-cameras mode is also live (PR 161). March to August videos are back (cut-off moved to 1 March, rejected stay rejected) and no separate Ready to post step is needed. Not tested on a real phone. Later on 17 Nov Kris's reject list from 14 Oct was applied (18 sessions rejected, 53 sessions kept) and clips of rejected sessions now sit under Binned, so To review fell from 731 to 377.",
+      "summary": "v2 cutover (20 Oct) and native clips are recorded. The Monday Night League website feed is live with goal clips, a Goals tab and main/POV angles, and the clip player now has share, download and like (4 Nov), and from 4 Nov finished sessions are sent to the Match Log sheet from the app. API, real-device and deferred configuration checks stay open. On 7 Nov the game results page design (all sessions, list and calendar, mockup only) was agreed and a code check recorded; non-league sessions may optionally record teams and bibs. It will be a new page on the Squarespace site, fed by a public results feed. On 8 Nov the feed was built and merged, switched on, and the Game results page went live on the Squarespace site (not in the navigation yet): native title blocks plus one embed for the filters, list and calendar, checked at desktop, tablet and phone widths. Goals from the last 14 days in league games now open a clip player with share, download and like, as on the Monday League page. On 11 Nov normal sessions gained optional teams, bibs and goals (is_league flag) and league goals now reach the Match Log sheet automatically, with a Delete goal button. On 12 Nov multi-team days (2 to 5 teams, games logged afterwards from footage, one day table per session) were built and went live; goal claims with upvotes (players claim, others back, staff approve in the app) also went live the same day. On 12 Nov the player foundation began: player records and spelling aliases (step 1 of 3) are built, merged and migrated on production; step 2 (player ids on teams, goals and claims) is built and in review. Also on 12 Nov the Watch screen load error and the team, bib and goal buttons on normal sessions were fixed and checked in a real browser (phone not yet confirmed). Acuity sign-ups: the Acuity API is not on the current plan, so the app reads Acuity's calendar sync link instead; for Monday 9 Nov it found 28 people. Nothing from it is saved yet. On 13 Nov the website claim sheet was reworked: it asks the team first when unknown, handles own goals, has a quiet \"Wrong scorer?\" link and keyboard/scroll fixes (PRs 130-132); goals without a cut clip now show the match's YouTube frame and goal time and play the full match from the goal (PR 133). All live on the Game results page; no real claim tested on production yet; not checked on a real phone. On 14 Nov the tap-a-goal redesign (PRs 135 and 136) was merged: one pop-up for every goal (clip or match footage) with share, download, like and a More goals list, then a two-step player picker with public confirm votes, Undo and own goals. It is live on the Game results page. On 15 Nov a live audit found display problems and PR 141 fixed them (merged, embed re-pasted, live page checked at phone and desktop width): goals not yet sorted into teams show a goal count instead of 0–0, an empty multi-team day hides its table, the pop-up names teams by bib colour like the list, and two headings that were unreadable on dark are now white. Other audit items are still open. No real phone test yet. On 17 Nov Kris's clip-review requests went live (PRs 156 to 160): Keep and Bin, star ratings, rename, Ready to upload and Posted tabs, bigger Both-cameras Watch view. Review Both-cameras mode is also live (PR 161). March to August videos are back (cut-off moved to 1 March, rejected stay rejected) and no separate Ready to post step is needed. Not tested on a real phone. Later on 17 Nov Kris's reject list from 14 Oct was applied (18 sessions rejected, 53 sessions kept) and clips of rejected sessions now sit under Binned, so To review fell from 731 to 377. On 25 Nov the anonymous Results suggestion flow was verified locally and with a reversible live production suggestion: pending credit appeared publicly and in staff Review without changing the goal, then was withdrawn. Existing code limits, staff approval and the seven-day window were confirmed. Trusted-helper labelling and staff-first ranking are built in ffa-media PR 196 but remain unmerged and undeployed.",
       "milestones": [
         {
           "name": "Beta entry live",
@@ -695,9 +695,9 @@
           "status": "todo"
         }
       ],
-      "next_step": "Ask Kris to check the clip review on a real phone, then close issues 98 and 61. Staff sort the older goals onto teams, then work through the remaining audit items (see media-074).",
+      "next_step": "Review ffa-media PR 196 for the trusted-helper label-and-rank feature; if approved, merge, deploy, run the add-only migration, re-paste the Results embed and complete a reversible live helper test. Ask Kris to check clip review on a real phone, then close issues 98 and 61. Staff should continue sorting older goals onto teams and work through media-074.",
       "blocker": "Check #55 depends on key configuration; #54 still needs the current v2 suite. Signed-in acceptance is unverified.",
-      "updated": "19 NOV",
+      "updated": "25 NOV",
       "workspace": {
         "provider": "GitHub",
         "url": "https://github.com/users/JhnsonO/projects/5/views/"
@@ -2349,8 +2349,8 @@
           "name": "Staff badge when claims are waiting",
           "status": "todo",
           "owner": null,
-          "note": "Next for claims. A count badge on Review so staff see waiting claims. Then try one real claim end to end.",
-          "last_touched": "2026-11-12",
+          "note": "A count exists inside the Goal claims tab. A live end-to-end anonymous suggestion test passed on 25 Nov; a top-level Review badge and real-phone check remain open.",
+          "last_touched": "2026-11-25",
           "lane": "Results page",
           "depends_on": [
             "media-067"
@@ -2614,9 +2614,48 @@
               "label": "Star filter PR (merged)"
             }
           ]
+        },
+        {
+          "id": "media-claims-local-e2e",
+          "name": "Test the Results suggestion flow end to end locally and live",
+          "status": "done",
+          "completed_on": "2026-11-25",
+          "owner": null,
+          "depends_on": [
+            "media-068"
+          ],
+          "note": "Local throwaway-database testing verified anonymous scorer/assist suggestions, deduplication and backers, refusal of public staff decisions, staff approval, rival closure and goal locking; 28 claim tests passed. A reversible live desktop test then created one pending suggestion, confirmed it in public feed and staff Review without changing the goal, and withdrew it. Production staff approval and real-phone use were not exercised.",
+          "last_touched": "2026-11-25",
+          "lane": "Results page",
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/ffa_media/api_claims.py",
+              "label": "Results claims implementation"
+            }
+          ]
+        },
+        {
+          "id": "media-trusted-helpers",
+          "name": "Trusted helpers: label and rank recognised helpers' goal suggestions",
+          "status": "doing",
+          "owner": null,
+          "depends_on": [
+            "media-claims-local-e2e"
+          ],
+          "note": "Johnson chose label-and-rank only: recognised helpers appear first with a private staff label, while every suggestion still requires staff approval and public backer totals are unchanged. Built and locally tested in ffa-media PR 196; not merged, deployed, migrated or checked on a real phone. Admins add or revoke helpers through one-time links.",
+          "last_touched": "2026-11-25",
+          "lane": "Results page",
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/196",
+              "label": "Trusted helpers PR (open)"
+            }
+          ]
         }
       ],
-      "watch": "The compact 21 October current-state summary missed later entries in the historical log; use dated evidence and keep live acceptance separate. The clip-review controls went live on 17 November (media-075) but have only been checked in headless browsers; device acceptance by Kris remains open.",
+      "watch": "The compact 21 October current-state summary missed later entries in the historical log; use dated evidence and keep live acceptance separate. The clip-review controls went live on 17 November (media-075) but have only been checked in headless browsers; device acceptance by Kris remains open. The anonymous suggestion flow passed local and reversible live desktop checks on 25 Nov; staff approve/reject was exercised locally, not on production. Trusted helpers remain an open PR and must not be described as live.",
       "target_asked_on": "2026-10-23",
       "questions": [
         {
@@ -4590,7 +4629,7 @@
       "mono": "PC",
       "group": "FFA",
       "status": "Players page live (unlinked) · profile route live · 56 draft cards loaded · stats from 4 Jan",
-      "summary": "The read-only player-card experience is live at the unlinked /players URL with nine approved starter display names and tiers. The backend feed still has no published cards, so the Squarespace embed supplies the current roster and profiles show zero stats until verified season data begins. The public profile route is deployed; player accounts and claiming remain out of scope. Johnson also confirmed that verified scorer, assister and missing-goal contributions should earn rewards; the values and abuse controls are not yet designed.",
+      "summary": "The read-only player-card experience is live at the unlinked /players URL with nine approved starter display names and tiers. The backend feed still has no published cards, so the Squarespace embed supplies the current roster and profiles show zero stats until verified season data begins. The public profile route is deployed; player accounts and claiming remain out of scope. Johnson also confirmed that verified scorer, assister and missing-goal contributions should earn rewards; the values and abuse controls are not yet designed. On 25 Nov the staff Player cards screen was deployed and its staff-only test season was enabled from 1 Nov for live-session checking; the public Players page remains launch-gated with zero stats until 4 Jan 2027.",
       "milestones": [
         {
           "name": "Verify attendance data",
@@ -4613,8 +4652,8 @@
           "status": "doing"
         }
       ],
-      "next_step": "Re-paste the /players Code Block from ffa-media main (PRs 193 and 194) and check it on desktop and a real phone. Confirm consent for the nine public display names, publish the supported backend card records, test /players on a real phone and merge ffa-media PR 185; then connect verified season data from 4 January. In parallel, integrate the accepted 3D badge material reference and verify its interaction and rendering on desktop and mobile. Define a small verified-contribution reward proposal using the existing staff-approval flow before assigning Tier Points or building missing-goal reporting. Review the visual refinement of the existing dark Players gallery and profile before implementation. Review the extended side flames and connected crest on a physical phone before Players profile integration.",
-      "watch": "The live unlinked /players page currently shows nine starter cards from the Squarespace embed, while all backend draft records remain private and unpublished. Attendance, goals, assists, POTM, photos and Media links stay pending until verified data exists. Keep shared-booker names separate and same-name records under different contacts. No player accounts or claim flow. The material-specific 3D badge direction is accepted as a prototype, but inspector integration and desktop/mobile browser verification remain open. Contributor rewards are a confirmed direction only: no values, anti-abuse rules or missing-goal infrastructure are agreed.",
+      "next_step": "Spot-check several staff card previews against real sessions from the 1 Nov test-season start, especially goals and assists that may still be name-only. Re-paste the /players Code Block from ffa-media main (PRs 193 and 194) and check it on desktop and a real phone. Review the centred-wisp/full-rim streak-flame prototype on a physical phone before Players profile integration. Confirm consent for the nine public display names, publish the supported backend card records and connect verified season data from 4 January. Define a small verified-contribution reward proposal before assigning Tier Points.",
+      "watch": "The live unlinked /players page currently shows nine starter cards from the Squarespace embed, while all backend draft records remain private and unpublished. Attendance, goals, assists, POTM, photos and Media links stay pending until verified data exists. Keep shared-booker names separate and same-name records under different contacts. No player accounts or claim flow. The material-specific 3D badge direction is accepted as a prototype, but inspector integration and desktop/mobile browser verification remain open. Contributor rewards are a confirmed direction only: no values, anti-abuse rules or missing-goal infrastructure are agreed. The staff-only test season is live from 1 Nov; public profiles stay at zero until 4 Jan. Older goals and assists can be absent where footage credits are still stored only as names. The centred-wisp/full-rim flame artifact is the preferred prototype reference, but its current readback is not browser or physical-phone acceptance.",
       "updated": "25 NOV",
       "target_asked_on": "2026-11-06",
       "questions": [
@@ -6265,6 +6304,51 @@
             "cards-connected-flame-crest"
           ],
           "note": "Prototype adds longer, tapered side curls with a comparison against the connected crest. Chromium checks passed. Real-phone review remains open."
+        },
+        {
+          "id": "cards-077",
+          "name": "Deploy the staff Cards screen and enable a staff-only test season",
+          "status": "done",
+          "completed_on": "2026-11-25",
+          "owner": null,
+          "note": "ffa-media PR 195 merged and deployed on 25 Nov. The live staff app exposes card stages, search, publish/manage controls, stats previews, Ready, Changes and Settings. The staff-only test season was enabled from 1 Nov so real sessions can be checked now; the public Players page remains unchanged with zero stats until 4 Jan 2027. A signed-in read-only live check found the screen working; broader stat spot-checks and real-phone acceptance remain open.",
+          "last_touched": "2026-11-25",
+          "lane": "Staff cards",
+          "depends_on": [
+            "cards-074"
+          ],
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/195",
+              "label": "Staff Cards screen and test season PR (merged)"
+            },
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
+              "label": "Player Cards board and handover"
+            }
+          ]
+        },
+        {
+          "id": "cards-full-rim-centre-wisp",
+          "name": "Set the full-rim flame with a centred top wisp as the preferred reference",
+          "status": "done",
+          "completed_on": "2026-11-25",
+          "owner": null,
+          "note": "Johnson preferred the centred top wisp with flame continuing around the rotating badge. The repaired self-contained Library prototype was read back as non-empty with material, streak, angle, drag, keyboard, motion and playback controls. This confirms the artifact, not browser or physical-phone acceptance; the live Players page was not changed.",
+          "last_touched": "2026-11-25",
+          "lane": "Streak effects",
+          "depends_on": [
+            "cards-extended-side-flames"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
+              "label": "25 November full-rim centred-wisp handover"
+            }
+          ]
         }
       ]
     },
