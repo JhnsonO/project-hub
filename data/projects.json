@@ -4613,7 +4613,7 @@
           "status": "doing"
         }
       ],
-      "next_step": "Re-paste the /players Code Block from ffa-media main (PRs 193 and 194) and check it on desktop and a real phone. Confirm consent for the nine public display names, publish the supported backend card records, test /players on a real phone and merge ffa-media PR 185; then connect verified season data from 4 January. In parallel, integrate the accepted 3D badge material reference and verify its interaction and rendering on desktop and mobile. Define a small verified-contribution reward proposal using the existing staff-approval flow before assigning Tier Points or building missing-goal reporting. Review the visual refinement of the existing dark Players gallery and profile before implementation. Review the taller connected flame on a physical phone, including blue on Diamond, before integrating it into the Players profile.",
+      "next_step": "Re-paste the /players Code Block from ffa-media main (PRs 193 and 194) and check it on desktop and a real phone. Confirm consent for the nine public display names, publish the supported backend card records, test /players on a real phone and merge ffa-media PR 185; then connect verified season data from 4 January. In parallel, integrate the accepted 3D badge material reference and verify its interaction and rendering on desktop and mobile. Define a small verified-contribution reward proposal using the existing staff-approval flow before assigning Tier Points or building missing-goal reporting. Review the visual refinement of the existing dark Players gallery and profile before implementation. Review the extended side flames and connected crest on a physical phone before Players profile integration.",
       "watch": "The live unlinked /players page currently shows nine starter cards from the Squarespace embed, while all backend draft records remain private and unpublished. Attendance, goals, assists, POTM, photos and Media links stay pending until verified data exists. Keep shared-booker names separate and same-name records under different contacts. No player accounts or claim flow. The material-specific 3D badge direction is accepted as a prototype, but inspector integration and desktop/mobile browser verification remain open. Contributor rewards are a confirmed direction only: no values, anti-abuse rules or missing-goal infrastructure are agreed.",
       "updated": "25 NOV",
       "target_asked_on": "2026-11-06",
@@ -6254,6 +6254,17 @@
             "cards-flame-rotation-audit"
           ],
           "note": "Rotating prototype joins the top flame across the badge depth. Root continuity checked at 16 phases, with rotation and mobile emulation verified. Physical handset review and live integration remain open."
+        },
+        {
+          "id": "cards-extended-side-flames",
+          "name": "Extend and soften the side flames in rotation",
+          "status": "done",
+          "completed_on": "2026-11-25",
+          "owner": null,
+          "depends_on": [
+            "cards-connected-flame-crest"
+          ],
+          "note": "Prototype adds longer, tapered side curls with a comparison against the connected crest. Chromium checks passed. Real-phone review remains open."
         }
       ]
     },
