@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "updated": "2026-11-24",
+  "updated": "2026-11-25",
   "updated_by": "chatgpt",
   "groups": [
     "FFA",
@@ -4613,9 +4613,9 @@
           "status": "doing"
         }
       ],
-      "next_step": "Confirm consent for the nine public display names, publish the supported backend card records, test /players on a real phone and merge ffa-media PR 185; then connect verified season data from 4 January. In parallel, integrate the accepted 3D badge material reference and verify its interaction and rendering on desktop and mobile. Define a small verified-contribution reward proposal using the existing staff-approval flow before assigning Tier Points or building missing-goal reporting. Review the visual refinement of the existing dark Players gallery and profile before implementation. Review the flame mockup and test the preferred effect on a real phone before integrating it with the profile badge.",
+      "next_step": "Confirm consent for the nine public display names, publish the supported backend card records, test /players on a real phone and merge ffa-media PR 185; then connect verified season data from 4 January. In parallel, integrate the accepted 3D badge material reference and verify its interaction and rendering on desktop and mobile. Define a small verified-contribution reward proposal using the existing staff-approval flow before assigning Tier Points or building missing-goal reporting. Review the visual refinement of the existing dark Players gallery and profile before implementation. Review the revised rim flame mockup and test the preferred effect on a real phone before integrating it with the profile badge.",
       "watch": "The live unlinked /players page currently shows nine starter cards from the Squarespace embed, while all backend draft records remain private and unpublished. Attendance, goals, assists, POTM, photos and Media links stay pending until verified data exists. Keep shared-booker names separate and same-name records under different contacts. No player accounts or claim flow. The material-specific 3D badge direction is accepted as a prototype, but inspector integration and desktop/mobile browser verification remain open. Contributor rewards are a confirmed direction only: no values, anti-abuse rules or missing-goal infrastructure are agreed.",
-      "updated": "24 NOV",
+      "updated": "25 NOV",
       "target_asked_on": "2026-11-06",
       "questions": [
         {
@@ -6181,6 +6181,17 @@
           "owner": null,
           "depends_on": [],
           "note": "Compared isolated prismatic clip flames, amber lower-edge flames and flames off across all eight tiers. Chromium rotation, controls and mobile layout checked. Real-phone playback and design review remain open."
+        },
+        {
+          "id": "cards-rim-flame-revision",
+          "name": "Revise flame coverage across the rotating badge rim",
+          "status": "done",
+          "completed_on": "2026-11-25",
+          "owner": null,
+          "depends_on": [
+            "cards-360-flame-mockup"
+          ],
+          "note": "Second interactive mockup maps flames to the six rim edges through full rotation. Chromium checks passed. Design review and real-device testing remain open."
         }
       ]
     },
