@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "updated": "2026-11-25",
-  "updated_by": "chatgpt",
+  "updated_by": "claude",
   "groups": [
     "FFA",
     "OEV",
@@ -697,7 +697,7 @@
       ],
       "next_step": "Ask Kris to check the clip review on a real phone, then close issues 98 and 61. Staff sort the older goals onto teams, then work through the remaining audit items (see media-074).",
       "blocker": "Check #55 depends on key configuration; #54 still needs the current v2 suite. Signed-in acceptance is unverified.",
-      "updated": "19 NOV",
+      "updated": "25 NOV",
       "workspace": {
         "provider": "GitHub",
         "url": "https://github.com/users/JhnsonO/projects/5/views/"
@@ -2349,8 +2349,8 @@
           "name": "Staff badge when claims are waiting",
           "status": "todo",
           "owner": null,
-          "note": "Next for claims. A count badge on Review so staff see waiting claims. Then try one real claim end to end.",
-          "last_touched": "2026-11-12",
+          "note": "Next for claims. A count badge on Review so staff see waiting claims (the Goal claims tab already shows a count inside Review). Then try one real claim end to end on the live site: the flow passed a local end-to-end test on 25 Nov.",
+          "last_touched": "2026-11-25",
           "lane": "Results page",
           "depends_on": [
             "media-067"
@@ -2612,6 +2612,26 @@
               "provider": "GitHub",
               "url": "https://github.com/JhnsonO/ffa-media/pull/173",
               "label": "Star filter PR (merged)"
+            }
+          ]
+        },
+        {
+          "id": "media-claims-local-e2e",
+          "name": "Test the Results suggestion flow end to end",
+          "status": "done",
+          "completed_on": "2026-11-25",
+          "owner": null,
+          "depends_on": [
+            "media-068"
+          ],
+          "note": "Tested locally on 25 Nov (throwaway database, not production). A visitor with no login suggests a scorer and assist; it shows as pending with a backer count and the goal is unchanged; a matching suggestion joins it; public calls to the staff decision are refused; staff approval updates the goal, closes rival suggestions and locks the goal. Spam limits per browser and per network, a 7-day window and a per-goal cap were confirmed in code; 28 claim tests passed. Not tested on the live site, Postgres or a real phone.",
+          "last_touched": "2026-11-25",
+          "lane": "Results page",
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/blob/main/ffa_media/api_claims.py",
+              "label": "Claims code"
             }
           ]
         }

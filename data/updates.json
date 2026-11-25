@@ -1307,6 +1307,16 @@
         "cards"
       ],
       "snapshot_hash": "752c043688df47659a1477e0094dedd58e5d3d71dd2653149fb998cc73c789ae"
+    },
+    {
+      "id": "claude-20261125-claims-flow-local-test-01",
+      "fingerprint": "1f2a940a4d287099e4639ab0497f41471f9a724548927f34839a97bda3f25069",
+      "date": "2026-11-25",
+      "editor": "claude",
+      "projects": [
+        "media"
+      ],
+      "snapshot_hash": "5ad879c431bb673c13424a10cfeeaa58668c24f28f209a1d45690f25a36323a7"
     }
   ]
 }
