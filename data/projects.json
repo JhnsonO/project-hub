@@ -2634,6 +2634,25 @@
               "label": "Claims code"
             }
           ]
+        },
+        {
+          "id": "media-trusted-helpers",
+          "name": "Trusted helpers: label and rank recognised helpers' goal suggestions",
+          "status": "doing",
+          "owner": null,
+          "depends_on": [
+            "media-claims-local-e2e"
+          ],
+          "note": "Built 25 Nov, in review (ffa-media PR 196), not merged or deployed. Staff who help at sessions and name players reliably get a private one-time link and tap Confirm; their suggestions are then labelled and listed first for staff. Label and rank only: staff still approve every suggestion, nothing is applied automatically, public counts are unchanged and the label is never shown on the public page. Admins add and revoke helpers. Tested locally in a real browser end to end (full suite passing). Not tested on production, Postgres or a real phone. Needs approval, deploy and a re-paste of the Results embed in Squarespace.",
+          "last_touched": "2026-11-25",
+          "lane": "Results page",
+          "evidence": [
+            {
+              "provider": "GitHub",
+              "url": "https://github.com/JhnsonO/ffa-media/pull/196",
+              "label": "Trusted helpers PR (open)"
+            }
+          ]
         }
       ],
       "watch": "The compact 21 October current-state summary missed later entries in the historical log; use dated evidence and keep live acceptance separate. The clip-review controls went live on 17 November (media-075) but have only been checked in headless browsers; device acceptance by Kris remains open.",

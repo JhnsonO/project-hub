@@ -1327,6 +1327,16 @@
         "media"
       ],
       "snapshot_hash": "1837645d597ea09d2e592e2f9f331531ff2369b885ec5cfb5d1f6664fba9385c"
+    },
+    {
+      "id": "claude-20261125-trusted-helpers-01",
+      "fingerprint": "78c7d1e2b2988beef8325c67d18a6a3b900fab222142288fb1d5f798703f79a6",
+      "date": "2026-11-25",
+      "editor": "claude",
+      "projects": [
+        "media"
+      ],
+      "snapshot_hash": "1547c79c0dfd3dd420c8108d56125f4433a3c58f6e5727fda1b0cebadc65262b"
     }
   ]
 }
