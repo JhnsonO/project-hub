@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "updated": "2026-11-25",
+  "updated": "2026-11-26",
   "updated_by": "chatgpt",
   "groups": [
     "FFA",
@@ -4652,9 +4652,9 @@
           "status": "doing"
         }
       ],
-      "next_step": "Spot-check several staff card previews against real sessions from the 1 Nov test-season start, especially goals and assists that may still be name-only. Re-paste the /players Code Block from ffa-media main (PRs 193 and 194) and check it on desktop and a real phone. Review the centred-wisp/full-rim streak-flame prototype on a physical phone before Players profile integration. Confirm consent for the nine public display names, publish the supported backend card records and connect verified season data from 4 January. Define a small verified-contribution reward proposal before assigning Tier Points.",
-      "watch": "The live unlinked /players page currently shows nine starter cards from the Squarespace embed, while all backend draft records remain private and unpublished. Attendance, goals, assists, POTM, photos and Media links stay pending until verified data exists. Keep shared-booker names separate and same-name records under different contacts. No player accounts or claim flow. The material-specific 3D badge direction is accepted as a prototype, but inspector integration and desktop/mobile browser verification remain open. Contributor rewards are a confirmed direction only: no values, anti-abuse rules or missing-goal infrastructure are agreed. The staff-only test season is live from 1 Nov; public profiles stay at zero until 4 Jan. Older goals and assists can be absent where footage credits are still stored only as names. The centred-wisp/full-rim flame artifact is the preferred prototype reference, but its current readback is not browser or physical-phone acceptance.",
-      "updated": "25 NOV",
+      "next_step": "Compare the latest interactive badge directly against the two supplied flame videos and the three-view source pack, correct side and rear mismatches, then obtain visual approval and run a physical-phone check before Players integration. Also spot-check staff card previews against real sessions, re-paste the current /players Code Block and define the verified-contribution reward proposal.",
+      "watch": "The live unlinked /players page currently shows nine starter cards from the Squarespace embed, while all backend draft records remain private and unpublished. Attendance, goals, assists, POTM, photos and Media links stay pending until verified data exists. Keep shared-booker names separate and same-name records under different contacts. No player accounts or claim flow. The material-specific 3D badge direction is accepted as a prototype, but inspector integration and desktop/mobile browser verification remain open. Contributor rewards are a confirmed direction only: no values, anti-abuse rules or missing-goal infrastructure are agreed. The staff-only test season is live from 1 Nov; public profiles stay at zero until 4 Jan. Older goals and assists can be absent where footage credits are still stored only as names. The centred-wisp/full-rim flame artifact is the preferred prototype reference, but its current readback is not browser or physical-phone acceptance. On 26 Nov Johnson selected a newer gold/amber rim ribbon with a violet-tipped top-centre wisp and required a text-free multi-angle source pack. The updated interactive artifact exists, but Johnson rejected an earlier derivative and final visual acceptance, independent browser verification and physical-phone performance remain open.",
+      "updated": "26 NOV",
       "target_asked_on": "2026-11-06",
       "questions": [
         {
@@ -6349,6 +6349,25 @@
               "label": "25 November full-rim centred-wisp handover"
             }
           ]
+        },
+        {
+          "id": "cards-new-flame-reference",
+          "name": "Rebuild the interactive streak flames from the new animation reference",
+          "status": "doing",
+          "owner": null,
+          "note": "Johnson selected a gold/amber full-rim ribbon with a violet-tipped top-centre wisp and required the flame to wrap consistently across front, sides and rear. A text-free multi-angle source pack and updated interactive HTML exist. An earlier derivative was rejected; final visual approval, independent browser verification, real-phone performance and live integration remain open.",
+          "last_touched": "2026-11-26",
+          "lane": "Streak effects",
+          "depends_on": [
+            "cards-full-rim-centre-wisp"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1gK-9LTlzwRgICGJxByerjpr_Dq3cx0BRHQElXdLfuHA/edit",
+              "label": "26 November flame reference and 3D source-pack handover"
+            }
+          ]
         }
       ]
     },
@@ -7223,6 +7242,147 @@
               "provider": "Google",
               "url": "https://docs.google.com/document/d/1yHIiXysU677KaW1gvMEV-8Z6TXbhLvIIab-29mNSLxE/edit",
               "label": "UK Medical Registration board and handover"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "car-purchase",
+      "name": "Car Purchase",
+      "mono": "CP",
+      "group": "Personal",
+      "status": "Audi e-tron 55 Sportback search active",
+      "summary": "Johnson has selected a used Audi e-tron 55 Sportback as the current replacement-car target. Special equipment is optional. The active work is to build a fresh shortlist and verify condition, history, battery or range evidence and warranty before arranging a viewing.",
+      "milestones": [
+        {
+          "name": "Choose the vehicle target",
+          "status": "done"
+        },
+        {
+          "name": "Build a current shortlist",
+          "status": "doing"
+        },
+        {
+          "name": "Verify and inspect the best candidate",
+          "status": "todo"
+        },
+        {
+          "name": "Complete the purchase",
+          "status": "todo"
+        }
+      ],
+      "next_step": "Create a fresh shortlist of genuinely available Audi e-tron 55 Sportbacks, then verify the strongest candidate’s history, battery or usable-range evidence and warranty before arranging a viewing.",
+      "watch": "Listings can disappear quickly and no candidate is approved yet. A high-mileage lead requires stronger condition, battery, history and warranty evidence. Budget, deposit, finance and settlement details remain private.",
+      "updated": "26 NOV",
+      "target_asked_on": "2026-11-26",
+      "questions": [
+        {
+          "id": "car-purchase-target-date",
+          "text": "When do you want to buy the replacement car?",
+          "asked_on": "2026-11-26"
+        }
+      ],
+      "workspace": {
+        "provider": "Google",
+        "url": "https://docs.google.com/document/d/1qQ7738ArLwK_Y61QwMzrLfgC-sgx2_R2PfAeUqTDoEo/edit"
+      },
+      "roadmap": {
+        "provider": "Google",
+        "url": "https://docs.google.com/document/d/1qQ7738ArLwK_Y61QwMzrLfgC-sgx2_R2PfAeUqTDoEo/edit"
+      },
+      "tasks": [
+        {
+          "id": "car-purchase-001",
+          "name": "Set the current vehicle target",
+          "status": "done",
+          "owner": "chatgpt",
+          "note": "Johnson confirmed the Audi e-tron 55 Sportback is the current target and special equipment is optional.",
+          "last_touched": "2026-11-26",
+          "completed_on": "2026-11-26",
+          "lane": "Decision",
+          "depends_on": [],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1qQ7738ArLwK_Y61QwMzrLfgC-sgx2_R2PfAeUqTDoEo/edit",
+              "label": "Personal Car Purchase board and handover"
+            }
+          ]
+        },
+        {
+          "id": "car-purchase-002",
+          "name": "Build a fresh shortlist of live cars",
+          "status": "doing",
+          "owner": null,
+          "note": "Check that each listing is still live and record the vehicle, mileage, seller, location and available condition evidence privately.",
+          "last_touched": "2026-11-26",
+          "lane": "Search",
+          "depends_on": [
+            "car-purchase-001"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1qQ7738ArLwK_Y61QwMzrLfgC-sgx2_R2PfAeUqTDoEo/edit",
+              "label": "Personal Car Purchase board and handover"
+            }
+          ]
+        },
+        {
+          "id": "car-purchase-003",
+          "name": "Verify the strongest candidate",
+          "status": "todo",
+          "owner": null,
+          "note": "Check service and MOT history, write-off and finance status, recalls, tyres, charging equipment, battery or usable-range evidence and warranty terms.",
+          "last_touched": "2026-11-26",
+          "lane": "Due diligence",
+          "depends_on": [
+            "car-purchase-002"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1qQ7738ArLwK_Y61QwMzrLfgC-sgx2_R2PfAeUqTDoEo/edit",
+              "label": "Personal Car Purchase board and handover"
+            }
+          ]
+        },
+        {
+          "id": "car-purchase-004",
+          "name": "Inspect and test drive the selected car",
+          "status": "todo",
+          "owner": null,
+          "note": "Confirm condition, charging, range estimate and essential controls before committing.",
+          "last_touched": "2026-11-26",
+          "lane": "Inspection",
+          "depends_on": [
+            "car-purchase-003"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1qQ7738ArLwK_Y61QwMzrLfgC-sgx2_R2PfAeUqTDoEo/edit",
+              "label": "Personal Car Purchase board and handover"
+            }
+          ]
+        },
+        {
+          "id": "car-purchase-005",
+          "name": "Make the purchase decision",
+          "status": "todo",
+          "owner": null,
+          "note": "Choose and purchase only after the shortlist, evidence and inspection are satisfactory.",
+          "last_touched": "2026-11-26",
+          "lane": "Purchase",
+          "depends_on": [
+            "car-purchase-004"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1qQ7738ArLwK_Y61QwMzrLfgC-sgx2_R2PfAeUqTDoEo/edit",
+              "label": "Personal Car Purchase board and handover"
             }
           ]
         }
