@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "updated": "2026-11-26",
+  "updated": "2026-11-27",
   "updated_by": "chatgpt",
   "groups": [
     "FFA",
@@ -4351,8 +4351,8 @@
       "name": "FFA Merch & Rewards",
       "mono": "FM",
       "group": "FFA",
-      "status": "Draft · approval pending",
-      "summary": "Live order and supplier-draft spreadsheets are established. Final quantities, production approval and reward artwork remain open.",
+      "status": "In progress · supplier quote pending",
+      "summary": "The live order scope has been reconciled and reusable supplier product assets are ready. Final quantities, sizes, branding, pricing, delivery, artwork proofs and production approval remain open.",
       "milestones": [
         {
           "name": "Order records established",
@@ -4360,16 +4360,16 @@
         },
         {
           "name": "Final scope and artwork",
-          "status": "todo"
+          "status": "doing"
         },
         {
           "name": "Production approval",
           "status": "todo"
         }
       ],
-      "next_step": "Verify source records and confirm draft details before production approval.",
-      "watch": "A supplier quote draft is not a placed order.",
-      "updated": "29 OCT",
+      "next_step": "Finalise the outstanding order details and supplier quote, including sizes, branding, pricing, delivery and artwork proofs, before production approval.",
+      "watch": "The supplier pack is ready, but the quote remains a draft and no production approval has been given.",
+      "updated": "27 NOV",
       "workspace": {
         "provider": "Google",
         "url": "https://docs.google.com/document/d/1yO92jAmM0f1sN02165yW_zm1wbE9O8AiN1lNShnVDrI/edit"
@@ -4418,10 +4418,10 @@
         {
           "id": "merch-r02",
           "name": "Confirm final draft items and production details",
-          "status": "todo",
+          "status": "doing",
           "owner": "chatgpt",
-          "note": "Confirm quantities, sizes, stock and branding in the private source. Draft proposals are not purchase approval.",
-          "last_touched": "2026-10-29",
+          "note": "Outstanding clothing scope has been reconciled and supplier materials are ready. Final quantities, sizes, branding, pricing, delivery and artwork proofs remain open; this is not purchase or production approval.",
+          "last_touched": "2026-11-27",
           "lane": "Restock",
           "start": null,
           "end": null,
@@ -4501,6 +4501,30 @@
               "label": "Merch project index and verification"
             }
           ]
+        },
+        {
+          "id": "merch-supplier-assets",
+          "name": "Create the supplier product photo pack and guide",
+          "status": "done",
+          "owner": "chatgpt",
+          "note": "A reusable supplier photo ZIP and product guide were created and their file identities were read back. This verifies the artifacts, not supplier acceptance or production approval.",
+          "last_touched": "2026-11-27",
+          "lane": "Restock",
+          "start": "2026-11-27",
+          "end": "2026-11-27",
+          "completed_on": "2026-11-27",
+          "depends_on": [
+            "merch-register"
+          ],
+          "evidence": [
+            {
+              "provider": "Google",
+              "url": "https://docs.google.com/document/d/1yO92jAmM0f1sN02165yW_zm1wbE9O8AiN1lNShnVDrI/edit",
+              "label": "Merch board and 27 November handover"
+            }
+          ],
+          "date_basis": "observed",
+          "date_note": "Library metadata verified both supplier assets were created on 27 November 2026."
         }
       ],
       "target_asked_on": "2026-10-29"
@@ -7252,8 +7276,8 @@
       "name": "Car Purchase",
       "mono": "CP",
       "group": "Personal",
-      "status": "Audi e-tron 55 Sportback search active",
-      "summary": "Johnson has selected a used Audi e-tron 55 Sportback as the current replacement-car target. Special equipment is optional. The active work is to build a fresh shortlist and verify condition, history, battery or range evidence and warranty before arranging a viewing.",
+      "status": "Audi e-tron 55 Sportback shortlist active",
+      "summary": "Johnson requires an Audi e-tron 55 quattro Sportback and is flexible on colour and trim. Two current leads have been identified, but neither is approved; comparison and due diligence remain open.",
       "milestones": [
         {
           "name": "Choose the vehicle target",
@@ -7272,9 +7296,9 @@
           "status": "todo"
         }
       ],
-      "next_step": "Create a fresh shortlist of genuinely available Audi e-tron 55 Sportbacks, then verify the strongest candidate’s history, battery or usable-range evidence and warranty before arranging a viewing.",
-      "watch": "Listings can disappear quickly and no candidate is approved yet. A high-mileage lead requires stronger condition, battery, history and warranty evidence. Budget, deposit, finance and settlement details remain private.",
-      "updated": "26 NOV",
+      "next_step": "Compare the two current leads, then verify the stronger candidate’s history, battery or usable-range evidence, charging equipment and warranty before arranging a viewing.",
+      "watch": "No candidate is approved yet. Lower-priced leads can carry higher mileage and need stronger condition, battery, history and warranty evidence. Budget and finance details remain private.",
+      "updated": "27 NOV",
       "target_asked_on": "2026-11-26",
       "questions": [
         {
@@ -7315,8 +7339,8 @@
           "name": "Build a fresh shortlist of live cars",
           "status": "doing",
           "owner": null,
-          "note": "Check that each listing is still live and record the vehicle, mileage, seller, location and available condition evidence privately.",
-          "last_touched": "2026-11-26",
+          "note": "Fresh checks identified two current 55 Sportback leads. The shortlist remains in progress and neither candidate is approved; price and finance details stay private.",
+          "last_touched": "2026-11-27",
           "lane": "Search",
           "depends_on": [
             "car-purchase-001"
@@ -7335,7 +7359,7 @@
           "status": "todo",
           "owner": null,
           "note": "Check service and MOT history, write-off and finance status, recalls, tyres, charging equipment, battery or usable-range evidence and warranty terms.",
-          "last_touched": "2026-11-26",
+          "last_touched": "2026-11-27",
           "lane": "Due diligence",
           "depends_on": [
             "car-purchase-002"
